@@ -1,129 +1,133 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Предикторы, переобучение и ложные связи · 20838</title>
+<title>Predictors, overfitting, and false links · 20838</title>
 <link rel="stylesheet" href="../css/style.css">
 </head>
 <body data-page="predictors">
 <header class="topbar">
-  <button class="menu-btn" type="button" data-nav-toggle aria-expanded="false">Меню</button>
-  <a class="brand" href="../index.html"><strong>20838 · к экзамену</strong><span>Data &amp; Analytics for Strategic Marketing Decisions</span></a>
+  <button class="menu-btn" type="button" data-nav-toggle aria-expanded="false">Menu</button>
+  <a class="brand" href="../index.html"><strong>20838 · exam prep</strong><span>Data &amp; Analytics for Strategic Marketing Decisions</span></a>
   <div class="top-actions">
-    <a class="ghost" href="../topics/mock-exam.html">Mock exam</a>
+    <a class="ghost" href="../topics/mock-exam.html">Practice exam</a>
   </div>
 </header>
 <div class="layout">
-  <nav class="sidenav" aria-label="Темы"><h2>Навигация</h2>
-<a href="../index.html">План на 8 недель<small>С чего начать</small></a>
-<a href="../index.html#inventory">Все материалы<small>Лекции, лабы, кейсы</small></a>
-<a href="formula-sheet.html">Шпаргалка формул<small>Выучить до автоматизма</small></a>
-<a href="mock-exam.html">Пробный экзамен<small>Сначала сами, потом решение</small></a>
-<h2>Неделя 1. Язык данных</h2>
-<a href="model-and-data.html">Модель и строка клиента</a>
-<a href="variable-types.html">Типы переменных</a>
-<a href="descriptive-stats.html">Среднее, медиана, мода, SD</a>
-<a href="shape-missing.html">Форма, ящики и пропуски</a>
-<a href="inference-se-ci.html">Выборка, SE и интервал</a>
-<a href="hypothesis-testing.html">Проверка гипотезы</a>
-<a href="python-bank-walkthrough.html">Тетрадь bank_basics</a>
-<h2>Неделя 2. Python без страха</h2>
-<a href="python-objects.html">Имена, списки, множества</a>
-<a href="python-strings.html">Строки и срезы</a>
-<a href="python-sets-dicts.html">Множества и словари</a>
-<a href="python-logic.html">Условия, циклы, функции</a>
+  <nav class="sidenav" aria-label="Topics"><h2>Navigation</h2>
+<a href="../index.html">The 8-week plan<small>Where to start</small></a>
+<a href="../index.html#inventory">Every file<small>Lectures, labs, cases</small></a>
+<a href="formula-sheet.html">Formula sheet<small>Say these without notes</small></a>
+<a href="mock-exam.html">Practice exam<small>Try it first, then the solution</small></a>
+<h2>Week 1. The language of data</h2>
+<a href="model-and-data.html">A model and one customer row</a>
+<a href="variable-types.html">Types of variables</a>
+<a href="descriptive-stats.html">Mean, median, mode, SD</a>
+<a href="shape-missing.html">Shape, boxes, and missing values</a>
+<a href="inference-se-ci.html">The sample, the SE, and the interval</a>
+<a href="hypothesis-testing.html">Testing a claim</a>
+<a href="python-bank-walkthrough.html">The bank notebook, line by line</a>
+<h2>Week 2. Python without fear</h2>
+<a href="python-objects.html">Names, lists, and sets</a>
+<a href="python-strings.html">Strings and slices</a>
+<a href="python-sets-dicts.html">Sets and dictionaries</a>
+<a href="python-logic.html">if, for, and functions</a>
 <a href="python-olympics.html">Python Olympics</a>
-<h2>Неделя 3. Эксперимент</h2>
-<a href="acquisition.html">Привлечение клиента</a>
-<a href="privacy.html">Privacy на слайдах</a>
-<a href="causation.html">Причинность и field test</a>
-<a href="experiment-design.html">Словарь эксперимента</a>
-<h2>Неделя 4. Кейс Artea</h2>
-<a href="artea-setup.html">Кейс Artea</a>
-<a href="artea-balance.html">Рандомизация и средние</a>
-<a href="artea-ols.html">OLS по купону</a>
-<a href="artea-heterogeneity.html">Кому слать купон</a>
-<a href="artea-notebook.html">Тетрадь Artea</a>
-<h2>Неделя 5. Ценность и отток</h2>
-<a href="clv.html">CLV и срок жизни</a>
-<a href="churn-management.html">Управление оттоком</a>
-<a href="model-choice.html">Какая модель под какой Y</a>
-<a href="calibration-lift.html">Calibration, validation, lift</a>
-<a href="predictors.html">Какие X брать</a>
-<h2>Неделя 6. Logit и шансы</h2>
-<a href="logit-odds.html">Шансы и odds ratio</a>
-<a href="advertising-lab.html">Лаба Advertising</a>
-<a href="reading-output.html">Чтение таблиц OLS и logit</a>
-<a href="interactions.html">Взаимодействия</a>
-<h2>Неделя 7. Кейсы и matching</h2>
-<a href="pilgrim.html">Кейс Pilgrim</a>
-<a href="books-r-us.html">Кейс Books R Us</a>
-<a href="association-experiment.html">Связь или причина</a>
-<a href="matching-idea.html">Идея matching</a>
-<a href="sample-box.html">Sample Box и деньги</a>
-<h2>Неделя 8. Пробный экзамен</h2>
-<a href="exam-format.html">Формат экзамена</a>
+<h2>Week 3. Experiments</h2>
+<a href="acquisition.html">Customer acquisition</a>
+<a href="privacy.html">Privacy, only what the slides cover</a>
+<a href="causation.html">Causation and the field test</a>
+<a href="experiment-design.html">The experiment dictionary</a>
+<h2>Week 4. The Artea case</h2>
+<a href="artea-setup.html">The 20% coupon test</a>
+<a href="artea-balance.html">Were the groups alike?</a>
+<a href="artea-ols.html">The OLS coupon effect</a>
+<a href="artea-heterogeneity.html">Who should get the coupon</a>
+<a href="artea-notebook.html">The Artea notebook</a>
+<h2>Week 5. Value and churn</h2>
+<a href="clv.html">CLV and how long a customer stays</a>
+<a href="churn-management.html">Managing churn</a>
+<a href="model-choice.html">Which model for which Y</a>
+<a href="calibration-lift.html">Calibration, validation, and lift</a>
+<a href="predictors.html">Which X to put in</a>
+<h2>Week 6. Logit and odds</h2>
+<a href="logit-odds.html">Odds and the odds ratio</a>
+<a href="advertising-lab.html">The Advertising lab</a>
+<a href="reading-output.html">Reading OLS and logit tables</a>
+<a href="interactions.html">Interactions</a>
+<h2>Week 7. Cases and matching</h2>
+<a href="pilgrim.html">The Pilgrim case</a>
+<a href="books-r-us.html">The Books R Us case</a>
+<a href="association-experiment.html">Association or cause</a>
+<a href="matching-idea.html">The idea of matching</a>
+<a href="sample-box.html">Sample Box and the money</a>
+<h2>Week 8. The practice exam</h2>
+<a href="exam-format.html">How the exam is marked</a>
 <a href="touchpoints.html">Touchpoints</a>
-<a href="readings-gaps.html">Чего нет в папке</a>
-<a href="formula-sheet.html">Шпаргалка</a>
-<a href="mock-exam.html">Пробный экзамен</a></nav>
+<a href="readings-gaps.html">What is missing from the folder</a>
+<a href="formula-sheet.html">Formula sheet</a>
+<a href="mock-exam.html">Practice exam</a>
+</nav>
   <main><div class="wrap">
-    <p class="kicker">Неделя 5 · выбор X</p>
-    <h1>Предикторы, переобучение и ложные связи</h1>
-    <p class="lead">Хороший X — это измеримая гипотеза о поведении, а не любой столбец, который случайно коррелирует.</p>
+    <p class="kicker">Week 5 · choosing X</p>
     
-<p>Слайд предлагает превратить гипотезу в переменную. Для оттока из зала это могут быть: как человек ходит, кто он, как с ним говорили, отвечал ли он. Буквы X₁ … Xₚ — просто список таких измерений.</p>
-<p>Как выбирают набор. Слайд ссылается на Neslin et al. (2006): и академики, и менеджеры часто начинают с EDA, exploratory data analysis, то есть со смотрения на данные. Дальше возможен перебор подмножеств. Берут набор с самым высоким R² или с самым низким AIC либо BIC.</p>
-<div class="callout formula"><strong>Три индекса со слайда, словами</strong><br>AIC = −2·LL + 2k. Штраф за число параметров k растёт медленно.<br>BIC = −2·LL + ln(N)·k. Штраф растёт вместе с размером выборки, лишние X он наказывает сильнее.<br>Pseudo R² = 1 − LL_full / LL₀. Это не доля дисперсии. Для обычной OLS R² — доля объяснённой дисперсии. Для logit слово pseudo стоит не зря.</div>
-<p>LL — log-likelihood, число «насколько данные правдоподобны при этих коэффициентах». LL₀ — то же для модели, где есть только intercept, без X. Меньше AIC и BIC — лучше, при сравнении моделей на одних и тех же данных. Выше R² — теснее подгонка, но не автоматически лучше прогноз.</p>
-<h2>Ложная корреляция и два промаха</h2>
-<p>Слайд даёт ссылку на графики Tyler Vigen: ряды, которые движутся одинаково по чистому совпадению. Фраза лектора: предикторы могут коррелировать случайно, сначала проверьте, что у связи есть смысл, и не бросайте все столбцы в стену.</p>
-<p>Две болезни:</p>
+<h1>Predictors, overfitting, and false links</h1>
+<p class="lead">A good X is a measurable hypothesis about behaviour, not any column that happens to correlate.</p>
+<p>The slide suggests turning a hypothesis into a variable. For churn from a gym that might be: how the person attends, who they are, how you spoke to them, and whether they replied. The letters X₁ … Xₚ are simply the list of those measurements.</p>
+<p>How the set is chosen. The slide cites Neslin et al. (2006): academics and managers often start with EDA, exploratory data analysis, that is, looking at the data. Then a search over subsets is possible. Take the set with the highest R², or with the lowest AIC or BIC.</p>
+<div class="callout formula"><strong>Three indexes, in words</strong><br>
+AIC = −2·LL + 2k. The penalty for the number of parameters k grows slowly.<br>
+BIC = −2·LL + ln(N)·k. The penalty grows with the sample size, so extra X’s are punished harder.<br>
+Pseudo R² = 1 − LL_full / LL₀. This is not a share of variance. For ordinary OLS, R² is the share of explained variance. For logit, the word pseudo is there on purpose.</div>
+<p>LL is the log-likelihood, a number for “how plausible the data are at these coefficients”. LL₀ is the same thing for a model that has only an intercept, no X. Smaller AIC and BIC are better, when you compare models on the same data. Higher R² is a tighter fit, but not automatically a better forecast.</p>
+<h2>A spurious correlation, and two failures</h2>
+<p>The slide points at Tyler Vigen’s charts: series that move together by pure coincidence. The lecturer’s sentence: predictors can correlate by chance, so first check that the link has a meaning, and do not throw every column at the wall.</p>
 <ul>
-<li><b>Overfitting</b>, переобучение. Слишком много X. Модель запоминает шум старой выборки и проваливает новую.</li>
-<li><b>Underfitting</b>. Слишком мало X. Модель не видит устойчивый сигнал, который в данных есть.</li>
+<li><b>Overfitting.</b> Too many X’s. The model memorises the noise of the old sample and fails on a new one.</li>
+<li><b>Underfitting.</b> Too few X’s. The model misses a stable signal that is in the data.</li>
 </ul>
-<p>Лекарство от переобучения, уже известное: validation на людях, которых не использовали при выборе X. Если X выбирали, перебирая сотни столбцов на всей базе, «проверочная» выборка уже не чистая. Это тонкость, слайд её не формализует. Достаточно сказать: и выбор X, и коэффициенты проверяют на out-sample.</p>
-<h2>Решённый короткий ответ</h2>
-<p>Аналитик добавил 40 признаков, in-sample pseudo R² вырос с 0,06 до 0,40, out-sample lift верхнего дециля упал с 2,5 до 1,1. Что случилось?</p>
+<p>The remedy for overfitting is one you already know: validation on people who were not used when the X’s were chosen. If you chose the X’s by searching hundreds of columns on the whole base, the “check” sample is no longer clean. The slide does not formalise that subtlety. It is enough to say: both the choice of X and the coefficients are checked out of sample.</p>
+<h2>A short worked answer</h2>
+<p>An analyst added 40 features. In-sample pseudo R² rose from 0.06 to 0.40. Out-sample lift of the top decile fell from 2.5 to 1.1. What happened?</p>
 <ol class="steps">
-<li>Рост pseudo R² на обучающих людях сам по себе не победа. Индекс подгонки растёт, когда модели дают больше гибкости.</li>
-<li>Падение lift на новых людях — симптом overfitting.</li>
-<li>Действие: убрать признаки без управленческого смысла, сравнить AIC/BIC, оставить набор, который держит lift снаружи.</li>
+<li>A rise in pseudo R² on the training people is not a victory by itself. A fit index rises when the model is given more flexibility.</li>
+<li>A fall in lift on new people is the symptom of overfitting.</li>
+<li>The action: drop features with no managerial meaning, compare AIC and BIC, and keep the set that holds its lift on the outside.</li>
 </ol>
-<p>На closing class у примера logit pseudo R² всего 0,056, и модель всё равно интерпретируют по значимым коэффициентам. Маленький pseudo R² не запрещает читать отдельный коэффициент. Он запрещает фразу «модель объяснила 5,6% поведения» как будто это OLS R².</p>
-<h2>Практикум</h2>
-
-<section class="quiz" data-quiz data-kind="mcq" data-qid="x1" data-answer="b" data-why="Формула есть на слайде Customer Development. В лабе Advertising решение повторяет запрет словами.">
-  <p class="prompt">Pseudo R² для logit — это:</p>
-  <label class="opt"><input type="radio" name="x1" value="a"> доля дисперсии Y, как обычный R² в OLS</label><label class="opt"><input type="radio" name="x1" value="b"> индекс правдоподобия 1 − LL_full / LL₀, не процент объяснённой дисперсии</label><label class="opt"><input type="radio" name="x1" value="c"> p-value</label><label class="opt"><input type="radio" name="x1" value="d"> lift</label>
-  <button type="button" data-check>Проверить</button>
+<p>On the closing class, an example logit has a pseudo R² of only 0.056, and the model is still interpreted through its significant coefficients. A small pseudo R² does not forbid reading a single coefficient. It forbids the sentence “the model explained 5.6% of behaviour” as if that were an OLS R².</p>
+<h2>Practice</h2>
+<section class="quiz" data-quiz data-kind="mcq" data-qid="pr1" data-answer="b" data-why="The word pseudo is there because it is not the OLS share of variance.">
+  <p class="prompt">Pseudo R² for a logit is:</p>
+  <label class="opt"><input type="radio" name="pr1" value="a"> the share of the variance of Y, like ordinary R² in OLS</label><label class="opt"><input type="radio" name="pr1" value="b"> a likelihood index, 1 − LL_full / LL₀, not a percent of explained variance</label><label class="opt"><input type="radio" name="pr1" value="c"> the p-value</label><label class="opt"><input type="radio" name="pr1" value="d"> the lift</label>
+  <button type="button" data-check>Check</button>
   <div class="feedback"></div>
 </section>
 
-<section class="quiz" data-quiz data-kind="mcq" data-qid="x2" data-answer="a" data-why="AIC = −2LL + 2k. BIC = −2LL + ln(N)·k. Слайд пишет 2 ln(N) k в одной из вёрсток, смысл штрафа тот же: множитель растёт с N.">
-  <p class="prompt">BIC штрафует лишние параметры сильнее AIC, когда выборка большая, потому что…</p>
-  <label class="opt"><input type="radio" name="x2" value="a"> в штрафе BIC стоит ln(N), и он растёт с N</label><label class="opt"><input type="radio" name="x2" value="b"> BIC не смотрит на k</label><label class="opt"><input type="radio" name="x2" value="c"> AIC делит на n</label><label class="opt"><input type="radio" name="x2" value="d"> это одно и то же</label>
-  <button type="button" data-check>Проверить</button>
+<section class="quiz" data-quiz data-kind="mcq" data-qid="pr2" data-answer="a" data-why="AIC’s penalty is 2k. BIC’s penalty is ln(N)·k.">
+  <p class="prompt">BIC punishes extra parameters harder than AIC when the sample is large, because…</p>
+  <label class="opt"><input type="radio" name="pr2" value="a"> BIC’s penalty contains ln(N), and that grows with N</label><label class="opt"><input type="radio" name="pr2" value="b"> BIC does not look at k</label><label class="opt"><input type="radio" name="pr2" value="c"> AIC divides by n</label><label class="opt"><input type="radio" name="pr2" value="d"> they are the same thing</label>
+  <button type="button" data-check>Check</button>
   <div class="feedback"></div>
 </section>
 
-<section class="quiz" data-quiz data-kind="mcq" data-qid="x3" data-answer="a" data-why="Подпись: predictors may correlate by chance. Make sure they make sense.">
-  <p class="prompt">Графики Tyler Vigen на слайде зачем?</p>
-  <label class="opt"><input type="radio" name="x3" value="a"> Показать, что корреляция бывает случайной, и X нужен смысл</label><label class="opt"><input type="radio" name="x3" value="b"> Дать формулу CLV</label><label class="opt"><input type="radio" name="x3" value="c"> Заменить lift chart</label><label class="opt"><input type="radio" name="x3" value="d"> Доказать, что чем больше X, тем лучше</label>
-  <button type="button" data-check>Проверить</button>
+<section class="quiz" data-quiz data-kind="mcq" data-qid="pr3" data-answer="a" data-why="Spurious correlation. Do not throw every column at the wall.">
+  <p class="prompt">Why are Tyler Vigen’s charts on the slide?</p>
+  <label class="opt"><input type="radio" name="pr3" value="a"> To show that a correlation can be accidental, and that an X needs a meaning</label><label class="opt"><input type="radio" name="pr3" value="b"> To give the CLV formula</label><label class="opt"><input type="radio" name="pr3" value="c"> To replace the lift chart</label><label class="opt"><input type="radio" name="pr3" value="d"> To prove that more X’s are always better</label>
+  <button type="button" data-check>Check</button>
   <div class="feedback"></div>
 </section>
 
-<section class="quiz" data-quiz data-kind="mcq" data-qid="x4" data-answer="b" data-why="Много X запомнили старый шум. На новых людях преимущества не осталось. Underfitting был бы слабым и там, и там.">
-  <p class="prompt">In-sample подгонка выросла, out-sample lift упал. Это похоже на:</p>
-  <label class="opt"><input type="radio" name="x4" value="a"> underfitting</label><label class="opt"><input type="radio" name="x4" value="b"> overfitting</label><label class="opt"><input type="radio" name="x4" value="c"> идеальную рандомизацию</label><label class="opt"><input type="radio" name="x4" value="d"> ошибку в mean</label>
-  <button type="button" data-check>Проверить</button>
+<section class="quiz" data-quiz data-kind="mcq" data-qid="pr4" data-answer="b" data-why="The model memorised the training noise. On new people the ranking got worse: lift from 2.5 down to 1.1.">
+  <p class="prompt">The in-sample fit rose, and the out-sample lift fell. This looks like:</p>
+  <label class="opt"><input type="radio" name="pr4" value="a"> underfitting</label><label class="opt"><input type="radio" name="pr4" value="b"> overfitting</label><label class="opt"><input type="radio" name="pr4" value="c"> perfect randomization</label><label class="opt"><input type="radio" name="pr4" value="d"> a mistake in the mean</label>
+  <button type="button" data-check>Check</button>
   <div class="feedback"></div>
 </section>
-<p class="pills"><a href="calibration-lift.html">← Calibration, validation, lift</a><a href="logit-odds.html">Шансы и odds ratio →</a></p>
-    <footer class="note">Числа и формулировки взяты из загруженных слайдов, тетрадей и mock exam курса 20838 (2026). Если в файле чего-то нет, страница так и говорит.</footer>
+
+<p class="pills"><a href="calibration-lift.html">← Calibration and lift</a><a href="logit-odds.html">Odds and the odds ratio →</a></p>
+
+    <footer class="note">Numbers and wording follow the uploaded slides, notebooks, and the 20838 mock exam (2026). If a file does not contain a figure, the page says so instead of inventing it.</footer>
   </div></main>
 </div>
 <script src="../js/nav.js"></script>

@@ -1,124 +1,132 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Logit: вероятность, шанс и exp(коэффициент) · 20838</title>
+<title>Logit: probability, odds, and exp(coefficient) · 20838</title>
 <link rel="stylesheet" href="../css/style.css">
 </head>
 <body data-page="logit-odds">
 <header class="topbar">
-  <button class="menu-btn" type="button" data-nav-toggle aria-expanded="false">Меню</button>
-  <a class="brand" href="../index.html"><strong>20838 · к экзамену</strong><span>Data &amp; Analytics for Strategic Marketing Decisions</span></a>
+  <button class="menu-btn" type="button" data-nav-toggle aria-expanded="false">Menu</button>
+  <a class="brand" href="../index.html"><strong>20838 · exam prep</strong><span>Data &amp; Analytics for Strategic Marketing Decisions</span></a>
   <div class="top-actions">
-    <a class="ghost" href="../topics/mock-exam.html">Mock exam</a>
+    <a class="ghost" href="../topics/mock-exam.html">Practice exam</a>
   </div>
 </header>
 <div class="layout">
-  <nav class="sidenav" aria-label="Темы"><h2>Навигация</h2>
-<a href="../index.html">План на 8 недель<small>С чего начать</small></a>
-<a href="../index.html#inventory">Все материалы<small>Лекции, лабы, кейсы</small></a>
-<a href="formula-sheet.html">Шпаргалка формул<small>Выучить до автоматизма</small></a>
-<a href="mock-exam.html">Пробный экзамен<small>Сначала сами, потом решение</small></a>
-<h2>Неделя 1. Язык данных</h2>
-<a href="model-and-data.html">Модель и строка клиента</a>
-<a href="variable-types.html">Типы переменных</a>
-<a href="descriptive-stats.html">Среднее, медиана, мода, SD</a>
-<a href="shape-missing.html">Форма, ящики и пропуски</a>
-<a href="inference-se-ci.html">Выборка, SE и интервал</a>
-<a href="hypothesis-testing.html">Проверка гипотезы</a>
-<a href="python-bank-walkthrough.html">Тетрадь bank_basics</a>
-<h2>Неделя 2. Python без страха</h2>
-<a href="python-objects.html">Имена, списки, множества</a>
-<a href="python-strings.html">Строки и срезы</a>
-<a href="python-sets-dicts.html">Множества и словари</a>
-<a href="python-logic.html">Условия, циклы, функции</a>
+  <nav class="sidenav" aria-label="Topics"><h2>Navigation</h2>
+<a href="../index.html">The 8-week plan<small>Where to start</small></a>
+<a href="../index.html#inventory">Every file<small>Lectures, labs, cases</small></a>
+<a href="formula-sheet.html">Formula sheet<small>Say these without notes</small></a>
+<a href="mock-exam.html">Practice exam<small>Try it first, then the solution</small></a>
+<h2>Week 1. The language of data</h2>
+<a href="model-and-data.html">A model and one customer row</a>
+<a href="variable-types.html">Types of variables</a>
+<a href="descriptive-stats.html">Mean, median, mode, SD</a>
+<a href="shape-missing.html">Shape, boxes, and missing values</a>
+<a href="inference-se-ci.html">The sample, the SE, and the interval</a>
+<a href="hypothesis-testing.html">Testing a claim</a>
+<a href="python-bank-walkthrough.html">The bank notebook, line by line</a>
+<h2>Week 2. Python without fear</h2>
+<a href="python-objects.html">Names, lists, and sets</a>
+<a href="python-strings.html">Strings and slices</a>
+<a href="python-sets-dicts.html">Sets and dictionaries</a>
+<a href="python-logic.html">if, for, and functions</a>
 <a href="python-olympics.html">Python Olympics</a>
-<h2>Неделя 3. Эксперимент</h2>
-<a href="acquisition.html">Привлечение клиента</a>
-<a href="privacy.html">Privacy на слайдах</a>
-<a href="causation.html">Причинность и field test</a>
-<a href="experiment-design.html">Словарь эксперимента</a>
-<h2>Неделя 4. Кейс Artea</h2>
-<a href="artea-setup.html">Кейс Artea</a>
-<a href="artea-balance.html">Рандомизация и средние</a>
-<a href="artea-ols.html">OLS по купону</a>
-<a href="artea-heterogeneity.html">Кому слать купон</a>
-<a href="artea-notebook.html">Тетрадь Artea</a>
-<h2>Неделя 5. Ценность и отток</h2>
-<a href="clv.html">CLV и срок жизни</a>
-<a href="churn-management.html">Управление оттоком</a>
-<a href="model-choice.html">Какая модель под какой Y</a>
-<a href="calibration-lift.html">Calibration, validation, lift</a>
-<a href="predictors.html">Какие X брать</a>
-<h2>Неделя 6. Logit и шансы</h2>
-<a href="logit-odds.html">Шансы и odds ratio</a>
-<a href="advertising-lab.html">Лаба Advertising</a>
-<a href="reading-output.html">Чтение таблиц OLS и logit</a>
-<a href="interactions.html">Взаимодействия</a>
-<h2>Неделя 7. Кейсы и matching</h2>
-<a href="pilgrim.html">Кейс Pilgrim</a>
-<a href="books-r-us.html">Кейс Books R Us</a>
-<a href="association-experiment.html">Связь или причина</a>
-<a href="matching-idea.html">Идея matching</a>
-<a href="sample-box.html">Sample Box и деньги</a>
-<h2>Неделя 8. Пробный экзамен</h2>
-<a href="exam-format.html">Формат экзамена</a>
+<h2>Week 3. Experiments</h2>
+<a href="acquisition.html">Customer acquisition</a>
+<a href="privacy.html">Privacy, only what the slides cover</a>
+<a href="causation.html">Causation and the field test</a>
+<a href="experiment-design.html">The experiment dictionary</a>
+<h2>Week 4. The Artea case</h2>
+<a href="artea-setup.html">The 20% coupon test</a>
+<a href="artea-balance.html">Were the groups alike?</a>
+<a href="artea-ols.html">The OLS coupon effect</a>
+<a href="artea-heterogeneity.html">Who should get the coupon</a>
+<a href="artea-notebook.html">The Artea notebook</a>
+<h2>Week 5. Value and churn</h2>
+<a href="clv.html">CLV and how long a customer stays</a>
+<a href="churn-management.html">Managing churn</a>
+<a href="model-choice.html">Which model for which Y</a>
+<a href="calibration-lift.html">Calibration, validation, and lift</a>
+<a href="predictors.html">Which X to put in</a>
+<h2>Week 6. Logit and odds</h2>
+<a href="logit-odds.html">Odds and the odds ratio</a>
+<a href="advertising-lab.html">The Advertising lab</a>
+<a href="reading-output.html">Reading OLS and logit tables</a>
+<a href="interactions.html">Interactions</a>
+<h2>Week 7. Cases and matching</h2>
+<a href="pilgrim.html">The Pilgrim case</a>
+<a href="books-r-us.html">The Books R Us case</a>
+<a href="association-experiment.html">Association or cause</a>
+<a href="matching-idea.html">The idea of matching</a>
+<a href="sample-box.html">Sample Box and the money</a>
+<h2>Week 8. The practice exam</h2>
+<a href="exam-format.html">How the exam is marked</a>
 <a href="touchpoints.html">Touchpoints</a>
-<a href="readings-gaps.html">Чего нет в папке</a>
-<a href="formula-sheet.html">Шпаргалка</a>
-<a href="mock-exam.html">Пробный экзамен</a></nav>
+<a href="readings-gaps.html">What is missing from the folder</a>
+<a href="formula-sheet.html">Formula sheet</a>
+<a href="mock-exam.html">Practice exam</a>
+</nav>
   <main><div class="wrap">
-    <p class="kicker">Неделя 6 · logistic regression</p>
-    <h1>Logit: вероятность, шанс и exp(коэффициент)</h1>
-    <p class="lead">Коэффициент logit нельзя прибавлять к вероятности как евро. Его сначала превращают в множитель шанса.</p>
+    <p class="kicker">Week 6 · logistic regression</p>
     
-<p>Logit нужен, когда Y равен 1 или 0: высокая продажа или нет, купил Red Bull или нет, ушёл или нет. Обычная прямая OLS умеет выдать «вероятность» 1,4 или −0,2. Logit держит прогноз между 0 и 1.</p>
-<p>Внутри сидит линейная сумма, её называют log-odds, логарифм шанса:</p>
-<div class="callout formula">log(odds) = b₀ + b₁x₁ + b₂x₂ + …<br>odds = P / (1 − P)<br>P = 1 / (1 + exp(−(b₀ + b₁x₁ + …)))</div>
-<p><b>Odds</b>, шанс, это не вероятность. Если P = 0,25, то на одну «удачу» приходится три «неудачи», odds = 0,25 / 0,75 = 1/3. Если вероятность растёт с 0,25 до 0,50, шанс растёт с 1/3 до 1, то есть утраивается. Говорить «вероятность выросла в три раза» было бы неверно: она выросла в два раза.</p>
-<p>Коэффициент b в таблице — это прибавка к log-odds. На экзамене почти всегда просят множитель:</p>
-<div class="callout formula">odds ratio = exp(b)<br>если OR &gt; 1, шансы выше на (OR − 1) × 100%<br>если OR &lt; 1, шансы ниже на (1 − OR) × 100%</div>
-<p>Фраза «на 42% выше» в решении mock считается именно так: OR = 1,42, (1,42 − 1) × 100 = 42. Это проценты шанса, не процентные пункты вероятности.</p>
-<h2>Маленький числовой пример</h2>
-<p>Простая модель Advertising, её полностью разберём на следующей странице. Коэффициент TV равен 0,0210. OR = exp(0,0210) = 1,021. Каждый дополнительный единичный расход на TV умножает шансы высокой продажи на 1,021, то есть поднимает их примерно на 2,1%.</p>
-<p>Для десяти единиц: exp(0,0210 × 10) = exp(0,210) = 1,233. Плюс 23,3% к шансам. Десять единиц легче произнести менеджеру, чем «2,1% за каждую мелкую единицу».</p>
-<p>Вероятность при TV = 100 в простой модели: линейная часть −3,9673 + 0,0210 × 100 = −1,8673. P = 1 / (1 + exp(1,8673)) ≈ 0,133. Тетрадь печатает 0,13345. Вот откуда берётся «13,3%», и это уже вероятность, не шанс.</p>
-<div class="callout mistake"><strong>Главная ошибка курса</strong>Увидеть OR = 1,42 и написать «вероятность покупки выросла на 42%». Решение mock пишет odds. Если превращаете в вероятность, нужна подстановка в формулу P для конкретного человека, а не один процент на всех.</div>
-<h2>Когда коэффициент значим</h2>
-<p>Рядом с OR стоят p-value и доверительный интервал. Для OR интервал «нет эффекта» — это 1, не 0. Если интервал OR содержит 1, данные мирятся с отсутствием связи. В простой модели TV интервал OR равен [1,015; 1,027], единицы внутри нет, p &lt; 0,001.</p>
-<p>В mock комментируют и 5%, и 10%. p = 0,051 они называют значимым на 10%. p = 0,109 уже нет. Не округляйте 0,051 до «не значимо, вычёркиваем из ответа»: в решении Red Bull такой коэффициент как раз обсуждают.</p>
-<h2>Практикум</h2>
-
-<section class="quiz" data-quiz data-kind="blank" data-qid="od1" data-why="(1 − 0,61) × 100 = 39. Так решение mock читает Healthy: about 39% lower odds.">
-  <p class="prompt">OR = 0,61. На сколько процентов ниже шансы? Впишите целое число процентов.</p>
-  <p><label>Проценты<br><input type="text" data-accept="39" data-label="Проценты" placeholder="39"></label></p>
-  <button type="button" data-check>Проверить</button>
+<h1>Logit: a probability, an odds, and exp(coefficient)</h1>
+<p class="lead">You cannot add a logit coefficient to a probability the way you add euros. First turn it into a multiplier of the odds.</p>
+<p>Logit is what you use when Y is 1 or 0: a high sale or not, bought Red Bull or not, left or not. An ordinary OLS line can print a “probability” of 1.4 or of −0.2. Logit keeps the forecast between 0 and 1.</p>
+<p>Inside it sits a linear sum. That sum is called the log-odds, the logarithm of the odds:</p>
+<div class="callout formula">log(odds) = b₀ + b₁x₁ + b₂x₂ + …<br>
+odds = P / (1 − P)<br>
+P = 1 / (1 + exp(−(b₀ + b₁x₁ + …)))</div>
+<p>Odds are not a probability. If P = 0.25, then for one “success” there are three “failures”, and odds = 0.25 / 0.75 = 1/3. If the probability rises from 0.25 to 0.50, the odds rise from 1/3 to 1, so they triple. Saying “the probability tripled” would be wrong. It doubled.</p>
+<p>The coefficient b in the table is an addition to the log-odds. On the exam you are almost always asked for the multiplier:</p>
+<ul>
+<li>odds ratio = exp(b)</li>
+<li>if OR &gt; 1, the odds are higher by (OR − 1) × 100%</li>
+<li>if OR &lt; 1, the odds are lower by (1 − OR) × 100%</li>
+</ul>
+<p>The phrase “42% higher” in the mock solution is computed exactly this way: OR = 1.42, (1.42 − 1) × 100 = 42. Those are percent of the odds, not percentage points of probability.</p>
+<h2>A small numerical example</h2>
+<p>The simple Advertising model, which the next page takes apart. The TV coefficient is 0.0210. OR = exp(0.0210) = 1.021. Each extra unit of TV spend multiplies the odds of a high sale by 1.021, which is about 2.1% higher.</p>
+<p>For ten units: exp(0.0210 × 10) = exp(0.210) = 1.233. Plus 23.3% on the odds. Ten units are easier to say to a manager than “2.1% for each tiny unit”.</p>
+<p>The probability at TV = 100 in the simple model: the linear piece is −3.9673 + 0.0210 × 100 = −1.8673. P = 1 / (1 + exp(1.8673)) ≈ 0.133. The notebook prints 0.13345. That is where “13.3%” comes from, and it is already a probability, not an odds.</p>
+<div class="callout mistake"><strong>The course’s main mistake</strong>Seeing OR = 1.42 and writing “the probability of purchase rose by 42%”. The mock solution writes odds. If you convert to a probability, you must plug a particular person into the formula for P. One percent does not apply to everyone.</div>
+<h2>When a coefficient is significant</h2>
+<p>Next to the OR sit a p-value and a confidence interval. For an OR, the interval that means “no effect” contains 1, not 0. If the OR interval contains 1, the data are compatible with no link. In the simple TV model the OR interval is [1.015; 1.027]. The number 1 is not inside, and p &lt; 0.001.</p>
+<p>The mock comments on both 5% and 10%. They call p = 0.051 significant at 10%. p = 0.109 is not. Do not round 0.051 down to “not significant, cross it out of the answer”. In the Red Bull solution that coefficient is discussed.</p>
+<h2>Practice</h2>
+<section class="quiz" data-quiz data-kind="blank" data-qid="lo1" data-why="(1 − 0.61) × 100 = 39. The odds are 39% lower, not 39 percentage points of probability.">
+  <p class="prompt">OR = 0.61. By what percent are the odds lower? Type a whole number of percent.</p>
+  <p><label>Percent<br><input type="text" data-accept="39" data-label="Percent" placeholder="39"></label></p>
+  <button type="button" data-check>Check</button>
   <div class="feedback"></div>
 </section>
 
-<section class="quiz" data-quiz data-kind="blank" data-qid="od2" data-why="exp(0,021) = 1,021. exp(0,210) = 1,233. Вторая цифра из тетради: 1,23324.">
-  <p class="prompt">Коэффициент 0,0210. OR на 1 единицу и OR на 10 единиц. Округлите до трёх знаков.</p>
-  <p><label>OR на 1<br><input type="text" data-accept="1.021" data-label="OR на 1" placeholder="1,021"></label></p><p><label>OR на 10<br><input type="text" data-accept="1.233" data-label="OR на 10" placeholder="1,233"></label></p>
-  <button type="button" data-check>Проверить</button>
+<section class="quiz" data-quiz data-kind="blank" data-qid="lo2" data-why="exp(0.0210) = 1.021. exp(0.210) = 1.233, which is +23.3% on the odds.">
+  <p class="prompt">Coefficient 0.0210. The OR for 1 unit and the OR for 10 units. Round to three decimal places.</p>
+  <p><label>OR for 1<br><input type="text" data-accept="1.021" data-label="OR for 1" placeholder="1.021"></label></p><p><label>OR for 10<br><input type="text" data-accept="1.233" data-label="OR for 10" placeholder="1.233"></label></p>
+  <button type="button" data-check>Check</button>
   <div class="feedback"></div>
 </section>
 
-<section class="quiz" data-quiz data-kind="mcq" data-qid="od3" data-answer="b" data-why="Единица — «множитель ничего не меняет». Это случай newspaper в множественной модели, p = 0,399.">
-  <p class="prompt">Интервал odds ratio [0,979; 1,055]. Какой вывод?</p>
-  <label class="opt"><input type="radio" name="od3" value="a"> Связь доказана, потому что интервал узкий</label><label class="opt"><input type="radio" name="od3" value="b"> Интервал содержит 1, значимой связи нет</label><label class="opt"><input type="radio" name="od3" value="c"> OR отрицательный</label><label class="opt"><input type="radio" name="od3" value="d"> Вероятность равна 0,979</label>
-  <button type="button" data-check>Проверить</button>
+<section class="quiz" data-quiz data-kind="mcq" data-qid="lo3" data-answer="b" data-why="For an odds ratio, “no effect” is 1, not 0. This is the newspaper row in Advertising.">
+  <p class="prompt">The odds-ratio interval is [0.979; 1.055]. Which conclusion?</p>
+  <label class="opt"><input type="radio" name="lo3" value="a"> The link is proved, because the interval is narrow</label><label class="opt"><input type="radio" name="lo3" value="b"> The interval contains 1, so there is no significant link</label><label class="opt"><input type="radio" name="lo3" value="c"> The OR is negative</label><label class="opt"><input type="radio" name="lo3" value="d"> The probability equals 0.979</label>
+  <button type="button" data-check>Check</button>
   <div class="feedback"></div>
 </section>
 
-<section class="quiz" data-quiz data-kind="mcq" data-qid="od4" data-answer="b" data-why="Odds = P / (1 − P). Вероятность и шанс совпадают только в бытовой речи, не в таблице logit.">
-  <p class="prompt">P = 0,25. Чему равен odds?</p>
-  <label class="opt"><input type="radio" name="od4" value="a"> 0,25</label><label class="opt"><input type="radio" name="od4" value="b"> 0,25 / 0,75 = 0,333</label><label class="opt"><input type="radio" name="od4" value="c"> 4</label><label class="opt"><input type="radio" name="od4" value="d"> 1,25</label>
-  <button type="button" data-check>Проверить</button>
+<section class="quiz" data-quiz data-kind="mcq" data-qid="lo4" data-answer="b" data-why="Odds = P / (1 − P) = 0.25 / 0.75 = 1/3. One success for every three failures.">
+  <p class="prompt">P = 0.25. What is the odds?</p>
+  <label class="opt"><input type="radio" name="lo4" value="a"> 0.25</label><label class="opt"><input type="radio" name="lo4" value="b"> 0.25 / 0.75 = 0.333</label><label class="opt"><input type="radio" name="lo4" value="c"> 4</label><label class="opt"><input type="radio" name="lo4" value="d"> 1.25</label>
+  <button type="button" data-check>Check</button>
   <div class="feedback"></div>
 </section>
-<p class="pills"><a href="predictors.html">← Какие X брать</a><a href="advertising-lab.html">Лаба Advertising →</a></p>
-    <footer class="note">Числа и формулировки взяты из загруженных слайдов, тетрадей и mock exam курса 20838 (2026). Если в файле чего-то нет, страница так и говорит.</footer>
+
+<p class="pills"><a href="predictors.html">← Which X to put in</a><a href="advertising-lab.html">The Advertising lab →</a></p>
+
+    <footer class="note">Numbers and wording follow the uploaded slides, notebooks, and the 20838 mock exam (2026). If a file does not contain a figure, the page says so instead of inventing it.</footer>
   </div></main>
 </div>
 <script src="../js/nav.js"></script>

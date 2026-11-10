@@ -1,137 +1,140 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>От выборки к неизвестному среднему · 20838</title>
+<title>From the sample to an unknown mean · 20838</title>
 <link rel="stylesheet" href="../css/style.css">
 </head>
 <body data-page="inference-se-ci">
 <header class="topbar">
-  <button class="menu-btn" type="button" data-nav-toggle aria-expanded="false">Меню</button>
-  <a class="brand" href="../index.html"><strong>20838 · к экзамену</strong><span>Data &amp; Analytics for Strategic Marketing Decisions</span></a>
+  <button class="menu-btn" type="button" data-nav-toggle aria-expanded="false">Menu</button>
+  <a class="brand" href="../index.html"><strong>20838 · exam prep</strong><span>Data &amp; Analytics for Strategic Marketing Decisions</span></a>
   <div class="top-actions">
-    <a class="ghost" href="../topics/mock-exam.html">Mock exam</a>
+    <a class="ghost" href="../topics/mock-exam.html">Practice exam</a>
   </div>
 </header>
 <div class="layout">
-  <nav class="sidenav" aria-label="Темы"><h2>Навигация</h2>
-<a href="../index.html">План на 8 недель<small>С чего начать</small></a>
-<a href="../index.html#inventory">Все материалы<small>Лекции, лабы, кейсы</small></a>
-<a href="formula-sheet.html">Шпаргалка формул<small>Выучить до автоматизма</small></a>
-<a href="mock-exam.html">Пробный экзамен<small>Сначала сами, потом решение</small></a>
-<h2>Неделя 1. Язык данных</h2>
-<a href="model-and-data.html">Модель и строка клиента</a>
-<a href="variable-types.html">Типы переменных</a>
-<a href="descriptive-stats.html">Среднее, медиана, мода, SD</a>
-<a href="shape-missing.html">Форма, ящики и пропуски</a>
-<a href="inference-se-ci.html">Выборка, SE и интервал</a>
-<a href="hypothesis-testing.html">Проверка гипотезы</a>
-<a href="python-bank-walkthrough.html">Тетрадь bank_basics</a>
-<h2>Неделя 2. Python без страха</h2>
-<a href="python-objects.html">Имена, списки, множества</a>
-<a href="python-strings.html">Строки и срезы</a>
-<a href="python-sets-dicts.html">Множества и словари</a>
-<a href="python-logic.html">Условия, циклы, функции</a>
+  <nav class="sidenav" aria-label="Topics"><h2>Navigation</h2>
+<a href="../index.html">The 8-week plan<small>Where to start</small></a>
+<a href="../index.html#inventory">Every file<small>Lectures, labs, cases</small></a>
+<a href="formula-sheet.html">Formula sheet<small>Say these without notes</small></a>
+<a href="mock-exam.html">Practice exam<small>Try it first, then the solution</small></a>
+<h2>Week 1. The language of data</h2>
+<a href="model-and-data.html">A model and one customer row</a>
+<a href="variable-types.html">Types of variables</a>
+<a href="descriptive-stats.html">Mean, median, mode, SD</a>
+<a href="shape-missing.html">Shape, boxes, and missing values</a>
+<a href="inference-se-ci.html">The sample, the SE, and the interval</a>
+<a href="hypothesis-testing.html">Testing a claim</a>
+<a href="python-bank-walkthrough.html">The bank notebook, line by line</a>
+<h2>Week 2. Python without fear</h2>
+<a href="python-objects.html">Names, lists, and sets</a>
+<a href="python-strings.html">Strings and slices</a>
+<a href="python-sets-dicts.html">Sets and dictionaries</a>
+<a href="python-logic.html">if, for, and functions</a>
 <a href="python-olympics.html">Python Olympics</a>
-<h2>Неделя 3. Эксперимент</h2>
-<a href="acquisition.html">Привлечение клиента</a>
-<a href="privacy.html">Privacy на слайдах</a>
-<a href="causation.html">Причинность и field test</a>
-<a href="experiment-design.html">Словарь эксперимента</a>
-<h2>Неделя 4. Кейс Artea</h2>
-<a href="artea-setup.html">Кейс Artea</a>
-<a href="artea-balance.html">Рандомизация и средние</a>
-<a href="artea-ols.html">OLS по купону</a>
-<a href="artea-heterogeneity.html">Кому слать купон</a>
-<a href="artea-notebook.html">Тетрадь Artea</a>
-<h2>Неделя 5. Ценность и отток</h2>
-<a href="clv.html">CLV и срок жизни</a>
-<a href="churn-management.html">Управление оттоком</a>
-<a href="model-choice.html">Какая модель под какой Y</a>
-<a href="calibration-lift.html">Calibration, validation, lift</a>
-<a href="predictors.html">Какие X брать</a>
-<h2>Неделя 6. Logit и шансы</h2>
-<a href="logit-odds.html">Шансы и odds ratio</a>
-<a href="advertising-lab.html">Лаба Advertising</a>
-<a href="reading-output.html">Чтение таблиц OLS и logit</a>
-<a href="interactions.html">Взаимодействия</a>
-<h2>Неделя 7. Кейсы и matching</h2>
-<a href="pilgrim.html">Кейс Pilgrim</a>
-<a href="books-r-us.html">Кейс Books R Us</a>
-<a href="association-experiment.html">Связь или причина</a>
-<a href="matching-idea.html">Идея matching</a>
-<a href="sample-box.html">Sample Box и деньги</a>
-<h2>Неделя 8. Пробный экзамен</h2>
-<a href="exam-format.html">Формат экзамена</a>
+<h2>Week 3. Experiments</h2>
+<a href="acquisition.html">Customer acquisition</a>
+<a href="privacy.html">Privacy, only what the slides cover</a>
+<a href="causation.html">Causation and the field test</a>
+<a href="experiment-design.html">The experiment dictionary</a>
+<h2>Week 4. The Artea case</h2>
+<a href="artea-setup.html">The 20% coupon test</a>
+<a href="artea-balance.html">Were the groups alike?</a>
+<a href="artea-ols.html">The OLS coupon effect</a>
+<a href="artea-heterogeneity.html">Who should get the coupon</a>
+<a href="artea-notebook.html">The Artea notebook</a>
+<h2>Week 5. Value and churn</h2>
+<a href="clv.html">CLV and how long a customer stays</a>
+<a href="churn-management.html">Managing churn</a>
+<a href="model-choice.html">Which model for which Y</a>
+<a href="calibration-lift.html">Calibration, validation, and lift</a>
+<a href="predictors.html">Which X to put in</a>
+<h2>Week 6. Logit and odds</h2>
+<a href="logit-odds.html">Odds and the odds ratio</a>
+<a href="advertising-lab.html">The Advertising lab</a>
+<a href="reading-output.html">Reading OLS and logit tables</a>
+<a href="interactions.html">Interactions</a>
+<h2>Week 7. Cases and matching</h2>
+<a href="pilgrim.html">The Pilgrim case</a>
+<a href="books-r-us.html">The Books R Us case</a>
+<a href="association-experiment.html">Association or cause</a>
+<a href="matching-idea.html">The idea of matching</a>
+<a href="sample-box.html">Sample Box and the money</a>
+<h2>Week 8. The practice exam</h2>
+<a href="exam-format.html">How the exam is marked</a>
 <a href="touchpoints.html">Touchpoints</a>
-<a href="readings-gaps.html">Чего нет в папке</a>
-<a href="formula-sheet.html">Шпаргалка</a>
-<a href="mock-exam.html">Пробный экзамен</a></nav>
+<a href="readings-gaps.html">What is missing from the folder</a>
+<a href="formula-sheet.html">Formula sheet</a>
+<a href="mock-exam.html">Practice exam</a>
+</nav>
   <main><div class="wrap">
-    <p class="kicker">Неделя 1 · population, sample, standard error</p>
-    <h1>От выборки к неизвестному среднему</h1>
-    <p class="lead">4&nbsp;521 клиента — это ещё не «все клиенты банка». Разница между этими словами и есть inferential statistics.</p>
+    <p class="kicker">Week 1 · population, sample, standard error</p>
     
-<p>Слайд ставит два вопроса рядом.</p>
+<h1>From the sample to an unknown mean</h1>
+<p class="lead">4,521 customers are not yet “every customer of the bank”. The gap between those two phrases is inferential statistics.</p>
+<p>The slide puts two questions side by side.</p>
 <ul>
-<li><b>Descriptive statistics.</b> Как выглядит то, что мы уже видим?</li>
-<li><b>Inferential statistics.</b> Что выборка может сказать о более широкой совокупности, population?</li>
+<li><b>Descriptive statistics.</b> What does the thing we already see look like?</li>
+<li><b>Inferential statistics.</b> What can the sample say about a wider population?</li>
 </ul>
 <div class="table-wrap"><table>
-<thead><tr><th></th><th>Как называют</th><th>В примере с возрастом</th></tr></thead>
+<thead><tr><th>Name</th><th>In the age example</th></tr></thead>
 <tbody>
-<tr><td>Population</td><td>Параметр, обычно неизвестен. Среднее совокупности обозначают μ</td><td>Все клиенты, о которых менеджер хочет сделать вывод</td></tr>
-<tr><td>Sample</td><td>Статистика, её можно посчитать. Среднее выборки обозначают x̄</td><td>4&nbsp;521 человека в файле, x̄ = 41,17</td></tr>
+<tr><td>Population. A parameter, usually unknown. The population mean is written μ</td><td>Every customer the manager wants a conclusion about</td></tr>
+<tr><td>Sample. A statistic you can compute. The sample mean is written x̄</td><td>The 4,521 people in the file, x̄ = 41.17</td></tr>
 </tbody></table></div>
-<p>Тот же ход для баланса: x̄ = €1&nbsp;423, а истинное μ неизвестно. Выборка помогает узнать μ, но с неопределённостью.</p>
-<h2>Почему среднее прыгает</h2>
-<p>Если бы взяли других клиентов того же банка, среднее было бы другим. Слайд показывает три возможных средних возраста: 40,78, 41,17 и 41,29. Они близко, но не равны. Это sampling variability, удача выборки.</p>
-<div class="callout formula"><strong>Две разные «ошибки»</strong><br>SD = 10,57 года. Насколько клиенты отличаются друг от друга.<br>SE(x̄) = SD / √n = 10,57 / √4521 = 0,157 года. Насколько обычно прыгает само среднее от выборки к выборке.</div>
-<p>Корень из 4&nbsp;521 около 67,2. Делить на большое n значит: при большой выборке среднее стоит на месте, даже если люди очень разные. Тетрадь это проверяет вживую: среднее по 50 случайным людям скачет, среднее по 4&nbsp;000 почти не двигается.</p>
-<h2>Доверительный интервал 95%</h2>
-<p>Слайд пишет правило для большой выборки:</p>
-<div class="callout formula">95% CI ≈ x̄ ± 1,96 × SE</div>
-<p>Подставьте числа возраста.</p>
+<p>The same move for balance: x̄ = €1,423, and the true μ is unknown. The sample helps you learn μ, but with uncertainty attached.</p>
+<h2>Why the mean jumps</h2>
+<p>If you had drawn other customers from the same bank, the mean would have been different. The slide shows three possible mean ages: 40.78, 41.17, and 41.29. They are close, and they are not equal. That is sampling variability, the luck of the draw.</p>
+<div class="callout formula"><strong>Two different “errors”</strong><br>
+SD = 10.57 years. How much customers differ from each other.<br>
+SE(x̄) = SD / √n = 10.57 / √4521 = 0.157 years. How much the mean itself usually jumps from sample to sample.</div>
+<p>The square root of 4,521 is about 67.2. Dividing by a large n means: with a large sample the mean sits still, even if the people are very different. The notebook checks this live. A mean of 50 random people jumps around. A mean of 4,000 barely moves.</p>
+<h2>The 95% interval, with the arithmetic written out</h2>
+<p>For a large sample the slide writes:</p>
+<p>95% CI ≈ x̄ ± 1.96 × SE</p>
 <ol class="steps">
-<li>1,96 × 0,157 = 0,308.</li>
-<li>Нижняя граница: 41,17 − 0,31 = 40,86.</li>
-<li>Верхняя: 41,17 + 0,31 = 41,48.</li>
-<li>Тетрадь печатает точнее: 40,862 … 41,478. Слайд округляет до 40,86 и 41,48.</li>
+<li>1.96 × 0.157 = 0.308, which rounds to 0.31.</li>
+<li>Lower end: 41.17 − 0.31 = 40.86.</li>
+<li>Upper end: 41.17 + 0.31 = 41.48.</li>
 </ol>
-<p>Интервал — набор значений μ, которые с этими данными выглядят правдоподобно. Число 41 внутрь попадает. Число 44 нет.</p>
-<div class="callout mistake"><strong>Частая ошибка</strong>Интервал не говорит «с вероятностью 95% истинный возраст лежит тут» в бытовом смысле уже после того, как интервал посчитан. На курсе его используют практично: внутри интервала гипотезу не отвергают, снаружи отвергают. И «не отвергли» не значит «доказали, что менеджер прав».</div>
-<h2>Практикум</h2>
-
-<section class="quiz" data-quiz data-kind="blank" data-qid="i1" data-why="10,57 / √4521 = 10,57 / 67,24 ≈ 0,157. Слайд пишет ровно это.">
-  <p class="prompt">Посчитайте SE возраста. SD = 10,57, n = 4521. Округлите SE до трёх знаков после запятой.</p>
-  <p><label>SE<br><input type="text" data-accept="0.157" data-label="SE" placeholder="0,157"></label></p>
-  <button type="button" data-check>Проверить</button>
+<p>The notebook prints the more precise ends: 40.862 … 41.478. The slide rounds to 40.86 and 41.48.</p>
+<p>The interval is the set of values of μ that look plausible with these data. The number 41 falls inside. The number 44 does not.</p>
+<div class="callout mistake"><strong>A common miss</strong>Once the interval has been computed, do not say “there is a 95% probability the true age is in here” as if the true age were still rolling a die. In this course you use the interval practically: a claim inside the interval is not rejected, and a claim outside it is rejected. And “not rejected” does not mean “we proved the manager right”.</div>
+<h2>Practice</h2>
+<section class="quiz" data-quiz data-kind="blank" data-qid="i1" data-why="10.57 / √4521 ≈ 10.57 / 67.2 ≈ 0.157.">
+  <p class="prompt">Compute the SE of age. SD = 10.57, n = 4521. Round the SE to three decimal places.</p>
+  <p><label>SE<br><input type="text" data-accept="0.157" data-label="SE" placeholder="0.157"></label></p>
+  <button type="button" data-check>Check</button>
   <div class="feedback"></div>
 </section>
 
-<section class="quiz" data-quiz data-kind="blank" data-qid="i2" data-why="41,17 ± 1,96 × 0,157.">
-  <p class="prompt">Границы 95% интервала для среднего возраста. Как на слайде, два знака после запятой.</p>
-  <p><label>Нижняя<br><input type="text" data-accept="40.86" data-label="Нижняя" placeholder="40,86"></label></p><p><label>Верхняя<br><input type="text" data-accept="41.48" data-label="Верхняя" placeholder="41,48"></label></p>
-  <button type="button" data-check>Проверить</button>
+<section class="quiz" data-quiz data-kind="blank" data-qid="i2" data-why="41.17 ± 1.96 × 0.157 gives 40.86 to 41.48.">
+  <p class="prompt">The ends of the 95% interval for mean age, as the slide rounds them, two decimal places.</p>
+  <p><label>Lower<br><input type="text" data-accept="40.86" data-label="Lower" placeholder="40.86"></label></p><p><label>Upper<br><input type="text" data-accept="41.48" data-label="Upper" placeholder="41.48"></label></p>
+  <button type="button" data-check>Check</button>
   <div class="feedback"></div>
 </section>
 
-<section class="quiz" data-quiz data-kind="mcq" data-qid="i3" data-answer="b" data-why="Формулировка слайда: SD describes variability among customers, SE describes uncertainty in our estimated mean.">
-  <p class="prompt">SD и SE в этом примере:</p>
-  <label class="opt"><input type="radio" name="i3" value="a"> это одно и то же число</label><label class="opt"><input type="radio" name="i3" value="b"> SD про различие клиентов, SE про неточность среднего</label><label class="opt"><input type="radio" name="i3" value="c"> SE всегда больше SD</label><label class="opt"><input type="radio" name="i3" value="d"> SE считают только для категорий</label>
-  <button type="button" data-check>Проверить</button>
+<section class="quiz" data-quiz data-kind="mcq" data-qid="i3" data-answer="b" data-why="SD = 10.57 years of spread between people. SE = 0.157 years of uncertainty in the mean.">
+  <p class="prompt">In this example, SD and SE are:</p>
+  <label class="opt"><input type="radio" name="i3" value="a"> the same number</label><label class="opt"><input type="radio" name="i3" value="b"> SD is about how customers differ; SE is about how imprecise the mean is</label><label class="opt"><input type="radio" name="i3" value="c"> SE is always larger than SD</label><label class="opt"><input type="radio" name="i3" value="d"> SE is computed only for categories</label>
+  <button type="button" data-check>Check</button>
   <div class="feedback"></div>
 </section>
 
-<section class="quiz" data-quiz data-kind="mcq" data-qid="i4" data-answer="b" data-why="Слайд отдельно ставит sample statistic €1 423 напротив неизвестного μ.">
-  <p class="prompt">x̄ баланса = €1 423. Что из этого верно?</p>
-  <label class="opt"><input type="radio" name="i4" value="a"> Истинное среднее всех клиентов банка точно €1 423</label><label class="opt"><input type="radio" name="i4" value="b"> €1 423 — статистика выборки. Параметр совокупности неизвестен, и к нему прилагается неопределённость</label><label class="opt"><input type="radio" name="i4" value="c"> Это медиана</label><label class="opt"><input type="radio" name="i4" value="d"> Это standard error</label>
-  <button type="button" data-check>Проверить</button>
+<section class="quiz" data-quiz data-kind="mcq" data-qid="i4" data-answer="b" data-why="x̄ is computed from the file. μ is the unknown mean of the wider population.">
+  <p class="prompt">The sample mean of balance is €1,423. Which statement is right?</p>
+  <label class="opt"><input type="radio" name="i4" value="a"> The true mean of every customer of the bank is exactly €1,423</label><label class="opt"><input type="radio" name="i4" value="b"> €1,423 is a sample statistic. The population parameter is unknown, and uncertainty comes with it</label><label class="opt"><input type="radio" name="i4" value="c"> That number is the median</label><label class="opt"><input type="radio" name="i4" value="d"> That number is the standard error</label>
+  <button type="button" data-check>Check</button>
   <div class="feedback"></div>
 </section>
-<p class="pills"><a href="shape-missing.html">← Форма, ящики и пропуски</a><a href="hypothesis-testing.html">Проверка гипотезы →</a></p>
-    <footer class="note">Числа и формулировки взяты из загруженных слайдов, тетрадей и mock exam курса 20838 (2026). Если в файле чего-то нет, страница так и говорит.</footer>
+
+<p class="pills"><a href="shape-missing.html">← Shape, boxes, and missing values</a><a href="hypothesis-testing.html">Testing a claim →</a></p>
+
+    <footer class="note">Numbers and wording follow the uploaded slides, notebooks, and the 20838 mock exam (2026). If a file does not contain a figure, the page says so instead of inventing it.</footer>
   </div></main>
 </div>
 <script src="../js/nav.js"></script>

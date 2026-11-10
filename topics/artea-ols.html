@@ -1,141 +1,143 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Artea: коэффициент купона в OLS · 20838</title>
+<title>The coupon coefficient in OLS · 20838</title>
 <link rel="stylesheet" href="../css/style.css">
 </head>
 <body data-page="artea-ols">
 <header class="topbar">
-  <button class="menu-btn" type="button" data-nav-toggle aria-expanded="false">Меню</button>
-  <a class="brand" href="../index.html"><strong>20838 · к экзамену</strong><span>Data &amp; Analytics for Strategic Marketing Decisions</span></a>
+  <button class="menu-btn" type="button" data-nav-toggle aria-expanded="false">Menu</button>
+  <a class="brand" href="../index.html"><strong>20838 · exam prep</strong><span>Data &amp; Analytics for Strategic Marketing Decisions</span></a>
   <div class="top-actions">
-    <a class="ghost" href="../topics/mock-exam.html">Mock exam</a>
+    <a class="ghost" href="../topics/mock-exam.html">Practice exam</a>
   </div>
 </header>
 <div class="layout">
-  <nav class="sidenav" aria-label="Темы"><h2>Навигация</h2>
-<a href="../index.html">План на 8 недель<small>С чего начать</small></a>
-<a href="../index.html#inventory">Все материалы<small>Лекции, лабы, кейсы</small></a>
-<a href="formula-sheet.html">Шпаргалка формул<small>Выучить до автоматизма</small></a>
-<a href="mock-exam.html">Пробный экзамен<small>Сначала сами, потом решение</small></a>
-<h2>Неделя 1. Язык данных</h2>
-<a href="model-and-data.html">Модель и строка клиента</a>
-<a href="variable-types.html">Типы переменных</a>
-<a href="descriptive-stats.html">Среднее, медиана, мода, SD</a>
-<a href="shape-missing.html">Форма, ящики и пропуски</a>
-<a href="inference-se-ci.html">Выборка, SE и интервал</a>
-<a href="hypothesis-testing.html">Проверка гипотезы</a>
-<a href="python-bank-walkthrough.html">Тетрадь bank_basics</a>
-<h2>Неделя 2. Python без страха</h2>
-<a href="python-objects.html">Имена, списки, множества</a>
-<a href="python-strings.html">Строки и срезы</a>
-<a href="python-sets-dicts.html">Множества и словари</a>
-<a href="python-logic.html">Условия, циклы, функции</a>
+  <nav class="sidenav" aria-label="Topics"><h2>Navigation</h2>
+<a href="../index.html">The 8-week plan<small>Where to start</small></a>
+<a href="../index.html#inventory">Every file<small>Lectures, labs, cases</small></a>
+<a href="formula-sheet.html">Formula sheet<small>Say these without notes</small></a>
+<a href="mock-exam.html">Practice exam<small>Try it first, then the solution</small></a>
+<h2>Week 1. The language of data</h2>
+<a href="model-and-data.html">A model and one customer row</a>
+<a href="variable-types.html">Types of variables</a>
+<a href="descriptive-stats.html">Mean, median, mode, SD</a>
+<a href="shape-missing.html">Shape, boxes, and missing values</a>
+<a href="inference-se-ci.html">The sample, the SE, and the interval</a>
+<a href="hypothesis-testing.html">Testing a claim</a>
+<a href="python-bank-walkthrough.html">The bank notebook, line by line</a>
+<h2>Week 2. Python without fear</h2>
+<a href="python-objects.html">Names, lists, and sets</a>
+<a href="python-strings.html">Strings and slices</a>
+<a href="python-sets-dicts.html">Sets and dictionaries</a>
+<a href="python-logic.html">if, for, and functions</a>
 <a href="python-olympics.html">Python Olympics</a>
-<h2>Неделя 3. Эксперимент</h2>
-<a href="acquisition.html">Привлечение клиента</a>
-<a href="privacy.html">Privacy на слайдах</a>
-<a href="causation.html">Причинность и field test</a>
-<a href="experiment-design.html">Словарь эксперимента</a>
-<h2>Неделя 4. Кейс Artea</h2>
-<a href="artea-setup.html">Кейс Artea</a>
-<a href="artea-balance.html">Рандомизация и средние</a>
-<a href="artea-ols.html">OLS по купону</a>
-<a href="artea-heterogeneity.html">Кому слать купон</a>
-<a href="artea-notebook.html">Тетрадь Artea</a>
-<h2>Неделя 5. Ценность и отток</h2>
-<a href="clv.html">CLV и срок жизни</a>
-<a href="churn-management.html">Управление оттоком</a>
-<a href="model-choice.html">Какая модель под какой Y</a>
-<a href="calibration-lift.html">Calibration, validation, lift</a>
-<a href="predictors.html">Какие X брать</a>
-<h2>Неделя 6. Logit и шансы</h2>
-<a href="logit-odds.html">Шансы и odds ratio</a>
-<a href="advertising-lab.html">Лаба Advertising</a>
-<a href="reading-output.html">Чтение таблиц OLS и logit</a>
-<a href="interactions.html">Взаимодействия</a>
-<h2>Неделя 7. Кейсы и matching</h2>
-<a href="pilgrim.html">Кейс Pilgrim</a>
-<a href="books-r-us.html">Кейс Books R Us</a>
-<a href="association-experiment.html">Связь или причина</a>
-<a href="matching-idea.html">Идея matching</a>
-<a href="sample-box.html">Sample Box и деньги</a>
-<h2>Неделя 8. Пробный экзамен</h2>
-<a href="exam-format.html">Формат экзамена</a>
+<h2>Week 3. Experiments</h2>
+<a href="acquisition.html">Customer acquisition</a>
+<a href="privacy.html">Privacy, only what the slides cover</a>
+<a href="causation.html">Causation and the field test</a>
+<a href="experiment-design.html">The experiment dictionary</a>
+<h2>Week 4. The Artea case</h2>
+<a href="artea-setup.html">The 20% coupon test</a>
+<a href="artea-balance.html">Were the groups alike?</a>
+<a href="artea-ols.html">The OLS coupon effect</a>
+<a href="artea-heterogeneity.html">Who should get the coupon</a>
+<a href="artea-notebook.html">The Artea notebook</a>
+<h2>Week 5. Value and churn</h2>
+<a href="clv.html">CLV and how long a customer stays</a>
+<a href="churn-management.html">Managing churn</a>
+<a href="model-choice.html">Which model for which Y</a>
+<a href="calibration-lift.html">Calibration, validation, and lift</a>
+<a href="predictors.html">Which X to put in</a>
+<h2>Week 6. Logit and odds</h2>
+<a href="logit-odds.html">Odds and the odds ratio</a>
+<a href="advertising-lab.html">The Advertising lab</a>
+<a href="reading-output.html">Reading OLS and logit tables</a>
+<a href="interactions.html">Interactions</a>
+<h2>Week 7. Cases and matching</h2>
+<a href="pilgrim.html">The Pilgrim case</a>
+<a href="books-r-us.html">The Books R Us case</a>
+<a href="association-experiment.html">Association or cause</a>
+<a href="matching-idea.html">The idea of matching</a>
+<a href="sample-box.html">Sample Box and the money</a>
+<h2>Week 8. The practice exam</h2>
+<a href="exam-format.html">How the exam is marked</a>
 <a href="touchpoints.html">Touchpoints</a>
-<a href="readings-gaps.html">Чего нет в папке</a>
-<a href="formula-sheet.html">Шпаргалка</a>
-<a href="mock-exam.html">Пробный экзамен</a></nav>
+<a href="readings-gaps.html">What is missing from the folder</a>
+<a href="formula-sheet.html">Formula sheet</a>
+<a href="mock-exam.html">Practice exam</a>
+</nav>
   <main><div class="wrap">
-    <p class="kicker">Неделя 4 · чтение OLS</p>
-    <h1>Artea: коэффициент купона в OLS</h1>
-    <p class="lead">OLS, ordinary least squares, здесь просто прямая: на сколько единиц вырастает Y, если купон равен 1, а не 0.</p>
+    <p class="kicker">Week 4 · reading OLS</p>
     
-<p>Модель для числа транзакций:</p>
-<div class="callout formula">trans_after = b₀ + b₁ × test_coupon + ошибка</div>
-<p>b₀ — среднее Y, когда купона нет. b₁ — насколько меняется среднее Y, если купон дали. Это и есть treatment effect в единицах Y.</p>
+<h1>The coupon coefficient in OLS</h1>
+<p class="lead">OLS, ordinary least squares, is a straight line here: by how many units Y rises when the coupon equals 1 rather than 0.</p>
+<p>The model for the number of transactions:</p>
+<div class="callout formula">trans_after = b₀ + b₁ × test_coupon + error</div>
+<p>b₀ is the mean of Y when there is no coupon. b₁ is how much the mean of Y changes if the coupon was given. That is the treatment effect, in units of Y.</p>
 <div class="table-wrap"><table>
 <thead><tr><th>Y</th><th>Intercept</th><th>test_coupon</th><th>t</th><th>p-value</th></tr></thead>
 <tbody>
-<tr><td>Число транзакций, простая модель</td><td>0,13</td><td>+0,03</td><td>2,21</td><td>0,03</td></tr>
-<tr><td>Выручка, простая модель</td><td>7,78</td><td>−0,24</td><td>−0,36</td><td>0,72</td></tr>
+<tr><td>Number of transactions, simple model</td><td>0.13</td><td>+0.03</td><td>2.21</td><td>0.03</td></tr>
+<tr><td>Revenue, simple model</td><td>7.78</td><td>−0.24</td><td>−0.36</td><td>0.72</td></tr>
 </tbody></table></div>
-<p>Тетрадь чуть точнее слайда, и это нормально: округление.</p>
+<p>The notebook is a little more precise than the slide, and that is normal. It is rounding.</p>
 <ul>
-<li>Транзакции: intercept 0,1257, купон +0,0262, p = 0,027. R² = 0,001. Купон объясняет крошечную долю разброса, но среднее всё же сдвигается значимо.</li>
-<li>Выручка: intercept 7,7802, купон −0,2415, p = 0,718. R² около нуля.</li>
+<li>Transactions: intercept 0.1257, coupon +0.0262, p = 0.027. R² = 0.001. The coupon explains a tiny share of the spread, but the mean still shifts significantly.</li>
+<li>Revenue: intercept 7.7802, coupon −0.2415, p = 0.718. R² is about zero.</li>
 </ul>
-<h2>Как прочитать вслух</h2>
+<h2>Read it out loud</h2>
 <ol class="steps">
-<li>Без купона человек в среднем делает около 0,13 транзакции после окна теста. Большинство покупает ноль раз, поэтому среднее меньше единицы.</li>
-<li>Купон добавляет около 0,03 транзакции на человека. Слайд пишет «0,03 pp», имея в виду этот сдвиг. Поскольку транзакции чаще всего 0 или 1, сдвиг близко к +3 процентным пунктам вероятности покупки. Точная фраза безопаснее: «плюс 0,03 транзакции, p = 0,03».</li>
-<li>На выручку эффект −0,24 доллара, p = 0,72. Отвергнуть «эффекта на выручку нет» нельзя. Слайд так и говорит: значимого эффекта на revenues нет.</li>
-<li>Маленький R² не отменяет значимый сдвиг среднего. R² говорит, какая доля различий между людьми связана с купоном. Люди различаются сильно по другим причинам. Средний эффект при этом может быть настоящим.</li>
+<li>Without the coupon, a person makes about 0.13 transactions after the test window, on average. Most people buy zero times, so the mean is less than one.</li>
+<li>The coupon adds about 0.03 transactions per person. The slide writes “0.03 pp” for this shift. Because transactions are usually 0 or 1, the shift is close to +3 percentage points of the probability of a purchase. The safer sentence is: “plus 0.03 transactions, p = 0.03”.</li>
+<li>On revenue the effect is −0.24 dollars, p = 0.72. You cannot reject “there is no effect on revenue”. The slide says it that way: no significant effect on revenues.</li>
 </ol>
-<h2>А если добавить контроль</h2>
-<p>В тетради и на слайде купон оставляют в одной модели с прошлыми покупками, минутами, корзиной и каналами. Для транзакций коэффициент купона становится 0,03, t = 2,38, p = 0,02. Для выручки −0,28, t = −0,46, p = 0,64. Слайд объясняет, почему купон почти не поехал: назначение случайное, поэтому другие X не должны сильно менять его коэффициент. Они нужны, чтобы точнее описать, кто и так покупает больше.</p>
-<p>Эти другие коэффициенты читаются так, потому что Y — число, не шанс:</p>
+<p>A small R² does not cancel a significant shift in the mean. R² says what share of the differences between people is tied to the coupon. People differ a lot for other reasons. The average effect can still be real.</p>
+<h2>What happens if you add controls</h2>
+<p>In the notebook and on the slide the coupon stays in one model together with past purchases, minutes, the cart, and the channels. For transactions the coupon coefficient becomes 0.03, t = 2.38, p = 0.02. For revenue it is −0.28, t = −0.46, p = 0.64. The slide explains why the coupon barely moved: the assignment was random, so the other X’s should not change its coefficient much. They are there to describe, more precisely, who would have bought more anyway.</p>
+<p>Those other coefficients are read this way because Y is a number, not an odds:</p>
 <ul>
-<li>Каждая прошлая покупка: около +0,06 транзакции и +$3,17 выручки.</li>
-<li>Брошенная корзина: около +0,17 транзакции и +$9,31. Эти люди и без купона ближе к покупке.</li>
-<li>Каждая лишняя неделя с визита: около −0,02 транзакции и −$1,11.</li>
-<li>Каналы Facebook, Instagram, Referral, Other положительны относительно базы Google.</li>
+<li>Each past purchase: about +0.06 transactions and +$3.17 of revenue.</li>
+<li>An abandoned cart: about +0.17 transactions and +$9.31. These people are closer to a purchase even without the coupon.</li>
+<li>Each extra week since the visit: about −0.02 transactions and −$1.11.</li>
+<li>The channels Facebook, Instagram, Referral, and Other are positive relative to the Google baseline.</li>
 </ul>
-<div class="callout exam"><strong>Итог, который ждут</strong>Купон причинно поднимает число транзакций примерно на 0,03. Поднять среднюю выручку на человека он в этом тесте не смог. «Можно лучше» — вопрос не «слать ли всем», а «слать ли кому-то».</div>
-<div class="callout mistake"><strong>Частая ошибка</strong>Увидеть положительные коэффициенты каналов и сказать «Instagram вызвал покупки». Канал не назначали случайно в этом тесте. Случайным был только купон. Канал — связь, купон — ближе к причине.</div>
-<h2>Практикум</h2>
-
-<section class="quiz" data-quiz data-kind="blank" data-qid="o1" data-why="На слайде оба числа 0,03: эффект +0,03 и p = 0,03. В тетради точнее +0,0262 и p = 0,027. Смысл один: эффект есть на уровне 5%.">
-  <p class="prompt">Простая модель транзакций. Впишите коэффициент купона и p-value так, как их округляет слайд решения.</p>
-  <p><label>Коэффициент<br><input type="text" data-accept="0.03" data-label="Коэффициент" placeholder="0,03"></label></p><p><label>p-value<br><input type="text" data-accept="0.03" data-label="p-value" placeholder="0,03"></label></p>
-  <button type="button" data-check>Проверить</button>
+<div class="callout exam"><strong>The conclusion they want</strong>The coupon causally raises the number of transactions by about 0.03. It did not raise average revenue per person in this test. “We can do better” is not the question “send it to everyone”. It is the question “send it to someone”.</div>
+<div class="callout mistake"><strong>A common miss</strong>Seeing positive channel coefficients and saying “Instagram caused the purchases”. The channel was not assigned at random in this test. Only the coupon was random. The channel is a link. The coupon is closer to a cause.</div>
+<h2>Practice</h2>
+<section class="quiz" data-quiz data-kind="blank" data-qid="ao1" data-why="The slide rounds to +0.03 transactions, p = 0.03. The notebook is 0.0262 with p = 0.027.">
+  <p class="prompt">The simple model of transactions. Type the coupon coefficient and the p-value the way the solution slide rounds them.</p>
+  <p><label>Coefficient<br><input type="text" data-accept="0.03|+.03|+0.03" data-label="Coefficient" placeholder="0.03"></label></p><p><label>p-value<br><input type="text" data-accept="0.03" data-label="p-value" placeholder="0.03"></label></p>
+  <button type="button" data-check>Check</button>
   <div class="feedback"></div>
 </section>
 
-<section class="quiz" data-quiz data-kind="mcq" data-qid="o2" data-answer="b" data-why="Коэффициент −0,24, t = −0,36. До порога 0,05 очень далеко.">
-  <p class="prompt">p-value выручки 0,72. Верный вывод:</p>
-  <label class="opt"><input type="radio" name="o2" value="a"> Купон значимо снизил выручку</label><label class="opt"><input type="radio" name="o2" value="b"> Значимого эффекта купона на выручку нет</label><label class="opt"><input type="radio" name="o2" value="c"> Выручка выросла на 72%</label><label class="opt"><input type="radio" name="o2" value="d"> Нужно убрать control group</label>
-  <button type="button" data-check>Проверить</button>
+<section class="quiz" data-quiz data-kind="mcq" data-qid="ao2" data-answer="b" data-why="p = 0.72 is far above 0.05. A raw gap of −$0.24 is compatible with no effect.">
+  <p class="prompt">The revenue p-value is 0.72. The right conclusion:</p>
+  <label class="opt"><input type="radio" name="ao2" value="a"> The coupon significantly reduced revenue</label><label class="opt"><input type="radio" name="ao2" value="b"> There is no significant effect of the coupon on revenue</label><label class="opt"><input type="radio" name="ao2" value="c"> Revenue rose by 72%</label><label class="opt"><input type="radio" name="ao2" value="d"> Drop the control group</label>
+  <button type="button" data-check>Check</button>
   <div class="feedback"></div>
 </section>
 
-<section class="quiz" data-quiz data-kind="mcq" data-qid="o3" data-answer="a" data-why="Прямая реплика слайда: since the coupon test is randomized, its impact will not change significantly.">
-  <p class="prompt">Почему добавление прошлых покупок почти не меняет коэффициент купона?</p>
-  <label class="opt"><input type="radio" name="o3" value="a"> Потому что купон назначили случайно, группы и так были похожи</label><label class="opt"><input type="radio" name="o3" value="b"> Потому что R² всегда равен 1</label><label class="opt"><input type="radio" name="o3" value="c"> Потому что past purchases — это и есть купон</label><label class="opt"><input type="radio" name="o3" value="d"> Потому что OLS нельзя считать с dummy</label>
-  <button type="button" data-check>Проверить</button>
+<section class="quiz" data-quiz data-kind="mcq" data-qid="ao3" data-answer="a" data-why="Random assignment means the other X’s are not tangled up with the coupon. They sharpen the description of who buys, and they barely move b₁.">
+  <p class="prompt">Why does adding past purchases barely change the coupon coefficient?</p>
+  <label class="opt"><input type="radio" name="ao3" value="a"> Because the coupon was assigned at random, so the groups were already alike</label><label class="opt"><input type="radio" name="ao3" value="b"> Because R² is always 1</label><label class="opt"><input type="radio" name="ao3" value="c"> Because past purchases are the coupon</label><label class="opt"><input type="radio" name="ao3" value="d"> Because OLS cannot be estimated with a dummy</label>
+  <button type="button" data-check>Check</button>
   <div class="feedback"></div>
 </section>
 
-<section class="quiz" data-quiz data-kind="mcq" data-qid="o4" data-answer="b" data-why="В тетради p = 0,027 при R² = 0,001. Это не противоречие. Значимость среднего эффекта и доля объяснённого разброса — разные вопросы.">
-  <p class="prompt">R² = 0,001 у модели транзакций значит:</p>
-  <label class="opt"><input type="radio" name="o4" value="a"> эффект купона не может быть значимым</label><label class="opt"><input type="radio" name="o4" value="b"> купон объясняет очень маленькую долю различий между людьми, хотя средний сдвиг может быть значим</label><label class="opt"><input type="radio" name="o4" value="c"> модель объяснила 100% выручки</label><label class="opt"><input type="radio" name="o4" value="d"> рандомизация провалена</label>
-  <button type="button" data-check>Проверить</button>
+<section class="quiz" data-quiz data-kind="mcq" data-qid="ao4" data-answer="b" data-why="R² and the p-value answer different questions. People differ for many reasons. The average can still move.">
+  <p class="prompt">R² = 0.001 on the transaction model means:</p>
+  <label class="opt"><input type="radio" name="ao4" value="a"> the coupon effect cannot be significant</label><label class="opt"><input type="radio" name="ao4" value="b"> the coupon explains a very small share of the differences between people, even though the shift in the mean can be significant</label><label class="opt"><input type="radio" name="ao4" value="c"> the model explained 100% of revenue</label><label class="opt"><input type="radio" name="ao4" value="d"> randomization failed</label>
+  <button type="button" data-check>Check</button>
   <div class="feedback"></div>
 </section>
-<p class="pills"><a href="artea-balance.html">← Рандомизация и средние</a><a href="artea-heterogeneity.html">Кому слать купон →</a></p>
-    <footer class="note">Числа и формулировки взяты из загруженных слайдов, тетрадей и mock exam курса 20838 (2026). Если в файле чего-то нет, страница так и говорит.</footer>
+
+<p class="pills"><a href="artea-balance.html">← Were the groups alike?</a><a href="artea-heterogeneity.html">Who should get the coupon →</a></p>
+
+    <footer class="note">Numbers and wording follow the uploaded slides, notebooks, and the 20838 mock exam (2026). If a file does not contain a figure, the page says so instead of inventing it.</footer>
   </div></main>
 </div>
 <script src="../js/nav.js"></script>

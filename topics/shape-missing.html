@@ -1,140 +1,142 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Скос, boxplot и грязные данные · 20838</title>
+<title>Skew, the box, and dirty data · 20838</title>
 <link rel="stylesheet" href="../css/style.css">
 </head>
 <body data-page="shape-missing">
 <header class="topbar">
-  <button class="menu-btn" type="button" data-nav-toggle aria-expanded="false">Меню</button>
-  <a class="brand" href="../index.html"><strong>20838 · к экзамену</strong><span>Data &amp; Analytics for Strategic Marketing Decisions</span></a>
+  <button class="menu-btn" type="button" data-nav-toggle aria-expanded="false">Menu</button>
+  <a class="brand" href="../index.html"><strong>20838 · exam prep</strong><span>Data &amp; Analytics for Strategic Marketing Decisions</span></a>
   <div class="top-actions">
-    <a class="ghost" href="../topics/mock-exam.html">Mock exam</a>
+    <a class="ghost" href="../topics/mock-exam.html">Practice exam</a>
   </div>
 </header>
 <div class="layout">
-  <nav class="sidenav" aria-label="Темы"><h2>Навигация</h2>
-<a href="../index.html">План на 8 недель<small>С чего начать</small></a>
-<a href="../index.html#inventory">Все материалы<small>Лекции, лабы, кейсы</small></a>
-<a href="formula-sheet.html">Шпаргалка формул<small>Выучить до автоматизма</small></a>
-<a href="mock-exam.html">Пробный экзамен<small>Сначала сами, потом решение</small></a>
-<h2>Неделя 1. Язык данных</h2>
-<a href="model-and-data.html">Модель и строка клиента</a>
-<a href="variable-types.html">Типы переменных</a>
-<a href="descriptive-stats.html">Среднее, медиана, мода, SD</a>
-<a href="shape-missing.html">Форма, ящики и пропуски</a>
-<a href="inference-se-ci.html">Выборка, SE и интервал</a>
-<a href="hypothesis-testing.html">Проверка гипотезы</a>
-<a href="python-bank-walkthrough.html">Тетрадь bank_basics</a>
-<h2>Неделя 2. Python без страха</h2>
-<a href="python-objects.html">Имена, списки, множества</a>
-<a href="python-strings.html">Строки и срезы</a>
-<a href="python-sets-dicts.html">Множества и словари</a>
-<a href="python-logic.html">Условия, циклы, функции</a>
+  <nav class="sidenav" aria-label="Topics"><h2>Navigation</h2>
+<a href="../index.html">The 8-week plan<small>Where to start</small></a>
+<a href="../index.html#inventory">Every file<small>Lectures, labs, cases</small></a>
+<a href="formula-sheet.html">Formula sheet<small>Say these without notes</small></a>
+<a href="mock-exam.html">Practice exam<small>Try it first, then the solution</small></a>
+<h2>Week 1. The language of data</h2>
+<a href="model-and-data.html">A model and one customer row</a>
+<a href="variable-types.html">Types of variables</a>
+<a href="descriptive-stats.html">Mean, median, mode, SD</a>
+<a href="shape-missing.html">Shape, boxes, and missing values</a>
+<a href="inference-se-ci.html">The sample, the SE, and the interval</a>
+<a href="hypothesis-testing.html">Testing a claim</a>
+<a href="python-bank-walkthrough.html">The bank notebook, line by line</a>
+<h2>Week 2. Python without fear</h2>
+<a href="python-objects.html">Names, lists, and sets</a>
+<a href="python-strings.html">Strings and slices</a>
+<a href="python-sets-dicts.html">Sets and dictionaries</a>
+<a href="python-logic.html">if, for, and functions</a>
 <a href="python-olympics.html">Python Olympics</a>
-<h2>Неделя 3. Эксперимент</h2>
-<a href="acquisition.html">Привлечение клиента</a>
-<a href="privacy.html">Privacy на слайдах</a>
-<a href="causation.html">Причинность и field test</a>
-<a href="experiment-design.html">Словарь эксперимента</a>
-<h2>Неделя 4. Кейс Artea</h2>
-<a href="artea-setup.html">Кейс Artea</a>
-<a href="artea-balance.html">Рандомизация и средние</a>
-<a href="artea-ols.html">OLS по купону</a>
-<a href="artea-heterogeneity.html">Кому слать купон</a>
-<a href="artea-notebook.html">Тетрадь Artea</a>
-<h2>Неделя 5. Ценность и отток</h2>
-<a href="clv.html">CLV и срок жизни</a>
-<a href="churn-management.html">Управление оттоком</a>
-<a href="model-choice.html">Какая модель под какой Y</a>
-<a href="calibration-lift.html">Calibration, validation, lift</a>
-<a href="predictors.html">Какие X брать</a>
-<h2>Неделя 6. Logit и шансы</h2>
-<a href="logit-odds.html">Шансы и odds ratio</a>
-<a href="advertising-lab.html">Лаба Advertising</a>
-<a href="reading-output.html">Чтение таблиц OLS и logit</a>
-<a href="interactions.html">Взаимодействия</a>
-<h2>Неделя 7. Кейсы и matching</h2>
-<a href="pilgrim.html">Кейс Pilgrim</a>
-<a href="books-r-us.html">Кейс Books R Us</a>
-<a href="association-experiment.html">Связь или причина</a>
-<a href="matching-idea.html">Идея matching</a>
-<a href="sample-box.html">Sample Box и деньги</a>
-<h2>Неделя 8. Пробный экзамен</h2>
-<a href="exam-format.html">Формат экзамена</a>
+<h2>Week 3. Experiments</h2>
+<a href="acquisition.html">Customer acquisition</a>
+<a href="privacy.html">Privacy, only what the slides cover</a>
+<a href="causation.html">Causation and the field test</a>
+<a href="experiment-design.html">The experiment dictionary</a>
+<h2>Week 4. The Artea case</h2>
+<a href="artea-setup.html">The 20% coupon test</a>
+<a href="artea-balance.html">Were the groups alike?</a>
+<a href="artea-ols.html">The OLS coupon effect</a>
+<a href="artea-heterogeneity.html">Who should get the coupon</a>
+<a href="artea-notebook.html">The Artea notebook</a>
+<h2>Week 5. Value and churn</h2>
+<a href="clv.html">CLV and how long a customer stays</a>
+<a href="churn-management.html">Managing churn</a>
+<a href="model-choice.html">Which model for which Y</a>
+<a href="calibration-lift.html">Calibration, validation, and lift</a>
+<a href="predictors.html">Which X to put in</a>
+<h2>Week 6. Logit and odds</h2>
+<a href="logit-odds.html">Odds and the odds ratio</a>
+<a href="advertising-lab.html">The Advertising lab</a>
+<a href="reading-output.html">Reading OLS and logit tables</a>
+<a href="interactions.html">Interactions</a>
+<h2>Week 7. Cases and matching</h2>
+<a href="pilgrim.html">The Pilgrim case</a>
+<a href="books-r-us.html">The Books R Us case</a>
+<a href="association-experiment.html">Association or cause</a>
+<a href="matching-idea.html">The idea of matching</a>
+<a href="sample-box.html">Sample Box and the money</a>
+<h2>Week 8. The practice exam</h2>
+<a href="exam-format.html">How the exam is marked</a>
 <a href="touchpoints.html">Touchpoints</a>
-<a href="readings-gaps.html">Чего нет в папке</a>
-<a href="formula-sheet.html">Шпаргалка</a>
-<a href="mock-exam.html">Пробный экзамен</a></nav>
+<a href="readings-gaps.html">What is missing from the folder</a>
+<a href="formula-sheet.html">Formula sheet</a>
+<a href="mock-exam.html">Practice exam</a>
+</nav>
   <main><div class="wrap">
-    <p class="kicker">Неделя 1 · форма распределения и качество данных</p>
-    <h1>Скос, boxplot и грязные данные</h1>
-    <p class="lead">Прежде чем верить коэффициенту, смотрят, не сломан ли столбец. Курс тренирует это на возрасте и балансе.</p>
+    <p class="kicker">Week 1 · shape and data quality</p>
     
-<p>Если среднее заметно выше медианы, правый хвост длинный: редкие большие значения. У age сдвиг мягкий, 41 против 39. У balance сдвиг огромный, 1&nbsp;423 против 444. Слайд прямо говорит: при сильном скосе среднее может быть плохим «типичным» числом.</p>
-<h2>Что показывает boxplot</h2>
-<p>В тетради строят ящик для age и для balance. Ящик собирают из квартилей, которые уже напечатаны в <code>describe()</code>.</p>
+<h1>Skew, the box, and dirty data</h1>
+<p class="lead">Before you trust a coefficient, look at whether the column is broken. The course practises this on age and on balance.</p>
+<p>If the mean sits clearly above the median, the right tail is long: a few large values. For age the shift is gentle, 41 against 39. For balance it is huge, 1,423 against 444. The slide says it plainly: under strong skew the mean can be a bad “typical” number.</p>
+<h2>What a boxplot is showing</h2>
+<p>The notebook draws a box for age and a box for balance. The box is built from the quartiles that <code>describe()</code> already printed.</p>
 <div class="table-wrap"><table>
-<thead><tr><th>Кусок ящика</th><th>Age в банке</th><th>Как читать</th></tr></thead>
+<thead><tr><th>Piece of the box</th><th>Age in the bank</th><th>How to read it</th></tr></thead>
 <tbody>
-<tr><td>Нижний ус и минимум</td><td>19 лет</td><td>Самый молодой клиент в файле</td></tr>
-<tr><td>Низ ящика, 25%</td><td>33</td><td>Четверть клиентов моложе</td></tr>
-<tr><td>Линия внутри, медиана</td><td>39</td><td>Середина</td></tr>
-<tr><td>Верх ящика, 75%</td><td>49</td><td>Три четверти моложе</td></tr>
-<tr><td>Верх и точки</td><td>максимум 87</td><td>Редкие старшие возрасты. На графике balance такие точки уезжают очень далеко, вплоть до 71&nbsp;188</td></tr>
+<tr><td>Lower whisker and minimum</td><td>19 years</td><td>The youngest customer in the file</td></tr>
+<tr><td>Bottom of the box, 25%</td><td>33</td><td>A quarter of customers are younger</td></tr>
+<tr><td>Line inside, the median</td><td>39</td><td>The middle</td></tr>
+<tr><td>Top of the box, 75%</td><td>49</td><td>Three quarters are younger</td></tr>
+<tr><td>Top and the points</td><td>maximum 87</td><td>A few older ages. On the balance chart those points run very far, up to 71,188</td></tr>
 </tbody></table></div>
-<p>Слайд не выписывает формулу усов. Для экзамена достаточно уметь назвать медиану и квартили и не пугаться отдельной точки, пока не проверите, ошибка это или редкий, но настоящий клиент.</p>
-<h2>Решённая задача: €105&nbsp;000</h2>
-<p>На слайде «ваш ход» подозрительная сумма €105&nbsp;000. Прежде чем удалять строку, курс предлагает четыре вопроса.</p>
+<p>The slide does not write the formula for the whiskers. For the exam, name the median and the quartiles. Do not panic at a lone point until you have checked whether it is an error or a rare but real customer.</p>
+<h2>Worked example: €105,000</h2>
+<p>The slide’s “your turn” shows a suspicious amount of €105,000. Before you delete the row, the course asks four questions.</p>
 <ol class="steps">
-<li>Ошибка ввода? Лишний ноль, и было €10&nbsp;500 или €1&nbsp;050.</li>
-<li>Не та единица? Центы записали как евро, или наоборот.</li>
-<li>Дубль? Один и тот же клиент попал дважды, и сумма раздулась.</li>
-<li>В исходной карточке правда €105&nbsp;000? Тогда это не мусор, а редкий клиент. Удалять его значит притворяться, что таких счетов не бывает.</li>
+<li>A typing error? An extra zero, and it was €10,500 or €1,050.</li>
+<li>The wrong unit? Cents stored as euros, or the other way around.</li>
+<li>A duplicate? The same customer entered twice, so the amount is inflated.</li>
+<li>Is €105,000 actually on the original card? Then it is not rubbish. It is a rare customer. Deleting it pretends that such accounts do not exist.</li>
 </ol>
-<p>В банковском balance максимум €71&nbsp;188 при медиане €444 выглядит так же. Это повод открыть строку, а не автоматически стереть хвост. Если стереть все большие счета, среднее упадет к медиане, и вы опишете уже другой, выдуманный банк.</p>
-<h2>Пропуски</h2>
-<p>Пусто — не ноль. Три вопроса слайда:</p>
+<p>In the bank file the maximum balance is €71,188 against a median of €444. That is a reason to open the row, not a reason to erase the tail automatically. If you delete every large account, the mean falls toward the median, and you have described a different, invented bank.</p>
+<h2>Missing values</h2>
+<p>Blank is not zero. The slide’s three questions:</p>
 <ul>
-<li>поле вообще не собирали;</li>
-<li>клиент отказался отвечать;</li>
-<li>значение потеряли при выгрузке.</li>
+<li>the field was never collected;</li>
+<li>the customer refused to answer;</li>
+<li>the value was lost when the file was exported.</li>
 </ul>
-<p>В кейсах курса пропуск иногда кодируют нулём плюс отдельным флагом. В Pilgrim есть age и agemiss, inc и incmiss: если возраст неизвестен, в столбце age стоит 0, а agemiss = 1 говорит «это не младенец, это пропуск». Ноль без флага был бы ложью. Это пригодится на неделе 7, запомните приём.</p>
-<div class="callout exam"><strong>На экзамене</strong>Если в таблице есть переменная с хвостом «miss», не интерпретируйте ноль в основном столбце как настоящий ноль, пока не увидите флаг.</div>
-<h2>Практикум</h2>
-
-<section class="quiz" data-quiz data-kind="mcq" data-qid="s1" data-answer="b" data-why="Медиана — середина упорядоченного списка. Сильный отрыв среднего вверх на слайде назван поводом не делать mean единственным «типичным» числом.">
-  <p class="prompt">Mean balance €1 423, median €444. Какой вывод верен?</p>
-  <label class="opt"><input type="radio" name="s1" value="a"> Типичный клиент в середине списка имеет около €1 423</label><label class="opt"><input type="radio" name="s1" value="b"> Середина списка — около €444, а среднее вытянуто большими счетами</label><label class="opt"><input type="radio" name="s1" value="c"> Данные симметричны, разница случайна и ни о чём</label><label class="opt"><input type="radio" name="s1" value="d"> Медиану для денег считать нельзя</label>
-  <button type="button" data-check>Проверить</button>
+<p>In later cases a missing value is sometimes stored as zero plus a separate flag. Pilgrim has age and agemiss, inc and incmiss. If age is unknown, the age column holds 0, and agemiss = 1 says “this is not a baby, this is a missing value”. A zero without the flag would be a lie. You will need that trick in week 7. Remember the device now.</p>
+<div class="callout exam"><strong>On the exam</strong>If a table has a variable whose name ends in “miss”, do not read a zero in the main column as a real zero until you have seen the flag.</div>
+<h2>Practice</h2>
+<section class="quiz" data-quiz data-kind="mcq" data-qid="s1" data-answer="b" data-why="The median is the middle of the ordered list. The mean is the sum divided by n, so large accounts move it.">
+  <p class="prompt">Mean balance is €1,423 and the median is €444. Which conclusion is right?</p>
+  <label class="opt"><input type="radio" name="s1" value="a"> The typical customer in the middle of the list has about €1,423</label><label class="opt"><input type="radio" name="s1" value="b"> The middle of the list is about €444, and the mean is pulled up by large accounts</label><label class="opt"><input type="radio" name="s1" value="c"> The data are symmetric, and the gap is meaningless noise</label><label class="opt"><input type="radio" name="s1" value="d"> You are not allowed to compute a median for money</label>
+  <button type="button" data-check>Check</button>
   <div class="feedback"></div>
 </section>
 
-<section class="quiz" data-quiz data-kind="mcq" data-qid="s2" data-answer="c" data-why="Три вопроса написаны на слайде про missing data.">
-  <p class="prompt">В ячейке баланса пусто. Что из этого правда?</p>
-  <label class="opt"><input type="radio" name="s2" value="a"> Пусто значит 0 евро</label><label class="opt"><input type="radio" name="s2" value="b"> Нужно сразу подставить среднее, не думая</label><label class="opt"><input type="radio" name="s2" value="c"> Сначала понять: не собрали, отказались или потеряли</label><label class="opt"><input type="radio" name="s2" value="d"> Строку всегда удаляют, пропуски запрещены</label>
-  <button type="button" data-check>Проверить</button>
+<section class="quiz" data-quiz data-kind="mcq" data-qid="s2" data-answer="c" data-why="The slide’s three reasons are: not collected, refused, or lost in processing. Empty is not zero.">
+  <p class="prompt">The balance cell is empty. Which statement is true?</p>
+  <label class="opt"><input type="radio" name="s2" value="a"> Empty means 0 euros</label><label class="opt"><input type="radio" name="s2" value="b"> You should immediately type the mean in, without thinking</label><label class="opt"><input type="radio" name="s2" value="c"> First ask whether it was not collected, refused, or lost</label><label class="opt"><input type="radio" name="s2" value="d"> You always delete the row. Missing values are forbidden</label>
+  <button type="button" data-check>Check</button>
   <div class="feedback"></div>
 </section>
 
-<section class="quiz" data-quiz data-kind="blank" data-qid="s3" data-why="Нижняя и верхняя границы ящика для age: 33 и 49. Медиана 39 лежит между ними.">
-  <p class="prompt">Квартили возраста из describe(). Впишите 25% и 75%.</p>
+<section class="quiz" data-quiz data-kind="blank" data-qid="s3" data-why="describe() prints 25% = 33 and 75% = 49 for age.">
+  <p class="prompt">The age quartiles from describe(). Type the 25% and the 75%.</p>
   <p><label>25%<br><input type="text" data-accept="33" data-label="25%" placeholder="33"></label></p><p><label>75%<br><input type="text" data-accept="49" data-label="75%" placeholder="49"></label></p>
-  <button type="button" data-check>Проверить</button>
+  <button type="button" data-check>Check</button>
   <div class="feedback"></div>
 </section>
 
-<section class="quiz" data-quiz data-kind="mcq" data-qid="s4" data-answer="a" data-why="Флаг пропуска не даёт модели принять «не знаем» за ноль. На полном выводе logit коэффициент у incmiss большой и значимый, то есть отсутствие дохода — отдельный сигнал, не то же самое, что доход 0.">
-  <p class="prompt">В Pilgrim неизвестный доход записан как inc = 0 и incmiss = 1. Зачем второй столбец?</p>
-  <label class="opt"><input type="radio" name="s4" value="a"> Чтобы ноль можно было отличить от настоящего нулевого дохода</label><label class="opt"><input type="radio" name="s4" value="b"> Чтобы увеличить pseudo R²</label><label class="opt"><input type="radio" name="s4" value="c"> Это дубль, его удаляют</label><label class="opt"><input type="radio" name="s4" value="d"> incmiss означает, что клиент богат</label>
-  <button type="button" data-check>Проверить</button>
+<section class="quiz" data-quiz data-kind="mcq" data-qid="s4" data-answer="a" data-why="The flag says the zero is a code for missing, not a baby’s age and not a true income of zero.">
+  <p class="prompt">In Pilgrim an unknown income is stored as inc = 0 and incmiss = 1. Why the second column?</p>
+  <label class="opt"><input type="radio" name="s4" value="a"> So that a zero can be told apart from a real income of zero</label><label class="opt"><input type="radio" name="s4" value="b"> To increase the pseudo R²</label><label class="opt"><input type="radio" name="s4" value="c"> It is a duplicate and should be deleted</label><label class="opt"><input type="radio" name="s4" value="d"> incmiss means the customer is rich</label>
+  <button type="button" data-check>Check</button>
   <div class="feedback"></div>
 </section>
-<p class="pills"><a href="descriptive-stats.html">← Среднее, медиана, мода, SD</a><a href="inference-se-ci.html">Выборка, SE и интервал →</a></p>
-    <footer class="note">Числа и формулировки взяты из загруженных слайдов, тетрадей и mock exam курса 20838 (2026). Если в файле чего-то нет, страница так и говорит.</footer>
+
+<p class="pills"><a href="descriptive-stats.html">← Mean, median, mode, SD</a><a href="inference-se-ci.html">The sample, the SE, and the interval →</a></p>
+
+    <footer class="note">Numbers and wording follow the uploaded slides, notebooks, and the 20838 mock exam (2026). If a file does not contain a figure, the page says so instead of inventing it.</footer>
   </div></main>
 </div>
 <script src="../js/nav.js"></script>

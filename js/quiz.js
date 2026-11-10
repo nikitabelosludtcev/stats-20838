@@ -60,7 +60,7 @@
         show(
           box,
           ok,
-          (ok ? "Верно. " : "Пока не то. Правильный ответ: <b>" + rightText + "</b>. ") + why
+          (ok ? "Correct. " : "Not yet. The right answer is: <b>" + rightText + "</b>. ") + why
         );
         record(card, ok);
         return;
@@ -73,15 +73,15 @@
         input.style.borderColor = good ? "#1d6b3a" : "#8f2d3a";
         if (!good) {
           ok = false;
-          misses.push("<b>" + (input.dataset.label || "поле") + "</b>: " + input.dataset.accept.split("|")[0]);
+          misses.push("<b>" + (input.dataset.label || "field") + "</b>: " + input.dataset.accept.split("|")[0]);
         }
       });
       show(
         box,
         ok,
         ok
-          ? "Верно. " + why
-          : "Есть ошибки. Ожидалось: " + misses.join("; ") + ". " + why
+          ? "Correct. " + why
+          : "Not quite. Expected: " + misses.join("; ") + ". " + why
       );
       record(card, ok);
     });

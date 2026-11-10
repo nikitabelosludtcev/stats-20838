@@ -1,133 +1,135 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Текст, методы и срезы списков · 20838</title>
+<title>Text, methods, and slices · 20838</title>
 <link rel="stylesheet" href="../css/style.css">
 </head>
 <body data-page="python-strings">
 <header class="topbar">
-  <button class="menu-btn" type="button" data-nav-toggle aria-expanded="false">Меню</button>
-  <a class="brand" href="../index.html"><strong>20838 · к экзамену</strong><span>Data &amp; Analytics for Strategic Marketing Decisions</span></a>
+  <button class="menu-btn" type="button" data-nav-toggle aria-expanded="false">Menu</button>
+  <a class="brand" href="../index.html"><strong>20838 · exam prep</strong><span>Data &amp; Analytics for Strategic Marketing Decisions</span></a>
   <div class="top-actions">
-    <a class="ghost" href="../topics/mock-exam.html">Mock exam</a>
+    <a class="ghost" href="../topics/mock-exam.html">Practice exam</a>
   </div>
 </header>
 <div class="layout">
-  <nav class="sidenav" aria-label="Темы"><h2>Навигация</h2>
-<a href="../index.html">План на 8 недель<small>С чего начать</small></a>
-<a href="../index.html#inventory">Все материалы<small>Лекции, лабы, кейсы</small></a>
-<a href="formula-sheet.html">Шпаргалка формул<small>Выучить до автоматизма</small></a>
-<a href="mock-exam.html">Пробный экзамен<small>Сначала сами, потом решение</small></a>
-<h2>Неделя 1. Язык данных</h2>
-<a href="model-and-data.html">Модель и строка клиента</a>
-<a href="variable-types.html">Типы переменных</a>
-<a href="descriptive-stats.html">Среднее, медиана, мода, SD</a>
-<a href="shape-missing.html">Форма, ящики и пропуски</a>
-<a href="inference-se-ci.html">Выборка, SE и интервал</a>
-<a href="hypothesis-testing.html">Проверка гипотезы</a>
-<a href="python-bank-walkthrough.html">Тетрадь bank_basics</a>
-<h2>Неделя 2. Python без страха</h2>
-<a href="python-objects.html">Имена, списки, множества</a>
-<a href="python-strings.html">Строки и срезы</a>
-<a href="python-sets-dicts.html">Множества и словари</a>
-<a href="python-logic.html">Условия, циклы, функции</a>
+  <nav class="sidenav" aria-label="Topics"><h2>Navigation</h2>
+<a href="../index.html">The 8-week plan<small>Where to start</small></a>
+<a href="../index.html#inventory">Every file<small>Lectures, labs, cases</small></a>
+<a href="formula-sheet.html">Formula sheet<small>Say these without notes</small></a>
+<a href="mock-exam.html">Practice exam<small>Try it first, then the solution</small></a>
+<h2>Week 1. The language of data</h2>
+<a href="model-and-data.html">A model and one customer row</a>
+<a href="variable-types.html">Types of variables</a>
+<a href="descriptive-stats.html">Mean, median, mode, SD</a>
+<a href="shape-missing.html">Shape, boxes, and missing values</a>
+<a href="inference-se-ci.html">The sample, the SE, and the interval</a>
+<a href="hypothesis-testing.html">Testing a claim</a>
+<a href="python-bank-walkthrough.html">The bank notebook, line by line</a>
+<h2>Week 2. Python without fear</h2>
+<a href="python-objects.html">Names, lists, and sets</a>
+<a href="python-strings.html">Strings and slices</a>
+<a href="python-sets-dicts.html">Sets and dictionaries</a>
+<a href="python-logic.html">if, for, and functions</a>
 <a href="python-olympics.html">Python Olympics</a>
-<h2>Неделя 3. Эксперимент</h2>
-<a href="acquisition.html">Привлечение клиента</a>
-<a href="privacy.html">Privacy на слайдах</a>
-<a href="causation.html">Причинность и field test</a>
-<a href="experiment-design.html">Словарь эксперимента</a>
-<h2>Неделя 4. Кейс Artea</h2>
-<a href="artea-setup.html">Кейс Artea</a>
-<a href="artea-balance.html">Рандомизация и средние</a>
-<a href="artea-ols.html">OLS по купону</a>
-<a href="artea-heterogeneity.html">Кому слать купон</a>
-<a href="artea-notebook.html">Тетрадь Artea</a>
-<h2>Неделя 5. Ценность и отток</h2>
-<a href="clv.html">CLV и срок жизни</a>
-<a href="churn-management.html">Управление оттоком</a>
-<a href="model-choice.html">Какая модель под какой Y</a>
-<a href="calibration-lift.html">Calibration, validation, lift</a>
-<a href="predictors.html">Какие X брать</a>
-<h2>Неделя 6. Logit и шансы</h2>
-<a href="logit-odds.html">Шансы и odds ratio</a>
-<a href="advertising-lab.html">Лаба Advertising</a>
-<a href="reading-output.html">Чтение таблиц OLS и logit</a>
-<a href="interactions.html">Взаимодействия</a>
-<h2>Неделя 7. Кейсы и matching</h2>
-<a href="pilgrim.html">Кейс Pilgrim</a>
-<a href="books-r-us.html">Кейс Books R Us</a>
-<a href="association-experiment.html">Связь или причина</a>
-<a href="matching-idea.html">Идея matching</a>
-<a href="sample-box.html">Sample Box и деньги</a>
-<h2>Неделя 8. Пробный экзамен</h2>
-<a href="exam-format.html">Формат экзамена</a>
+<h2>Week 3. Experiments</h2>
+<a href="acquisition.html">Customer acquisition</a>
+<a href="privacy.html">Privacy, only what the slides cover</a>
+<a href="causation.html">Causation and the field test</a>
+<a href="experiment-design.html">The experiment dictionary</a>
+<h2>Week 4. The Artea case</h2>
+<a href="artea-setup.html">The 20% coupon test</a>
+<a href="artea-balance.html">Were the groups alike?</a>
+<a href="artea-ols.html">The OLS coupon effect</a>
+<a href="artea-heterogeneity.html">Who should get the coupon</a>
+<a href="artea-notebook.html">The Artea notebook</a>
+<h2>Week 5. Value and churn</h2>
+<a href="clv.html">CLV and how long a customer stays</a>
+<a href="churn-management.html">Managing churn</a>
+<a href="model-choice.html">Which model for which Y</a>
+<a href="calibration-lift.html">Calibration, validation, and lift</a>
+<a href="predictors.html">Which X to put in</a>
+<h2>Week 6. Logit and odds</h2>
+<a href="logit-odds.html">Odds and the odds ratio</a>
+<a href="advertising-lab.html">The Advertising lab</a>
+<a href="reading-output.html">Reading OLS and logit tables</a>
+<a href="interactions.html">Interactions</a>
+<h2>Week 7. Cases and matching</h2>
+<a href="pilgrim.html">The Pilgrim case</a>
+<a href="books-r-us.html">The Books R Us case</a>
+<a href="association-experiment.html">Association or cause</a>
+<a href="matching-idea.html">The idea of matching</a>
+<a href="sample-box.html">Sample Box and the money</a>
+<h2>Week 8. The practice exam</h2>
+<a href="exam-format.html">How the exam is marked</a>
 <a href="touchpoints.html">Touchpoints</a>
-<a href="readings-gaps.html">Чего нет в папке</a>
-<a href="formula-sheet.html">Шпаргалка</a>
-<a href="mock-exam.html">Пробный экзамен</a></nav>
+<a href="readings-gaps.html">What is missing from the folder</a>
+<a href="formula-sheet.html">Formula sheet</a>
+<a href="mock-exam.html">Practice exam</a>
+</nav>
   <main><div class="wrap">
-    <p class="kicker">Неделя 2 · strings и slices</p>
-    <h1>Текст, методы и срезы списков</h1>
-    <p class="lead">Строка — это текст. Список — это очередь значений. У обоих есть позиции, и обе позиции считают с нуля.</p>
+    <p class="kicker">Week 2 · strings and slices</p>
     
-<h2>Метод возвращает новый текст</h2>
-<pre><code>my_name = "Anna Rossi"
+<h1>Text, methods, and slices</h1>
+<p class="lead">A string is text. A list is a queue of values. Both have positions, and both positions count from zero.</p>
+<h2>A method returns new text</h2>
+<pre>my_name = "Anna Rossi"
 small_name = my_name.lower()
 BIG_name = my_name.upper()
-print(my_name == small_name)  # False</code></pre>
-<p><code>lower()</code> делает строчные буквы, <code>upper()</code> — заглавные. Исходное имя не меняется, пока вы сами не запишете результат обратно. Сравнение <code>==</code> спрашивает, совпадают ли тексты. "Anna Rossi" и "anna rossi" не совпадают, печатается False.</p>
-<p>Слайд показывает типичную поломку:</p>
-<pre><code>"I will pass " + course + " with " + grade</code></pre>
-<p>Если <code>grade</code> — число 29, Python откажется складывать текст и число. Число нужно превратить в текст: <code>str(grade)</code>. Это TypeError, его название стоит запомнить: «типы не подходят друг другу».</p>
-<h2>Повтор куска строки</h2>
-<pre><code>let_it_be = "let it be, "
-chorus = let_it_be * 4</code></pre>
-<p>Умножение строки на 4 не умножает буквы как числа. Оно повторяет текст четыре раза. Слайд использует это в упражнении с фразой.</p>
-<h2>Срез: отсюда и до, но не включая конец</h2>
-<pre><code>tv_shows = ["Breaking Bad", "Dark", "The Office", "Stranger Things", "Rick & Morty"]
-print(len(tv_shows))       # 5
-best = tv_shows[:3]        # первые три
-worst = tv_shows[-3:]      # последние три</code></pre>
-<p><code>len</code> считает элементы. Запись <code>[:3]</code> значит «с начала до индекса 3, сам индекс 3 не берём», то есть места 0, 1 и 2. Запись <code>[-3:]</code> значит «последние три». Минус считает с хвоста.</p>
-<p>Упражнение слайда: из списка итальянской еды взять всё, кроме первых двух и последних двух. Если в списке 8 блюд с индексами 0…7, срез <code>[2:-2]</code> оставляет индексы 2, 3, 4, 5. Конец <code>-2</code> не включается, поэтому предпоследний и последний отпадают, а первые два отпали из-за старта с 2.</p>
-<div class="callout remember"><strong>Запомните картинку</strong>Срез «начинается здесь и останавливается перед тем местом». Правый край не входит. Это самая частая ошибка на одну позицию.</div>
-<h2>Решённая задача</h2>
-<p>Список <code>italian_food</code> мысленно такой: 0 pineapple, 1 pizza, 2 pasta, 3 risotto, 4 gelato, 5 tiramisu. Команда <code>italian_food[2:-2]</code> вернёт pasta и risotto? Посчитаем: старт 2 (pasta), стоп перед −2. Индекс −2 у списка из 6 элементов — это место 4 (gelato). Значит берём 2 и 3: pasta, risotto. Gelato уже граница и не входит. Если блюд больше, войдут все средние.</p>
-<p>Точный список еды на слайде нарисован, в тексте PDF он обрезан. Правило среза от этого не меняется, и именно правило спрашивают в коде.</p>
-<h2>Практикум</h2>
-
-<section class="quiz" data-quiz data-kind="mcq" data-qid="st1" data-answer="b" data-why="Слайд: string methods produce new values. Сравнение my_name == small_name может быть False.">
-  <p class="prompt">my_name.lower() делает что?</p>
-  <label class="opt"><input type="radio" name="st1" value="a"> Меняет my_name навсегда и печатает его</label><label class="opt"><input type="radio" name="st1" value="b"> Возвращает новый текст строчными буквами, исходная переменная сама не меняется</label><label class="opt"><input type="radio" name="st1" value="c"> Считает длину</label><label class="opt"><input type="radio" name="st1" value="d"> Удаляет пробелы и превращает текст в число</label>
-  <button type="button" data-check>Проверить</button>
+print(my_name == small_name)  # False</pre>
+<p><code>lower()</code> makes lowercase letters. <code>upper()</code> makes capitals. The original name does not change unless you store the result back into it yourself. <code>==</code> asks whether two texts match. "Anna Rossi" and "anna rossi" do not match, so the print is False.</p>
+<p>The slide shows a typical break:</p>
+<pre>"I will pass " + course + " with " + grade</pre>
+<p>If <code>grade</code> is the number 29, Python refuses to add text and a number. Turn the number into text with <code>str(grade)</code>. The error’s name is worth remembering: TypeError, “these types do not fit together”.</p>
+<h2>Repeating a piece of text</h2>
+<pre>let_it_be = "let it be, "
+chorus = let_it_be * 4</pre>
+<p>Multiplying a string by 4 does not multiply letters the way numbers multiply. It repeats the text four times. The slide uses this in a phrase exercise.</p>
+<h2>A slice: from here, up to but not including the end</h2>
+<pre>tv_shows = ["Breaking Bad", "Dark", "The Office", "Stranger Things", "Rick &amp; Morty"]
+print(len(tv_shows))  # 5
+best = tv_shows[:3]   # the first three
+worst = tv_shows[-3:] # the last three</pre>
+<p><code>len</code> counts the items. <code>[:3]</code> means “from the start up to index 3, and do not take index 3 itself”, so places 0, 1, and 2. <code>[-3:]</code> means “the last three”. A minus counts from the tail.</p>
+<p>The slide’s exercise: from a list of Italian food, take everything except the first two and the last two. If the list has 8 dishes at indexes 0…7, the slice <code>[2:-2]</code> keeps indexes 2, 3, 4, and 5. The end <code>-2</code> is not included, so the last two drop off, and the first two dropped because you started at 2.</p>
+<div class="callout remember"><strong>Picture to keep</strong>A slice “starts here and stops before that place”. The right edge is not included. That off-by-one is the most common mistake.</div>
+<h2>A worked slice</h2>
+<p>Imagine <code>italian_food</code> as: 0 pineapple, 1 pizza, 2 pasta, 3 risotto, 4 gelato, 5 tiramisu. The command <code>italian_food[2:-2]</code> starts at 2 (pasta) and stops before −2. In a list of 6 items, index −2 is place 4 (gelato). So you keep 2 and 3: pasta and risotto. Gelato is the boundary and is not included. If there are more dishes, every middle one comes along.</p>
+<p>The exact food list is drawn on the slide, and the PDF text cuts it off. The slice rule does not change, and the rule is what a code question asks.</p>
+<h2>Practice</h2>
+<section class="quiz" data-quiz data-kind="mcq" data-qid="st1" data-answer="b" data-why="lower() returns a new string. The original changes only if you assign the result back.">
+  <p class="prompt">What does my_name.lower() do?</p>
+  <label class="opt"><input type="radio" name="st1" value="a"> Changes my_name forever and prints it</label><label class="opt"><input type="radio" name="st1" value="b"> Returns new lowercase text. The original variable does not change by itself</label><label class="opt"><input type="radio" name="st1" value="c"> Counts the length</label><label class="opt"><input type="radio" name="st1" value="d"> Deletes spaces and turns the text into a number</label>
+  <button type="button" data-check>Check</button>
   <div class="feedback"></div>
 </section>
 
-<section class="quiz" data-quiz data-kind="mcq" data-qid="st2" data-answer="b" data-why="Слайд прямо показывает эту ошибку типов. Лечение: str(grade).">
-  <p class="prompt">Почему падает "with " + grade, если grade = 29?</p>
-  <label class="opt"><input type="radio" name="st2" value="a"> 29 слишком большая оценка</label><label class="opt"><input type="radio" name="st2" value="b"> Нельзя склеивать текст и число без перевода числа в текст. Это TypeError</label><label class="opt"><input type="radio" name="st2" value="c"> Плюс для текста запрещён всегда</label><label class="opt"><input type="radio" name="st2" value="d"> Нужен список, а не строка</label>
-  <button type="button" data-check>Проверить</button>
+<section class="quiz" data-quiz data-kind="mcq" data-qid="st2" data-answer="b" data-why="str(grade) turns 29 into the text &quot;29&quot;. Then the pieces can be joined.">
+  <p class="prompt">Why does "with " + grade crash when grade = 29?</p>
+  <label class="opt"><input type="radio" name="st2" value="a"> 29 is too high a grade</label><label class="opt"><input type="radio" name="st2" value="b"> You cannot glue text and a number without turning the number into text. That is a TypeError</label><label class="opt"><input type="radio" name="st2" value="c"> Plus is always forbidden for text</label><label class="opt"><input type="radio" name="st2" value="d"> You need a list, not a string</label>
+  <button type="button" data-check>Check</button>
   <div class="feedback"></div>
 </section>
 
-<section class="quiz" data-quiz data-kind="mcq" data-qid="st3" data-answer="b" data-why="Правая граница среза не входит. [:3] — это 0, 1, 2. Последние три были бы [-3:].">
-  <p class="prompt">tv_shows[:3] при пяти сериалах вернёт…</p>
-  <label class="opt"><input type="radio" name="st3" value="a"> три последних</label><label class="opt"><input type="radio" name="st3" value="b"> первые три, индексы 0, 1 и 2</label><label class="opt"><input type="radio" name="st3" value="c"> элемент с индексом 3</label><label class="opt"><input type="radio" name="st3" value="d"> пустой список</label>
-  <button type="button" data-check>Проверить</button>
+<section class="quiz" data-quiz data-kind="mcq" data-qid="st3" data-answer="b" data-why="The right edge is not included. [:3] keeps 0, 1, and 2.">
+  <p class="prompt">With five shows, tv_shows[:3] returns…</p>
+  <label class="opt"><input type="radio" name="st3" value="a"> the last three</label><label class="opt"><input type="radio" name="st3" value="b"> the first three, indexes 0, 1, and 2</label><label class="opt"><input type="radio" name="st3" value="c"> the item at index 3</label><label class="opt"><input type="radio" name="st3" value="d"> an empty list</label>
+  <button type="button" data-check>Check</button>
   <div class="feedback"></div>
 </section>
 
-<section class="quiz" data-quiz data-kind="blank" data-qid="st4" data-why="Повторы в списке считаются отдельно. Во множестве было бы 2, в списке 3.">
-  <p class="prompt">Чему равен len(["Dark", "The Office", "Dark"])?</p>
+<section class="quiz" data-quiz data-kind="blank" data-qid="st4" data-why="len counts items. A repeated title still counts, so the length is 3.">
+  <p class="prompt">What is len(["Dark", "The Office", "Dark"])?</p>
   <p><label>len<br><input type="text" data-accept="3" data-label="len" placeholder="3"></label></p>
-  <button type="button" data-check>Проверить</button>
+  <button type="button" data-check>Check</button>
   <div class="feedback"></div>
 </section>
-<p class="pills"><a href="python-objects.html">← Имена, списки, множества</a><a href="python-sets-dicts.html">Множества и словари →</a></p>
-    <footer class="note">Числа и формулировки взяты из загруженных слайдов, тетрадей и mock exam курса 20838 (2026). Если в файле чего-то нет, страница так и говорит.</footer>
+
+<p class="pills"><a href="python-objects.html">← Names, lists, and sets</a><a href="python-sets-dicts.html">Sets and dictionaries →</a></p>
+
+    <footer class="note">Numbers and wording follow the uploaded slides, notebooks, and the 20838 mock exam (2026). If a file does not contain a figure, the page says so instead of inventing it.</footer>
   </div></main>
 </div>
 <script src="../js/nav.js"></script>
