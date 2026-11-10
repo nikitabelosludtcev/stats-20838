@@ -85,6 +85,25 @@ When D = 0, only the coefficient of X remains</div>
 <li>A person from Instagram. The coupon’s effect is about −0.01 + 0.07 = +0.06 transactions. The extra 0.07 is significant.</li>
 </ol>
 <p>You cannot say “the coupon is insignificant” by looking only at the bare test_coupon. It is insignificant for the baseline. The manager’s question “whom to send it to” lives in the interaction row.</p>
+<figure class="figure">
+<svg viewBox="0 0 640 280" role="img" aria-labelledby="fig-slope">
+<title id="fig-slope">Once the interaction is in the model, the bare coupon coefficient is the effect for the baseline, Google. Instagram’s effect is that baseline plus the interaction: −0.01 + 0.07 = +0.06 transactions.</title>
+
+<line x1="80" y1="230" x2="560" y2="230" stroke="#cbbfaa"/>
+<line x1="80" y1="40" x2="80" y2="230" stroke="#cbbfaa"/>
+<line x1="140" y1="140" x2="460" y2="148" stroke="#8a4b12" stroke-width="3"/>
+<line x1="140" y1="140" x2="460" y2="70" stroke="#0e6e68" stroke-width="3"/>
+<circle cx="140" cy="140" r="6" fill="#1c1915"/>
+<text x="140" y="252" fill="#5c564c" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" text-anchor="middle">no coupon</text>
+<text x="460" y="252" fill="#5c564c" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" text-anchor="middle">coupon</text>
+<text x="470" y="148" fill="#8a4b12" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" text-anchor="start">Google −0.01</text>
+<text x="470" y="66" fill="#0e6e68" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" text-anchor="start">Instagram +0.06</text>
+<text x="300" y="36" fill="#0e6e68" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" text-anchor="middle">−0.01 + 0.07 = +0.06</text>
+
+</svg>
+<figcaption>Once the interaction is in the model, the bare coupon coefficient is the effect for the baseline, Google. Instagram’s effect is that baseline plus the interaction: −0.01 + 0.07 = +0.06 transactions.</figcaption>
+</figure>
+
 <h2>How not to mangle a percent</h2>
 <p>In OLS an interaction of 0.001 is already in units of profit, per unit of advertising and per unit of income. A small number can matter if income is measured in dollars rather than in thousands: for every $1,000 of income the slope of advertising rises by 1. Look at the units. The slide itself does not translate 0.001 into “a very weak effect”. It speaks only of the sign and the significance.</p>
 <p>In a logit the interaction also lives in log-odds. You compute a percent from exp of the sum, if you need the group’s overall multiplier, or from exp of the interaction itself, if you need “how much the group’s multiplier differs from the baseline”. The Red Bull solution takes the second, shorter path: a significant positive interaction means the link between the promo and the odds of choosing Red Bull is stronger in that group than in the baseline. They do not multiply every OR into one probability.</p>

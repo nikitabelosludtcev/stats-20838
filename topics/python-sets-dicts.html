@@ -81,6 +81,22 @@ in_studio = {"Eleanor", "Jack", "Diane"}
 smokers = {"Jacob", "Diane", "Kassandra"}
 suspects = staff &amp; in_studio &amp; smokers</pre>
 <p>The sign <code>&amp;</code> is the intersection. Diane is in every set. Eleanor is not among the smokers. Jacob is not in the studio. Diane remains. The Olympics food puzzle uses the same move on three sets of favourite food and, after <code>sorted</code>, prints ['pizza', 'tacos'].</p>
+<figure class="figure">
+<svg viewBox="0 0 640 360" role="img" aria-labelledby="fig-venn">
+<title id="fig-venn">The sign &amp; keeps only people who are in every set. Diane is on the staff, in the studio, and a smoker. Eleanor misses smokers. Jacob misses the studio. Union, the sign |, would have kept anyone in at least one set.</title>
+
+<circle cx="250" cy="150" r="90" fill="#e5f3f1" fill-opacity="0.9" stroke="#0e6e68" stroke-width="2"/>
+<circle cx="340" cy="150" r="90" fill="#fbf0e4" fill-opacity="0.55" stroke="#8a4b12" stroke-width="2"/>
+<circle cx="295" cy="220" r="90" fill="#f8e8ea" fill-opacity="0.45" stroke="#8f2d3a" stroke-width="2"/>
+<text x="180" y="70" fill="#0e6e68" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" text-anchor="start">staff</text>
+<text x="430" y="70" fill="#8a4b12" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" text-anchor="start">in the studio</text>
+<text x="295" y="330" fill="#8f2d3a" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" text-anchor="middle">smokers</text>
+<text x="295" y="168" fill="#0a4f4b" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="16" font-weight="700" text-anchor="middle">Diane</text>
+
+</svg>
+<figcaption>The sign &amp; keeps only people who are in every set. Diane is on the staff, in the studio, and a smoker. Eleanor misses smokers. Jacob misses the studio. Union, the sign |, would have kept anyone in at least one set.</figcaption>
+</figure>
+
 <div class="table-wrap"><table>
 <thead><tr><th>Sign</th><th>Name</th><th>A plain meaning</th></tr></thead>
 <tbody>
@@ -115,7 +131,7 @@ print(len(pet_lookup))  # 5</pre>
 <h2>Practice</h2>
 <section class="quiz" data-quiz data-kind="mcq" data-qid="sd1" data-answer="b" data-why="&amp; is the intersection. | is the union: at least one set.">
   <p class="prompt">Which sign keeps only the people who are in every set at once?</p>
-  <label class="opt"><input type="radio" name="sd1" value="a"> |</label><label class="opt"><input type="radio" name="sd1" value="b"> &</label><label class="opt"><input type="radio" name="sd1" value="c"> -</label><label class="opt"><input type="radio" name="sd1" value="d"> +</label>
+  <label class="opt"><input type="radio" name="sd1" value="a"> |</label><label class="opt"><input type="radio" name="sd1" value="b"> &amp;</label><label class="opt"><input type="radio" name="sd1" value="c"> -</label><label class="opt"><input type="radio" name="sd1" value="d"> +</label>
   <button type="button" data-check>Check</button>
   <div class="feedback"></div>
 </section>

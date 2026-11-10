@@ -102,6 +102,29 @@ SE(x̄) = SD / √n = 10.57 / √4521 = 0.157 years. How much the mean itself us
 </ol>
 <p>The notebook prints the more precise ends: 40.862 … 41.478. The slide rounds to 40.86 and 41.48.</p>
 <p>The interval is the set of values of μ that look plausible with these data. The number 41 falls inside. The number 44 does not.</p>
+<figure class="figure">
+<svg viewBox="0 0 640 280" role="img" aria-labelledby="fig-ci">
+<title id="fig-ci">The band 40.86 to 41.48 is the set of means that still fit this sample. 41 sits inside it. 44 does not. The band is built as 41.17 ± 1.96 × 0.157.</title>
+
+<line x1="40" y1="140" x2="600" y2="140" stroke="#cbbfaa" stroke-width="3"/>
+<rect x="168" y="112" width="150" height="56" rx="8" fill="#e5f3f1" stroke="#0e6e68" stroke-width="2"/>
+<circle cx="230" cy="140" r="7" fill="#0a4f4b"/>
+<circle cx="198" cy="140" r="6" fill="#0e6e68"/>
+<circle cx="540" cy="140" r="6" fill="#8f2d3a"/>
+<text x="198" y="78" fill="#0e6e68" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle">41</text>
+<text x="230" y="196" fill="#0e6e68" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" text-anchor="middle">inside: do not reject</text>
+<text x="230" y="96" fill="#0a4f4b" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle">41.17</text>
+<text x="230" y="220" fill="#5c564c" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" text-anchor="middle">sample mean</text>
+<text x="168" y="248" fill="#5c564c" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" text-anchor="middle">40.86</text>
+<text x="318" y="248" fill="#5c564c" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" text-anchor="middle">41.48</text>
+<text x="540" y="96" fill="#8f2d3a" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle">44</text>
+<text x="540" y="196" fill="#8f2d3a" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" text-anchor="middle">outside: reject</text>
+<text x="320" y="40" fill="#1c1915" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="16" font-weight="700" text-anchor="middle">95% interval for mean age</text>
+
+</svg>
+<figcaption>The band 40.86 to 41.48 is the set of means that still fit this sample. 41 sits inside it. 44 does not. The band is built as 41.17 ± 1.96 × 0.157.</figcaption>
+</figure>
+
 <div class="callout mistake"><strong>A common miss</strong>Once the interval has been computed, do not say “there is a 95% probability the true age is in here” as if the true age were still rolling a die. In this course you use the interval practically: a claim inside the interval is not rejected, and a claim outside it is rejected. And “not rejected” does not mean “we proved the manager right”.</div>
 <h2>Practice</h2>
 <section class="quiz" data-quiz data-kind="blank" data-qid="i1" data-why="10.57 / √4521 ≈ 10.57 / 67.2 ≈ 0.157.">

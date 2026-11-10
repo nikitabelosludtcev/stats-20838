@@ -75,6 +75,47 @@
 <h1>Skew, the box, and dirty data</h1>
 <p class="lead">Before you trust a coefficient, look at whether the column is broken. The course practises this on age and on balance.</p>
 <p>If the mean sits clearly above the median, the right tail is long: a few large values. For age the shift is gentle, 41 against 39. For balance it is huge, 1,423 against 444. The slide says it plainly: under strong skew the mean can be a bad “typical” number.</p>
+<figure class="figure">
+<svg viewBox="0 0 640 292" role="img" aria-labelledby="fig-skew">
+<title id="fig-skew">Balance is skewed. Half of customers sit at or below the median, €444. The mean, €1,423, is pulled right by rare large accounts, so it is a poor picture of a typical customer.</title>
+<rect x="36" y="218" width="32" height="28" rx="3" fill="#b7ddd8"/><rect x="74" y="184" width="32" height="62" rx="3" fill="#b7ddd8"/><rect x="112" y="136" width="32" height="110" rx="3" fill="#b7ddd8"/><rect x="150" y="88" width="32" height="158" rx="3" fill="#b7ddd8"/><rect x="188" y="70" width="32" height="176" rx="3" fill="#b7ddd8"/><rect x="226" y="96" width="32" height="150" rx="3" fill="#b7ddd8"/><rect x="264" y="134" width="32" height="112" rx="3" fill="#b7ddd8"/><rect x="302" y="172" width="32" height="74" rx="3" fill="#b7ddd8"/><rect x="340" y="198" width="32" height="48" rx="3" fill="#b7ddd8"/><rect x="378" y="214" width="32" height="32" rx="3" fill="#b7ddd8"/><rect x="416" y="224" width="32" height="22" rx="3" fill="#b7ddd8"/><rect x="454" y="231" width="32" height="15" rx="3" fill="#b7ddd8"/><rect x="492" y="235" width="32" height="11" rx="3" fill="#b7ddd8"/><rect x="530" y="238" width="32" height="8" rx="3" fill="#b7ddd8"/><rect x="568" y="240" width="32" height="6" rx="3" fill="#b7ddd8"/>
+<line x1="166.0" y1="40" x2="166.0" y2="246" stroke="#0e6e68" stroke-width="2.5"/>
+<line x1="356.0" y1="40" x2="356.0" y2="246" stroke="#8a4b12" stroke-width="2.5" stroke-dasharray="5 4"/>
+<text x="166.0" y="28" fill="#0e6e68" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">median €444</text>
+<text x="348" y="52" fill="#8a4b12" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="end">mean €1,423</text>
+<text x="36" y="270" fill="#5c564c" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" text-anchor="start">small balances, most people</text>
+<text x="604" y="270" fill="#5c564c" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" text-anchor="end">a few huge accounts</text>
+
+</svg>
+<figcaption>Balance is skewed. Half of customers sit at or below the median, €444. The mean, €1,423, is pulled right by rare large accounts, so it is a poor picture of a typical customer.</figcaption>
+</figure>
+
+<figure class="figure">
+<svg viewBox="0 0 640 292" role="img" aria-labelledby="fig-box">
+<title id="fig-box">A box is built from the quartiles. For age, a quarter are under 33, the middle person is 39, and three quarters are under 49. The point at 87 is a real older customer, not automatically an error.</title>
+
+<line x1="70" y1="150" x2="590" y2="150" stroke="#cbbfaa" stroke-width="2"/>
+<line x1="90" y1="118" x2="90" y2="182" stroke="#0e6e68" stroke-width="3"/>
+<rect x="210" y="108" width="220" height="84" rx="6" fill="#e5f3f1" stroke="#0e6e68" stroke-width="2.5"/>
+<line x1="300" y1="108" x2="300" y2="192" stroke="#0a4f4b" stroke-width="4"/>
+<line x1="520" y1="118" x2="520" y2="182" stroke="#0e6e68" stroke-width="3"/>
+<circle cx="575" cy="150" r="6" fill="#8a4b12"/>
+<text x="90" y="100" fill="#5c564c" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" text-anchor="middle">19</text>
+<text x="90" y="214" fill="#5c564c" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" text-anchor="middle">minimum</text>
+<text x="210" y="100" fill="#5c564c" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" text-anchor="middle">33</text>
+<text x="210" y="214" fill="#5c564c" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" text-anchor="middle">25%</text>
+<text x="300" y="86" fill="#0a4f4b" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle">39</text>
+<text x="300" y="228" fill="#0a4f4b" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" text-anchor="middle">median</text>
+<text x="430" y="100" fill="#5c564c" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" text-anchor="middle">49</text>
+<text x="430" y="214" fill="#5c564c" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" text-anchor="middle">75%</text>
+<text x="560" y="100" fill="#8a4b12" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" text-anchor="middle">87</text>
+<text x="560" y="214" fill="#8a4b12" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" text-anchor="middle">oldest</text>
+<text x="320" y="268" fill="#5c564c" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle">Age in the bank file. The box holds the middle half of customers.</text>
+
+</svg>
+<figcaption>A box is built from the quartiles. For age, a quarter are under 33, the middle person is 39, and three quarters are under 49. The point at 87 is a real older customer, not automatically an error.</figcaption>
+</figure>
+
 <h2>What a boxplot is showing</h2>
 <p>The notebook draws a box for age and a box for balance. The box is built from the quartiles that <code>describe()</code> already printed.</p>
 <div class="table-wrap"><table>

@@ -87,6 +87,25 @@ Pseudo R² = 1 − LL_full / LL₀. This is not a share of variance. For ordinar
 <li><b>Overfitting.</b> Too many X’s. The model memorises the noise of the old sample and fails on a new one.</li>
 <li><b>Underfitting.</b> Too few X’s. The model misses a stable signal that is in the data.</li>
 </ul>
+<figure class="figure">
+<svg viewBox="0 0 640 290" role="img" aria-labelledby="fig-over">
+<title id="fig-over">Adding features can raise in-sample pseudo R² from 0.06 to 0.40 while the out-sample lift of the top decile falls from 2.5 to 1.1. The model memorised noise. A good X is a hypothesis about behaviour, checked on people who were not used to choose it.</title>
+
+<rect x="24" y="36" width="290" height="230" rx="12" fill="#f7f1e6"/>
+<rect x="326" y="36" width="290" height="230" rx="12" fill="#f8e8ea"/>
+<text x="169" y="64" fill="#0a4f4b" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" text-anchor="middle">In-sample</text>
+<text x="471" y="64" fill="#8f2d3a" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" text-anchor="middle">Out-sample</text>
+<polyline fill="none" stroke="#0e6e68" stroke-width="2.5" points="50,200 80,170 110,190 140,120 170,150 200,90 230,130 270,70"/>
+<circle cx="80" cy="170" r="4" fill="#1c1915"/><circle cx="140" cy="120" r="4" fill="#1c1915"/><circle cx="200" cy="90" r="4" fill="#1c1915"/><circle cx="250" cy="100" r="4" fill="#1c1915"/>
+<line x1="360" y1="180" x2="560" y2="100" stroke="#0e6e68" stroke-width="2.5"/>
+<circle cx="400" cy="200" r="4" fill="#8f2d3a"/><circle cx="450" cy="90" r="4" fill="#8f2d3a"/><circle cx="500" cy="190" r="4" fill="#8f2d3a"/><circle cx="550" cy="80" r="4" fill="#8f2d3a"/>
+<text x="169" y="240" fill="#0e6e68" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" text-anchor="middle">fit looks wonderful</text>
+<text x="471" y="240" fill="#8f2d3a" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" text-anchor="middle">new people, lift falls</text>
+
+</svg>
+<figcaption>Adding features can raise in-sample pseudo R² from 0.06 to 0.40 while the out-sample lift of the top decile falls from 2.5 to 1.1. The model memorised noise. A good X is a hypothesis about behaviour, checked on people who were not used to choose it.</figcaption>
+</figure>
+
 <p>The remedy for overfitting is one you already know: validation on people who were not used when the X’s were chosen. If you chose the X’s by searching hundreds of columns on the whole base, the “check” sample is no longer clean. The slide does not formalise that subtlety. It is enough to say: both the choice of X and the coefficients are checked out of sample.</p>
 <h2>A short worked answer</h2>
 <p>An analyst added 40 features. In-sample pseudo R² rose from 0.06 to 0.40. Out-sample lift of the top decile fell from 2.5 to 1.1. What happened?</p>

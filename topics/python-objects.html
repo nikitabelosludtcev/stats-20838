@@ -86,6 +86,25 @@ grade = grade + 2</pre>
 <h2>A set keeps unique values</h2>
 <pre>pets = {"dog", "cat", "dog"}</pre>
 <p>A set folds this into {"dog", "cat"}. The second "dog" disappears. There is no order you can rely on. The curly braces here are not a dictionary: there are no “key: value” pairs inside.</p>
+<figure class="figure">
+<svg viewBox="0 0 640 250" role="img" aria-labelledby="fig-list">
+<title id="fig-list">A list is a ranking: index 0 is the first item, and a repeated title stays. A set keeps each value once and promises no order. Curly braces with no colons are a set, not a dictionary.</title>
+
+<rect x="30" y="50" width="250" height="180" rx="12" fill="#fffdf8" stroke="#0e6e68"/>
+<rect x="350" y="50" width="250" height="180" rx="12" fill="#fffdf8" stroke="#8a4b12"/>
+<text x="155" y="80" fill="#0e6e68" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="16" font-weight="700" text-anchor="middle">list</text>
+<text x="155" y="120" fill="#1c1915" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle">0  "Dark"</text>
+<text x="155" y="148" fill="#1c1915" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle">1  "The Office"</text>
+<text x="155" y="176" fill="#1c1915" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle">2  "Dark" again</text>
+<text x="475" y="80" fill="#8a4b12" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="16" font-weight="700" text-anchor="middle">set</text>
+<text x="475" y="130" fill="#1c1915" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="middle">"dog"   "cat"</text>
+<text x="475" y="170" fill="#5c564c" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" text-anchor="middle">the second dog is gone</text>
+<text x="155" y="210" fill="#0e6e68" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" text-anchor="middle">order and repeats kept</text>
+
+</svg>
+<figcaption>A list is a ranking: index 0 is the first item, and a repeated title stays. A set keeps each value once and promises no order. Curly braces with no colons are a set, not a dictionary.</figcaption>
+</figure>
+
 <div class="table-wrap"><table>
 <thead><tr><th>Task</th><th>Choose</th><th>Why</th></tr></thead>
 <tbody>
@@ -126,7 +145,7 @@ print(years_left)  # 76</pre>
 </section>
 
 <section class="quiz" data-quiz data-kind="mcq" data-qid="o3" data-answer="b" data-why="A set drops the duplicate dog. Curly braces with no colons are a set, not a dictionary.">
-  <p class="prompt">pets = {{"dog", "cat", "dog"}}. How many values remain in the set?</p>
+  <p class="prompt">pets = {"dog", "cat", "dog"}. How many values remain in the set?</p>
   <label class="opt"><input type="radio" name="o3" value="a"> 3</label><label class="opt"><input type="radio" name="o3" value="b"> 2: dog and cat</label><label class="opt"><input type="radio" name="o3" value="c"> 1</label><label class="opt"><input type="radio" name="o3" value="d"> 0, because curly braces are always empty</label>
   <button type="button" data-check>Check</button>
   <div class="feedback"></div>

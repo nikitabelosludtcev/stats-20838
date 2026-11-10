@@ -117,6 +117,22 @@ tv_model.predict(pd.DataFrame({"TV": [100]}))</pre>
 <tr><td>B</td><td>200</td><td>40</td><td>20</td><td>0.999360</td></tr>
 </tbody></table></div>
 <p>The gap is about 0.999, that is 99.9 percentage points. Strategy B almost certainly lands in HighSales under this model. A almost certainly does not. The solution stresses: a gulf between probabilities is not the same thing as “the difference in odds ratios”. An OR describes a multiplier for one unit of a channel. A probability describes a particular bundle of spending.</p>
+<figure class="figure">
+<svg viewBox="0 0 640 300" role="img" aria-labelledby="fig-strat">
+<title id="fig-strat">Strategy A is predicted HighSales with probability about 0.000008. Strategy B is about 0.999. That gulf is not an odds ratio. An odds ratio is the multiplier for one extra unit of a channel, with the others held fixed.</title>
+
+<rect x="70" y="150" width="160" height="18" rx="4" fill="#8f2d3a"/>
+<rect x="360" y="48" width="160" height="160" rx="4" fill="#0e6e68"/>
+<text x="150" y="140" fill="#8f2d3a" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle">A  almost 0</text>
+<text x="440" y="36" fill="#0e6e68" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle">B  almost 1</text>
+<text x="150" y="200" fill="#5c564c" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" text-anchor="middle">TV 100, radio 10</text>
+<text x="440" y="228" fill="#5c564c" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" text-anchor="middle">TV 200, radio 40</text>
+<text x="320" y="270" fill="#1c1915" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="400" text-anchor="middle">These are probabilities for two bundles, not odds ratios.</text>
+
+</svg>
+<figcaption>Strategy A is predicted HighSales with probability about 0.000008. Strategy B is about 0.999. That gulf is not an odds ratio. An odds ratio is the multiplier for one extra unit of a channel, with the others held fixed.</figcaption>
+</figure>
+
 <p>A paragraph close to the solution’s sample. Higher spending on TV and on radio is associated with higher odds of HighSales, even if the other channels are held constant. For newspaper no separate link is visible: the OR interval contains 1. The two example strategies give completely different probabilities. These are associations, not a proven effect from a random experiment. Uncertainty is named through the p-values and the intervals.</p>
 <div class="callout remember"><strong>What to have ready</strong>37.5%. Simple TV OR 1.021, and 1.233 for +10 units. P(TV=100) = 13.3%. Multiple model: TV 1.077, radio 1.477, newspaper 1.016 with p = 0.399. Pseudo R² 0.825 is not a share of variance.</div>
 <h2>Practice</h2>
