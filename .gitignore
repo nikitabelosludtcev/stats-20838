@@ -1,0 +1,10 @@
+# Copyrighted course files stay off this public repo.
+sources/
+_build/
+__pycache__/
+*.pdf
+*.docx
+*.xlsx
+*.xls
+*.ipynb
+*.csv

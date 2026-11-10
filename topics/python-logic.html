@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>if, for и функция · 20838</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-page="python-logic">
+<header class="topbar">
+  <button class="menu-btn" type="button" data-nav-toggle aria-expanded="false">Меню</button>
+  <a class="brand" href="../index.html"><strong>20838 · к экзамену</strong><span>Data &amp; Analytics for Strategic Marketing Decisions</span></a>
+  <div class="top-actions">
+    <a class="ghost" href="../topics/mock-exam.html">Mock exam</a>
+  </div>
+</header>
+<div class="layout">
+  <nav class="sidenav" aria-label="Темы"><h2>Навигация</h2>
+<a href="../index.html">План на 8 недель<small>С чего начать</small></a>
+<a href="../index.html#inventory">Все материалы<small>Лекции, лабы, кейсы</small></a>
+<a href="formula-sheet.html">Шпаргалка формул<small>Выучить до автоматизма</small></a>
+<a href="mock-exam.html">Пробный экзамен<small>Сначала сами, потом решение</small></a>
+<h2>Неделя 1. Язык данных</h2>
+<a href="model-and-data.html">Модель и строка клиента</a>
+<a href="variable-types.html">Типы переменных</a>
+<a href="descriptive-stats.html">Среднее, медиана, мода, SD</a>
+<a href="shape-missing.html">Форма, ящики и пропуски</a>
+<a href="inference-se-ci.html">Выборка, SE и интервал</a>
+<a href="hypothesis-testing.html">Проверка гипотезы</a>
+<a href="python-bank-walkthrough.html">Тетрадь bank_basics</a>
+<h2>Неделя 2. Python без страха</h2>
+<a href="python-objects.html">Имена, списки, множества</a>
+<a href="python-strings.html">Строки и срезы</a>
+<a href="python-sets-dicts.html">Множества и словари</a>
+<a href="python-logic.html">Условия, циклы, функции</a>
+<a href="python-olympics.html">Python Olympics</a>
+<h2>Неделя 3. Эксперимент</h2>
+<a href="acquisition.html">Привлечение клиента</a>
+<a href="privacy.html">Privacy на слайдах</a>
+<a href="causation.html">Причинность и field test</a>
+<a href="experiment-design.html">Словарь эксперимента</a>
+<h2>Неделя 4. Кейс Artea</h2>
+<a href="artea-setup.html">Кейс Artea</a>
+<a href="artea-balance.html">Рандомизация и средние</a>
+<a href="artea-ols.html">OLS по купону</a>
+<a href="artea-heterogeneity.html">Кому слать купон</a>
+<a href="artea-notebook.html">Тетрадь Artea</a>
+<h2>Неделя 5. Ценность и отток</h2>
+<a href="clv.html">CLV и срок жизни</a>
+<a href="churn-management.html">Управление оттоком</a>
+<a href="model-choice.html">Какая модель под какой Y</a>
+<a href="calibration-lift.html">Calibration, validation, lift</a>
+<a href="predictors.html">Какие X брать</a>
+<h2>Неделя 6. Logit и шансы</h2>
+<a href="logit-odds.html">Шансы и odds ratio</a>
+<a href="advertising-lab.html">Лаба Advertising</a>
+<a href="reading-output.html">Чтение таблиц OLS и logit</a>
+<a href="interactions.html">Взаимодействия</a>
+<h2>Неделя 7. Кейсы и matching</h2>
+<a href="pilgrim.html">Кейс Pilgrim</a>
+<a href="books-r-us.html">Кейс Books R Us</a>
+<a href="association-experiment.html">Связь или причина</a>
+<a href="matching-idea.html">Идея matching</a>
+<a href="sample-box.html">Sample Box и деньги</a>
+<h2>Неделя 8. Пробный экзамен</h2>
+<a href="exam-format.html">Формат экзамена</a>
+<a href="touchpoints.html">Touchpoints</a>
+<a href="readings-gaps.html">Чего нет в папке</a>
+<a href="formula-sheet.html">Шпаргалка</a>
+<a href="mock-exam.html">Пробный экзамен</a></nav>
+  <main><div class="wrap">
+    <p class="kicker">Неделя 2 · logic</p>
+    <h1>if, for и функция</h1>
+    <p class="lead">Цикл делает одно и то же для каждого элемента. Условие выбирает ветку. Функция упаковывает план, чтобы его можно было вызвать на новых данных.</p>
+    
+<h2>Булево значение</h2>
+<pre><code>grade = 18
+print(grade &gt;= 18)  # True</code></pre>
+<p>Сравнение не равно числу. Оно даёт True или False. Дальше <code>and</code> требует, чтобы оба куска были True, <code>or</code> довольствуется одним, <code>not</code> переворачивает.</p>
+<pre><code>if grade &gt;= 18:
+    print("pass")
+else:
+    print("retry")</code></pre>
+<p>Двоеточие открывает ветку. Отступ показывает, какие строки внутри. На слайде grade = 18, условие истинно, путь ведёт в pass. Если бы стояло 16, напечаталось бы retry.</p>
+<h2>Цикл</h2>
+<pre><code>grades = [16, 18, 25, 30]
+for grade in grades:
+    if grade &gt;= 18:
+        print("pass")
+    else:
+        print("retry")</code></pre>
+<p><code>grade</code> по очереди становится 16, потом 18, потом 25, потом 30. Для 16 печатается retry, для остальных pass. Отступ у <code>if</code> обязателен: без него Python не поймёт, что развилка внутри цикла, и выдаст IndentationError.</p>
+<p>Если нужно сохранить результаты, а не только печатать:</p>
+<pre><code>updated = []
+for old in [18, 29, 26, 27]:
+    updated.append(old + 1)</code></pre>
+<p><code>append</code> кладёт новый элемент в конец списка. После цикла в <code>updated</code> лежит [19, 30, 27, 28]. Плюс один к каждой оценке — пример слайда про бонусный балл.</p>
+<h2>Вложенный словарь</h2>
+<pre><code>students = {
+    "Kirs": {"best_grade": 29, "course": "corporate finance"},
+    "Paula": {"best_grade": 30, "course": "math"},
+}
+print(students["Kirs"]["best_grade"])  # 29</code></pre>
+<p>Два ключа подряд. Первый выбирает человека, второй поле внутри его карточки. Ошибка слайда: <code>students["best_grade"]</code> ищет ключ best_grade на внешнем уровне, а там ключи Kirs, Paula и Mark. Такого ключа нет, будет KeyError.</p>
+<p>Понизить оценку Kirs на 2 нужно так: <code>students["Kirs"]["best_grade"] -= 2</code>. Запись <code>-=</code> значит «прочитай, вычти, запиши обратно».</p>
+<h2>Функция отделяет план от данных</h2>
+<p>Слайд просит <code>list_average</code> без готовой функции <code>sum</code>.</p>
+<pre><code>def list_average(values):
+    total = 0
+    count = 0
+    for v in values:
+        total = total + v
+        count = count + 1
+    return total / count
+
+print(list_average([18, 29, 26, 27]))  # 25.0</code></pre>
+<p><code>def</code> только описывает план. План запускается в строке с вызовом. <code>return</code> отдаёт результат наружу. 18+29+26+27 = 100, делим на 4, получаем 25.</p>
+<h2>Решённая задача: багаж семьи Stone</h2>
+<p>Словарь весов сумок. Самолёт пускает, если каждая сумка не тяжелее лимита и, возможно, если сумма тоже в лимите. Слайд предупреждает: проверка только <code>sum(weights) &lt; 27</code> неполная. Одна сумка может быть 20 кг при лимите 10, а сумма всё ещё маленькая, если остальные почти пустые. Нужен цикл, который смотрит каждый вес, и отдельно сумма, если лимит есть и на неё.</p>
+<div class="callout exam"><strong>Что могут показать в MCQ</strong>Фрагмент с <code>for</code> и <code>if</code>, и вопрос «что напечатается». Спокойно идите по элементам слева направо и записывайте печать на бумаге. Не запускайте код в голове «примерно».</div>
+<h2>Практикум</h2>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="l1" data-answer="b" data-why="16 не дотягивает, 18 уже проходит, потому что условие «больше или равно». 25 проходит.">
+  <p class="prompt">grades = [16, 18, 25]. Цикл печатает pass, если grade &gt;= 18, иначе retry. Что выйдет?</p>
+  <label class="opt"><input type="radio" name="l1" value="a"> pass, pass, pass</label><label class="opt"><input type="radio" name="l1" value="b"> retry, pass, pass</label><label class="opt"><input type="radio" name="l1" value="c"> retry, retry, pass</label><label class="opt"><input type="radio" name="l1" value="d"> ничего, цикл без print</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="l2" data-answer="b" data-why="Слайд называет это wrong level. Нужно students[&quot;Kirs&quot;][&quot;best_grade&quot;].">
+  <p class="prompt">students["best_grade"] при внешнем словаре людей…</p>
+  <label class="opt"><input type="radio" name="l2" value="a"> вернёт 29</label><label class="opt"><input type="radio" name="l2" value="b"> сломается: на внешнем уровне нет ключа best_grade</label><label class="opt"><input type="radio" name="l2" value="c"> вернёт список всех оценок</label><label class="opt"><input type="radio" name="l2" value="d"> создаст новый ключ молча</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="blank" data-qid="l3" data-why="Сумма 100, четыре оценки, 100 / 4 = 25.">
+  <p class="prompt">list_average([18, 29, 26, 27]) без sum(). Какое число вернёт функция?</p>
+  <p><label>Среднее<br><input type="text" data-accept="25|25.0" data-label="Среднее" placeholder="25"></label></p>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="l4" data-answer="b" data-why="Слайд: append saves each result. Печать после конца программы уже не достать, если её не сохранили.">
+  <p class="prompt">Зачем в цикле пишут updated.append(old + 1), а не только print?</p>
+  <label class="opt"><input type="radio" name="l4" value="a"> print не существует</label><label class="opt"><input type="radio" name="l4" value="b"> append сохраняет каждый новый результат в список, print только показывает</label><label class="opt"><input type="radio" name="l4" value="c"> append удаляет элемент</label><label class="opt"><input type="radio" name="l4" value="d"> так считают standard error</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+<p class="pills"><a href="python-sets-dicts.html">← Множества и словари</a><a href="python-olympics.html">Python Olympics →</a></p>
+    <footer class="note">Числа и формулировки взяты из загруженных слайдов, тетрадей и mock exam курса 20838 (2026). Если в файле чего-то нет, страница так и говорит.</footer>
+  </div></main>
+</div>
+<script src="../js/nav.js"></script>
+<script src="../js/quiz.js"></script>
+</body>
+</html>

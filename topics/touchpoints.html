@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Четыре типа точек касания · 20838</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-page="touchpoints">
+<header class="topbar">
+  <button class="menu-btn" type="button" data-nav-toggle aria-expanded="false">Меню</button>
+  <a class="brand" href="../index.html"><strong>20838 · к экзамену</strong><span>Data &amp; Analytics for Strategic Marketing Decisions</span></a>
+  <div class="top-actions">
+    <a class="ghost" href="../topics/mock-exam.html">Mock exam</a>
+  </div>
+</header>
+<div class="layout">
+  <nav class="sidenav" aria-label="Темы"><h2>Навигация</h2>
+<a href="../index.html">План на 8 недель<small>С чего начать</small></a>
+<a href="../index.html#inventory">Все материалы<small>Лекции, лабы, кейсы</small></a>
+<a href="formula-sheet.html">Шпаргалка формул<small>Выучить до автоматизма</small></a>
+<a href="mock-exam.html">Пробный экзамен<small>Сначала сами, потом решение</small></a>
+<h2>Неделя 1. Язык данных</h2>
+<a href="model-and-data.html">Модель и строка клиента</a>
+<a href="variable-types.html">Типы переменных</a>
+<a href="descriptive-stats.html">Среднее, медиана, мода, SD</a>
+<a href="shape-missing.html">Форма, ящики и пропуски</a>
+<a href="inference-se-ci.html">Выборка, SE и интервал</a>
+<a href="hypothesis-testing.html">Проверка гипотезы</a>
+<a href="python-bank-walkthrough.html">Тетрадь bank_basics</a>
+<h2>Неделя 2. Python без страха</h2>
+<a href="python-objects.html">Имена, списки, множества</a>
+<a href="python-strings.html">Строки и срезы</a>
+<a href="python-sets-dicts.html">Множества и словари</a>
+<a href="python-logic.html">Условия, циклы, функции</a>
+<a href="python-olympics.html">Python Olympics</a>
+<h2>Неделя 3. Эксперимент</h2>
+<a href="acquisition.html">Привлечение клиента</a>
+<a href="privacy.html">Privacy на слайдах</a>
+<a href="causation.html">Причинность и field test</a>
+<a href="experiment-design.html">Словарь эксперимента</a>
+<h2>Неделя 4. Кейс Artea</h2>
+<a href="artea-setup.html">Кейс Artea</a>
+<a href="artea-balance.html">Рандомизация и средние</a>
+<a href="artea-ols.html">OLS по купону</a>
+<a href="artea-heterogeneity.html">Кому слать купон</a>
+<a href="artea-notebook.html">Тетрадь Artea</a>
+<h2>Неделя 5. Ценность и отток</h2>
+<a href="clv.html">CLV и срок жизни</a>
+<a href="churn-management.html">Управление оттоком</a>
+<a href="model-choice.html">Какая модель под какой Y</a>
+<a href="calibration-lift.html">Calibration, validation, lift</a>
+<a href="predictors.html">Какие X брать</a>
+<h2>Неделя 6. Logit и шансы</h2>
+<a href="logit-odds.html">Шансы и odds ratio</a>
+<a href="advertising-lab.html">Лаба Advertising</a>
+<a href="reading-output.html">Чтение таблиц OLS и logit</a>
+<a href="interactions.html">Взаимодействия</a>
+<h2>Неделя 7. Кейсы и matching</h2>
+<a href="pilgrim.html">Кейс Pilgrim</a>
+<a href="books-r-us.html">Кейс Books R Us</a>
+<a href="association-experiment.html">Связь или причина</a>
+<a href="matching-idea.html">Идея matching</a>
+<a href="sample-box.html">Sample Box и деньги</a>
+<h2>Неделя 8. Пробный экзамен</h2>
+<a href="exam-format.html">Формат экзамена</a>
+<a href="touchpoints.html">Touchpoints</a>
+<a href="readings-gaps.html">Чего нет в папке</a>
+<a href="formula-sheet.html">Шпаргалка</a>
+<a href="mock-exam.html">Пробный экзамен</a></nav>
+  <main><div class="wrap">
+    <p class="kicker">Неделя 8 · вопрос из mock про Lemon & Verhoef</p>
+    <h1>Четыре типа точек касания</h1>
+    <p class="lead">В слайдах путь клиента режут на «до покупки, покупка, после». Четыре владельца точки касания подробно живут в статье. В папке есть только экзаменационный вопрос и отсылка к статье.</p>
+    
+<p>Closing class ставит mapping the customer journey первым итогом курса: поведение и touchpoints, точки, где человек встречается с брендом. Кейсы раскладывают действия по времени: acquisition до покупки, development и retention после. Этого достаточно, чтобы не путать купон Artea с письмом удержания Pilgrim.</p>
+<p>Дальше mock спрашивает другое деление, не по времени, а по тому, кто владеет точкой. Вопрос дословный: какие touchpoints — это взаимодействия, которые спроектированы и управляются фирмой и находятся под её контролем. Варианты:</p>
+<ul>
+<li>A. Partner-owned</li>
+<li>B. Customer-owned</li>
+<li>C. Brand-owned</li>
+<li>D. Social / external / independent</li>
+</ul>
+<p>Файл solution не обводит букву. Он пишет: ответ опирается на Lemon and Verhoef, «Understanding Customer Experience Throughout the Customer Journey». По определению, которое уже стоит в самом вопросе, подходит C, brand-owned: точка принадлежит бренду и им управляется. Партнёрская точка управляется партнёром, клиентская — самим человеком, социальная — внешней средой, не фирмой.</p>
+<div class="callout remember"><strong>Граница</strong>Полной карты статьи в загруженных PDF нет. Не учите по этому сайту стадии опыта, формулы статьи и рисунки, которых вы не видели. Если статья в силлабусе обязательна, её нужно открыть отдельно. Здесь держите только развилку, которую mock уже показал, и временную ось со слайдов.</div>
+<h2>Как не перепутать с каналом Artea</h2>
+<p>channel_Instagram в Artea — откуда человек впервые пришёл. Это канал привлечения, измеримый столбец. Touchpoint из вопроса — более широкое слово: любое касание, включая то, которым фирма не владеет. На экзамене, если просят тип точки, отвечайте про владельца. Если просят переменную кейса, отвечайте именем столбца.</p>
+<h2>Практикум</h2>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="tp1" data-answer="c" data-why="Определение уже в тексте вопроса mock. Solution отсылает к Lemon &amp; Verhoef и не противоречит варианту C.">
+  <p class="prompt">Какие точки фирма сама проектирует и держит под контролем?</p>
+  <label class="opt"><input type="radio" name="tp1" value="a"> Partner-owned</label><label class="opt"><input type="radio" name="tp1" value="b"> Customer-owned</label><label class="opt"><input type="radio" name="tp1" value="c"> Brand-owned</label><label class="opt"><input type="radio" name="tp1" value="d"> Social / external / independent</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="tp2" data-answer="a" data-why="Он спроектирован фирмой. Отзыв клиента на независимом форуме был бы ближе к social/external.">
+  <p class="prompt">Сайт, который ведёт сама фирма, ближе к какому типу?</p>
+  <label class="opt"><input type="radio" name="tp2" value="a"> Brand-owned</label><label class="opt"><input type="radio" name="tp2" value="b"> К точке, которой фирма не управляет</label><label class="opt"><input type="radio" name="tp2" value="c"> К пропуску в данных</label><label class="opt"><input type="radio" name="tp2" value="d"> К standard error</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="tp3" data-answer="b" data-why="Честная дыра. Временную ось journey учите по слайдам acquisition, development и cases.">
+  <p class="prompt">Что в файлах курса есть по этой статье?</p>
+  <label class="opt"><input type="radio" name="tp3" value="a"> Полный текст и все таблицы статьи</label><label class="opt"><input type="radio" name="tp3" value="b"> Библиографическая ссылка, место в списке чтения и один MCQ. Текста статьи нет</label><label class="opt"><input type="radio" name="tp3" value="c"> Только датасет банка</label><label class="opt"><input type="radio" name="tp3" value="d"> Готовая формула CLV внутри статьи, уже посчитанная</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="tp4" data-answer="a" data-why="Тип точки может всплыть отдельным MCQ. Кейс Artea спрашивают числами и причинностью, не классификацией Lemon &amp; Verhoef.">
+  <p class="prompt">Купон Artea на сайте фирмы — это в первую очередь вопрос…</p>
+  <label class="opt"><input type="radio" name="tp4" value="a"> эксперимента: случайный treatment и исход покупки</label><label class="opt"><input type="radio" name="tp4" value="b"> только названия touchpoint без данных</label><label class="opt"><input type="radio" name="tp4" value="c"> peer review</label><label class="opt"><input type="radio" name="tp4" value="d"> медианного баланса</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+<p class="pills"><a href="exam-format.html">← Формат экзамена</a><a href="readings-gaps.html">Чего нет в папке →</a></p>
+    <footer class="note">Числа и формулировки взяты из загруженных слайдов, тетрадей и mock exam курса 20838 (2026). Если в файле чего-то нет, страница так и говорит.</footer>
+  </div></main>
+</div>
+<script src="../js/nav.js"></script>
+<script src="../js/quiz.js"></script>
+</body>
+</html>

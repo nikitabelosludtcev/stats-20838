@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Совместимо ли утверждение менеджера с данными · 20838</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-page="hypothesis-testing">
+<header class="topbar">
+  <button class="menu-btn" type="button" data-nav-toggle aria-expanded="false">Меню</button>
+  <a class="brand" href="../index.html"><strong>20838 · к экзамену</strong><span>Data &amp; Analytics for Strategic Marketing Decisions</span></a>
+  <div class="top-actions">
+    <a class="ghost" href="../topics/mock-exam.html">Mock exam</a>
+  </div>
+</header>
+<div class="layout">
+  <nav class="sidenav" aria-label="Темы"><h2>Навигация</h2>
+<a href="../index.html">План на 8 недель<small>С чего начать</small></a>
+<a href="../index.html#inventory">Все материалы<small>Лекции, лабы, кейсы</small></a>
+<a href="formula-sheet.html">Шпаргалка формул<small>Выучить до автоматизма</small></a>
+<a href="mock-exam.html">Пробный экзамен<small>Сначала сами, потом решение</small></a>
+<h2>Неделя 1. Язык данных</h2>
+<a href="model-and-data.html">Модель и строка клиента</a>
+<a href="variable-types.html">Типы переменных</a>
+<a href="descriptive-stats.html">Среднее, медиана, мода, SD</a>
+<a href="shape-missing.html">Форма, ящики и пропуски</a>
+<a href="inference-se-ci.html">Выборка, SE и интервал</a>
+<a href="hypothesis-testing.html">Проверка гипотезы</a>
+<a href="python-bank-walkthrough.html">Тетрадь bank_basics</a>
+<h2>Неделя 2. Python без страха</h2>
+<a href="python-objects.html">Имена, списки, множества</a>
+<a href="python-strings.html">Строки и срезы</a>
+<a href="python-sets-dicts.html">Множества и словари</a>
+<a href="python-logic.html">Условия, циклы, функции</a>
+<a href="python-olympics.html">Python Olympics</a>
+<h2>Неделя 3. Эксперимент</h2>
+<a href="acquisition.html">Привлечение клиента</a>
+<a href="privacy.html">Privacy на слайдах</a>
+<a href="causation.html">Причинность и field test</a>
+<a href="experiment-design.html">Словарь эксперимента</a>
+<h2>Неделя 4. Кейс Artea</h2>
+<a href="artea-setup.html">Кейс Artea</a>
+<a href="artea-balance.html">Рандомизация и средние</a>
+<a href="artea-ols.html">OLS по купону</a>
+<a href="artea-heterogeneity.html">Кому слать купон</a>
+<a href="artea-notebook.html">Тетрадь Artea</a>
+<h2>Неделя 5. Ценность и отток</h2>
+<a href="clv.html">CLV и срок жизни</a>
+<a href="churn-management.html">Управление оттоком</a>
+<a href="model-choice.html">Какая модель под какой Y</a>
+<a href="calibration-lift.html">Calibration, validation, lift</a>
+<a href="predictors.html">Какие X брать</a>
+<h2>Неделя 6. Logit и шансы</h2>
+<a href="logit-odds.html">Шансы и odds ratio</a>
+<a href="advertising-lab.html">Лаба Advertising</a>
+<a href="reading-output.html">Чтение таблиц OLS и logit</a>
+<a href="interactions.html">Взаимодействия</a>
+<h2>Неделя 7. Кейсы и matching</h2>
+<a href="pilgrim.html">Кейс Pilgrim</a>
+<a href="books-r-us.html">Кейс Books R Us</a>
+<a href="association-experiment.html">Связь или причина</a>
+<a href="matching-idea.html">Идея matching</a>
+<a href="sample-box.html">Sample Box и деньги</a>
+<h2>Неделя 8. Пробный экзамен</h2>
+<a href="exam-format.html">Формат экзамена</a>
+<a href="touchpoints.html">Touchpoints</a>
+<a href="readings-gaps.html">Чего нет в папке</a>
+<a href="formula-sheet.html">Шпаргалка</a>
+<a href="mock-exam.html">Пробный экзамен</a></nav>
+  <main><div class="wrap">
+    <p class="kicker">Неделя 1 · hypothesis testing</p>
+    <h1>Совместимо ли утверждение менеджера с данными</h1>
+    <p class="lead">Гипотеза — это точное заявление о совокупности. Данные либо мирятся с ним, либо нет. Они не «доказывают менеджера».</p>
+    
+<p>Менеджер говорит: «нашим клиентам в среднем 41 год». В файле 41,17. Разница есть. Вопрос слайда: она больше обычного шума или нет?</p>
+<div class="callout formula"><strong>Три шага со слайда</strong><br>1. Записать H₀, точное заявление о параметре. Здесь H₀: μ = 41.<br>2. Измерить, как далеко x̄ от этого заявления в единицах шума.<br>3. Решить: совместимо → не отвергаем H₀. Слишком странно → отвергаем H₀.<br>Конкурент для двусторонней проверки: H₁: μ ≠ μ₀.</div>
+<h2>Разбор заявления «41 год»</h2>
+<ol class="steps">
+<li>Наблюдаемая разница: 41,17 − 41 = 0,17 года.</li>
+<li>Обычный шум среднего: SE = 0,157.</li>
+<li>Стандартизованная разница t = 0,17 / 0,157 = 1,08.</li>
+<li>Для двусторонней проверки при α = 0,05 ориентир большой выборки: примерно ±1,96 SE. 1,08 внутри коридора.</li>
+<li>Решение тетради и слайда: do not reject H₀. 41 год совместим с данными.</li>
+<li>Тот же вывод через интервал: 41 лежит между 40,86 и 41,48.</li>
+</ol>
+<div class="callout remember"><strong>Фраза, которую любят снимать баллы</strong>«Do not reject H₀ does not mean we proved the claim true». Не отвергли «41» — не доказали, что среднее ровно 41. Доказали только, что 41 не выглядит дико рядом с этой выборкой.</div>
+<h2>Те же данные, другое заявление</h2>
+<p>«Нашим клиентам в среднем 44». H₀: μ = 44.</p>
+<ol class="steps">
+<li>Интервал тот же: 40,86 … 41,48. Число 44 снаружи.</li>
+<li>t = (41,17 − 44) / 0,157 = −2,83 / 0,157 ≈ −18. Это далеко за −1,96.</li>
+<li>Решение слайда: reject H₀. Заявление несовместимо с данными.</li>
+</ol>
+<p>Доказательная сила изменилась не потому, что сменили файл, а потому что сменили заявление. Это главный рисунок слайда «same data, different claim».</p>
+<h2>Вторая пара: баланс €1&nbsp;000</h2>
+<p>Слайд ставит вопрос, не считая его до конца: правдоподобен ли средний баланс €1&nbsp;000, если в выборке €1&nbsp;423? Схема та же. Посчитаем её как тренировку, числа SD баланса есть в тетради: SD = 3&nbsp;009,64, n = 4&nbsp;521.</p>
+<ol class="steps">
+<li>SE = 3009,64 / √4521 ≈ 3009,64 / 67,24 ≈ 44,76 евро.</li>
+<li>Разница 1422,66 − 1000 = 422,66.</li>
+<li>t ≈ 422,66 / 44,76 ≈ 9,4. Это гораздо дальше 1,96.</li>
+<li>H₀: μ = 1000 отвергаем. Тысяча евро как среднее всех клиентов с этими данными не совместима. Типичный клиент при этом всё равно ближе к медиане €444: помните, что среднее и медиана отвечают на разные вопросы.</li>
+</ol>
+<div class="callout exam"><strong>Как это всплывёт позже</strong>p-value в OLS и logit — родственник этого t. Маленький p-value значит: такое или более крайнее расхождение с «эффекта нет» плохо стыкуется со случайным шумом. На экзамене порог, который используют в решениях, обычно 0,05, а в mock ещё комментируют 0,10.</div>
+<h2>Практикум</h2>
+
+<section class="quiz" data-quiz data-kind="blank" data-qid="h1" data-why="0,17 / 0,157 = 1,082. Слайд пишет 1.08. До 1,96 далеко, H₀ не отвергают.">
+  <p class="prompt">t для заявления μ = 41. Разница 0,17, SE 0,157. Округлите t до двух знаков.</p>
+  <p><label>t<br><input type="text" data-accept="1.08" data-label="t" placeholder="1,08"></label></p>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="h2" data-answer="b" data-why="Слайд: вне интервала → reject H₀ при двустороннем тесте α = 0,05.">
+  <p class="prompt">H₀: μ = 44 при том же интервале 40,86–41,48. Решение?</p>
+  <label class="opt"><input type="radio" name="h2" value="a"> Не отвергать, потому что выборка та же</label><label class="opt"><input type="radio" name="h2" value="b"> Отвергнуть: 44 вне 95% интервала</label><label class="opt"><input type="radio" name="h2" value="c"> Доказать, что истинное среднее равно 41,17</label><label class="opt"><input type="radio" name="h2" value="d"> Посчитать mode</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="h3" data-answer="b" data-why="Прямая оговорка слайда 49.">
+  <p class="prompt">«Не отвергли H₀: μ = 41». Что это значит?</p>
+  <label class="opt"><input type="radio" name="h3" value="a"> Мы доказали, что среднее ровно 41</label><label class="opt"><input type="radio" name="h3" value="b"> 41 совместимо с данными. Это не доказательство точного равенства</label><label class="opt"><input type="radio" name="h3" value="c"> Интервал построен неправильно</label><label class="opt"><input type="radio" name="h3" value="d"> Нужно всегда отвергать H₀</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="blank" data-qid="h4" data-why="Знакомое правило большой выборки: около ±1,96 standard errors. t = 1,08 его не переходит, t около −18 переходит.">
+  <p class="prompt">Порог |t| для двусторонней проверки при α = 0,05 на большой выборке. Впишите число со слайда.</p>
+  <p><label>Порог<br><input type="text" data-accept="1.96" data-label="Порог" placeholder="1,96"></label></p>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+<p class="pills"><a href="inference-se-ci.html">← Выборка, SE и интервал</a><a href="python-bank-walkthrough.html">Тетрадь bank_basics →</a></p>
+    <footer class="note">Числа и формулировки взяты из загруженных слайдов, тетрадей и mock exam курса 20838 (2026). Если в файле чего-то нет, страница так и говорит.</footer>
+  </div></main>
+</div>
+<script src="../js/nav.js"></script>
+<script src="../js/quiz.js"></script>
+</body>
+</html>

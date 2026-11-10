@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Customer acquisition: первое касание и первые деньги · 20838</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-page="acquisition">
+<header class="topbar">
+  <button class="menu-btn" type="button" data-nav-toggle aria-expanded="false">Меню</button>
+  <a class="brand" href="../index.html"><strong>20838 · к экзамену</strong><span>Data &amp; Analytics for Strategic Marketing Decisions</span></a>
+  <div class="top-actions">
+    <a class="ghost" href="../topics/mock-exam.html">Mock exam</a>
+  </div>
+</header>
+<div class="layout">
+  <nav class="sidenav" aria-label="Темы"><h2>Навигация</h2>
+<a href="../index.html">План на 8 недель<small>С чего начать</small></a>
+<a href="../index.html#inventory">Все материалы<small>Лекции, лабы, кейсы</small></a>
+<a href="formula-sheet.html">Шпаргалка формул<small>Выучить до автоматизма</small></a>
+<a href="mock-exam.html">Пробный экзамен<small>Сначала сами, потом решение</small></a>
+<h2>Неделя 1. Язык данных</h2>
+<a href="model-and-data.html">Модель и строка клиента</a>
+<a href="variable-types.html">Типы переменных</a>
+<a href="descriptive-stats.html">Среднее, медиана, мода, SD</a>
+<a href="shape-missing.html">Форма, ящики и пропуски</a>
+<a href="inference-se-ci.html">Выборка, SE и интервал</a>
+<a href="hypothesis-testing.html">Проверка гипотезы</a>
+<a href="python-bank-walkthrough.html">Тетрадь bank_basics</a>
+<h2>Неделя 2. Python без страха</h2>
+<a href="python-objects.html">Имена, списки, множества</a>
+<a href="python-strings.html">Строки и срезы</a>
+<a href="python-sets-dicts.html">Множества и словари</a>
+<a href="python-logic.html">Условия, циклы, функции</a>
+<a href="python-olympics.html">Python Olympics</a>
+<h2>Неделя 3. Эксперимент</h2>
+<a href="acquisition.html">Привлечение клиента</a>
+<a href="privacy.html">Privacy на слайдах</a>
+<a href="causation.html">Причинность и field test</a>
+<a href="experiment-design.html">Словарь эксперимента</a>
+<h2>Неделя 4. Кейс Artea</h2>
+<a href="artea-setup.html">Кейс Artea</a>
+<a href="artea-balance.html">Рандомизация и средние</a>
+<a href="artea-ols.html">OLS по купону</a>
+<a href="artea-heterogeneity.html">Кому слать купон</a>
+<a href="artea-notebook.html">Тетрадь Artea</a>
+<h2>Неделя 5. Ценность и отток</h2>
+<a href="clv.html">CLV и срок жизни</a>
+<a href="churn-management.html">Управление оттоком</a>
+<a href="model-choice.html">Какая модель под какой Y</a>
+<a href="calibration-lift.html">Calibration, validation, lift</a>
+<a href="predictors.html">Какие X брать</a>
+<h2>Неделя 6. Logit и шансы</h2>
+<a href="logit-odds.html">Шансы и odds ratio</a>
+<a href="advertising-lab.html">Лаба Advertising</a>
+<a href="reading-output.html">Чтение таблиц OLS и logit</a>
+<a href="interactions.html">Взаимодействия</a>
+<h2>Неделя 7. Кейсы и matching</h2>
+<a href="pilgrim.html">Кейс Pilgrim</a>
+<a href="books-r-us.html">Кейс Books R Us</a>
+<a href="association-experiment.html">Связь или причина</a>
+<a href="matching-idea.html">Идея matching</a>
+<a href="sample-box.html">Sample Box и деньги</a>
+<h2>Неделя 8. Пробный экзамен</h2>
+<a href="exam-format.html">Формат экзамена</a>
+<a href="touchpoints.html">Touchpoints</a>
+<a href="readings-gaps.html">Чего нет в папке</a>
+<a href="formula-sheet.html">Шпаргалка</a>
+<a href="mock-exam.html">Пробный экзамен</a></nav>
+  <main><div class="wrap">
+    <p class="kicker">Неделя 3 · Customer Acquisition</p>
+    <h1>Customer acquisition: первое касание и первые деньги</h1>
+    <p class="lead">Acquisition — это не «любая реклама». В курсе это момент, когда человек впервые покупает или подписывается.</p>
+    
+<p>Определение со слайда, со ссылкой на Gupta and Zeithaml (2006) и Schweidel et al. (2008): <b>первый раз, когда новый клиент покупает у фирмы или подписывается на услугу</b>. Рядом стоит и более раннее касание: первый контакт фирмы с человеком, например регистрация на сайте или согласие на каталог. Artea как раз про тех, кто уже зарегистрирован, но ещё не купил.</p>
+<p>Слайд предупреждает против простой идеи «какая кампания приносит больше всего продаж, ту и масштабируем». Продажи без стоимости привлечения и без качества клиента легко ведут в минус. Рядом появляются две аббревиатуры:</p>
+<ul>
+<li><b>CLV</b>, customer lifetime value: сколько маржи клиент принесёт за всё время с фирмой. Формулу разберём на неделе 5.</li>
+<li><b>CAC</b>, customer acquisition cost: сколько стоило его привести.</li>
+</ul>
+<p>Данные полезны, если помогают найти сочетание высокого CLV и низкого CAC. Что можно измерять ещё до покупки: сам факт первой покупки, поведение до неё (поиск, минуты на сайте), маркетинговое касание на уровне человека.</p>
+<h2>Поток и KPI</h2>
+<p>Слайд рисует цепочку: заметить намерение → связаться → доставить → измерить и улучшить. KPI разложены по цели, их не смешивают.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Цель</th><th>Примеры со слайда</th><th>Простыми словами</th></tr></thead>
+<tbody>
+<tr><td>Prospecting</td><td>новые клиенты, qualified leads, reach, CTR, CPC</td><td>Добрались ли до людей и сколько стоил клик</td></tr>
+<tr><td>Conversion</td><td>CPA/CPO, стоимость визита, CVR, ROAS, выручка и маржа первого заказа</td><td>Сколько стоило действие и окупилось ли</td></tr>
+<tr><td>Store impact</td><td>доля записей, show-rate, прирост визитов</td><td>Дошли ли до магазина</td></tr>
+<tr><td>Quality</td><td>возвраты, отмены, валидность лида</td><td>Не фальшивая ли «покупка»</td></tr>
+<tr><td>Experience</td><td>NPS, first-contact resolution</td><td>Каким был первый опыт</td></tr>
+</tbody></table></div>
+<p><b>CTR</b> — доля показов, которая стала кликом. <b>CPC</b> — цена клика. <b>CVR</b> — доля кликов или визитов, которая стала покупкой. <b>ROAS</b> — выручка, делённая на рекламные расходы. <b>CPA</b> — цена целевого действия. Курсу важно не определение из интернета, а привычка не хвалить кампанию по одному CTR, если CPA огромный, а клиенты возвращают товар.</p>
+<p>Performance marketing на слайде — это измеримые действия (клик, покупка, запись) и постоянная перенастройка креатива и таргетинга. Звучит легко. Следующий слайд опускает на землю: данные обычно рваные, и «похож на хорошего клиента» для тысяч людей руками не разметить. Поэтому дальше идут статистические модели. Одна строка про защиту себя: не отдавайте данные так же бездумно, как не торгуетесь за ковёр с часами Rolex на руке. Это картинка лектора, не формула.</p>
+<h2>Путь клиента, customer journey</h2>
+<p>Closing class называет первым итогом курса умение видеть путь и touchpoints, точки касания. В кейсах путь режут на три куска: до покупки, покупка, после покупки. Acquisition живёт в начале. Development и retention, удержание, живут после. Четыре типа touchpoints из статьи Lemon &amp; Verhoef на слайдах подробно не расписаны, но mock спрашивает их по имени. Отдельная короткая страница стоит в неделе 8, там же честно сказано, что самой статьи в папке нет.</p>
+<div class="callout exam"><strong>Связка с Artea</strong>Вопрос кейса — acquisition: купон 20% тем, кто зарегистрирован на сайте одежды и часто так и не покупает. Прежде чем читать коэффициент, назовите Y (покупка или выручка после теста) и X (купон).</div>
+<h2>Практикум</h2>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="a1" data-answer="b" data-why="Формулировка Gupta / Zeithaml и Schweidel на слайде. Повторные покупки — это уже development.">
+  <p class="prompt">Как слайд определяет customer acquisition?</p>
+  <label class="opt"><input type="radio" name="a1" value="a"> Любой повторный визит постоянного клиента</label><label class="opt"><input type="radio" name="a1" value="b"> Первая покупка или подписка нового клиента</label><label class="opt"><input type="radio" name="a1" value="c"> Только показ рекламы, даже если покупки не было</label><label class="opt"><input type="radio" name="a1" value="d"> Отток в конце года</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="a2" data-answer="a" data-why="Слайд: данные помогают найти высокий CLV и низкий CAC. Один CTR без стоимости и качества вводит в заблуждение.">
+  <p class="prompt">Какую пару курс предлагает держать вместе?</p>
+  <label class="opt"><input type="radio" name="a2" value="a"> Высокий CLV и низкий CAC</label><label class="opt"><input type="radio" name="a2" value="b"> Максимум CTR любой ценой</label><label class="opt"><input type="radio" name="a2" value="c"> Только NPS</label><label class="opt"><input type="radio" name="a2" value="d"> Средний возраст и mode</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="blank" data-qid="a3" data-why="Они стоят в блоке Prospecting: reach, CTR, CPC.">
+  <p class="prompt">Впишите английские сокращения со слайда: цена клика и доля показов, ставших кликом.</p>
+  <p><label>Цена клика<br><input type="text" data-accept="cpc" data-label="Цена клика" placeholder="CPC"></label></p><p><label>Доля кликов от показов<br><input type="text" data-accept="ctr" data-label="Доля кликов от показов" placeholder="CTR"></label></p>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="a4" data-answer="b" data-why="Слайд так и называется по смыслу: why is this a bad idea. Дальше вводят CLV и CAC.">
+  <p class="prompt">Почему «кампания с максимумом продаж» — слабая цель сама по себе?</p>
+  <label class="opt"><input type="radio" name="a4" value="a"> Продажи нельзя посчитать</label><label class="opt"><input type="radio" name="a4" value="b"> Без стоимости привлечения и качества легко масштабировать убыточных клиентов</label><label class="opt"><input type="radio" name="a4" value="c"> CAC всегда равен CLV</label><label class="opt"><input type="radio" name="a4" value="d"> Первая покупка не относится к acquisition</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+<p class="pills"><a href="python-olympics.html">← Python Olympics</a><a href="privacy.html">Privacy на слайдах →</a></p>
+    <footer class="note">Числа и формулировки взяты из загруженных слайдов, тетрадей и mock exam курса 20838 (2026). Если в файле чего-то нет, страница так и говорит.</footer>
+  </div></main>
+</div>
+<script src="../js/nav.js"></script>
+<script src="../js/quiz.js"></script>
+</body>
+</html>

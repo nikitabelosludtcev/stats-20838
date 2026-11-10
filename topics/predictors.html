@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Предикторы, переобучение и ложные связи · 20838</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-page="predictors">
+<header class="topbar">
+  <button class="menu-btn" type="button" data-nav-toggle aria-expanded="false">Меню</button>
+  <a class="brand" href="../index.html"><strong>20838 · к экзамену</strong><span>Data &amp; Analytics for Strategic Marketing Decisions</span></a>
+  <div class="top-actions">
+    <a class="ghost" href="../topics/mock-exam.html">Mock exam</a>
+  </div>
+</header>
+<div class="layout">
+  <nav class="sidenav" aria-label="Темы"><h2>Навигация</h2>
+<a href="../index.html">План на 8 недель<small>С чего начать</small></a>
+<a href="../index.html#inventory">Все материалы<small>Лекции, лабы, кейсы</small></a>
+<a href="formula-sheet.html">Шпаргалка формул<small>Выучить до автоматизма</small></a>
+<a href="mock-exam.html">Пробный экзамен<small>Сначала сами, потом решение</small></a>
+<h2>Неделя 1. Язык данных</h2>
+<a href="model-and-data.html">Модель и строка клиента</a>
+<a href="variable-types.html">Типы переменных</a>
+<a href="descriptive-stats.html">Среднее, медиана, мода, SD</a>
+<a href="shape-missing.html">Форма, ящики и пропуски</a>
+<a href="inference-se-ci.html">Выборка, SE и интервал</a>
+<a href="hypothesis-testing.html">Проверка гипотезы</a>
+<a href="python-bank-walkthrough.html">Тетрадь bank_basics</a>
+<h2>Неделя 2. Python без страха</h2>
+<a href="python-objects.html">Имена, списки, множества</a>
+<a href="python-strings.html">Строки и срезы</a>
+<a href="python-sets-dicts.html">Множества и словари</a>
+<a href="python-logic.html">Условия, циклы, функции</a>
+<a href="python-olympics.html">Python Olympics</a>
+<h2>Неделя 3. Эксперимент</h2>
+<a href="acquisition.html">Привлечение клиента</a>
+<a href="privacy.html">Privacy на слайдах</a>
+<a href="causation.html">Причинность и field test</a>
+<a href="experiment-design.html">Словарь эксперимента</a>
+<h2>Неделя 4. Кейс Artea</h2>
+<a href="artea-setup.html">Кейс Artea</a>
+<a href="artea-balance.html">Рандомизация и средние</a>
+<a href="artea-ols.html">OLS по купону</a>
+<a href="artea-heterogeneity.html">Кому слать купон</a>
+<a href="artea-notebook.html">Тетрадь Artea</a>
+<h2>Неделя 5. Ценность и отток</h2>
+<a href="clv.html">CLV и срок жизни</a>
+<a href="churn-management.html">Управление оттоком</a>
+<a href="model-choice.html">Какая модель под какой Y</a>
+<a href="calibration-lift.html">Calibration, validation, lift</a>
+<a href="predictors.html">Какие X брать</a>
+<h2>Неделя 6. Logit и шансы</h2>
+<a href="logit-odds.html">Шансы и odds ratio</a>
+<a href="advertising-lab.html">Лаба Advertising</a>
+<a href="reading-output.html">Чтение таблиц OLS и logit</a>
+<a href="interactions.html">Взаимодействия</a>
+<h2>Неделя 7. Кейсы и matching</h2>
+<a href="pilgrim.html">Кейс Pilgrim</a>
+<a href="books-r-us.html">Кейс Books R Us</a>
+<a href="association-experiment.html">Связь или причина</a>
+<a href="matching-idea.html">Идея matching</a>
+<a href="sample-box.html">Sample Box и деньги</a>
+<h2>Неделя 8. Пробный экзамен</h2>
+<a href="exam-format.html">Формат экзамена</a>
+<a href="touchpoints.html">Touchpoints</a>
+<a href="readings-gaps.html">Чего нет в папке</a>
+<a href="formula-sheet.html">Шпаргалка</a>
+<a href="mock-exam.html">Пробный экзамен</a></nav>
+  <main><div class="wrap">
+    <p class="kicker">Неделя 5 · выбор X</p>
+    <h1>Предикторы, переобучение и ложные связи</h1>
+    <p class="lead">Хороший X — это измеримая гипотеза о поведении, а не любой столбец, который случайно коррелирует.</p>
+    
+<p>Слайд предлагает превратить гипотезу в переменную. Для оттока из зала это могут быть: как человек ходит, кто он, как с ним говорили, отвечал ли он. Буквы X₁ … Xₚ — просто список таких измерений.</p>
+<p>Как выбирают набор. Слайд ссылается на Neslin et al. (2006): и академики, и менеджеры часто начинают с EDA, exploratory data analysis, то есть со смотрения на данные. Дальше возможен перебор подмножеств. Берут набор с самым высоким R² или с самым низким AIC либо BIC.</p>
+<div class="callout formula"><strong>Три индекса со слайда, словами</strong><br>AIC = −2·LL + 2k. Штраф за число параметров k растёт медленно.<br>BIC = −2·LL + ln(N)·k. Штраф растёт вместе с размером выборки, лишние X он наказывает сильнее.<br>Pseudo R² = 1 − LL_full / LL₀. Это не доля дисперсии. Для обычной OLS R² — доля объяснённой дисперсии. Для logit слово pseudo стоит не зря.</div>
+<p>LL — log-likelihood, число «насколько данные правдоподобны при этих коэффициентах». LL₀ — то же для модели, где есть только intercept, без X. Меньше AIC и BIC — лучше, при сравнении моделей на одних и тех же данных. Выше R² — теснее подгонка, но не автоматически лучше прогноз.</p>
+<h2>Ложная корреляция и два промаха</h2>
+<p>Слайд даёт ссылку на графики Tyler Vigen: ряды, которые движутся одинаково по чистому совпадению. Фраза лектора: предикторы могут коррелировать случайно, сначала проверьте, что у связи есть смысл, и не бросайте все столбцы в стену.</p>
+<p>Две болезни:</p>
+<ul>
+<li><b>Overfitting</b>, переобучение. Слишком много X. Модель запоминает шум старой выборки и проваливает новую.</li>
+<li><b>Underfitting</b>. Слишком мало X. Модель не видит устойчивый сигнал, который в данных есть.</li>
+</ul>
+<p>Лекарство от переобучения, уже известное: validation на людях, которых не использовали при выборе X. Если X выбирали, перебирая сотни столбцов на всей базе, «проверочная» выборка уже не чистая. Это тонкость, слайд её не формализует. Достаточно сказать: и выбор X, и коэффициенты проверяют на out-sample.</p>
+<h2>Решённый короткий ответ</h2>
+<p>Аналитик добавил 40 признаков, in-sample pseudo R² вырос с 0,06 до 0,40, out-sample lift верхнего дециля упал с 2,5 до 1,1. Что случилось?</p>
+<ol class="steps">
+<li>Рост pseudo R² на обучающих людях сам по себе не победа. Индекс подгонки растёт, когда модели дают больше гибкости.</li>
+<li>Падение lift на новых людях — симптом overfitting.</li>
+<li>Действие: убрать признаки без управленческого смысла, сравнить AIC/BIC, оставить набор, который держит lift снаружи.</li>
+</ol>
+<p>На closing class у примера logit pseudo R² всего 0,056, и модель всё равно интерпретируют по значимым коэффициентам. Маленький pseudo R² не запрещает читать отдельный коэффициент. Он запрещает фразу «модель объяснила 5,6% поведения» как будто это OLS R².</p>
+<h2>Практикум</h2>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="x1" data-answer="b" data-why="Формула есть на слайде Customer Development. В лабе Advertising решение повторяет запрет словами.">
+  <p class="prompt">Pseudo R² для logit — это:</p>
+  <label class="opt"><input type="radio" name="x1" value="a"> доля дисперсии Y, как обычный R² в OLS</label><label class="opt"><input type="radio" name="x1" value="b"> индекс правдоподобия 1 − LL_full / LL₀, не процент объяснённой дисперсии</label><label class="opt"><input type="radio" name="x1" value="c"> p-value</label><label class="opt"><input type="radio" name="x1" value="d"> lift</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="x2" data-answer="a" data-why="AIC = −2LL + 2k. BIC = −2LL + ln(N)·k. Слайд пишет 2 ln(N) k в одной из вёрсток, смысл штрафа тот же: множитель растёт с N.">
+  <p class="prompt">BIC штрафует лишние параметры сильнее AIC, когда выборка большая, потому что…</p>
+  <label class="opt"><input type="radio" name="x2" value="a"> в штрафе BIC стоит ln(N), и он растёт с N</label><label class="opt"><input type="radio" name="x2" value="b"> BIC не смотрит на k</label><label class="opt"><input type="radio" name="x2" value="c"> AIC делит на n</label><label class="opt"><input type="radio" name="x2" value="d"> это одно и то же</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="x3" data-answer="a" data-why="Подпись: predictors may correlate by chance. Make sure they make sense.">
+  <p class="prompt">Графики Tyler Vigen на слайде зачем?</p>
+  <label class="opt"><input type="radio" name="x3" value="a"> Показать, что корреляция бывает случайной, и X нужен смысл</label><label class="opt"><input type="radio" name="x3" value="b"> Дать формулу CLV</label><label class="opt"><input type="radio" name="x3" value="c"> Заменить lift chart</label><label class="opt"><input type="radio" name="x3" value="d"> Доказать, что чем больше X, тем лучше</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="x4" data-answer="b" data-why="Много X запомнили старый шум. На новых людях преимущества не осталось. Underfitting был бы слабым и там, и там.">
+  <p class="prompt">In-sample подгонка выросла, out-sample lift упал. Это похоже на:</p>
+  <label class="opt"><input type="radio" name="x4" value="a"> underfitting</label><label class="opt"><input type="radio" name="x4" value="b"> overfitting</label><label class="opt"><input type="radio" name="x4" value="c"> идеальную рандомизацию</label><label class="opt"><input type="radio" name="x4" value="d"> ошибку в mean</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+<p class="pills"><a href="calibration-lift.html">← Calibration, validation, lift</a><a href="logit-odds.html">Шансы и odds ratio →</a></p>
+    <footer class="note">Числа и формулировки взяты из загруженных слайдов, тетрадей и mock exam курса 20838 (2026). Если в файле чего-то нет, страница так и говорит.</footer>
+  </div></main>
+</div>
+<script src="../js/nav.js"></script>
+<script src="../js/quiz.js"></script>
+</body>
+</html>

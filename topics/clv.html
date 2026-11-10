@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Сколько стоит удержать клиента · 20838</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-page="clv">
+<header class="topbar">
+  <button class="menu-btn" type="button" data-nav-toggle aria-expanded="false">Меню</button>
+  <a class="brand" href="../index.html"><strong>20838 · к экзамену</strong><span>Data &amp; Analytics for Strategic Marketing Decisions</span></a>
+  <div class="top-actions">
+    <a class="ghost" href="../topics/mock-exam.html">Mock exam</a>
+  </div>
+</header>
+<div class="layout">
+  <nav class="sidenav" aria-label="Темы"><h2>Навигация</h2>
+<a href="../index.html">План на 8 недель<small>С чего начать</small></a>
+<a href="../index.html#inventory">Все материалы<small>Лекции, лабы, кейсы</small></a>
+<a href="formula-sheet.html">Шпаргалка формул<small>Выучить до автоматизма</small></a>
+<a href="mock-exam.html">Пробный экзамен<small>Сначала сами, потом решение</small></a>
+<h2>Неделя 1. Язык данных</h2>
+<a href="model-and-data.html">Модель и строка клиента</a>
+<a href="variable-types.html">Типы переменных</a>
+<a href="descriptive-stats.html">Среднее, медиана, мода, SD</a>
+<a href="shape-missing.html">Форма, ящики и пропуски</a>
+<a href="inference-se-ci.html">Выборка, SE и интервал</a>
+<a href="hypothesis-testing.html">Проверка гипотезы</a>
+<a href="python-bank-walkthrough.html">Тетрадь bank_basics</a>
+<h2>Неделя 2. Python без страха</h2>
+<a href="python-objects.html">Имена, списки, множества</a>
+<a href="python-strings.html">Строки и срезы</a>
+<a href="python-sets-dicts.html">Множества и словари</a>
+<a href="python-logic.html">Условия, циклы, функции</a>
+<a href="python-olympics.html">Python Olympics</a>
+<h2>Неделя 3. Эксперимент</h2>
+<a href="acquisition.html">Привлечение клиента</a>
+<a href="privacy.html">Privacy на слайдах</a>
+<a href="causation.html">Причинность и field test</a>
+<a href="experiment-design.html">Словарь эксперимента</a>
+<h2>Неделя 4. Кейс Artea</h2>
+<a href="artea-setup.html">Кейс Artea</a>
+<a href="artea-balance.html">Рандомизация и средние</a>
+<a href="artea-ols.html">OLS по купону</a>
+<a href="artea-heterogeneity.html">Кому слать купон</a>
+<a href="artea-notebook.html">Тетрадь Artea</a>
+<h2>Неделя 5. Ценность и отток</h2>
+<a href="clv.html">CLV и срок жизни</a>
+<a href="churn-management.html">Управление оттоком</a>
+<a href="model-choice.html">Какая модель под какой Y</a>
+<a href="calibration-lift.html">Calibration, validation, lift</a>
+<a href="predictors.html">Какие X брать</a>
+<h2>Неделя 6. Logit и шансы</h2>
+<a href="logit-odds.html">Шансы и odds ratio</a>
+<a href="advertising-lab.html">Лаба Advertising</a>
+<a href="reading-output.html">Чтение таблиц OLS и logit</a>
+<a href="interactions.html">Взаимодействия</a>
+<h2>Неделя 7. Кейсы и matching</h2>
+<a href="pilgrim.html">Кейс Pilgrim</a>
+<a href="books-r-us.html">Кейс Books R Us</a>
+<a href="association-experiment.html">Связь или причина</a>
+<a href="matching-idea.html">Идея matching</a>
+<a href="sample-box.html">Sample Box и деньги</a>
+<h2>Неделя 8. Пробный экзамен</h2>
+<a href="exam-format.html">Формат экзамена</a>
+<a href="touchpoints.html">Touchpoints</a>
+<a href="readings-gaps.html">Чего нет в папке</a>
+<a href="formula-sheet.html">Шпаргалка</a>
+<a href="mock-exam.html">Пробный экзамен</a></nav>
+  <main><div class="wrap">
+    <p class="kicker">Неделя 5 · Customer Development</p>
+    <h1>Сколько стоит удержать клиента</h1>
+    <p class="lead">CLV переводит «пусть останется» в деньги. Маленький сдвиг churn может стоить больше, чем кажется, потому что связь выпуклая.</p>
+    
+<p>После первой покупки фирма задаёт вопрос слайда: и что теперь? Привлечение стоило денег. Если человек остаётся, эти деньги отбиваются. В мобильной связи слайд приводит удержание 70–85% в год и потери отрасли до $10 млрд. Это иллюстрация масштаба, не формула для подстановки в кейс.</p>
+<p>Customer development — действия, которые создают ценность и клиенту, и фирме. Customer retention — чтобы он не ушёл. На слайде удовлетворённость связана с маржой: very satisfied приносят в примере $620 прибыли на клиента, very dissatisfied минус $80. Источник таблицы — Rust, Zeithaml and Lemon, адаптация. Считать эти $620 в Red Bull не нужно. Нужен вывод: удовлетворённые приносят больше, а привлекать нового в среднем дороже, чем удерживать текущего. Последнее слайд относит к исследованию TARP.</p>
+<h2>Формула, которую надо уметь подставить</h2>
+<p>В колоде Blattberg et al. (2008) и в кейсе Books R Us одна и та же идея. Если маржа за период m постоянна, retention rate равен r, churn rate c = 1 − r, ставка дисконта δ (на слайде её ещё пишут d):</p>
+<div class="callout formula">CLV = m × (1 + δ) / (δ + c) = m × (1 + δ) / (1 + δ − r)</div>
+<p>Почему в числителе (1+δ), а в знаменателе δ+c. Слайд выводит это из суммы бесконечной геометрической серии: деньги сегодня, потом через период с вероятностью остаться, и каждый будущий евро дешевле из-за дисконта. На экзамене чаще просят подставить числа, чем вывести ряд заново. Ряд полезно узнать в лицо: ожидаемый срок жизни, если churn постоянен,</p>
+<div class="callout formula">ожидаемая длина жизни = 1 / c</div>
+<p>Таблица слайда: churn 28% → 1/0,28 ≈ 3,6 года; 20% → 5,0 лет; 15% → 6,7 года. Это не CLV, это срок. Деньги получаются, когда срок соединяют с маржой и дисконтом.</p>
+<h2>Решённый пример со слайда</h2>
+<p>m = $500, δ = 0,14. Сравнить churn 20% и 15%.</p>
+<ol class="steps">
+<li>При c = 0,20: CLV = 500 × 1,14 / (0,14 + 0,20) = 570 / 0,34 = $1&nbsp;676.</li>
+<li>При c = 0,15: CLV = 570 / (0,14 + 0,15) = 570 / 0,29 = $1&nbsp;965.</li>
+<li>Разница на одного клиента: 1965 − 1676 = $289.</li>
+<li>На базе 5&nbsp;000&nbsp;000 клиентов слайд получает порядка $1,45 млрд дополнительной прибыли. 289 × 5&nbsp;000&nbsp;000 = 1,445 млрд. Арифметика сходится с подписью слайда.</li>
+</ol>
+<p>График называется convex: чем ниже churn, тем круче растёт CLV. Срезать churn с 20% до 15% дороже в деньгах, чем такая же разница в пять пунктов где-нибудь при очень высоком оттоке. Поэтому «минус пять пунктов» нельзя оценивать на глаз.</p>
+<p>Поднять CLV можно тремя ручками формулы: больше m (выше чек или ниже себестоимость), меньше c (дольше остаётся), аккуратнее тратить на привлечение. Диагностика слайда: смотреть CLV / AC. Если на клиента тратите больше, чем он приносит, что-то не так. В Books R Us из CLV ещё вычитают AC = €10, и дисконт там d = 0,12. На графике исторический CLV мультиканального клиента €97,19, одноканального €30,85. Сами m и r для этих двух столбиков в тексте слайда не подписаны, поэтому столбики цитируйте как результат кейса, а не пересчитывайте вслепую.</p>
+<div class="callout mistake"><strong>Частая ошибка</strong>Подставить retention вместо churn. Если остаются 80%, то c = 0,20, не 0,80. В знаменателе стоит c или (1+δ−r). Перепутать легко и сразу удваивает срок жизни.</div>
+<h2>Практикум</h2>
+
+<section class="quiz" data-quiz data-kind="blank" data-qid="cl1" data-why="500 × 1,14 / 0,34 = 1676.">
+  <p class="prompt">m = 500, δ = 0,14, c = 0,20. Впишите CLV целым числом, как на слайде.</p>
+  <p><label>CLV<br><input type="text" data-accept="1676|1676.47" data-label="CLV" placeholder="1676"></label></p>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="blank" data-qid="cl2" data-why="1965 − 1676 = 289. Срок жизни при этом 1/0,15 ≈ 6,7 года против 1/0,20 = 5 лет.">
+  <p class="prompt">Churn 15% вместо 20% при тех же m и δ. На сколько долларов CLV одного клиента выше?</p>
+  <p><label>Разница<br><input type="text" data-accept="289" data-label="Разница" placeholder="289"></label></p>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="cl3" data-answer="b" data-why="Слайд: expected lifetime = 1/c. В таблице 20% → 5,0.">
+  <p class="prompt">Ожидаемый срок при постоянном churn 20%:</p>
+  <label class="opt"><input type="radio" name="cl3" value="a"> 20 лет</label><label class="opt"><input type="radio" name="cl3" value="b"> 5 лет, потому что 1 / 0,20</label><label class="opt"><input type="radio" name="cl3" value="c"> 0,20 года</label><label class="opt"><input type="radio" name="cl3" value="d"> ровно CLV</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="cl4" data-answer="b" data-why="Формула с c в знаменателе. Маленький c делает знаменатель чувствительным.">
+  <p class="prompt">Почему слайд называет связь CLV и churn выпуклой?</p>
+  <label class="opt"><input type="radio" name="cl4" value="a"> Одинаковый шаг churn в пунктах даёт одинаковые деньги на любом уровне</label><label class="opt"><input type="radio" name="cl4" value="b"> Чем ниже churn, тем сильнее один и тот же шаг меняет CLV</label><label class="opt"><input type="radio" name="cl4" value="c"> CLV не зависит от churn</label><label class="opt"><input type="radio" name="cl4" value="d"> Дисконт всегда равен churn</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+<p class="pills"><a href="artea-notebook.html">← Тетрадь Artea</a><a href="churn-management.html">Управление оттоком →</a></p>
+    <footer class="note">Числа и формулировки взяты из загруженных слайдов, тетрадей и mock exam курса 20838 (2026). Если в файле чего-то нет, страница так и говорит.</footer>
+  </div></main>
+</div>
+<script src="../js/nav.js"></script>
+<script src="../js/quiz.js"></script>
+</body>
+</html>

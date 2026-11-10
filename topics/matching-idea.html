@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Когда тест уже нельзя провести · 20838</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-page="matching-idea">
+<header class="topbar">
+  <button class="menu-btn" type="button" data-nav-toggle aria-expanded="false">Меню</button>
+  <a class="brand" href="../index.html"><strong>20838 · к экзамену</strong><span>Data &amp; Analytics for Strategic Marketing Decisions</span></a>
+  <div class="top-actions">
+    <a class="ghost" href="../topics/mock-exam.html">Mock exam</a>
+  </div>
+</header>
+<div class="layout">
+  <nav class="sidenav" aria-label="Темы"><h2>Навигация</h2>
+<a href="../index.html">План на 8 недель<small>С чего начать</small></a>
+<a href="../index.html#inventory">Все материалы<small>Лекции, лабы, кейсы</small></a>
+<a href="formula-sheet.html">Шпаргалка формул<small>Выучить до автоматизма</small></a>
+<a href="mock-exam.html">Пробный экзамен<small>Сначала сами, потом решение</small></a>
+<h2>Неделя 1. Язык данных</h2>
+<a href="model-and-data.html">Модель и строка клиента</a>
+<a href="variable-types.html">Типы переменных</a>
+<a href="descriptive-stats.html">Среднее, медиана, мода, SD</a>
+<a href="shape-missing.html">Форма, ящики и пропуски</a>
+<a href="inference-se-ci.html">Выборка, SE и интервал</a>
+<a href="hypothesis-testing.html">Проверка гипотезы</a>
+<a href="python-bank-walkthrough.html">Тетрадь bank_basics</a>
+<h2>Неделя 2. Python без страха</h2>
+<a href="python-objects.html">Имена, списки, множества</a>
+<a href="python-strings.html">Строки и срезы</a>
+<a href="python-sets-dicts.html">Множества и словари</a>
+<a href="python-logic.html">Условия, циклы, функции</a>
+<a href="python-olympics.html">Python Olympics</a>
+<h2>Неделя 3. Эксперимент</h2>
+<a href="acquisition.html">Привлечение клиента</a>
+<a href="privacy.html">Privacy на слайдах</a>
+<a href="causation.html">Причинность и field test</a>
+<a href="experiment-design.html">Словарь эксперимента</a>
+<h2>Неделя 4. Кейс Artea</h2>
+<a href="artea-setup.html">Кейс Artea</a>
+<a href="artea-balance.html">Рандомизация и средние</a>
+<a href="artea-ols.html">OLS по купону</a>
+<a href="artea-heterogeneity.html">Кому слать купон</a>
+<a href="artea-notebook.html">Тетрадь Artea</a>
+<h2>Неделя 5. Ценность и отток</h2>
+<a href="clv.html">CLV и срок жизни</a>
+<a href="churn-management.html">Управление оттоком</a>
+<a href="model-choice.html">Какая модель под какой Y</a>
+<a href="calibration-lift.html">Calibration, validation, lift</a>
+<a href="predictors.html">Какие X брать</a>
+<h2>Неделя 6. Logit и шансы</h2>
+<a href="logit-odds.html">Шансы и odds ratio</a>
+<a href="advertising-lab.html">Лаба Advertising</a>
+<a href="reading-output.html">Чтение таблиц OLS и logit</a>
+<a href="interactions.html">Взаимодействия</a>
+<h2>Неделя 7. Кейсы и matching</h2>
+<a href="pilgrim.html">Кейс Pilgrim</a>
+<a href="books-r-us.html">Кейс Books R Us</a>
+<a href="association-experiment.html">Связь или причина</a>
+<a href="matching-idea.html">Идея matching</a>
+<a href="sample-box.html">Sample Box и деньги</a>
+<h2>Неделя 8. Пробный экзамен</h2>
+<a href="exam-format.html">Формат экзамена</a>
+<a href="touchpoints.html">Touchpoints</a>
+<a href="readings-gaps.html">Чего нет в папке</a>
+<a href="formula-sheet.html">Шпаргалка</a>
+<a href="mock-exam.html">Пробный экзамен</a></nav>
+  <main><div class="wrap">
+    <p class="kicker">Неделя 7 · matching</p>
+    <h1>Когда тест уже нельзя провести</h1>
+    <p class="lead">Если воздействие уже раздали не случайно, сравнивать получателей со «всеми остальными» опасно. Matching ищет среди остальных похожих.</p>
+    
+<p>Проблема слайда: маркетинговое действие часто достаётся не случайным людям. Получатели отличаются от остальных. Разница в продажах может быть из-за людей, а не из-за акции. Фраза лектора: нельзя сказать, treatment это был или состав группы.</p>
+<p>Идея: в общей базе бывают люди, похожие на получивших акцию, но акции не получившие. Их и ставят в пару. Это не настоящий эксперимент. Это попытка собрать правдоподобное сравнение из архива.</p>
+<h2>Чего не хватает</h2>
+<p>У каждого человека два потенциальных исхода: Y(1), если бы акцию дали, и Y(0), если бы нет. В данных виден только один. Второй называется counterfactual, контрфактуал, «как было бы иначе». Рандомизация делает группы взаимозаменяемыми. Matching пытается заменить её похожестью по наблюдаемым X.</p>
+<p>Слайд называет и другие способы, без инструкций: difference-in-differences (сравнить изменения во времени) и regression discontinuity (сравнить тех, кто оказался сразу по разные стороны порога). Их процедуры в колоде нет. На экзамене достаточно узнать имя и сказать, что разобранный инструмент этой лекции — matching, в частности propensity score.</p>
+<h2>Кого с кем ставить в пару</h2>
+<ul>
+<li><b>Exact match.</b> Те же самые значения выбранных признаков. На слайде упражнение «кто подходит клиенту A и клиенту B» по прошлым заказам. Когда признаков много, точного близнеца часто нет.</li>
+<li><b>Nearest neighbor.</b> Ближайший не получивший акцию, даже если не двойник.</li>
+<li><b>Propensity score.</b> Сжимает много признаков в одно число: вероятность получить воздействие при наблюдаемых X до акции. Похожие вероятности считают «похожими людьми».</li>
+</ul>
+<p>Откуда берётся эта вероятность. Слайд задаёт вопрос «вы уже должны знать»: исход бинарный, получил действие или нет, признаков много. Это logit (или probit). Здесь Y модели — не продажи, а сам факт treatment. Продажи сравнивают потом, уже внутри пар.</p>
+<div class="callout formula">propensity score = P(treatment = 1 | X до акции)</div>
+<h2>Когда выводу можно верить осторожно</h2>
+<p>Три условия со слайда.</p>
+<ol class="steps">
+<li>Наблюдаемые конфаундеры. Мы измерили важные причины, по которым и акцию давали, и продажи потом отличались. Всё ненаблюдаемое matching не лечит.</li>
+<li>Overlap, перекрытие. У получателей и остальных есть общие значения score. Если у кого-то вероятность 0,99, а у остальных максимум 0,2, пары нет.</li>
+<li>Баланс после склейки. Признаки, по которым группы различались, внутри пар должны сблизиться. На рисунке Sample Box смотрят absolute standardized mean difference и радуются, когда после matching все показанные признаки ниже 0,10.</li>
+</ol>
+<p>В X кладут только то, что было до акции: прошлые покупки, стаж, канал. Исход после акции в matching класть нельзя. Иначе вы подгоняете пары по тому, что как раз хотите объяснить.</p>
+<p>Эффект, который считают на получивших акцию, называют ATT, average treatment effect on the treated: средний эффект для тех, кто акцию реально получил. Это не обязательно эффект для случайного клиента из всей базы.</p>
+<div class="callout exam"><strong>Как отличить от Artea</strong>В Artea купон назначали случайно, matching не нужен, хватает разницы групп. Matching появляется, когда случайности не было: Sample Box и, в mock, программа Early Access, куда люди записались сами.</div>
+<h2>Практикум</h2>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="mt1" data-answer="a" data-why="Определение слайда. Считают logit-ом, потому что treatment 0/1.">
+  <p class="prompt">Propensity score — это:</p>
+  <label class="opt"><input type="radio" name="mt1" value="a"> вероятность получить treatment при наблюдаемых характеристиках до акции</label><label class="opt"><input type="radio" name="mt1" value="b"> прибыль после акции</label><label class="opt"><input type="radio" name="mt1" value="c"> p-value баланса</label><label class="opt"><input type="radio" name="mt1" value="d"> odds ratio цены</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="mt2" data-answer="a" data-why="Слайд делит before the action и after the action. После — это Y, не X для matching.">
+  <p class="prompt">Почему в score нельзя класть траты после акции?</p>
+  <label class="opt"><input type="radio" name="mt2" value="a"> Потому что это как раз исход, который хотим объяснить, а не причина отбора</label><label class="opt"><input type="radio" name="mt2" value="b"> Потому что траты всегда категориальные</label><label class="opt"><input type="radio" name="mt2" value="c"> Можно и нужно</label><label class="opt"><input type="radio" name="mt2" value="d"> Потому что logit не принимает евро</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="mt3" data-answer="b" data-why="Один слайд Methods for causal comparison. Вся мастерская дальше — matching.">
+  <p class="prompt">Difference-in-differences и regression discontinuity в этой колоде:</p>
+  <label class="opt"><input type="radio" name="mt3" value="a"> разобраны с формулами и датасетом так же подробно, как Sample Box</label><label class="opt"><input type="radio" name="mt3" value="b"> названы как другие причинные сравнения, без пошагового расчёта. Учить глубоко по этой колоде не из чего</label><label class="opt"><input type="radio" name="mt3" value="c"> запрещены</label><label class="opt"><input type="radio" name="mt3" value="d"> это типы Python set</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="mt4" data-answer="a" data-why="Average treatment effect on the treated. Слайд Sample Box подчёркивает: for customers who actually received it.">
+  <p class="prompt">ATT — это эффект…</p>
+  <label class="opt"><input type="radio" name="mt4" value="a"> для тех, кто воздействие получил</label><label class="opt"><input type="radio" name="mt4" value="b"> для случайного человека, включая тех, кому его никогда бы не дали</label><label class="opt"><input type="radio" name="mt4" value="c"> только для контроля</label><label class="opt"><input type="radio" name="mt4" value="d"> синоним сырой разницы до matching</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+<p class="pills"><a href="association-experiment.html">← Связь или причина</a><a href="sample-box.html">Sample Box и деньги →</a></p>
+    <footer class="note">Числа и формулировки взяты из загруженных слайдов, тетрадей и mock exam курса 20838 (2026). Если в файле чего-то нет, страница так и говорит.</footer>
+  </div></main>
+</div>
+<script src="../js/nav.js"></script>
+<script src="../js/quiz.js"></script>
+</body>
+</html>

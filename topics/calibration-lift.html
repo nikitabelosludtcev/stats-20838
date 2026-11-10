@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Проверка прогноза на новых людях · 20838</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-page="calibration-lift">
+<header class="topbar">
+  <button class="menu-btn" type="button" data-nav-toggle aria-expanded="false">Меню</button>
+  <a class="brand" href="../index.html"><strong>20838 · к экзамену</strong><span>Data &amp; Analytics for Strategic Marketing Decisions</span></a>
+  <div class="top-actions">
+    <a class="ghost" href="../topics/mock-exam.html">Mock exam</a>
+  </div>
+</header>
+<div class="layout">
+  <nav class="sidenav" aria-label="Темы"><h2>Навигация</h2>
+<a href="../index.html">План на 8 недель<small>С чего начать</small></a>
+<a href="../index.html#inventory">Все материалы<small>Лекции, лабы, кейсы</small></a>
+<a href="formula-sheet.html">Шпаргалка формул<small>Выучить до автоматизма</small></a>
+<a href="mock-exam.html">Пробный экзамен<small>Сначала сами, потом решение</small></a>
+<h2>Неделя 1. Язык данных</h2>
+<a href="model-and-data.html">Модель и строка клиента</a>
+<a href="variable-types.html">Типы переменных</a>
+<a href="descriptive-stats.html">Среднее, медиана, мода, SD</a>
+<a href="shape-missing.html">Форма, ящики и пропуски</a>
+<a href="inference-se-ci.html">Выборка, SE и интервал</a>
+<a href="hypothesis-testing.html">Проверка гипотезы</a>
+<a href="python-bank-walkthrough.html">Тетрадь bank_basics</a>
+<h2>Неделя 2. Python без страха</h2>
+<a href="python-objects.html">Имена, списки, множества</a>
+<a href="python-strings.html">Строки и срезы</a>
+<a href="python-sets-dicts.html">Множества и словари</a>
+<a href="python-logic.html">Условия, циклы, функции</a>
+<a href="python-olympics.html">Python Olympics</a>
+<h2>Неделя 3. Эксперимент</h2>
+<a href="acquisition.html">Привлечение клиента</a>
+<a href="privacy.html">Privacy на слайдах</a>
+<a href="causation.html">Причинность и field test</a>
+<a href="experiment-design.html">Словарь эксперимента</a>
+<h2>Неделя 4. Кейс Artea</h2>
+<a href="artea-setup.html">Кейс Artea</a>
+<a href="artea-balance.html">Рандомизация и средние</a>
+<a href="artea-ols.html">OLS по купону</a>
+<a href="artea-heterogeneity.html">Кому слать купон</a>
+<a href="artea-notebook.html">Тетрадь Artea</a>
+<h2>Неделя 5. Ценность и отток</h2>
+<a href="clv.html">CLV и срок жизни</a>
+<a href="churn-management.html">Управление оттоком</a>
+<a href="model-choice.html">Какая модель под какой Y</a>
+<a href="calibration-lift.html">Calibration, validation, lift</a>
+<a href="predictors.html">Какие X брать</a>
+<h2>Неделя 6. Logit и шансы</h2>
+<a href="logit-odds.html">Шансы и odds ratio</a>
+<a href="advertising-lab.html">Лаба Advertising</a>
+<a href="reading-output.html">Чтение таблиц OLS и logit</a>
+<a href="interactions.html">Взаимодействия</a>
+<h2>Неделя 7. Кейсы и matching</h2>
+<a href="pilgrim.html">Кейс Pilgrim</a>
+<a href="books-r-us.html">Кейс Books R Us</a>
+<a href="association-experiment.html">Связь или причина</a>
+<a href="matching-idea.html">Идея matching</a>
+<a href="sample-box.html">Sample Box и деньги</a>
+<h2>Неделя 8. Пробный экзамен</h2>
+<a href="exam-format.html">Формат экзамена</a>
+<a href="touchpoints.html">Touchpoints</a>
+<a href="readings-gaps.html">Чего нет в папке</a>
+<a href="formula-sheet.html">Шпаргалка</a>
+<a href="mock-exam.html">Пробный экзамен</a></nav>
+  <main><div class="wrap">
+    <p class="kicker">Неделя 5 · lift chart</p>
+    <h1>Проверка прогноза на новых людях</h1>
+    <p class="lead">Модель, которая идеально помнит старых клиентов и путает новых, для таргетинга бесполезна. Поэтому выборку режут.</p>
+    
+<h2>Две выборки</h2>
+<p>Calibration sample, её же называют in-sample: на ней оценивают коэффициенты. Validation sample, out-sample или holdout: на ней коэффициенты уже не подгоняют, а только предсказывают Y и смотрят, попали ли.</p>
+<p>Учебный рисунок: всего N = 100, внутри 75, снаружи 25. Слайд говорит, что при небольшом размере любая разумная доля на калибровку годится. Как резать: случайно, не «самых удобных в калибровку, остальных в проверку».</p>
+<p>На рисунке слайда есть и обычная регрессия на 75 наблюдениях: один X, коэффициент 1,605, R² = 0,716. Это иллюстрация вывода stats, не кейс, который надо зубрить. Её роль: показать, что коэффициенты получают на in-sample.</p>
+<h2>Lift chart</h2>
+<p>После прогноза людей сортируют по предсказанному Y и режут на группы: половины, квинтили, децили. Дециль — десятая часть. Дециль 1 на слайдах про churn — самая рискованная верхушка, если так договорились. В Pilgrim дециль 1 тоже с самым высоким предсказанным риском.</p>
+<div class="callout formula">Lift группы k = средний фактический отклик группы / средний отклик всей выборки</div>
+<p>Если lift верхнего дециля равен 3, эта десятая часть уходит в три раза чаще, чем средний клиент. Слайд пишет пример: Lift del Top-Decile = 3. На рисунке столбики идут примерно 0,69, 0,43, 0,09 и дальше нули. Хороший прогноз оттока выглядит лестницей вниз: первая группа реально хуже второй.</p>
+<p>Порог таргетинга на слайде: брать группы, где lift &gt; 1, то есть хуже среднего, если речь про риск. Буква на слайде λₖ &gt; 1.</p>
+<h2>Как читают lift на closing class</h2>
+<p>Там два графика out-sample, и это готовый образец комментария.</p>
+<ul>
+<li>Lift для покупки 0/1: скромный прогноз. Столбики не падают ровно вниз. Первый дециль около 60% покупок, но дальше отрыв слабый. Модель плохо отделяет «очень вероятных».</li>
+<li>Lift для прибыли: сильный прогноз. От дециля 1 к децилю 10 средняя прибыль падает. Первый дециль около 7&nbsp;000, заметно выше хвоста. Такой моделью уже можно целиться в ценных.</li>
+</ul>
+<p>Комментарий, который забирает балл: не «график красивый», а «есть ли монотонный спад и насколько первый дециль отрывается от среднего».</p>
+<div class="callout mistake"><strong>Частая ошибка</strong>Хвалить модель по in-sample lift. Подгонка на тех же людях, на ком учили коэффициенты, почти всегда выглядит лучше. Closing class специально пишет OUT-SAMPLE. Спросить себя: это новые люди?</div>
+<h2>Решённая задача</h2>
+<p>Средний churn в базе 10%. В верхней децили фактический churn 30%. Lift = 30 / 10 = 3. Если касание дорогое, начинать с этой децили рационально для прогноза риска. Это ещё не значит, что оффер их удержит. Про удержание нужен тест, не lift.</p>
+<h2>Практикум</h2>
+
+<section class="quiz" data-quiz data-kind="blank" data-qid="lf1" data-why="30 / 10 = 3. Как в примере слайда про top decile.">
+  <p class="prompt">Средний отклик 10%, в верхней группе 30%. Чему равен lift?</p>
+  <p><label>Lift<br><input type="text" data-accept="3" data-label="Lift" placeholder="3"></label></p>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="lf2" data-answer="b" data-why="Out-sample, holdout. Коэффициенты берут с шага 1 и только применяют.">
+  <p class="prompt">Validation sample нужна, чтобы…</p>
+  <label class="opt"><input type="radio" name="lf2" value="a"> ещё раз подогнать коэффициенты на тех же людях</label><label class="opt"><input type="radio" name="lf2" value="b"> проверить прогноз на людях, которые не участвовали в подгонке</label><label class="opt"><input type="radio" name="lf2" value="c"> удалить Y</label><label class="opt"><input type="radio" name="lf2" value="d"> заменить случайное назначение</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="lf3" data-answer="b" data-why="Текст слайда: modest capability для purchase и strong для profits, decile 1 около 7 000.">
+  <p class="prompt">На closing class график покупок без ясной лестницы и график прибыли с ясной лестницей. Верный комментарий:</p>
+  <label class="opt"><input type="radio" name="lf3" value="a"> Оба предсказывают одинаково хорошо</label><label class="opt"><input type="radio" name="lf3" value="b"> Покупку модель делит слабо, прибыль — сильно, первый дециль прибыли около 7 000</label><label class="opt"><input type="radio" name="lf3" value="c"> Нужно смотреть только in-sample</label><label class="opt"><input type="radio" name="lf3" value="d"> Lift всегда равен R²</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="lf4" data-answer="b" data-why="Порог λ &amp;gt; 1 выбирает, кого модель считает необычными. Эффект акции — вопрос эксперимента или честного сравнения.">
+  <p class="prompt">Lift = 3 в децили риска. Можно ли сразу слать этим людям дорогой подарок?</p>
+  <label class="opt"><input type="radio" name="lf4" value="a"> Да, lift доказывает, что подарок их удержит</label><label class="opt"><input type="radio" name="lf4" value="b"> Нет. Lift говорит, что они рискованнее среднего. Удержит ли подарок, проверяют отдельно</label><label class="opt"><input type="radio" name="lf4" value="c"> Да, если децилей ровно десять</label><label class="opt"><input type="radio" name="lf4" value="d"> Нет, lift больше 1 всегда запрещён</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+<p class="pills"><a href="model-choice.html">← Какая модель под какой Y</a><a href="predictors.html">Какие X брать →</a></p>
+    <footer class="note">Числа и формулировки взяты из загруженных слайдов, тетрадей и mock exam курса 20838 (2026). Если в файле чего-то нет, страница так и говорит.</footer>
+  </div></main>
+</div>
+<script src="../js/nav.js"></script>
+<script src="../js/quiz.js"></script>
+</body>
+</html>

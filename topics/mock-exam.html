@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mock exam: сначала сами, потом решение · 20838</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-page="mock-exam">
+<header class="topbar">
+  <button class="menu-btn" type="button" data-nav-toggle aria-expanded="false">Меню</button>
+  <a class="brand" href="../index.html"><strong>20838 · к экзамену</strong><span>Data &amp; Analytics for Strategic Marketing Decisions</span></a>
+  <div class="top-actions">
+    <a class="ghost" href="../topics/mock-exam.html">Mock exam</a>
+  </div>
+</header>
+<div class="layout">
+  <nav class="sidenav" aria-label="Темы"><h2>Навигация</h2>
+<a href="../index.html">План на 8 недель<small>С чего начать</small></a>
+<a href="../index.html#inventory">Все материалы<small>Лекции, лабы, кейсы</small></a>
+<a href="formula-sheet.html">Шпаргалка формул<small>Выучить до автоматизма</small></a>
+<a href="mock-exam.html">Пробный экзамен<small>Сначала сами, потом решение</small></a>
+<h2>Неделя 1. Язык данных</h2>
+<a href="model-and-data.html">Модель и строка клиента</a>
+<a href="variable-types.html">Типы переменных</a>
+<a href="descriptive-stats.html">Среднее, медиана, мода, SD</a>
+<a href="shape-missing.html">Форма, ящики и пропуски</a>
+<a href="inference-se-ci.html">Выборка, SE и интервал</a>
+<a href="hypothesis-testing.html">Проверка гипотезы</a>
+<a href="python-bank-walkthrough.html">Тетрадь bank_basics</a>
+<h2>Неделя 2. Python без страха</h2>
+<a href="python-objects.html">Имена, списки, множества</a>
+<a href="python-strings.html">Строки и срезы</a>
+<a href="python-sets-dicts.html">Множества и словари</a>
+<a href="python-logic.html">Условия, циклы, функции</a>
+<a href="python-olympics.html">Python Olympics</a>
+<h2>Неделя 3. Эксперимент</h2>
+<a href="acquisition.html">Привлечение клиента</a>
+<a href="privacy.html">Privacy на слайдах</a>
+<a href="causation.html">Причинность и field test</a>
+<a href="experiment-design.html">Словарь эксперимента</a>
+<h2>Неделя 4. Кейс Artea</h2>
+<a href="artea-setup.html">Кейс Artea</a>
+<a href="artea-balance.html">Рандомизация и средние</a>
+<a href="artea-ols.html">OLS по купону</a>
+<a href="artea-heterogeneity.html">Кому слать купон</a>
+<a href="artea-notebook.html">Тетрадь Artea</a>
+<h2>Неделя 5. Ценность и отток</h2>
+<a href="clv.html">CLV и срок жизни</a>
+<a href="churn-management.html">Управление оттоком</a>
+<a href="model-choice.html">Какая модель под какой Y</a>
+<a href="calibration-lift.html">Calibration, validation, lift</a>
+<a href="predictors.html">Какие X брать</a>
+<h2>Неделя 6. Logit и шансы</h2>
+<a href="logit-odds.html">Шансы и odds ratio</a>
+<a href="advertising-lab.html">Лаба Advertising</a>
+<a href="reading-output.html">Чтение таблиц OLS и logit</a>
+<a href="interactions.html">Взаимодействия</a>
+<h2>Неделя 7. Кейсы и matching</h2>
+<a href="pilgrim.html">Кейс Pilgrim</a>
+<a href="books-r-us.html">Кейс Books R Us</a>
+<a href="association-experiment.html">Связь или причина</a>
+<a href="matching-idea.html">Идея matching</a>
+<a href="sample-box.html">Sample Box и деньги</a>
+<h2>Неделя 8. Пробный экзамен</h2>
+<a href="exam-format.html">Формат экзамена</a>
+<a href="touchpoints.html">Touchpoints</a>
+<a href="readings-gaps.html">Чего нет в папке</a>
+<a href="formula-sheet.html">Шпаргалка</a>
+<a href="mock-exam.html">Пробный экзамен</a></nav>
+  <main><div class="wrap">
+    <p class="kicker">Неделя 8 · официальный пробный бланк</p>
+    <h1>Mock exam: сначала сами, потом решение</h1>
+    <p class="lead">Ниже перевод бланка. Таблицы с исходными числами. Решения закрыты: откройте их после своей попытки или нажмите кнопку, когда 75 минут выйдут.</p>
+    
+<div class="callout exam"><strong>Как проводить попытку</strong>Поставьте таймер на 75 минут. Не открывайте блоки «Решение». Пишите так, будто сдаёте: модель, значимость, проценты odds, кому действие, где нет причинности. В оригинале кейс 2 помечен и как второй мини-кейс, и в файле solution как часть на максимальный балл. Сделайте оба.</div>
+<p><button class="btn" type="button" data-reveal="#mock-body">Показать все решения</button></p>
+<div id="mock-body">
+<h2>Часть 1. Red Bull</h2>
+<p>Бренд следит за трендом wellness. Есть вторичные данные по людям, которые покупали в категории энергетиков. Случайная выборка 500 человек: какой бренд взяли, сколько заплатили, брали ли раньше «здоровый» энергетик вроде Celsius, была ли покупка по промо, плюс портрет клиента.</p>
+<p>Модель ниже. Y: Red Bull = 1, другой бренд = 0, среди тех, кто покупал категорию за последние 6 месяцев.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Независимая переменная</th><th>Coef.</th><th>p-value</th><th>Exp(Coef.)</th></tr></thead>
+<tbody>
+<tr><td>Promo (1 = купил со скидкой)</td><td class="num">0,35</td><td class="num">0,038</td><td class="num">1,42</td></tr>
+<tr><td>Price (€)</td><td class="num">−0,07</td><td class="num">0,109</td><td class="num">0,93</td></tr>
+<tr><td>Healthy Energy Drink (1 = брал раньше)</td><td class="num">−0,50</td><td class="num">0,035</td><td class="num">0,61</td></tr>
+<tr><td>Age 36–55</td><td class="num">0,18</td><td class="num">0,021</td><td class="num">1,20</td></tr>
+<tr><td>Age 26–35</td><td class="num">0,08</td><td class="num">0,071</td><td class="num">1,08</td></tr>
+<tr><td>Age &lt; 25</td><td class="num">−0,02</td><td class="num">0,956</td><td class="num">0,98</td></tr>
+<tr><td>Male (1 = да, 0 = other)</td><td class="num">0,29</td><td class="num">0,051</td><td class="num">1,34</td></tr>
+<tr><td>Promo × Healthy</td><td class="num">−0,15</td><td class="num">0,067</td><td class="num">0,86</td></tr>
+<tr><td>Promo × Age 36–55</td><td class="num">0,00</td><td class="num">0,876</td><td class="num">1,00</td></tr>
+<tr><td>Promo × Age 26–35</td><td class="num">0,05</td><td class="num">0,546</td><td class="num">1,05</td></tr>
+<tr><td>Promo × Age &lt; 25</td><td class="num">0,21</td><td class="num">0,033</td><td class="num">1,23</td></tr>
+<tr><td>Promo × Male</td><td class="num">0,17</td><td class="num">0,024</td><td class="num">1,49</td></tr>
+<tr><td>Intercept</td><td class="num">1,02</td><td class="num">0,000</td><td></td></tr>
+</tbody></table></div>
+<p>База возрастных dummy — клиенты старше 55: отдельных столбцов для них нет. База пола — не мужчина.</p>
+<p><b>1.1</b> Какая модель оценена и почему?</p>
+<p><b>1.2</b> Прочитайте первые содержательные блоки: promo, price, healthy, возраст, пол. Что значимо? Насколько меняются шансы выбрать Red Bull?</p>
+<p><b>1.3</b> Как можно объяснить цену? Советовать ли поднять цену, раз она «не вредит»?</p>
+<p><b>1.4</b> Кому слать купон и почему?</p>
+<p><b>1.5</b> Red Bull хочет линейку Simply Organic и проверить готовность платить и вероятность покупки среди тех, кто уже брал healthy energy. Какой подход и какие шаги?</p>
+<details class="solution"><summary>Решение части 1</summary>
+<div class="hidden-sol">
+<p><b>1.1</b> Logistic regression. Y — качественная переменная 0/1, а в таблице есть столбец odds ratio, Exp(Coef.).</p>
+<p><b>1.2</b> Promo значимо на 5% (p = 0,038): у купивших по промо шансы выбрать Red Bull выше на 42%, (1,42 − 1)×100. Price не значима (0,109). Healthy значимо на 5%: шансы ниже примерно на 39%, 1 − 0,61. Возраст 36–55 значим на 5%: шансы выше на 20% относительно людей старше 55. Возраст 26–35 значим на 10% (p = 0,071): выше примерно на 8%. Моложе 25 не отличаются от базы старше 55 (p = 0,956). Male значим на 10% (p = 0,051): шансы выше примерно на 34%. Везде речь про odds, не про «вероятность выросла на столько-то процентов».</p>
+<p><b>1.3</b> Одного верного объяснения нет. Годится аккуратная критика: в данных мало разброса цен, сильна лояльность, репутация бренда или другие причины, по которым цену в этой категории почти не замечают. Нельзя советовать повысить цену только из незначимого коэффициента. Незначимость не доказывает отсутствие вреда. Это ещё и не эксперимент с ценой.</p>
+<p><b>1.4</b> В первую очередь людям моложе 25 и мужчинам: взаимодействия Promo × Age &lt; 25 (p = 0,033) и Promo × Male (p = 0,024) положительны, связь промо с шансами выбора сильнее. Ниже приоритет у тех, кто уже брал healthy: взаимодействие отрицательное, p = 0,067. Ячейка Exp = 1,49 при коэффициенте 0,17 не сходится, exp(0,17) ≈ 1,19. На процент 49% не опирайтесь.</p>
+<p><b>1.5</b> Случайный эксперимент. Например, полевой тест, где тем, кто раньше брал healthy, случайно показывают разные цены новой линейки и смотрят реальные покупки. Шаги, которые ждут: кого включаем, какие ценовые условия, как случайно назначаем, какой исход измеряем, как сравниваем доли покупок. Готовность платить отсюда косвенная. Одного канонического дизайна нет, есть требование к логике.</p>
+</div>
+</details>
+
+<h2>Часть 2. Green Product Launch</h2>
+<p>Бренд спортивной одежды хочет понять, повышает ли явная фраза про устойчивость вовлечение в пост Instagram: лайки, комментарии, репосты. Новая линейка беговых кроссовок из переработанных материалов. Бренд уже рассказывал про устойчивость, в том числе билбордами в Милане.</p>
+<p>Полевой тест в восьми городах. Группа A: подписчики в Милане, Венеции, Флоренции и Палермо, им показывают обычный товарный пост. Группа B: Турин, Болонья, Генуя и Катания, тот же визуал плюс явная фраза про устойчивость. Города делили «сравнимыми по размеру», не случайным назначением человека.</p>
+<p><b>2.1</b> Назовите зависимую и независимую переменные. Прокомментируйте дизайн и его ограничения.</p>
+<p><b>2.2</b> Ниже регрессия. Прочитайте коэффициенты и дайте рекомендацию.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Переменная</th><th>Coef.</th><th>p-value</th></tr></thead>
+<tbody>
+<tr><td>Intercept (b₀)</td><td class="num">120</td><td class="num">0,000</td></tr>
+<tr><td>Sustainability Message (b₁)</td><td class="num">58</td><td class="num">0,004</td></tr>
+</tbody></table></div>
+<p><b>2.3</b> Кроме кроссовок бренд продаёт одежду и аксессуары. Early Access: часть клиентов могла купить кроссовки за неделю до общего старта, остальные только после. Через три месяца участники Early Access потратили на одежду и аксессуары в среднем €58, остальные €13. Среднее включает нули тех, кто ничего не купил. Как оценить эффект программы и какие данные нужны?</p>
+<details class="solution"><summary>Решение части 2</summary>
+<div class="hidden-sol">
+<p><b>2.1</b> Y — вовлечение, сумма лайков, комментариев и репостов. X — dummy фразы про устойчивость: 1, если фраза была. Ограничения из решения: случайного назначения нет, города могли отличаться сами по себе. Милан уже видел билборды, в решении упомянут и контекст Design Week как предыдущее касание. Аудитории городов разные по знакомству с брендом и по интересу к среде. Разные хэштеги вроде #SustainableRunning могли сами привлечь другую аудиторию и смешать эффект текста.</p>
+<p><b>2.2</b> 120 — ожидаемое вовлечение без фразы. +58 — с фразой связано на 58 взаимодействий больше. p = 0,004, связь значима. Это ещё не причина: дизайн не убрал посторонние различия. Направление смещения из-за миланских билбордов неопределённое. Рекомендация осторожная: сигнал положительный, масштабировать как доказанный эффект текста нельзя, пока нет случайного назначения.</p>
+<p><b>2.3</b> Наблюдаемая разница €58 − €13 = €45. В Early Access люди записались сами, они могли быть и так лояльнее. Это selection bias, не эффект программы. Рабочий путь из решения — propensity score matching. Нужны данные до программы: прошлые траты, прошлое вовлечение, участие в прошлых акциях, индикатор участия в Early Access и траты на одежду и аксессуары за три месяца после, с нулями.</p>
+</div>
+</details>
+
+<h2>Часть 3. Два примера multiple choice</h2>
+<p>В боевом экзамене таких вопросов четыре. В файле даны два, как образец формата: один по чтению, один по Python.</p>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="mq1" data-answer="c" data-why="Solution отсылает к Lemon &amp; Verhoef. Определение в вопросе совпадает с brand-owned.">
+  <p class="prompt">Какие touchpoints фирма проектирует и контролирует сама?</p>
+  <label class="opt"><input type="radio" name="mq1" value="a"> Partner-owned touch points</label><label class="opt"><input type="radio" name="mq1" value="b"> Customer-owned touch points</label><label class="opt"><input type="radio" name="mq1" value="c"> Brand-owned touch points</label><label class="opt"><input type="radio" name="mq1" value="d"> Social / external / independent touch points</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="mq2" data-answer="a" data-why="head — начало таблицы. Последние строки были бы tail. Сортировка была бы sort_values.">
+  <p class="prompt">Что делает df_customers.head(25)?</p>
+  <label class="opt"><input type="radio" name="mq2" value="a"> Показывает первые 25 строк таблицы df_customers</label><label class="opt"><input type="radio" name="mq2" value="b"> Сортирует таблицу по первому столбцу</label><label class="opt"><input type="radio" name="mq2" value="c"> Печатает все строки</label><label class="opt"><input type="radio" name="mq2" value="d"> Показывает последние 25 строк</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<h2>Сверка после таймера</h2>
+<p>Разложите свой текст на полке. За каждый пункт поставьте себе 0 или 1. Это не официальная шкала, это способ увидеть дыру.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Пункт</th><th>Есть в ответе?</th></tr></thead>
+<tbody>
+<tr><td>Назван logit и причина: Y равен 0/1, есть Exp(Coef.)</td><td></td></tr>
+<tr><td>Promo +42% odds, healthy −39% odds, возраст относительно 55+, пол на 10%</td><td></td></tr>
+<tr><td>Цена не значима, и из этого не следует «поднимайте цену»</td><td></td></tr>
+<tr><td>Купон: моложе 25 и мужчины выше, healthy ниже. Это взаимодействия, не главные эффекты</td><td></td></tr>
+<tr><td>Для новой линейки названы шаги случайного теста, не просто «сделать опрос»</td><td></td></tr>
+<tr><td>У поста названы Y и X, и хотя бы три дыры дизайна</td><td></td></tr>
+<tr><td>+58 названы связью, не доказанной причиной</td><td></td></tr>
+<tr><td>€45 названы смещением самоотбора, а в качестве лечения упомянут matching и данные до программы</td><td></td></tr>
+</tbody></table></div>
+<p>Семь-восемь пунктов — вы уже говорите на языке курса. Четыре и меньше — вернитесь к неделям 6 и 7 и перепишите часть 1 ещё раз на следующий день, не в тот же вечер.</p>
+</div>
+<p class="pills"><a href="formula-sheet.html">← Шпаргалка</a></p>
+    <footer class="note">Числа и формулировки взяты из загруженных слайдов, тетрадей и mock exam курса 20838 (2026). Если в файле чего-то нет, страница так и говорит.</footer>
+  </div></main>
+</div>
+<script src="../js/nav.js"></script>
+<script src="../js/quiz.js"></script>
+</body>
+</html>

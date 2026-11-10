@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Targeted и untargeted churn · 20838</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-page="churn-management">
+<header class="topbar">
+  <button class="menu-btn" type="button" data-nav-toggle aria-expanded="false">Меню</button>
+  <a class="brand" href="../index.html"><strong>20838 · к экзамену</strong><span>Data &amp; Analytics for Strategic Marketing Decisions</span></a>
+  <div class="top-actions">
+    <a class="ghost" href="../topics/mock-exam.html">Mock exam</a>
+  </div>
+</header>
+<div class="layout">
+  <nav class="sidenav" aria-label="Темы"><h2>Навигация</h2>
+<a href="../index.html">План на 8 недель<small>С чего начать</small></a>
+<a href="../index.html#inventory">Все материалы<small>Лекции, лабы, кейсы</small></a>
+<a href="formula-sheet.html">Шпаргалка формул<small>Выучить до автоматизма</small></a>
+<a href="mock-exam.html">Пробный экзамен<small>Сначала сами, потом решение</small></a>
+<h2>Неделя 1. Язык данных</h2>
+<a href="model-and-data.html">Модель и строка клиента</a>
+<a href="variable-types.html">Типы переменных</a>
+<a href="descriptive-stats.html">Среднее, медиана, мода, SD</a>
+<a href="shape-missing.html">Форма, ящики и пропуски</a>
+<a href="inference-se-ci.html">Выборка, SE и интервал</a>
+<a href="hypothesis-testing.html">Проверка гипотезы</a>
+<a href="python-bank-walkthrough.html">Тетрадь bank_basics</a>
+<h2>Неделя 2. Python без страха</h2>
+<a href="python-objects.html">Имена, списки, множества</a>
+<a href="python-strings.html">Строки и срезы</a>
+<a href="python-sets-dicts.html">Множества и словари</a>
+<a href="python-logic.html">Условия, циклы, функции</a>
+<a href="python-olympics.html">Python Olympics</a>
+<h2>Неделя 3. Эксперимент</h2>
+<a href="acquisition.html">Привлечение клиента</a>
+<a href="privacy.html">Privacy на слайдах</a>
+<a href="causation.html">Причинность и field test</a>
+<a href="experiment-design.html">Словарь эксперимента</a>
+<h2>Неделя 4. Кейс Artea</h2>
+<a href="artea-setup.html">Кейс Artea</a>
+<a href="artea-balance.html">Рандомизация и средние</a>
+<a href="artea-ols.html">OLS по купону</a>
+<a href="artea-heterogeneity.html">Кому слать купон</a>
+<a href="artea-notebook.html">Тетрадь Artea</a>
+<h2>Неделя 5. Ценность и отток</h2>
+<a href="clv.html">CLV и срок жизни</a>
+<a href="churn-management.html">Управление оттоком</a>
+<a href="model-choice.html">Какая модель под какой Y</a>
+<a href="calibration-lift.html">Calibration, validation, lift</a>
+<a href="predictors.html">Какие X брать</a>
+<h2>Неделя 6. Logit и шансы</h2>
+<a href="logit-odds.html">Шансы и odds ratio</a>
+<a href="advertising-lab.html">Лаба Advertising</a>
+<a href="reading-output.html">Чтение таблиц OLS и logit</a>
+<a href="interactions.html">Взаимодействия</a>
+<h2>Неделя 7. Кейсы и matching</h2>
+<a href="pilgrim.html">Кейс Pilgrim</a>
+<a href="books-r-us.html">Кейс Books R Us</a>
+<a href="association-experiment.html">Связь или причина</a>
+<a href="matching-idea.html">Идея matching</a>
+<a href="sample-box.html">Sample Box и деньги</a>
+<h2>Неделя 8. Пробный экзамен</h2>
+<a href="exam-format.html">Формат экзамена</a>
+<a href="touchpoints.html">Touchpoints</a>
+<a href="readings-gaps.html">Чего нет в папке</a>
+<a href="formula-sheet.html">Шпаргалка</a>
+<a href="mock-exam.html">Пробный экзамен</a></nav>
+  <main><div class="wrap">
+    <p class="kicker">Неделя 5 · churn management</p>
+    <h1>Targeted и untargeted churn</h1>
+    <p class="lead">Churn — доля ушедших за период, или вероятность ухода конкретного человека. Действие «удержать» бывает прицельным и общим, заранее и вдогонку.</p>
+    
+<p>Две единицы анализа на одном слайде. У человека i: cᵢ = вероятность, что он уйдёт в этом периоде. У фирмы: c = доля базы, которая ушла, и c = 1 − r, где r retention rate.</p>
+<p>Почему уходят, список слайда, его не надо расширять от себя: ценность для клиента (качество, соответствие нужде, удовлетворённость, цена), инерция и издержки переключения, психологические и физические.</p>
+<h2>Четыре клетки</h2>
+<div class="table-wrap"><table>
+<thead><tr><th></th><th>Targeted, прицельно</th><th>Untargeted, на всех или на среду</th></tr></thead>
+<tbody>
+<tr><td>Proactive, заранее</td><td>Найти рискованных и успеть сделать им предложение. Эту ветку проверяет Pilgrim</td><td>Поднять удовлетворённость или стоимость ухода действием, которое не целит в список «вот-вот уйдут». Эту ветку проверяет Books R Us: научить новых покупать в нескольких каналах</td></tr>
+<tr><td>Reactive, вдогонку</td><td>Дождаться сигнала «не продлевает» и тогда сделать оффер остаться</td><td>На слайде клетка названа, отдельных чисел под неё нет</td></tr>
+</tbody></table></div>
+<p>Прицельный путь: прогноз → действие. Слайд рисует процесс модели. Сначала вопрос менеджера. Потом какие данные нужны. Потом поведение, которое предсказываем, и таблица. Потом выбор X, выбор техники под тип Y, оценка, проверка на новых людях, таргетинг по индивидуальным баллам и lift.</p>
+<div class="callout exam"><strong>Фраза, которая отличает высокий балл</strong>Кто склонен уйти, и кого удержит конкретный оффер, это не один вопрос. Модель churn отвечает на первый. Field test отвечает на второй. В Cases это сказано прямо: churn model ≠ field experiment. Статья Ascarza 2018 называется Retention futility: целиться в самых рискованных может быть бесполезно. Самой статьи в папке нет. Кейс Pilgrim как раз показывает похожую логику на числах, его и учите подробно на неделе 7.</div>
+<h2>Прибыль прицельной акции, как на слайде</h2>
+<p>Буквы слайда, без лишней алгебры, которой на слайде нет:</p>
+<ul>
+<li>N — число клиентов.</li>
+<li>α — вероятность, что клиента коснутся программой.</li>
+<li>β — вероятность, что он и так был бы уходящим.</li>
+<li>ψ — вероятность, что стимул получит тот, кто уходить не собирался.</li>
+<li>Δ — прирост LTV у неуходящих, которые стимул всё же получили.</li>
+</ul>
+<p>Слайд рисует, что прибыль складывается из спасённых уходящих и из побочного эффекта на тех, кто и так остался бы, и что стимул не бесплатен. Готовой одной строки «прибыль = …» в тексте слайда нет, там схема. На экзамене безопаснее назвать буквы и сказать идею: часть бюджета попадает мимо уходящих, а оффер может даже навредить, если заденет привычку. Числовой вердикт смотрите в Pilgrim, не выдумывайте формулу поверх схемы.</p>
+<h2>Практикум</h2>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="ch1" data-answer="b" data-why="Churn и retention делят один и тот же период. 100% − 85% = 15%. В таблице срока жизни 85% → 6,7 года = 1/0,15.">
+  <p class="prompt">c = 1 − r. Если retention 85%, churn равен…</p>
+  <label class="opt"><input type="radio" name="ch1" value="a"> 85%</label><label class="opt"><input type="radio" name="ch1" value="b"> 15%</label><label class="opt"><input type="radio" name="ch1" value="c"> 1,85</label><label class="opt"><input type="radio" name="ch1" value="d"> 0</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="ch2" data-answer="a" data-why="Подпись слайда Cases: Pilgrim tests the proactive branch of targeted retention.">
+  <p class="prompt">Pilgrim проверяет какую клетку?</p>
+  <label class="opt"><input type="radio" name="ch2" value="a"> Прицельное действие заранее, targeted proactive</label><label class="opt"><input type="radio" name="ch2" value="b"> Только реактивный звонок после ухода</label><label class="opt"><input type="radio" name="ch2" value="c"> Мультиканальное письмо всем новым, это Books R Us</label><label class="opt"><input type="radio" name="ch2" value="d"> Расчёт одного только среднего</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="ch3" data-answer="b" data-why="Слайд: Who is likely to leave? ≠ Will this offer make them stay?">
+  <p class="prompt">Модель «кто уйдёт» уже говорит, кому слать удерживающий оффер?</p>
+  <label class="opt"><input type="radio" name="ch3" value="a"> Да, это одно и то же</label><label class="opt"><input type="radio" name="ch3" value="b"> Нет. Риск ухода и реакция на оффер — разные вопросы. Второй закрывает эксперимент</label><label class="opt"><input type="radio" name="ch3" value="c"> Да, если R² больше 0,5</label><label class="opt"><input type="radio" name="ch3" value="d"> Нет, оффер нельзя проверять никогда</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="ch4" data-answer="b" data-why="Closing class указывает Ascarza, Journal of Marketing Research, 2018. В папке есть ссылка и кейс, не PDF статьи.">
+  <p class="prompt">Что в загруженных файлах есть про статью Ascarza про retention futility?</p>
+  <label class="opt"><input type="radio" name="ch4" value="a"> Полный текст статьи</label><label class="opt"><input type="radio" name="ch4" value="b"> Имя статьи в списке чтения и кейс Pilgrim с той же логикой. Текста статьи нет</label><label class="opt"><input type="radio" name="ch4" value="c"> Только датасет Advertising</label><label class="opt"><input type="radio" name="ch4" value="d"> Готовая формула ψ в виде одного числа</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+<p class="pills"><a href="clv.html">← CLV и срок жизни</a><a href="model-choice.html">Какая модель под какой Y →</a></p>
+    <footer class="note">Числа и формулировки взяты из загруженных слайдов, тетрадей и mock exam курса 20838 (2026). Если в файле чего-то нет, страница так и говорит.</footer>
+  </div></main>
+</div>
+<script src="../js/nav.js"></script>
+<script src="../js/quiz.js"></script>
+</body>
+</html>

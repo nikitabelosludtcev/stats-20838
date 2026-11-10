@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>От выборки к неизвестному среднему · 20838</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-page="inference-se-ci">
+<header class="topbar">
+  <button class="menu-btn" type="button" data-nav-toggle aria-expanded="false">Меню</button>
+  <a class="brand" href="../index.html"><strong>20838 · к экзамену</strong><span>Data &amp; Analytics for Strategic Marketing Decisions</span></a>
+  <div class="top-actions">
+    <a class="ghost" href="../topics/mock-exam.html">Mock exam</a>
+  </div>
+</header>
+<div class="layout">
+  <nav class="sidenav" aria-label="Темы"><h2>Навигация</h2>
+<a href="../index.html">План на 8 недель<small>С чего начать</small></a>
+<a href="../index.html#inventory">Все материалы<small>Лекции, лабы, кейсы</small></a>
+<a href="formula-sheet.html">Шпаргалка формул<small>Выучить до автоматизма</small></a>
+<a href="mock-exam.html">Пробный экзамен<small>Сначала сами, потом решение</small></a>
+<h2>Неделя 1. Язык данных</h2>
+<a href="model-and-data.html">Модель и строка клиента</a>
+<a href="variable-types.html">Типы переменных</a>
+<a href="descriptive-stats.html">Среднее, медиана, мода, SD</a>
+<a href="shape-missing.html">Форма, ящики и пропуски</a>
+<a href="inference-se-ci.html">Выборка, SE и интервал</a>
+<a href="hypothesis-testing.html">Проверка гипотезы</a>
+<a href="python-bank-walkthrough.html">Тетрадь bank_basics</a>
+<h2>Неделя 2. Python без страха</h2>
+<a href="python-objects.html">Имена, списки, множества</a>
+<a href="python-strings.html">Строки и срезы</a>
+<a href="python-sets-dicts.html">Множества и словари</a>
+<a href="python-logic.html">Условия, циклы, функции</a>
+<a href="python-olympics.html">Python Olympics</a>
+<h2>Неделя 3. Эксперимент</h2>
+<a href="acquisition.html">Привлечение клиента</a>
+<a href="privacy.html">Privacy на слайдах</a>
+<a href="causation.html">Причинность и field test</a>
+<a href="experiment-design.html">Словарь эксперимента</a>
+<h2>Неделя 4. Кейс Artea</h2>
+<a href="artea-setup.html">Кейс Artea</a>
+<a href="artea-balance.html">Рандомизация и средние</a>
+<a href="artea-ols.html">OLS по купону</a>
+<a href="artea-heterogeneity.html">Кому слать купон</a>
+<a href="artea-notebook.html">Тетрадь Artea</a>
+<h2>Неделя 5. Ценность и отток</h2>
+<a href="clv.html">CLV и срок жизни</a>
+<a href="churn-management.html">Управление оттоком</a>
+<a href="model-choice.html">Какая модель под какой Y</a>
+<a href="calibration-lift.html">Calibration, validation, lift</a>
+<a href="predictors.html">Какие X брать</a>
+<h2>Неделя 6. Logit и шансы</h2>
+<a href="logit-odds.html">Шансы и odds ratio</a>
+<a href="advertising-lab.html">Лаба Advertising</a>
+<a href="reading-output.html">Чтение таблиц OLS и logit</a>
+<a href="interactions.html">Взаимодействия</a>
+<h2>Неделя 7. Кейсы и matching</h2>
+<a href="pilgrim.html">Кейс Pilgrim</a>
+<a href="books-r-us.html">Кейс Books R Us</a>
+<a href="association-experiment.html">Связь или причина</a>
+<a href="matching-idea.html">Идея matching</a>
+<a href="sample-box.html">Sample Box и деньги</a>
+<h2>Неделя 8. Пробный экзамен</h2>
+<a href="exam-format.html">Формат экзамена</a>
+<a href="touchpoints.html">Touchpoints</a>
+<a href="readings-gaps.html">Чего нет в папке</a>
+<a href="formula-sheet.html">Шпаргалка</a>
+<a href="mock-exam.html">Пробный экзамен</a></nav>
+  <main><div class="wrap">
+    <p class="kicker">Неделя 1 · population, sample, standard error</p>
+    <h1>От выборки к неизвестному среднему</h1>
+    <p class="lead">4&nbsp;521 клиента — это ещё не «все клиенты банка». Разница между этими словами и есть inferential statistics.</p>
+    
+<p>Слайд ставит два вопроса рядом.</p>
+<ul>
+<li><b>Descriptive statistics.</b> Как выглядит то, что мы уже видим?</li>
+<li><b>Inferential statistics.</b> Что выборка может сказать о более широкой совокупности, population?</li>
+</ul>
+<div class="table-wrap"><table>
+<thead><tr><th></th><th>Как называют</th><th>В примере с возрастом</th></tr></thead>
+<tbody>
+<tr><td>Population</td><td>Параметр, обычно неизвестен. Среднее совокупности обозначают μ</td><td>Все клиенты, о которых менеджер хочет сделать вывод</td></tr>
+<tr><td>Sample</td><td>Статистика, её можно посчитать. Среднее выборки обозначают x̄</td><td>4&nbsp;521 человека в файле, x̄ = 41,17</td></tr>
+</tbody></table></div>
+<p>Тот же ход для баланса: x̄ = €1&nbsp;423, а истинное μ неизвестно. Выборка помогает узнать μ, но с неопределённостью.</p>
+<h2>Почему среднее прыгает</h2>
+<p>Если бы взяли других клиентов того же банка, среднее было бы другим. Слайд показывает три возможных средних возраста: 40,78, 41,17 и 41,29. Они близко, но не равны. Это sampling variability, удача выборки.</p>
+<div class="callout formula"><strong>Две разные «ошибки»</strong><br>SD = 10,57 года. Насколько клиенты отличаются друг от друга.<br>SE(x̄) = SD / √n = 10,57 / √4521 = 0,157 года. Насколько обычно прыгает само среднее от выборки к выборке.</div>
+<p>Корень из 4&nbsp;521 около 67,2. Делить на большое n значит: при большой выборке среднее стоит на месте, даже если люди очень разные. Тетрадь это проверяет вживую: среднее по 50 случайным людям скачет, среднее по 4&nbsp;000 почти не двигается.</p>
+<h2>Доверительный интервал 95%</h2>
+<p>Слайд пишет правило для большой выборки:</p>
+<div class="callout formula">95% CI ≈ x̄ ± 1,96 × SE</div>
+<p>Подставьте числа возраста.</p>
+<ol class="steps">
+<li>1,96 × 0,157 = 0,308.</li>
+<li>Нижняя граница: 41,17 − 0,31 = 40,86.</li>
+<li>Верхняя: 41,17 + 0,31 = 41,48.</li>
+<li>Тетрадь печатает точнее: 40,862 … 41,478. Слайд округляет до 40,86 и 41,48.</li>
+</ol>
+<p>Интервал — набор значений μ, которые с этими данными выглядят правдоподобно. Число 41 внутрь попадает. Число 44 нет.</p>
+<div class="callout mistake"><strong>Частая ошибка</strong>Интервал не говорит «с вероятностью 95% истинный возраст лежит тут» в бытовом смысле уже после того, как интервал посчитан. На курсе его используют практично: внутри интервала гипотезу не отвергают, снаружи отвергают. И «не отвергли» не значит «доказали, что менеджер прав».</div>
+<h2>Практикум</h2>
+
+<section class="quiz" data-quiz data-kind="blank" data-qid="i1" data-why="10,57 / √4521 = 10,57 / 67,24 ≈ 0,157. Слайд пишет ровно это.">
+  <p class="prompt">Посчитайте SE возраста. SD = 10,57, n = 4521. Округлите SE до трёх знаков после запятой.</p>
+  <p><label>SE<br><input type="text" data-accept="0.157" data-label="SE" placeholder="0,157"></label></p>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="blank" data-qid="i2" data-why="41,17 ± 1,96 × 0,157.">
+  <p class="prompt">Границы 95% интервала для среднего возраста. Как на слайде, два знака после запятой.</p>
+  <p><label>Нижняя<br><input type="text" data-accept="40.86" data-label="Нижняя" placeholder="40,86"></label></p><p><label>Верхняя<br><input type="text" data-accept="41.48" data-label="Верхняя" placeholder="41,48"></label></p>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="i3" data-answer="b" data-why="Формулировка слайда: SD describes variability among customers, SE describes uncertainty in our estimated mean.">
+  <p class="prompt">SD и SE в этом примере:</p>
+  <label class="opt"><input type="radio" name="i3" value="a"> это одно и то же число</label><label class="opt"><input type="radio" name="i3" value="b"> SD про различие клиентов, SE про неточность среднего</label><label class="opt"><input type="radio" name="i3" value="c"> SE всегда больше SD</label><label class="opt"><input type="radio" name="i3" value="d"> SE считают только для категорий</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="i4" data-answer="b" data-why="Слайд отдельно ставит sample statistic €1 423 напротив неизвестного μ.">
+  <p class="prompt">x̄ баланса = €1 423. Что из этого верно?</p>
+  <label class="opt"><input type="radio" name="i4" value="a"> Истинное среднее всех клиентов банка точно €1 423</label><label class="opt"><input type="radio" name="i4" value="b"> €1 423 — статистика выборки. Параметр совокупности неизвестен, и к нему прилагается неопределённость</label><label class="opt"><input type="radio" name="i4" value="c"> Это медиана</label><label class="opt"><input type="radio" name="i4" value="d"> Это standard error</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+<p class="pills"><a href="shape-missing.html">← Форма, ящики и пропуски</a><a href="hypothesis-testing.html">Проверка гипотезы →</a></p>
+    <footer class="note">Числа и формулировки взяты из загруженных слайдов, тетрадей и mock exam курса 20838 (2026). Если в файле чего-то нет, страница так и говорит.</footer>
+  </div></main>
+</div>
+<script src="../js/nav.js"></script>
+<script src="../js/quiz.js"></script>
+</body>
+</html>

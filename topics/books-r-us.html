@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Books R Us: письмо важнее, чем сам факт мультиканала в регрессии · 20838</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-page="books-r-us">
+<header class="topbar">
+  <button class="menu-btn" type="button" data-nav-toggle aria-expanded="false">Меню</button>
+  <a class="brand" href="../index.html"><strong>20838 · к экзамену</strong><span>Data &amp; Analytics for Strategic Marketing Decisions</span></a>
+  <div class="top-actions">
+    <a class="ghost" href="../topics/mock-exam.html">Mock exam</a>
+  </div>
+</header>
+<div class="layout">
+  <nav class="sidenav" aria-label="Темы"><h2>Навигация</h2>
+<a href="../index.html">План на 8 недель<small>С чего начать</small></a>
+<a href="../index.html#inventory">Все материалы<small>Лекции, лабы, кейсы</small></a>
+<a href="formula-sheet.html">Шпаргалка формул<small>Выучить до автоматизма</small></a>
+<a href="mock-exam.html">Пробный экзамен<small>Сначала сами, потом решение</small></a>
+<h2>Неделя 1. Язык данных</h2>
+<a href="model-and-data.html">Модель и строка клиента</a>
+<a href="variable-types.html">Типы переменных</a>
+<a href="descriptive-stats.html">Среднее, медиана, мода, SD</a>
+<a href="shape-missing.html">Форма, ящики и пропуски</a>
+<a href="inference-se-ci.html">Выборка, SE и интервал</a>
+<a href="hypothesis-testing.html">Проверка гипотезы</a>
+<a href="python-bank-walkthrough.html">Тетрадь bank_basics</a>
+<h2>Неделя 2. Python без страха</h2>
+<a href="python-objects.html">Имена, списки, множества</a>
+<a href="python-strings.html">Строки и срезы</a>
+<a href="python-sets-dicts.html">Множества и словари</a>
+<a href="python-logic.html">Условия, циклы, функции</a>
+<a href="python-olympics.html">Python Olympics</a>
+<h2>Неделя 3. Эксперимент</h2>
+<a href="acquisition.html">Привлечение клиента</a>
+<a href="privacy.html">Privacy на слайдах</a>
+<a href="causation.html">Причинность и field test</a>
+<a href="experiment-design.html">Словарь эксперимента</a>
+<h2>Неделя 4. Кейс Artea</h2>
+<a href="artea-setup.html">Кейс Artea</a>
+<a href="artea-balance.html">Рандомизация и средние</a>
+<a href="artea-ols.html">OLS по купону</a>
+<a href="artea-heterogeneity.html">Кому слать купон</a>
+<a href="artea-notebook.html">Тетрадь Artea</a>
+<h2>Неделя 5. Ценность и отток</h2>
+<a href="clv.html">CLV и срок жизни</a>
+<a href="churn-management.html">Управление оттоком</a>
+<a href="model-choice.html">Какая модель под какой Y</a>
+<a href="calibration-lift.html">Calibration, validation, lift</a>
+<a href="predictors.html">Какие X брать</a>
+<h2>Неделя 6. Logit и шансы</h2>
+<a href="logit-odds.html">Шансы и odds ratio</a>
+<a href="advertising-lab.html">Лаба Advertising</a>
+<a href="reading-output.html">Чтение таблиц OLS и logit</a>
+<a href="interactions.html">Взаимодействия</a>
+<h2>Неделя 7. Кейсы и matching</h2>
+<a href="pilgrim.html">Кейс Pilgrim</a>
+<a href="books-r-us.html">Кейс Books R Us</a>
+<a href="association-experiment.html">Связь или причина</a>
+<a href="matching-idea.html">Идея matching</a>
+<a href="sample-box.html">Sample Box и деньги</a>
+<h2>Неделя 8. Пробный экзамен</h2>
+<a href="exam-format.html">Формат экзамена</a>
+<a href="touchpoints.html">Touchpoints</a>
+<a href="readings-gaps.html">Чего нет в папке</a>
+<a href="formula-sheet.html">Шпаргалка</a>
+<a href="mock-exam.html">Пробный экзамен</a></nav>
+  <main><div class="wrap">
+    <p class="kicker">Неделя 7 · Case 4</p>
+    <h1>Books R Us: письмо важнее, чем сам факт мультиканала в регрессии</h1>
+    <p class="lead">Исторически люди нескольких каналов прибыльнее. Это ещё не значит, что письмо «ходите в несколько каналов» создаст те же €33.</p>
+    
+<p>Книжный ритейлер продаёт в магазине, по почте, по телефону, на сайте и в приложении. Членство продлевается раз в год, поэтому churn здесь наблюдаемый: не продлил. Исторические когорты 1 и 2 показывают связь. Когорта 3 — уже field test на новых клиентах, которые живут в зоне магазина.</p>
+<p>Зачем новые. У них слабее привычка канала, письмо ещё может сдвинуть поведение. Четыре вопроса слайда: может ли маркетинг создать мультиканальных клиентов; станут ли они прибыльнее, чем были бы без письма; что будет с оттоком; какой текст работает.</p>
+<h2>Что было до эксперимента</h2>
+<p>На истории мультиканальность связана с +€20,95 прибыли в год при контролях. В logit оттока коэффициент −1,0227. Это ассоциация когорты 1, N около 35&nbsp;391 на одном из слайдов. Её нельзя читать как эффект письма: канал человек выбрал сам.</p>
+<p>Отдельная регрессия уже на полевом файле, но всё ещё про наблюдаемый канал, не про письмо: multichannel в logit оттока имеет коэффициент −1,3417, OR = exp(−1,3417) ≈ 0,26, то есть шансы уйти ниже примерно на 74%. В регрессии прибыли коэффициент +€32,58. N = 30&nbsp;710. Слайд подчёркивает: channel use is observed, not randomly assigned.</p>
+<p>CLV на истории считают формулой CLV = m(1+d)/(1+d−r) − AC, d = 0,12, AC = €10. Столбики: мультиканал €97,19, один канал €30,85. Подставить чужое m нельзя, на слайде даны уже готовые CLV.</p>
+<h2>Пять групп теста</h2>
+<p>Письмо в 5-м периоде года привлечения, дальше смотрят покупки. Имена: MNF и MF зовут пользоваться несколькими каналами, VPNF и VPF рассказывают ценность компании. F значит financial incentive, денежный стимул. NF — без него.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Группа</th><th>Людей</th><th>Мультиканал</th><th>Churn</th><th>Прибыль в год</th></tr></thead>
+<tbody>
+<tr><td>Control</td><td>3&nbsp;419</td><td>6,99%</td><td>17,46%</td><td>€20,89</td></tr>
+<tr><td>MF, каналы + деньги</td><td>6&nbsp;831</td><td>7,28%</td><td>17,33%</td><td>€21,15</td></tr>
+<tr><td>MNF, каналы без денег</td><td>6&nbsp;810</td><td>8,21%</td><td>15,87%</td><td>€21,93</td></tr>
+<tr><td>VPF, ценность + деньги</td><td>6&nbsp;821</td><td>7,02%</td><td>17,42%</td><td>€21,04</td></tr>
+<tr><td>VPNF, ценность без денег</td><td>6&nbsp;829</td><td>7,18%</td><td>17,00%</td><td>€21,17</td></tr>
+</tbody></table></div>
+<p>Всего 30&nbsp;710. MNF минус контроль: +1,22 п.п. мультиканала, −1,59 п.п. оттока, +€1,04 прибыли. Остальные тексты на картинке слабее.</p>
+<h2>Модели, база — контроль</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Исход</th><th>Коэффициент MNF</th><th>p</th><th>Как читать</th></tr></thead>
+<tbody>
+<tr><td>Logit «стал мультиканальным»</td><td>+0,1738</td><td>0,0304</td><td>OR = 1,19, шансы выше на 19%</td></tr>
+<tr><td>Logit оттока</td><td>−0,1144</td><td>0,0409</td><td>OR = 0,89, шансы уйти ниже примерно на 11%</td></tr>
+<tr><td>Прибыль, OLS</td><td>+€1,0367</td><td>0,0168</td><td>около €1 на клиента</td></tr>
+</tbody></table></div>
+<p>Остальные кампании на этих моделях не значимы на 5%. Слайд просит относиться к MNF как к кандидату, которого ещё сверяют с затратами, а не как к вечному победителю.</p>
+<h2>Почему €1 и €33 не спорят</h2>
+<ol class="steps">
+<li>€32,58 — разница между людьми, которые сами стали мультиканальными, и теми, кто не стал. Среди первых больше тех, кто и так активен.</li>
+<li>€1,04 — разница между теми, кому случайно послали письмо MNF, и контролем. Письмо сдвигает канал лишь немного, поэтому и деньги маленькие.</li>
+<li>Случайное письмо не назначает случайно будущий канал. Канал после письма — уже отклик, не treatment.</li>
+<li>Механизм, который слайд считает правдоподобным: MNF объясняет, как покупать в разных каналах, и не добавляет денежный стимул. Опрос после теста, 2&nbsp;068 ответов, и отдельный коммуникационный эксперимент это поддерживают качественно. Точные шкалы 1–5 на рисунке в текст не выгрузились, на балл влияет идея, не высота столбика.</li>
+</ol>
+<p>Дополнительные проверки слайда: разрыв прибыли мультиканала остаётся внутри одинаковой частоты покупок, и его не объясняет только смесь дешёвых каналов. Это аргумент против «они просто чаще заходят». Для экзамена достаточно помнить, что ассоциация канала жирная, а эффект письма тонкий, и оба измерения в кейсе сделаны.</p>
+<div class="callout exam"><strong>Фраза</strong>«Historical phase и Cohort 3 experiment держат отдельно». Если в ответе €33 названы эффектом рассылки, балл снимают.</div>
+<h2>Практикум</h2>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="bk1" data-answer="b" data-why="MNF: p = 0,030, 0,041 и 0,017. Слайд: other campaign coefficients are not significant at 5%.">
+  <p class="prompt">Какое письмо единственное значимо двигает и канал, и отток, и прибыль на 5%?</p>
+  <label class="opt"><input type="radio" name="bk1" value="a"> MF</label><label class="opt"><input type="radio" name="bk1" value="b"> MNF</label><label class="opt"><input type="radio" name="bk1" value="c"> VPF</label><label class="opt"><input type="radio" name="bk1" value="d"> Все четыре одинаково</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="blank" data-qid="bk2" data-why="Коэффициент +1,0367, p = 0,0168. Это не €32,58.">
+  <p class="prompt">Эффект MNF на годовую прибыль в евро и p-value. Прибыль округлите до двух знаков.</p>
+  <p><label>Евро<br><input type="text" data-accept="1.04|1.0367" data-label="Евро" placeholder="1,04"></label></p><p><label>p-value<br><input type="text" data-accept="0.0168|0.017" data-label="p-value" placeholder="0,017"></label></p>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="bk3" data-answer="b" data-why="Коэффициент multichannel в регрессии прибыли +32,58. Слайд: two comparisons answer two different questions.">
+  <p class="prompt">Откуда берётся около €33?</p>
+  <label class="opt"><input type="radio" name="bk3" value="a"> Из случайного сравнения письма MNF с контролем</label><label class="opt"><input type="radio" name="bk3" value="b"> Из сравнения людей, которые уже пользуются несколькими каналами, с одноканальными. Канал не был назначен случайно</label><label class="opt"><input type="radio" name="bk3" value="c"> Это стоимость письма</label><label class="opt"><input type="radio" name="bk3" value="d"> Это AC</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="bk4" data-answer="a" data-why="(1 − 0,89) × 100 = 11. p = 0,0409 как раз ниже 0,05. 17% на картинке — это сырой уровень оттока, не OR.">
+  <p class="prompt">OR оттока для MNF равен 0,89. Это значит:</p>
+  <label class="opt"><input type="radio" name="bk4" value="a"> шансы уйти ниже примерно на 11% относительно контроля</label><label class="opt"><input type="radio" name="bk4" value="b"> вероятность уйти равна 89%</label><label class="opt"><input type="radio" name="bk4" value="c"> прибыль выросла на 89 евро</label><label class="opt"><input type="radio" name="bk4" value="d"> эффект не значим, p был 0,04</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+<p class="pills"><a href="pilgrim.html">← Кейс Pilgrim</a><a href="association-experiment.html">Связь или причина →</a></p>
+    <footer class="note">Числа и формулировки взяты из загруженных слайдов, тетрадей и mock exam курса 20838 (2026). Если в файле чего-то нет, страница так и говорит.</footer>
+  </div></main>
+</div>
+<script src="../js/nav.js"></script>
+<script src="../js/quiz.js"></script>
+</body>
+</html>

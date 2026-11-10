@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Artea: группы похожи, сырые средние ещё не ответ · 20838</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-page="artea-balance">
+<header class="topbar">
+  <button class="menu-btn" type="button" data-nav-toggle aria-expanded="false">Меню</button>
+  <a class="brand" href="../index.html"><strong>20838 · к экзамену</strong><span>Data &amp; Analytics for Strategic Marketing Decisions</span></a>
+  <div class="top-actions">
+    <a class="ghost" href="../topics/mock-exam.html">Mock exam</a>
+  </div>
+</header>
+<div class="layout">
+  <nav class="sidenav" aria-label="Темы"><h2>Навигация</h2>
+<a href="../index.html">План на 8 недель<small>С чего начать</small></a>
+<a href="../index.html#inventory">Все материалы<small>Лекции, лабы, кейсы</small></a>
+<a href="formula-sheet.html">Шпаргалка формул<small>Выучить до автоматизма</small></a>
+<a href="mock-exam.html">Пробный экзамен<small>Сначала сами, потом решение</small></a>
+<h2>Неделя 1. Язык данных</h2>
+<a href="model-and-data.html">Модель и строка клиента</a>
+<a href="variable-types.html">Типы переменных</a>
+<a href="descriptive-stats.html">Среднее, медиана, мода, SD</a>
+<a href="shape-missing.html">Форма, ящики и пропуски</a>
+<a href="inference-se-ci.html">Выборка, SE и интервал</a>
+<a href="hypothesis-testing.html">Проверка гипотезы</a>
+<a href="python-bank-walkthrough.html">Тетрадь bank_basics</a>
+<h2>Неделя 2. Python без страха</h2>
+<a href="python-objects.html">Имена, списки, множества</a>
+<a href="python-strings.html">Строки и срезы</a>
+<a href="python-sets-dicts.html">Множества и словари</a>
+<a href="python-logic.html">Условия, циклы, функции</a>
+<a href="python-olympics.html">Python Olympics</a>
+<h2>Неделя 3. Эксперимент</h2>
+<a href="acquisition.html">Привлечение клиента</a>
+<a href="privacy.html">Privacy на слайдах</a>
+<a href="causation.html">Причинность и field test</a>
+<a href="experiment-design.html">Словарь эксперимента</a>
+<h2>Неделя 4. Кейс Artea</h2>
+<a href="artea-setup.html">Кейс Artea</a>
+<a href="artea-balance.html">Рандомизация и средние</a>
+<a href="artea-ols.html">OLS по купону</a>
+<a href="artea-heterogeneity.html">Кому слать купон</a>
+<a href="artea-notebook.html">Тетрадь Artea</a>
+<h2>Неделя 5. Ценность и отток</h2>
+<a href="clv.html">CLV и срок жизни</a>
+<a href="churn-management.html">Управление оттоком</a>
+<a href="model-choice.html">Какая модель под какой Y</a>
+<a href="calibration-lift.html">Calibration, validation, lift</a>
+<a href="predictors.html">Какие X брать</a>
+<h2>Неделя 6. Logit и шансы</h2>
+<a href="logit-odds.html">Шансы и odds ratio</a>
+<a href="advertising-lab.html">Лаба Advertising</a>
+<a href="reading-output.html">Чтение таблиц OLS и logit</a>
+<a href="interactions.html">Взаимодействия</a>
+<h2>Неделя 7. Кейсы и matching</h2>
+<a href="pilgrim.html">Кейс Pilgrim</a>
+<a href="books-r-us.html">Кейс Books R Us</a>
+<a href="association-experiment.html">Связь или причина</a>
+<a href="matching-idea.html">Идея matching</a>
+<a href="sample-box.html">Sample Box и деньги</a>
+<h2>Неделя 8. Пробный экзамен</h2>
+<a href="exam-format.html">Формат экзамена</a>
+<a href="touchpoints.html">Touchpoints</a>
+<a href="readings-gaps.html">Чего нет в папке</a>
+<a href="formula-sheet.html">Шпаргалка</a>
+<a href="mock-exam.html">Пробный экзамен</a></nav>
+  <main><div class="wrap">
+    <p class="kicker">Неделя 4 · step 1 и step 2</p>
+    <h1>Artea: группы похожи, сырые средние ещё не ответ</h1>
+    <p class="lead">Случайное назначение проверяют до того, как радоваться разнице в продажах. Иначе вы похвалите купон за то, что в одну группу попали более активные люди.</p>
+    
+<h2>Шаг 1. Похожи ли группы до купона</h2>
+<p>Сравнивают средние признаков, которые купон ещё не мог изменить: прошлые покупки, последний чек, давность визита, минуты, корзина, каналы.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Признак до теста</th><th>Control, без купона</th><th>Treatment, купон</th></tr></thead>
+<tbody>
+<tr><td>num_past_purch</td><td>2,02</td><td>2,09</td></tr>
+<tr><td>spent_last_purchase</td><td>56,69</td><td>58,16</td></tr>
+<tr><td>weeks_since_visit</td><td>3,18</td><td>3,26</td></tr>
+<tr><td>browsing_minutes</td><td>13,71</td><td>13,67</td></tr>
+<tr><td>shopping_cart</td><td>30%</td><td>29%</td></tr>
+<tr><td>Facebook</td><td>21%</td><td>22%</td></tr>
+<tr><td>Instagram</td><td>21%</td><td>22%</td></tr>
+<tr><td>Referral</td><td>5%</td><td>5%</td></tr>
+<tr><td>Other</td><td>2%</td><td>2%</td></tr>
+<tr><td>Google</td><td>52%</td><td>49%</td></tr>
+</tbody></table></div>
+<p>Глазом группы близки. Тетрадь не верит глазу до конца и считает тест. Для числа прошлых покупок t = −0,99, p-value = 0,32. Для доли Facebook z-тест, p-value = 0,33. Оба p большие: такое расхождение легко получить случайно. Повод кричать «рандомизация сломалась» эти две проверки не дают.</p>
+<div class="callout remember"><strong>Как сказать на экзамене</strong>«Средние до теста близки, формальные сравнения не показывают значимой разницы. Значит, дальше разницу в покупках можно осторожно относить на купон, а не на то, что в treatment собрали других людей». Один столбец с p = 0,32 не заменяет взгляда на всю таблицу. В решении таблица как раз показана целиком.</div>
+<h2>Шаг 2. Model-free evidence</h2>
+<p>Теперь смотрят исходы, уже после теста.</p>
+<div class="table-wrap"><table>
+<thead><tr><th></th><th>Control</th><th>Купон</th><th>Разница на слайде</th></tr></thead>
+<tbody>
+<tr><td>Среднее число транзакций</td><td>13% на рисунке, в регрессии база 0,13</td><td>15%</td><td>около +2 процентных пункта</td></tr>
+<tr><td>Средняя выручка на человека</td><td>$7,78</td><td>$7,54</td><td>−0,24 доллара</td></tr>
+</tbody></table></div>
+<p>Слайд сам спрашивает: значимы ли эти разницы и какова ошибка оценки? Сырой рисунок этого не говорит. Плюс два пункта может быть шумом. Поэтому шаг 3 — регрессия или t-тест, где у разницы есть p-value.</p>
+<p>Тетрадь замечает полезную мелочь: t-тест разницы средних и простая регрессия <code>Y ~ test_coupon</code> дают один и тот же вывод. Для транзакций t = 2,207 и p = 0,027. Это не новая магия, а та же арифметика.</p>
+<div class="callout mistake"><strong>Частая ошибка</strong>Увидеть $7,54 &lt; $7,78 и написать «купон уменьшил выручку». Разница −0,24 при шуме, который мы увидим на следующем шаге, ничтожна. Направление без p-value — ещё не результат.</div>
+<h2>Практикум</h2>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="b1" data-answer="b" data-why="Шаг 1: verify random assignment по предтестовым переменным.">
+  <p class="prompt">Зачем сравнивать num_past_purch в двух группах до вывода о купоне?</p>
+  <label class="opt"><input type="radio" name="b1" value="a"> Это и есть выручка после теста</label><label class="opt"><input type="radio" name="b1" value="b"> Чтобы проверить, не оказались ли группы разными ещё до воздействия</label><label class="opt"><input type="radio" name="b1" value="c"> Чтобы посчитать CLV</label><label class="opt"><input type="radio" name="b1" value="d"> Столбец не относится к кейсу</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="b2" data-answer="b" data-why="Большой p-value: расхождение совместимо со случайным разбиением. t = −0,99.">
+  <p class="prompt">p-value = 0,32 при сравнении прошлых покупок. Что сказать?</p>
+  <label class="opt"><input type="radio" name="b2" value="a"> Группы значимо различаются, тест испорчен</label><label class="opt"><input type="radio" name="b2" value="b"> Значимой разницы по этому признаку не видно</label><label class="opt"><input type="radio" name="b2" value="c"> Купон поднял выручку на 32%</label><label class="opt"><input type="radio" name="b2" value="d"> Нужно отвергнуть H₀: μ = 41</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="blank" data-qid="b3" data-why="Разница −0,24. Значимость этой разницы ещё не доказана картинкой.">
+  <p class="prompt">Сырая средняя выручка. Впишите control и treatment в долларах, как на слайде.</p>
+  <p><label>Control<br><input type="text" data-accept="7.78" data-label="Control" placeholder="7,78"></label></p><p><label>Купон<br><input type="text" data-accept="7.54" data-label="Купон" placeholder="7,54"></label></p>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="b4" data-answer="a" data-why="Так шаг назван в презентации: check the effect of Coupon through descriptive statistics.">
+  <p class="prompt">Model-free evidence — это:</p>
+  <label class="opt"><input type="radio" name="b4" value="a"> сравнение средних без регрессии</label><label class="opt"><input type="radio" name="b4" value="b"> обязательно logit</label><label class="opt"><input type="radio" name="b4" value="c"> удаление control group</label><label class="opt"><input type="radio" name="b4" value="d"> прогноз на новой базе без проверки</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+<p class="pills"><a href="artea-setup.html">← Кейс Artea</a><a href="artea-ols.html">OLS по купону →</a></p>
+    <footer class="note">Числа и формулировки взяты из загруженных слайдов, тетрадей и mock exam курса 20838 (2026). Если в файле чего-то нет, страница так и говорит.</footer>
+  </div></main>
+</div>
+<script src="../js/nav.js"></script>
+<script src="../js/quiz.js"></script>
+</body>
+</html>

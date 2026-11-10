@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Тетрадь Artea: код по шагам · 20838</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-page="artea-notebook">
+<header class="topbar">
+  <button class="menu-btn" type="button" data-nav-toggle aria-expanded="false">Меню</button>
+  <a class="brand" href="../index.html"><strong>20838 · к экзамену</strong><span>Data &amp; Analytics for Strategic Marketing Decisions</span></a>
+  <div class="top-actions">
+    <a class="ghost" href="../topics/mock-exam.html">Mock exam</a>
+  </div>
+</header>
+<div class="layout">
+  <nav class="sidenav" aria-label="Темы"><h2>Навигация</h2>
+<a href="../index.html">План на 8 недель<small>С чего начать</small></a>
+<a href="../index.html#inventory">Все материалы<small>Лекции, лабы, кейсы</small></a>
+<a href="formula-sheet.html">Шпаргалка формул<small>Выучить до автоматизма</small></a>
+<a href="mock-exam.html">Пробный экзамен<small>Сначала сами, потом решение</small></a>
+<h2>Неделя 1. Язык данных</h2>
+<a href="model-and-data.html">Модель и строка клиента</a>
+<a href="variable-types.html">Типы переменных</a>
+<a href="descriptive-stats.html">Среднее, медиана, мода, SD</a>
+<a href="shape-missing.html">Форма, ящики и пропуски</a>
+<a href="inference-se-ci.html">Выборка, SE и интервал</a>
+<a href="hypothesis-testing.html">Проверка гипотезы</a>
+<a href="python-bank-walkthrough.html">Тетрадь bank_basics</a>
+<h2>Неделя 2. Python без страха</h2>
+<a href="python-objects.html">Имена, списки, множества</a>
+<a href="python-strings.html">Строки и срезы</a>
+<a href="python-sets-dicts.html">Множества и словари</a>
+<a href="python-logic.html">Условия, циклы, функции</a>
+<a href="python-olympics.html">Python Olympics</a>
+<h2>Неделя 3. Эксперимент</h2>
+<a href="acquisition.html">Привлечение клиента</a>
+<a href="privacy.html">Privacy на слайдах</a>
+<a href="causation.html">Причинность и field test</a>
+<a href="experiment-design.html">Словарь эксперимента</a>
+<h2>Неделя 4. Кейс Artea</h2>
+<a href="artea-setup.html">Кейс Artea</a>
+<a href="artea-balance.html">Рандомизация и средние</a>
+<a href="artea-ols.html">OLS по купону</a>
+<a href="artea-heterogeneity.html">Кому слать купон</a>
+<a href="artea-notebook.html">Тетрадь Artea</a>
+<h2>Неделя 5. Ценность и отток</h2>
+<a href="clv.html">CLV и срок жизни</a>
+<a href="churn-management.html">Управление оттоком</a>
+<a href="model-choice.html">Какая модель под какой Y</a>
+<a href="calibration-lift.html">Calibration, validation, lift</a>
+<a href="predictors.html">Какие X брать</a>
+<h2>Неделя 6. Logit и шансы</h2>
+<a href="logit-odds.html">Шансы и odds ratio</a>
+<a href="advertising-lab.html">Лаба Advertising</a>
+<a href="reading-output.html">Чтение таблиц OLS и logit</a>
+<a href="interactions.html">Взаимодействия</a>
+<h2>Неделя 7. Кейсы и matching</h2>
+<a href="pilgrim.html">Кейс Pilgrim</a>
+<a href="books-r-us.html">Кейс Books R Us</a>
+<a href="association-experiment.html">Связь или причина</a>
+<a href="matching-idea.html">Идея matching</a>
+<a href="sample-box.html">Sample Box и деньги</a>
+<h2>Неделя 8. Пробный экзамен</h2>
+<a href="exam-format.html">Формат экзамена</a>
+<a href="touchpoints.html">Touchpoints</a>
+<a href="readings-gaps.html">Чего нет в папке</a>
+<a href="formula-sheet.html">Шпаргалка</a>
+<a href="mock-exam.html">Пробный экзамен</a></nav>
+  <main><div class="wrap">
+    <p class="kicker">Неделя 4 · Lab_1_ArteaCase</p>
+    <h1>Тетрадь Artea: код по шагам</h1>
+    <p class="lead">Тетрадь повторяет слайды. Ниже только строки, без которых нельзя объяснить вывод. Длинная раскраска графика на балл не влияет.</p>
+    
+<pre><code>import pandas as pd
+import statsmodels.formula.api as smf
+db_artea = pd.read_excel('DataArtea.xlsx')
+db_artea.head()
+db_artea.shape</code></pre>
+<p><code>head()</code> показывает первые строки, чтобы проверить, что столбцы на месте. <code>shape</code> в одном запуске печатает (5000, 14): пять тысяч людей. В другом выводе на экране 15 столбцов, потому что в файле преподавателя уже лежит готовое поле <code>channel</code> и <code>interaction_Insta_Coup</code>. На логику теста это не влияет. Если у вас нет готового взаимодействия, его собирают сами: единица только когда и Instagram, и купон равны 1.</p>
+<pre><code>desc = ['num_past_purch', 'spent_last_purchase', 'weeks_since_visit',
+        'browsing_minutes', 'shopping_cart', 'channel_Facebook',
+        'channel_Instagram', 'channel_Referral', 'channel_Other']
+db_artea.groupby("test_coupon")[desc].mean()</code></pre>
+<p><code>groupby("test_coupon")</code> режет таблицу на купон и не купон. <code>mean()</code> считает среднее каждого столбца внутри куска. Это шаг 1.</p>
+<pre><code>group1 = db_artea[db_artea['test_coupon'] == 0]['num_past_purch']
+group2 = db_artea[db_artea['test_coupon'] == 1]['num_past_purch']
+t_stat, p_value, df = smws.ttest_ind(group1, group2, alternative='two-sided', usevar='pooled')</code></pre>
+<p>Квадратные скобки с условием оставляют только нужные строки. <code>==</code> сравнивает. <code>ttest_ind</code> сравнивает два средних. <code>alternative='two-sided'</code> — двусторонний тест, как с возрастом на неделе 1: нас интересует отличие в любую сторону. <code>pooled</code> считает общий разброс. Печать: t = −0,99, p = 0,3208.</p>
+<p>Для доли Facebook берут <code>proportions_ztest</code>, потому что столбец 0/1, и вопрос про долю, а не про «средний рост». В тетради есть неаккуратность: в печати z-теста стоит переменная <code>t_stat</code> от предыдущего теста, поэтому на экран снова вылезает −0,99, хотя p-value уже новый, 0,3298. На экзамене, если видите такое, скажите: смотреть нужно на p-value этого теста, а не на случайно переиспользованное имя.</p>
+<pre><code>model = smf.ols(formula='trans_after ~ test_coupon', data=db_artea).fit()
+print(model.summary())</code></pre>
+<p><code>smf.ols</code> строит OLS. Формула читается «trans_after зависит от test_coupon». Слева Y, справа X. <code>fit()</code> подгоняет коэффициенты. <code>summary()</code> печатает таблицу: коэффициент, standard error, t, p-value, R². Для выручки меняют только левую часть: <code>revenue_after ~ test_coupon</code>.</p>
+<pre><code>model = smf.ols(
+    formula='trans_after ~ test_coupon + num_past_purch + spent_last_purchase + weeks_since_visit + browsing_minutes + shopping_cart + channel_Facebook + channel_Instagram + channel_Referral + channel_Other',
+    data=db_artea).fit()</code></pre>
+<p>Плюсы добавляют контроли. Коэффициент купона теперь «при прочих равных в этом списке». Из-за рандомизации он остаётся около +0,03.</p>
+<p>Дальше в тетради строят взаимодействие. Смысл формулы <code>trans_after ~ test_coupon * shopping_cart + ...</code>: звёздочка в формуле statsmodels просит и сами переменные, и их произведение. Это не обычное умножение чисел в Python. Путаница частая: в арифметике <code>*</code> умножает, в формуле модели <code>*</code> ещё и добавляет interaction.</p>
+<div class="callout exam"><strong>Что уметь объяснить без ноутбука</strong>groupby().mean() проверяет баланс. ols("Y ~ test_coupon") даёт средний эффект. p-value у коэффициента купона решает, отличается ли эффект от нуля. Звёздочка в формуле добавляет interaction.</div>
+<h2>Практикум</h2>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="n1" data-answer="a" data-why="В формулах statsmodels слева зависимая переменная, справа объясняющие.">
+  <p class="prompt">Формула trans_after ~ test_coupon. Где здесь Y?</p>
+  <label class="opt"><input type="radio" name="n1" value="a"> Слева, trans_after</label><label class="opt"><input type="radio" name="n1" value="b"> Справа, test_coupon</label><label class="opt"><input type="radio" name="n1" value="c"> В слове ols</label><label class="opt"><input type="radio" name="n1" value="d"> Y в этой формуле нет</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="n2" data-answer="a" data-why="Условие == 0. Treatment был бы == 1. Одно равно, =, здесь было бы ошибкой.">
+  <p class="prompt">db_artea[db_artea['test_coupon'] == 0] оставляет…</p>
+  <label class="opt"><input type="radio" name="n2" value="a"> только контрольную группу</label><label class="opt"><input type="radio" name="n2" value="b"> только тех, кому послали купон</label><label class="opt"><input type="radio" name="n2" value="c"> первые 25 строк</label><label class="opt"><input type="radio" name="n2" value="d"> пропуски</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="n3" data-answer="b" data-why="Комментарий в тетради: T-TEST &amp; REGRESSION SHOW SAME RESULTS. t = 2,207 и p = 0,027 в обоих.">
+  <p class="prompt">Зачем в тетради после t-теста всё равно запускают OLS с одним test_coupon?</p>
+  <label class="opt"><input type="radio" name="n3" value="a"> Это другой вопрос, числа не совпадут</label><label class="opt"><input type="radio" name="n3" value="b"> Для двух групп t-тест и такая регрессия дают один и тот же вывод. Тетрадь так и помечает</label><label class="opt"><input type="radio" name="n3" value="c"> OLS считает только медиану</label><label class="opt"><input type="radio" name="n3" value="d"> Чтобы удалить control</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="n4" data-answer="a" data-why="test_coupon * shopping_cart в формуле модели добавляет оба главных эффекта и произведение. В обычном Python * только умножает числа.">
+  <p class="prompt">Что делает знак * внутри формулы smf.ols, в отличие от обычного умножения?</p>
+  <label class="opt"><input type="radio" name="n4" value="a"> Просит включить взаимодействие переменных</label><label class="opt"><input type="radio" name="n4" value="b"> Возводит в степень, как **</label><label class="opt"><input type="radio" name="n4" value="c"> Удаляет столбец</label><label class="opt"><input type="radio" name="n4" value="d"> Считает standard error вручную</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+<p class="pills"><a href="artea-heterogeneity.html">← Кому слать купон</a><a href="clv.html">CLV и срок жизни →</a></p>
+    <footer class="note">Числа и формулировки взяты из загруженных слайдов, тетрадей и mock exam курса 20838 (2026). Если в файле чего-то нет, страница так и говорит.</footer>
+  </div></main>
+</div>
+<script src="../js/nav.js"></script>
+<script src="../js/quiz.js"></script>
+</body>
+</html>

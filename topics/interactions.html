@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Когда эффект разный у разных людей · 20838</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-page="interactions">
+<header class="topbar">
+  <button class="menu-btn" type="button" data-nav-toggle aria-expanded="false">Меню</button>
+  <a class="brand" href="../index.html"><strong>20838 · к экзамену</strong><span>Data &amp; Analytics for Strategic Marketing Decisions</span></a>
+  <div class="top-actions">
+    <a class="ghost" href="../topics/mock-exam.html">Mock exam</a>
+  </div>
+</header>
+<div class="layout">
+  <nav class="sidenav" aria-label="Темы"><h2>Навигация</h2>
+<a href="../index.html">План на 8 недель<small>С чего начать</small></a>
+<a href="../index.html#inventory">Все материалы<small>Лекции, лабы, кейсы</small></a>
+<a href="formula-sheet.html">Шпаргалка формул<small>Выучить до автоматизма</small></a>
+<a href="mock-exam.html">Пробный экзамен<small>Сначала сами, потом решение</small></a>
+<h2>Неделя 1. Язык данных</h2>
+<a href="model-and-data.html">Модель и строка клиента</a>
+<a href="variable-types.html">Типы переменных</a>
+<a href="descriptive-stats.html">Среднее, медиана, мода, SD</a>
+<a href="shape-missing.html">Форма, ящики и пропуски</a>
+<a href="inference-se-ci.html">Выборка, SE и интервал</a>
+<a href="hypothesis-testing.html">Проверка гипотезы</a>
+<a href="python-bank-walkthrough.html">Тетрадь bank_basics</a>
+<h2>Неделя 2. Python без страха</h2>
+<a href="python-objects.html">Имена, списки, множества</a>
+<a href="python-strings.html">Строки и срезы</a>
+<a href="python-sets-dicts.html">Множества и словари</a>
+<a href="python-logic.html">Условия, циклы, функции</a>
+<a href="python-olympics.html">Python Olympics</a>
+<h2>Неделя 3. Эксперимент</h2>
+<a href="acquisition.html">Привлечение клиента</a>
+<a href="privacy.html">Privacy на слайдах</a>
+<a href="causation.html">Причинность и field test</a>
+<a href="experiment-design.html">Словарь эксперимента</a>
+<h2>Неделя 4. Кейс Artea</h2>
+<a href="artea-setup.html">Кейс Artea</a>
+<a href="artea-balance.html">Рандомизация и средние</a>
+<a href="artea-ols.html">OLS по купону</a>
+<a href="artea-heterogeneity.html">Кому слать купон</a>
+<a href="artea-notebook.html">Тетрадь Artea</a>
+<h2>Неделя 5. Ценность и отток</h2>
+<a href="clv.html">CLV и срок жизни</a>
+<a href="churn-management.html">Управление оттоком</a>
+<a href="model-choice.html">Какая модель под какой Y</a>
+<a href="calibration-lift.html">Calibration, validation, lift</a>
+<a href="predictors.html">Какие X брать</a>
+<h2>Неделя 6. Logit и шансы</h2>
+<a href="logit-odds.html">Шансы и odds ratio</a>
+<a href="advertising-lab.html">Лаба Advertising</a>
+<a href="reading-output.html">Чтение таблиц OLS и logit</a>
+<a href="interactions.html">Взаимодействия</a>
+<h2>Неделя 7. Кейсы и matching</h2>
+<a href="pilgrim.html">Кейс Pilgrim</a>
+<a href="books-r-us.html">Кейс Books R Us</a>
+<a href="association-experiment.html">Связь или причина</a>
+<a href="matching-idea.html">Идея matching</a>
+<a href="sample-box.html">Sample Box и деньги</a>
+<h2>Неделя 8. Пробный экзамен</h2>
+<a href="exam-format.html">Формат экзамена</a>
+<a href="touchpoints.html">Touchpoints</a>
+<a href="readings-gaps.html">Чего нет в папке</a>
+<a href="formula-sheet.html">Шпаргалка</a>
+<a href="mock-exam.html">Пробный экзамен</a></nav>
+  <main><div class="wrap">
+    <p class="kicker">Неделя 6 · interactions</p>
+    <h1>Когда эффект разный у разных людей</h1>
+    <p class="lead">Взаимодействие — это не «ещё один обычный плюс». Оно говорит, что наклон одного X зависит от другого X.</p>
+    
+<p>Вы уже видели три штуки. В Artea купон почти ничего не делал с базовым Google и заметно двигал Instagram и брошенную корзину. В OLS closing class реклама сильнее связана с прибылью у богатых. В mock Red Bull промо по-разному связано с выбором бренда у молодых и у мужчин. Правило одно.</p>
+<div class="callout formula">Эффект X в группе D = коэффициент X + коэффициент (X × D), если D = 1<br>Если D = 0, остаётся только коэффициент X</div>
+<p>Поэтому голый коэффициент X после появления взаимодействия — это эффект не «в среднем по больнице», а в базовой группе, где все D равны нулю.</p>
+<h2>Разбор на числах Artea</h2>
+<p>Для транзакций, модель с каналами: test_coupon = −0,01 (p = 0,51), Instagram × coupon = +0,07 (p &lt; 0,01).</p>
+<ol class="steps">
+<li>Человек с Google, все канальные dummy = 0. Эффект купона ≈ −0,01. p = 0,51, от нуля не отличается.</li>
+<li>Человек с Instagram. Эффект купона ≈ −0,01 + 0,07 = +0,06 транзакции. Добавка 0,07 значима.</li>
+<li>Нельзя сказать «купон незначим», глядя только на голый test_coupon. Он незначим для базы. Вопрос менеджера «кому слать» живёт в строке взаимодействия.</li>
+</ol>
+<h2>Как не переврать процент</h2>
+<p>В OLS взаимодействие 0,001 уже в единицах прибыли на единицу рекламы и единицу дохода. Маленькое число может быть важным, если доход измерен в долларах, а не в тысячах: на каждые $1&nbsp;000 дохода наклон рекламы вырастет на 1. Смотрите единицы. Слайд сам не переводит 0,001 в «очень слабый эффект», он говорит только о знаке и значимости.</p>
+<p>В logit взаимодействие тоже живёт в log-odds. Процент считают через exp от суммы, если нужен общий множитель группы, либо через exp самого взаимодействия, если нужен ответ «насколько множитель группы отличается от базы». В решении Red Bull берут второй, более короткий путь: значимый положительный interaction значит, что связь промо с шансами выбрать Red Bull в этой группе сильнее, чем в базе. Они не перемножают все OR в одну вероятность.</p>
+<div class="callout mistake"><strong>Частая ошибка</strong>Интерпретировать взаимодействие как главный эффект. Строка Promo × Male не говорит, что «мужчины чаще берут Red Bull». Это говорит строка Male. Строка произведения говорит, что купон связан с выбором у мужчин иначе, чем у базы.</div>
+<h2>Практикум</h2>
+
+<section class="quiz" data-quiz data-kind="blank" data-qid="in1" data-why="−0,01 + 0,07 = 0,06. Значимость добавки смотрят по строке взаимодействия, не по голой строке купона.">
+  <p class="prompt">Эффект купона для базы −0,01, взаимодействие Instagram × coupon = 0,07. Чему равен суммарный эффект купона для Instagram в транзакциях?</p>
+  <p><label>Эффект<br><input type="text" data-accept="0.06" data-label="Эффект" placeholder="0,06"></label></p>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="in2" data-answer="b" data-why="Так устроены и каналы Artea, и возрастные группы, когда часть уровней спрятана в базе.">
+  <p class="prompt">После добавления взаимодействий голый коэффициент treatment — это эффект…</p>
+  <label class="opt"><input type="radio" name="in2" value="a"> для всех людей сразу</label><label class="opt"><input type="radio" name="in2" value="b"> для базовой группы, где взаимодействующие dummy равны нулю</label><label class="opt"><input type="radio" name="in2" value="c"> для самого богатого клиента</label><label class="opt"><input type="radio" name="in2" value="d"> это всегда p-value</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="in3" data-answer="b" data-why="Главный эффект пола — отдельная строка Male. Произведение — разница наклона промо.">
+  <p class="prompt">Строка Promo × Male в logit отвечает на вопрос:</p>
+  <label class="opt"><input type="radio" name="in3" value="a"> мужчины в целом чаще выбирают бренд, без разговора о промо</label><label class="opt"><input type="radio" name="in3" value="b"> связь промо с шансами выбора у мужчин отличается от связи в базовой группе</label><label class="opt"><input type="radio" name="in3" value="c"> цену надо повысить</label><label class="opt"><input type="radio" name="in3" value="d"> модель является OLS</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="in4" data-answer="a" data-why="0,001 на доллар и 0,001 на тысячу долларов — разные управленческие величины. Слайд обсуждает знак и p = 0,034, не размер в отрыве от шкалы.">
+  <p class="prompt">В OLS взаимодействие Spend × Income равно 0,001 и значимо. Что обязательно проверить глазами перед словом «эффект крошечный»?</p>
+  <label class="opt"><input type="radio" name="in4" value="a"> В каких единицах измерен доход</label><label class="opt"><input type="radio" name="in4" value="b"> Только цвет слайда</label><label class="opt"><input type="radio" name="in4" value="c"> Длину имени переменной</label><label class="opt"><input type="radio" name="in4" value="d"> Единицы не важны никогда</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+<p class="pills"><a href="reading-output.html">← Чтение таблиц OLS и logit</a><a href="pilgrim.html">Кейс Pilgrim →</a></p>
+    <footer class="note">Числа и формулировки взяты из загруженных слайдов, тетрадей и mock exam курса 20838 (2026). Если в файле чего-то нет, страница так и говорит.</footer>
+  </div></main>
+</div>
+<script src="../js/nav.js"></script>
+<script src="../js/quiz.js"></script>
+</body>
+</html>

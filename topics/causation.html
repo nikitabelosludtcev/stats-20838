@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Когда разница двух групп ещё не причина · 20838</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-page="causation">
+<header class="topbar">
+  <button class="menu-btn" type="button" data-nav-toggle aria-expanded="false">Меню</button>
+  <a class="brand" href="../index.html"><strong>20838 · к экзамену</strong><span>Data &amp; Analytics for Strategic Marketing Decisions</span></a>
+  <div class="top-actions">
+    <a class="ghost" href="../topics/mock-exam.html">Mock exam</a>
+  </div>
+</header>
+<div class="layout">
+  <nav class="sidenav" aria-label="Темы"><h2>Навигация</h2>
+<a href="../index.html">План на 8 недель<small>С чего начать</small></a>
+<a href="../index.html#inventory">Все материалы<small>Лекции, лабы, кейсы</small></a>
+<a href="formula-sheet.html">Шпаргалка формул<small>Выучить до автоматизма</small></a>
+<a href="mock-exam.html">Пробный экзамен<small>Сначала сами, потом решение</small></a>
+<h2>Неделя 1. Язык данных</h2>
+<a href="model-and-data.html">Модель и строка клиента</a>
+<a href="variable-types.html">Типы переменных</a>
+<a href="descriptive-stats.html">Среднее, медиана, мода, SD</a>
+<a href="shape-missing.html">Форма, ящики и пропуски</a>
+<a href="inference-se-ci.html">Выборка, SE и интервал</a>
+<a href="hypothesis-testing.html">Проверка гипотезы</a>
+<a href="python-bank-walkthrough.html">Тетрадь bank_basics</a>
+<h2>Неделя 2. Python без страха</h2>
+<a href="python-objects.html">Имена, списки, множества</a>
+<a href="python-strings.html">Строки и срезы</a>
+<a href="python-sets-dicts.html">Множества и словари</a>
+<a href="python-logic.html">Условия, циклы, функции</a>
+<a href="python-olympics.html">Python Olympics</a>
+<h2>Неделя 3. Эксперимент</h2>
+<a href="acquisition.html">Привлечение клиента</a>
+<a href="privacy.html">Privacy на слайдах</a>
+<a href="causation.html">Причинность и field test</a>
+<a href="experiment-design.html">Словарь эксперимента</a>
+<h2>Неделя 4. Кейс Artea</h2>
+<a href="artea-setup.html">Кейс Artea</a>
+<a href="artea-balance.html">Рандомизация и средние</a>
+<a href="artea-ols.html">OLS по купону</a>
+<a href="artea-heterogeneity.html">Кому слать купон</a>
+<a href="artea-notebook.html">Тетрадь Artea</a>
+<h2>Неделя 5. Ценность и отток</h2>
+<a href="clv.html">CLV и срок жизни</a>
+<a href="churn-management.html">Управление оттоком</a>
+<a href="model-choice.html">Какая модель под какой Y</a>
+<a href="calibration-lift.html">Calibration, validation, lift</a>
+<a href="predictors.html">Какие X брать</a>
+<h2>Неделя 6. Logit и шансы</h2>
+<a href="logit-odds.html">Шансы и odds ratio</a>
+<a href="advertising-lab.html">Лаба Advertising</a>
+<a href="reading-output.html">Чтение таблиц OLS и logit</a>
+<a href="interactions.html">Взаимодействия</a>
+<h2>Неделя 7. Кейсы и matching</h2>
+<a href="pilgrim.html">Кейс Pilgrim</a>
+<a href="books-r-us.html">Кейс Books R Us</a>
+<a href="association-experiment.html">Связь или причина</a>
+<a href="matching-idea.html">Идея matching</a>
+<a href="sample-box.html">Sample Box и деньги</a>
+<h2>Неделя 8. Пробный экзамен</h2>
+<a href="exam-format.html">Формат экзамена</a>
+<a href="touchpoints.html">Touchpoints</a>
+<a href="readings-gaps.html">Чего нет в папке</a>
+<a href="formula-sheet.html">Шпаргалка</a>
+<a href="mock-exam.html">Пробный экзамен</a></nav>
+  <main><div class="wrap">
+    <p class="kicker">Неделя 3 · causation</p>
+    <h1>Когда разница двух групп ещё не причина</h1>
+    <p class="lead">Без эксперимента курс разрешает говорить только об association, связи. Причина требует трёх условий и честного контроля.</p>
+    
+<p>Слайд задаёт два бытовых заявления. «Парацетамол уменьшает головную боль». «Красная тряпка злит быка». Просьба: какое из них причинное и почему. Ответ держится не на интуиции, а на трёх требованиях.</p>
+<div class="callout formula"><strong>Три условия, чтобы сказать X → Y</strong><br>1. Temporal precedence: изменение X происходит раньше изменения Y.<br>2. Covariance: между X и Y есть наблюдаемая связь.<br>3. Нет правдоподобного другого объяснения.</div>
+<p>В эксперименте те же три пункта выглядят так:</p>
+<ol>
+<li>X происходит раньше Y, и X обычно специально меняют. Это manipulation.</li>
+<li>Связь оценивают, собрав данные.</li>
+<li>Прочие факторы держат под контролем. Обычно это randomization, случайное назначение.</li>
+</ol>
+<p>Определение field test со слайда, своими словами: процедуру, в которой один или несколько treatments меняют, затем собирают observed outcome (выбор, траты, частота покупок), и при этом контролируют то, что могло бы исказить результат, например характеристики людей. Последняя строка слайда: <b>без эксперимента есть связь, но не причинность</b>.</p>
+<h2>Пример с упаковкой</h2>
+<p>Два цвета упаковки, выбор бренда. На слайде доли: синяя упаковка выбрана в 0,60 случаев, зелёная в 0,40.</p>
+<ol class="steps">
+<li>X, independent variable: цвет, его меняет исследователь.</li>
+<li>O, dependent variable: выбор. По нему судят, удался ли эксперимент. На слайде буква O, не Y, но роль та же, что у Y в регрессии.</li>
+<li>Treatment effect: 0,60 − 0,40 = 0,20, то есть 20 процентных пунктов. Слайд пишет «20%» именно как эту разницу долей.</li>
+<li>Разница становится эффектом цвета только если группы не отличались чем-то ещё. Иначе это selection bias.</li>
+</ol>
+<div class="callout mistake"><strong>Частая ошибка</strong>20 процентных пунктов и «вероятность выросла на 20%» — разные фразы. Здесь из 0,40 стало 0,60, разница 0,20. Относительный рост был бы 0,20 / 0,40 = 50%. Слайд имеет в виду разницу 0,60 − 0,40.</div>
+<h2>Где в курсе это уже почти эксперимент, а где нет</h2>
+<p>Колода Cases 3–4 коротко показывает Berger and Milkman про вирусные статьи New York Times. Сначала эмоции в тексте связаны с репостами: это наблюдение, association. Потом два варианта рекламной истории Jimmy Dean с разным уровнем amusement, 2,92 против 3,97, и p-value 0,00: здесь эмоцию уже назначают. Глубины статьи в файле нет, это иллюстрация на один слайд. Вывод иллюстрации: прогноз и эксперимент отвечают на разные вопросы. «Какие эмоции встречаются у вирусных текстов» не равно «если добавить юмор, репостов станет больше».</p>
+<p>Та же развилка позже станет главной в Pilgrim: модель оттока говорит, кто похож на уходящего. Field test говорит, удержит ли оффер.</p>
+<h2>Практикум</h2>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="c1" data-answer="b" data-why="Это temporal precedence, пункт 1 на слайде.">
+  <p class="prompt">Какое условие причинности про время?</p>
+  <label class="opt"><input type="radio" name="c1" value="a"> X и Y должны быть номинальными</label><label class="opt"><input type="radio" name="c1" value="b"> Изменение X должно происходить раньше изменения Y</label><label class="opt"><input type="radio" name="c1" value="c"> p-value всегда равен 0,05</label><label class="opt"><input type="radio" name="c1" value="d"> Группы обязаны различаться по возрасту</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="blank" data-qid="c2" data-why="0,60 − 0,40 = 0,20, слайд пишет 20%. Это разница долей, не относительный прирост 50%.">
+  <p class="prompt">Упаковка: синий выбирают с долей 0,60, зелёный с долей 0,40. Впишите treatment effect в процентных пунктах, как 20 или 0.20 — примите оба, если это сама разница.</p>
+  <p><label>Разница, п.п.<br><input type="text" data-accept="20|0.20|0.2" data-label="Разница, п.п." placeholder="20"></label></p>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="c3" data-answer="a" data-why="Дословный смысл последнего тезиса слайда про field test.">
+  <p class="prompt">Фраза слайда «without experimentation» означает:</p>
+  <label class="opt"><input type="radio" name="c3" value="a"> связь есть, причинности ещё нет</label><label class="opt"><input type="radio" name="c3" value="b"> данных недостаточно даже для среднего</label><label class="opt"><input type="radio" name="c3" value="c"> logit запрещён</label><label class="opt"><input type="radio" name="c3" value="d"> randomization не нужна никогда</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="c4" data-answer="a" data-why="Слайд Cases: from observed patterns to an experiment. Числа amusement 2,92 и 3,97, p = 0,00. Полной статьи в папке нет.">
+  <p class="prompt">Зачем в курсе рядом стоят вирусные статьи и два рекламных текста Jimmy Dean?</p>
+  <label class="opt"><input type="radio" name="c4" value="a"> Чтобы показать: наблюдённая связь и назначенный эксперимент — разные вопросы. Разбор статьи при этом в файлах тонкий</label><label class="opt"><input type="radio" name="c4" value="b"> Чтобы выучить коэффициент 2,92 как формулу CLV</label><label class="opt"><input type="radio" name="c4" value="c"> Это датасет банка</label><label class="opt"><input type="radio" name="c4" value="d"> Это задача Python Olympics</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+<p class="pills"><a href="privacy.html">← Privacy на слайдах</a><a href="experiment-design.html">Словарь эксперимента →</a></p>
+    <footer class="note">Числа и формулировки взяты из загруженных слайдов, тетрадей и mock exam курса 20838 (2026). Если в файле чего-то нет, страница так и говорит.</footer>
+  </div></main>
+</div>
+<script src="../js/nav.js"></script>
+<script src="../js/quiz.js"></script>
+</body>
+</html>

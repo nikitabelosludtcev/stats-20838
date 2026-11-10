@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Одна таблица, два разных вопроса · 20838</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-page="association-experiment">
+<header class="topbar">
+  <button class="menu-btn" type="button" data-nav-toggle aria-expanded="false">Меню</button>
+  <a class="brand" href="../index.html"><strong>20838 · к экзамену</strong><span>Data &amp; Analytics for Strategic Marketing Decisions</span></a>
+  <div class="top-actions">
+    <a class="ghost" href="../topics/mock-exam.html">Mock exam</a>
+  </div>
+</header>
+<div class="layout">
+  <nav class="sidenav" aria-label="Темы"><h2>Навигация</h2>
+<a href="../index.html">План на 8 недель<small>С чего начать</small></a>
+<a href="../index.html#inventory">Все материалы<small>Лекции, лабы, кейсы</small></a>
+<a href="formula-sheet.html">Шпаргалка формул<small>Выучить до автоматизма</small></a>
+<a href="mock-exam.html">Пробный экзамен<small>Сначала сами, потом решение</small></a>
+<h2>Неделя 1. Язык данных</h2>
+<a href="model-and-data.html">Модель и строка клиента</a>
+<a href="variable-types.html">Типы переменных</a>
+<a href="descriptive-stats.html">Среднее, медиана, мода, SD</a>
+<a href="shape-missing.html">Форма, ящики и пропуски</a>
+<a href="inference-se-ci.html">Выборка, SE и интервал</a>
+<a href="hypothesis-testing.html">Проверка гипотезы</a>
+<a href="python-bank-walkthrough.html">Тетрадь bank_basics</a>
+<h2>Неделя 2. Python без страха</h2>
+<a href="python-objects.html">Имена, списки, множества</a>
+<a href="python-strings.html">Строки и срезы</a>
+<a href="python-sets-dicts.html">Множества и словари</a>
+<a href="python-logic.html">Условия, циклы, функции</a>
+<a href="python-olympics.html">Python Olympics</a>
+<h2>Неделя 3. Эксперимент</h2>
+<a href="acquisition.html">Привлечение клиента</a>
+<a href="privacy.html">Privacy на слайдах</a>
+<a href="causation.html">Причинность и field test</a>
+<a href="experiment-design.html">Словарь эксперимента</a>
+<h2>Неделя 4. Кейс Artea</h2>
+<a href="artea-setup.html">Кейс Artea</a>
+<a href="artea-balance.html">Рандомизация и средние</a>
+<a href="artea-ols.html">OLS по купону</a>
+<a href="artea-heterogeneity.html">Кому слать купон</a>
+<a href="artea-notebook.html">Тетрадь Artea</a>
+<h2>Неделя 5. Ценность и отток</h2>
+<a href="clv.html">CLV и срок жизни</a>
+<a href="churn-management.html">Управление оттоком</a>
+<a href="model-choice.html">Какая модель под какой Y</a>
+<a href="calibration-lift.html">Calibration, validation, lift</a>
+<a href="predictors.html">Какие X брать</a>
+<h2>Неделя 6. Logit и шансы</h2>
+<a href="logit-odds.html">Шансы и odds ratio</a>
+<a href="advertising-lab.html">Лаба Advertising</a>
+<a href="reading-output.html">Чтение таблиц OLS и logit</a>
+<a href="interactions.html">Взаимодействия</a>
+<h2>Неделя 7. Кейсы и matching</h2>
+<a href="pilgrim.html">Кейс Pilgrim</a>
+<a href="books-r-us.html">Кейс Books R Us</a>
+<a href="association-experiment.html">Связь или причина</a>
+<a href="matching-idea.html">Идея matching</a>
+<a href="sample-box.html">Sample Box и деньги</a>
+<h2>Неделя 8. Пробный экзамен</h2>
+<a href="exam-format.html">Формат экзамена</a>
+<a href="touchpoints.html">Touchpoints</a>
+<a href="readings-gaps.html">Чего нет в папке</a>
+<a href="formula-sheet.html">Шпаргалка</a>
+<a href="mock-exam.html">Пробный экзамен</a></nav>
+  <main><div class="wrap">
+    <p class="kicker">Неделя 7 · association vs experiment</p>
+    <h1>Одна таблица, два разных вопроса</h1>
+    <p class="lead">Почти каждый кейс курса кладёт рядом жирную наблюдаемую разницу и тонкий эффект случайного действия. Путать их — типичный способ потерять кейс.</p>
+    
+<div class="table-wrap"><table>
+<thead><tr><th>Кейс</th><th>Наблюдаемая связь</th><th>Случайное действие</th></tr></thead>
+<tbody>
+<tr><td>Вирусные тексты</td><td>Какие эмоции встречаются у статей, которыми делятся</td><td>Два назначенных уровня amusement, 2,92 против 3,97</td></tr>
+<tr><td>Artea</td><td>Прошлые покупки и канал связаны с будущей выручкой</td><td>Только купон. Его коэффициент почти не меняется, когда контроли добавляют</td></tr>
+<tr><td>Pilgrim</td><td>Модель говорит, кто похож на уходящего</td><td>Оффер внутри децилей 1–3. В среднем минус к удержанию</td></tr>
+<tr><td>Books R Us</td><td>Уже мультиканальный клиент: около −74% к odds оттока и +€33 прибыли</td><td>Письмо MNF: около €1 и OR оттока 0,89</td></tr>
+<tr><td>Sample Box</td><td>Сырой разрыв трат €199</td><td>Назначения не было. После matching остаётся около €41, и это всё ещё оценка при допущениях</td></tr>
+</tbody></table></div>
+<h2>Решённый абзац</h2>
+<p>Вопрос. «Мультиканальные клиенты приносят на €33 больше. Давайте всем письмо про каналы и заложим в бюджет +€33 на человека».</p>
+<ol class="steps">
+<li>€33 сравнивают людей, которые уже ведут себя по-разному. Активный клиент и канал выбирает, и денег оставляет. Это не эффект текста письма.</li>
+<li>Письмо в тесте сдвигает долю мультиканала примерно на один пункт и прибыль примерно на €1. Бюджет на €33 завышен в десятки раз.</li>
+<li>Даже €1 ещё нужно сравнить со стоимостью рассылки. Слайд прямо говорит: candidate to validate and evaluate against costs.</li>
+<li>Верная рекомендация: масштабировать осторожно MNF, не MF и не ценность с денежным стимулом, и не обещать исторический разрыв канала.</li>
+</ol>
+<p>Тот же шаблон переносится на mock про Early Access. Люди, которые сами записались раньше, тратят €58 против €13. Разница €45 не эффект программы, пока запись добровольная. Об этом страница mock.</p>
+<h2>Практикум</h2>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="ae1" data-answer="a" data-why="€32,58 и −74% относятся к наблюдаемому каналу. Письмо сдвигает прибыль на €1,04.">
+  <p class="prompt">Какое число можно назвать эффектом случайного письма Books R Us?</p>
+  <label class="opt"><input type="radio" name="ae1" value="a"> около €1 у MNF против контроля</label><label class="opt"><input type="radio" name="ae1" value="b"> €32,58</label><label class="opt"><input type="radio" name="ae1" value="c"> €97,19 CLV</label><label class="opt"><input type="radio" name="ae1" value="d"> −74% odds как эффект письма</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="ae2" data-answer="b" data-why="Случайным был test_coupon. Канал — как человек когда-то пришёл.">
+  <p class="prompt">В Artea коэффициент канала Instagram при контролях — это:</p>
+  <label class="opt"><input type="radio" name="ae2" value="a"> такой же причинный эффект, как у купона</label><label class="opt"><input type="radio" name="ae2" value="b"> связь: канал не назначали случайно в этом тесте</label><label class="opt"><input type="radio" name="ae2" value="c"> standard error</label><label class="opt"><input type="radio" name="ae2" value="d"> пропуск</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="ae3" data-answer="b" data-why="Lift децилей показывает, что ранжирование риска работает. Эксперимент показывает, что оффер в среднем не лечит этот риск.">
+  <p class="prompt">Зачем Pilgrim вообще строит децили риска, если оффер потом вредит?</p>
+  <label class="opt"><input type="radio" name="ae3" value="a"> Децили не нужны</label><label class="opt"><input type="radio" name="ae3" value="b"> Чтобы отделить вопрос «кто рискованный» от вопроса «помогает ли этот оффер». Оба вопроса в кейсе законны и ответы разные</label><label class="opt"><input type="radio" name="ae3" value="c"> Чтобы заменить контроль людьми вне теста</label><label class="opt"><input type="radio" name="ae3" value="d"> Чтобы посчитать mode</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="ae4" data-answer="a" data-why="Слайд противопоставляет observed articles и assigned ad versions. Покрытие статьи тонкое: чисел хватает на эту развилку, не на пересказ paper.">
+  <p class="prompt">Jimmy Dean 3,97 против 2,92 на слайде — это скорее:</p>
+  <label class="opt"><input type="radio" name="ae4" value="a"> назначенное сравнение уровней amusement, не просто корреляция архива газеты</label><label class="opt"><input type="radio" name="ae4" value="b"> CLV</label><label class="opt"><input type="radio" name="ae4" value="c"> стандартная ошибка возраста</label><label class="opt"><input type="radio" name="ae4" value="d"> odds ratio газеты</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+<p class="pills"><a href="books-r-us.html">← Кейс Books R Us</a><a href="matching-idea.html">Идея matching →</a></p>
+    <footer class="note">Числа и формулировки взяты из загруженных слайдов, тетрадей и mock exam курса 20838 (2026). Если в файле чего-то нет, страница так и говорит.</footer>
+  </div></main>
+</div>
+<script src="../js/nav.js"></script>
+<script src="../js/quiz.js"></script>
+</body>
+</html>

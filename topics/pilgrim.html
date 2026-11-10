@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pilgrim Bank: прицельный оффер ухудшил удержание · 20838</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-page="pilgrim">
+<header class="topbar">
+  <button class="menu-btn" type="button" data-nav-toggle aria-expanded="false">Меню</button>
+  <a class="brand" href="../index.html"><strong>20838 · к экзамену</strong><span>Data &amp; Analytics for Strategic Marketing Decisions</span></a>
+  <div class="top-actions">
+    <a class="ghost" href="../topics/mock-exam.html">Mock exam</a>
+  </div>
+</header>
+<div class="layout">
+  <nav class="sidenav" aria-label="Темы"><h2>Навигация</h2>
+<a href="../index.html">План на 8 недель<small>С чего начать</small></a>
+<a href="../index.html#inventory">Все материалы<small>Лекции, лабы, кейсы</small></a>
+<a href="formula-sheet.html">Шпаргалка формул<small>Выучить до автоматизма</small></a>
+<a href="mock-exam.html">Пробный экзамен<small>Сначала сами, потом решение</small></a>
+<h2>Неделя 1. Язык данных</h2>
+<a href="model-and-data.html">Модель и строка клиента</a>
+<a href="variable-types.html">Типы переменных</a>
+<a href="descriptive-stats.html">Среднее, медиана, мода, SD</a>
+<a href="shape-missing.html">Форма, ящики и пропуски</a>
+<a href="inference-se-ci.html">Выборка, SE и интервал</a>
+<a href="hypothesis-testing.html">Проверка гипотезы</a>
+<a href="python-bank-walkthrough.html">Тетрадь bank_basics</a>
+<h2>Неделя 2. Python без страха</h2>
+<a href="python-objects.html">Имена, списки, множества</a>
+<a href="python-strings.html">Строки и срезы</a>
+<a href="python-sets-dicts.html">Множества и словари</a>
+<a href="python-logic.html">Условия, циклы, функции</a>
+<a href="python-olympics.html">Python Olympics</a>
+<h2>Неделя 3. Эксперимент</h2>
+<a href="acquisition.html">Привлечение клиента</a>
+<a href="privacy.html">Privacy на слайдах</a>
+<a href="causation.html">Причинность и field test</a>
+<a href="experiment-design.html">Словарь эксперимента</a>
+<h2>Неделя 4. Кейс Artea</h2>
+<a href="artea-setup.html">Кейс Artea</a>
+<a href="artea-balance.html">Рандомизация и средние</a>
+<a href="artea-ols.html">OLS по купону</a>
+<a href="artea-heterogeneity.html">Кому слать купон</a>
+<a href="artea-notebook.html">Тетрадь Artea</a>
+<h2>Неделя 5. Ценность и отток</h2>
+<a href="clv.html">CLV и срок жизни</a>
+<a href="churn-management.html">Управление оттоком</a>
+<a href="model-choice.html">Какая модель под какой Y</a>
+<a href="calibration-lift.html">Calibration, validation, lift</a>
+<a href="predictors.html">Какие X брать</a>
+<h2>Неделя 6. Logit и шансы</h2>
+<a href="logit-odds.html">Шансы и odds ratio</a>
+<a href="advertising-lab.html">Лаба Advertising</a>
+<a href="reading-output.html">Чтение таблиц OLS и logit</a>
+<a href="interactions.html">Взаимодействия</a>
+<h2>Неделя 7. Кейсы и matching</h2>
+<a href="pilgrim.html">Кейс Pilgrim</a>
+<a href="books-r-us.html">Кейс Books R Us</a>
+<a href="association-experiment.html">Связь или причина</a>
+<a href="matching-idea.html">Идея matching</a>
+<a href="sample-box.html">Sample Box и деньги</a>
+<h2>Неделя 8. Пробный экзамен</h2>
+<a href="exam-format.html">Формат экзамена</a>
+<a href="touchpoints.html">Touchpoints</a>
+<a href="readings-gaps.html">Чего нет в папке</a>
+<a href="formula-sheet.html">Шпаргалка</a>
+<a href="mock-exam.html">Пробный экзамен</a></nav>
+  <main><div class="wrap">
+    <p class="kicker">Неделя 7 · Case 3</p>
+    <h1>Pilgrim Bank: прицельный оффер ухудшил удержание</h1>
+    <p class="lead">Банк нашёл тех, кто похож на уходящих, и сделал им щедрый оффер. В среднем удержание упало. Это центральный сюрприз курса.</p>
+    
+<p>31&nbsp;634 клиента. Внутренняя модель на входе ставит каждому вероятность оттока и режет базу на 10 децилей. Дециль 1 — самый высокий предсказанный риск, дециль 10 — самый низкий. В тест берут только децили 1–3, это 9&nbsp;490 человек. Год спустя смотрят, кто остался, уже по всей базе, но эффект оффера считают только внутри теста.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>target_proactive</th><th>Кто это</th><th>Людей</th></tr></thead>
+<tbody>
+<tr><td>0</td><td>Случайный контроль внутри теста, оффера нет</td><td>4&nbsp;394</td></tr>
+<tr><td>1</td><td>Звонки и письма. Если останется, финансовая консультация, страховка в поездках, льготы за рубежом, закрытые события</td><td>5&nbsp;096</td></tr>
+<tr><td>пусто</td><td>Децили 4–10, вне теста. Им тоже ничего не давали, но это не контроль</td><td>22&nbsp;144</td></tr>
+</tbody></table></div>
+<div class="callout mistake"><strong>Самая дорогая ошибка кейса</strong>Сравнить получивших оффер со всеми, у кого оффера не было, включая 22&nbsp;144 вне теста. Вне теста риск ниже по построению. Они не случайный контроль. Слайд пишет: missing treatment is not control.</div>
+<h2>Сначала проверки</h2>
+<p>Lift по децилям: наблюдённый churn выше там, где модель обещала высокий риск. Ранжирование работает. Проверка баланса назначения: p = 0,893, совместного перекоса по ковариатам не нашли. Случайность внутри децилей 1–3 выглядит прилично.</p>
+<h2>Средний эффект</h2>
+<p>Доля оставшихся через год: контроль 65,20%, оффер 63,13%. Разница −2,07 процентного пункта. Оффер в этой рискованной группе в среднем связан с худшим удержанием.</p>
+<p>Logit, Y = retention, N = 9&nbsp;490. Pseudo R² = 0,074. Коэффициент target_proactive = −0,1008, p = 0,0247.</p>
+<ol class="steps">
+<li>OR = exp(−0,1008) = 0,904.</li>
+<li>Шансы остаться ниже на (1 − 0,904) × 100 ≈ 9,6%.</li>
+<li>Слайд отдельно напоминает: «около 10%» относится к odds, а сырая разница вероятностей — это −2,07 пункта. Оба числа правдивы и про разные вещи.</li>
+</ol>
+<p>Рядом в той же модели, уже как контроли, не как эксперимент: онлайн-банк раньше +0,199 (p = 0,008), каждый год tenure +0,059 (p &lt; 0,001). Пропуски возраста и дохода имеют большие отрицательные коэффициенты. Это снова флаги agemiss и incmiss, не «младенец с возрастом 0».</p>
+<h2>Стаж ломает среднее</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Группа стажа</th><th>Контроль удержан</th><th>Оффер удержан</th><th>Разница</th><th>Logit оффера</th></tr></thead>
+<tbody>
+<tr><td>Ниже медианы стажа, N = 4&nbsp;745</td><td>58,84%</td><td>61,27%</td><td>+2,43 п.п.</td><td>+0,1209, p = 0,051, OR ≈ 1,13, около +13% к шансам остаться</td></tr>
+<tr><td>Выше медианы, N = 4&nbsp;745</td><td>71,49%</td><td>65,01%</td><td>−6,48 п.п.</td><td>−0,3425, p &lt; 0,001, OR ≈ 0,71, около −29% к шансам</td></tr>
+</tbody></table></div>
+<p>У более новых клиентов оффер на грани плюса. У длинного стажа минус сильный. Слайд предлагает возможное объяснение «сломанная инерция»: тревожный звонок разбудил человека, который и так оставался по привычке. Это гипотеза, её надо проверять, не выдавать за найденный факт. Прежде чем объявлять неоднородность доказанной, слайд просит interaction оффера и стажа, а не только две отдельные таблички.</p>
+<h2>Решение менеджеру</h2>
+<ol class="steps">
+<li>Не масштабировать оффер на всю рискованную базу. Средний эффект в тесте отрицательный.</li>
+<li>Не путать «высокий риск» с «положительной реакцией на этот пакет подарков».</li>
+<li>Имеет смысл сужать аудиторию, начиная с более короткого стажа, и заново тестировать, а не верить одной подгруппе с p = 0,051.</li>
+<li>Pseudo R² = 0,074 не произносить как «модель объяснила 7% удержания» в смысле дисперсии OLS.</li>
+</ol>
+<h2>Практикум</h2>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="pi1" data-answer="b" data-why="Они не получали оффер, но их не рандомизировали вместе с тестом. Риск у них другой.">
+  <p class="prompt">Кого нельзя считать контролем в Pilgrim?</p>
+  <label class="opt"><input type="radio" name="pi1" value="a"> 4 394 человека с target_proactive = 0</label><label class="opt"><input type="radio" name="pi1" value="b"> 22 144 человека вне теста, у них treatment пустой</label><label class="opt"><input type="radio" name="pi1" value="c"> Тех, кому оффер назначили случайно</label><label class="opt"><input type="radio" name="pi1" value="d"> Децили 1–3</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="blank" data-qid="pi2" data-why="exp(−0,1008) = 0,904. (1 − 0,904) × 100 = 9,6. Слайд пишет about 9.6% lower retention odds. Сырые −2,07 п.п. — другое число.">
+  <p class="prompt">Коэффициент оффера −0,1008. Впишите OR, округлив до трёх знаков, и проценты снижения odds целым числом, как на слайде.</p>
+  <p><label>OR<br><input type="text" data-accept="0.904" data-label="OR" placeholder="0,904"></label></p><p><label>Проценты ниже<br><input type="text" data-accept="9.6|10|9.6%" data-label="Проценты ниже" placeholder="9,6"></label></p>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="pi3" data-answer="b" data-why="exp(−0,3425) ≈ 0,710. (1 − 0,71) × 100 ≈ 29. Сырая разница −6,48 п.п.">
+  <p class="prompt">У длинного стажа коэффициент оффера −0,3425, p &lt; 0,001. Верно:</p>
+  <label class="opt"><input type="radio" name="pi3" value="a"> Оффер повышает шансы остаться примерно на 34%</label><label class="opt"><input type="radio" name="pi3" value="b"> OR около 0,71, шансы остаться примерно на 29% ниже</label><label class="opt"><input type="radio" name="pi3" value="c"> Эффект не значим</label><label class="opt"><input type="radio" name="pi3" value="d"> Это OLS в евро</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="pi4" data-answer="b" data-why="Слайд: p = .0510, close to the 5% threshold, about 13% higher retention odds. p баланса 0,893 как раз говорит, что перекоса не нашли.">
+  <p class="prompt">p = 0,051 у короткого стажа. Как пишет курс?</p>
+  <label class="opt"><input type="radio" name="pi4" value="a"> Эффект точно нулевой, потому что не прошёл 5%</label><label class="opt"><input type="radio" name="pi4" value="b"> Плюс около 13% к odds, близко к порогу 5%. Это не такой же по силе результат, как минус у длинного стажа</label><label class="opt"><input type="radio" name="pi4" value="c"> Можно масштабировать оффер на весь банк</label><label class="opt"><input type="radio" name="pi4" value="d"> Контроль испорчен, p баланса был 0,893</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+<p class="pills"><a href="interactions.html">← Взаимодействия</a><a href="books-r-us.html">Кейс Books R Us →</a></p>
+    <footer class="note">Числа и формулировки взяты из загруженных слайдов, тетрадей и mock exam курса 20838 (2026). Если в файле чего-то нет, страница так и говорит.</footer>
+  </div></main>
+</div>
+<script src="../js/nav.js"></script>
+<script src="../js/quiz.js"></script>
+</body>
+</html>

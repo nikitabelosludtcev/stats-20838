@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Advertising: от доли HighSales до двух стратегий · 20838</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-page="advertising-lab">
+<header class="topbar">
+  <button class="menu-btn" type="button" data-nav-toggle aria-expanded="false">Меню</button>
+  <a class="brand" href="../index.html"><strong>20838 · к экзамену</strong><span>Data &amp; Analytics for Strategic Marketing Decisions</span></a>
+  <div class="top-actions">
+    <a class="ghost" href="../topics/mock-exam.html">Mock exam</a>
+  </div>
+</header>
+<div class="layout">
+  <nav class="sidenav" aria-label="Темы"><h2>Навигация</h2>
+<a href="../index.html">План на 8 недель<small>С чего начать</small></a>
+<a href="../index.html#inventory">Все материалы<small>Лекции, лабы, кейсы</small></a>
+<a href="formula-sheet.html">Шпаргалка формул<small>Выучить до автоматизма</small></a>
+<a href="mock-exam.html">Пробный экзамен<small>Сначала сами, потом решение</small></a>
+<h2>Неделя 1. Язык данных</h2>
+<a href="model-and-data.html">Модель и строка клиента</a>
+<a href="variable-types.html">Типы переменных</a>
+<a href="descriptive-stats.html">Среднее, медиана, мода, SD</a>
+<a href="shape-missing.html">Форма, ящики и пропуски</a>
+<a href="inference-se-ci.html">Выборка, SE и интервал</a>
+<a href="hypothesis-testing.html">Проверка гипотезы</a>
+<a href="python-bank-walkthrough.html">Тетрадь bank_basics</a>
+<h2>Неделя 2. Python без страха</h2>
+<a href="python-objects.html">Имена, списки, множества</a>
+<a href="python-strings.html">Строки и срезы</a>
+<a href="python-sets-dicts.html">Множества и словари</a>
+<a href="python-logic.html">Условия, циклы, функции</a>
+<a href="python-olympics.html">Python Olympics</a>
+<h2>Неделя 3. Эксперимент</h2>
+<a href="acquisition.html">Привлечение клиента</a>
+<a href="privacy.html">Privacy на слайдах</a>
+<a href="causation.html">Причинность и field test</a>
+<a href="experiment-design.html">Словарь эксперимента</a>
+<h2>Неделя 4. Кейс Artea</h2>
+<a href="artea-setup.html">Кейс Artea</a>
+<a href="artea-balance.html">Рандомизация и средние</a>
+<a href="artea-ols.html">OLS по купону</a>
+<a href="artea-heterogeneity.html">Кому слать купон</a>
+<a href="artea-notebook.html">Тетрадь Artea</a>
+<h2>Неделя 5. Ценность и отток</h2>
+<a href="clv.html">CLV и срок жизни</a>
+<a href="churn-management.html">Управление оттоком</a>
+<a href="model-choice.html">Какая модель под какой Y</a>
+<a href="calibration-lift.html">Calibration, validation, lift</a>
+<a href="predictors.html">Какие X брать</a>
+<h2>Неделя 6. Logit и шансы</h2>
+<a href="logit-odds.html">Шансы и odds ratio</a>
+<a href="advertising-lab.html">Лаба Advertising</a>
+<a href="reading-output.html">Чтение таблиц OLS и logit</a>
+<a href="interactions.html">Взаимодействия</a>
+<h2>Неделя 7. Кейсы и matching</h2>
+<a href="pilgrim.html">Кейс Pilgrim</a>
+<a href="books-r-us.html">Кейс Books R Us</a>
+<a href="association-experiment.html">Связь или причина</a>
+<a href="matching-idea.html">Идея matching</a>
+<a href="sample-box.html">Sample Box и деньги</a>
+<h2>Неделя 8. Пробный экзамен</h2>
+<a href="exam-format.html">Формат экзамена</a>
+<a href="touchpoints.html">Touchpoints</a>
+<a href="readings-gaps.html">Чего нет в папке</a>
+<a href="formula-sheet.html">Шпаргалка</a>
+<a href="mock-exam.html">Пробный экзамен</a></nav>
+  <main><div class="wrap">
+    <p class="kicker">Неделя 6 · logistic exercise</p>
+    <h1>Advertising: от доли HighSales до двух стратегий</h1>
+    <p class="lead">200 наблюдений, три канала рекламы и бинарный исход. Лаба — готовый шаблон того, как писать интерпретацию.</p>
+    
+<p>Файл <code>Advertising_logistic.csv</code>. Исходные непрерывные продажи убрали и оставили HighSales = 1, если продажи были больше 15, иначе 0. Столбцы: TV, radio, newspaper, HighSales. Вопрос бизнеса: какие каналы связаны с высокой вероятностью высоких продаж.</p>
+<p>Это связь, не field test. Расходы на рекламу никто не назначал случайно в этом файле. В управленческом абзаце так и пишут: associated with, а не causes.</p>
+<h2>Шаг 1. Посмотреть</h2>
+<pre><code>advertising["HighSales"].value_counts()
+advertising["HighSales"].mean()
+advertising.plot(kind="scatter", x="TV", y="HighSales")</code></pre>
+<p>Нулей 125, единиц 75. Доля 75/200 = 0,375, то есть 37,5%. Точечный график TV против 0/1: единицы чаще справа, где TV большой, но облака налезают друг на друга. Связь положительная и шумная. Для бинарного Y точечный график честный, потому что видно перекрытие. Красивая прямая здесь была бы обманом.</p>
+<h2>Шаги 2–4. Только TV</h2>
+<pre><code>tv_model = smf.logit("HighSales ~ TV", data=advertising).fit()
+np.exp(tv_model.params)
+np.exp(tv_model.conf_int())
+tv_model.predict(pd.DataFrame({"TV": [100]}))</code></pre>
+<div class="table-wrap"><table>
+<thead><tr><th></th><th>coef</th><th>OR</th><th>95% CI для OR</th><th>p</th></tr></thead>
+<tbody>
+<tr><td>Intercept</td><td>−3,9673</td><td>0,019</td><td></td><td>&lt; 0,001</td></tr>
+<tr><td>TV</td><td>0,0210</td><td>1,021</td><td>[1,015; 1,027]</td><td>&lt; 0,001</td></tr>
+</tbody></table></div>
+<p>Pseudo R² простой модели 0,326. Наблюдений 200, df model = 1. OR на +10 TV равен 1,233: шансы выше на 23,3%. Прогноз при TV = 100: вероятность 0,133, или 13,3%.</p>
+<h2>Шаг 5. Три канала сразу</h2>
+<pre><code>advertising_model = smf.logit(
+    "HighSales ~ TV + radio + newspaper", data=advertising).fit()</code></pre>
+<div class="table-wrap"><table>
+<thead><tr><th></th><th>coef</th><th>OR</th><th>95% CI</th><th>p</th></tr></thead>
+<tbody>
+<tr><td>Intercept</td><td>−23,404</td><td>около 0</td><td></td><td>&lt; 0,001</td></tr>
+<tr><td>TV</td><td>0,0742</td><td>1,077</td><td>[1,045; 1,110]</td><td>&lt; 0,001</td></tr>
+<tr><td>radio</td><td>0,3898</td><td>1,477</td><td>[1,266; 1,723]</td><td>&lt; 0,001</td></tr>
+<tr><td>newspaper</td><td>0,0160</td><td>1,016</td><td>[0,979; 1,055]</td><td>0,399</td></tr>
+</tbody></table></div>
+<p>Каждую строку читают <b>при неизменных остальных каналах</b>. Плюс одна единица TV: шансы выше на 7,7%. Плюс одна единица radio: выше на 47,7%. Newspaper: OR около 1, интервал включает 1, p = 0,399, отдельной связи не видно.</p>
+<p>TV в простой модели имел OR 1,021, а здесь 1,077. Смысл коэффициента изменился: теперь сравнивают наблюдения с одним и тем же radio и newspaper. Это не «TV стал важнее, потому что мы так хотим». Это другой вопрос, с контролем.</p>
+<h2>Шаг 6. Качество подгонки</h2>
+<p>Pseudo R² множественной модели ≈ 0,825. LLR p-value = 4,723×10⁻⁴⁷, то есть три канала вместе лучше модели «только intercept». И сразу запрет из решения: <b>pseudo R² нельзя произносить как «модель объяснила 82,5% дисперсии HighSales»</b>.</p>
+<p>В тетради есть предупреждение: possibly complete quasi-separation, около 39% наблюдений предсказываются почти идеально. Отсюда огромный intercept −23 и вероятности стратегий почти 0 и почти 1. На экзамене, если видите такое предупреждение, скажите: коэффициенты интерпретируем, но крайние вероятности хрупкие. Решение лабы всё равно пишет OR и две вероятности, не выбрасывая модель.</p>
+<h2>Шаги 7–8. Две стратегии и абзац менеджеру</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Стратегия</th><th>TV</th><th>radio</th><th>newspaper</th><th>Предсказанная P</th></tr></thead>
+<tbody>
+<tr><td>A</td><td>100</td><td>10</td><td>20</td><td>0,000008</td></tr>
+<tr><td>B</td><td>200</td><td>40</td><td>20</td><td>0,999360</td></tr>
+</tbody></table></div>
+<p>Разница около 0,999, то есть 99,9 процентного пункта. Стратегия B почти наверняка попадает в HighSales по этой модели, A почти наверняка нет. Решение подчёркивает: такая пропасть между вероятностями не равна «разнице odds ratio». OR описывает множитель за одну единицу канала. Вероятность описывает конкретный набор расходов.</p>
+<p>Абзац, близкий к образцу решения. Более высокие расходы на TV и radio связаны с более высокими шансами HighSales, даже если другие каналы держать постоянными. У newspaper отдельной связи не видно: интервал OR содержит 1. Две примерные стратегии дают совершенно разные вероятности. Это ассоциации, не доказанный эффект случайного эксперимента. Неопределённость названа через p-value и интервалы.</p>
+<div class="callout remember"><strong>Что зубрят</strong>37,5%. OR TV простой 1,021 и на +10 единиц 1,233. P(TV=100) = 13,3%. Множественная модель: TV 1,077, radio 1,477, newspaper 1,016 и p = 0,399. Pseudo R² 0,825 не есть доля дисперсии.</div>
+<h2>Практикум</h2>
+
+<section class="quiz" data-quiz data-kind="blank" data-qid="ad1" data-why="75 из 200. value_counts: 125 нулей и 75 единиц.">
+  <p class="prompt">Сколько наблюдений с HighSales = 1 и какая это доля?</p>
+  <p><label>Штук единиц<br><input type="text" data-accept="75" data-label="Штук единиц" placeholder="75"></label></p><p><label>Доля<br><input type="text" data-accept="0.375|37.5|37.5%" data-label="Доля" placeholder="0,375"></label></p>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="ad2" data-answer="b" data-why="Решение говорит прямо: interpretation changes because the multiple-model estimate holds the other predictors constant.">
+  <p class="prompt">Почему OR у TV вырос с 1,021 до 1,077 во множественной модели?</p>
+  <label class="opt"><input type="radio" name="ad2" value="a"> Потому что newspaper оказался значим</label><label class="opt"><input type="radio" name="ad2" value="b"> Потому что коэффициент теперь сравнивает наблюдения с одинаковыми radio и newspaper</label><label class="opt"><input type="radio" name="ad2" value="c"> Потому что выборка стала 1000 строк</label><label class="opt"><input type="radio" name="ad2" value="d"> Это ошибка exp()</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="ad3" data-answer="b" data-why="Запрет написан в решении дважды. Доля дисперсии — это R² обычной OLS, и то с оговорками.">
+  <p class="prompt">Pseudo R² = 0,825. Что сказать нельзя?</p>
+  <label class="opt"><input type="radio" name="ad3" value="a"> Вместе каналы лучше модели без них: LLR p крошечный</label><label class="opt"><input type="radio" name="ad3" value="b"> Модель объяснила 82,5% дисперсии HighSales</label><label class="opt"><input type="radio" name="ad3" value="c"> Это индекс на основе likelihood</label><label class="opt"><input type="radio" name="ad3" value="d"> Его печатает summary()</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="blank" data-qid="ad4" data-why="Разница около 99,9 п.п. Newspaper в обеих стратегиях равен 20, он сравнение не ломает.">
+  <p class="prompt">Вероятности стратегий A и B. Впишите A как 0.000008 и B как 0.999, если округляете B до трёх знаков, либо 0.999360.</p>
+  <p><label>A<br><input type="text" data-accept="0.000008" data-label="A" placeholder="0,000008"></label></p><p><label>B<br><input type="text" data-accept="0.999360|0.999|0.99936" data-label="B" placeholder="0,999"></label></p>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+<p class="pills"><a href="logit-odds.html">← Шансы и odds ratio</a><a href="reading-output.html">Чтение таблиц OLS и logit →</a></p>
+    <footer class="note">Числа и формулировки взяты из загруженных слайдов, тетрадей и mock exam курса 20838 (2026). Если в файле чего-то нет, страница так и говорит.</footer>
+  </div></main>
+</div>
+<script src="../js/nav.js"></script>
+<script src="../js/quiz.js"></script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OLS, logit, Poisson и соседи · 20838</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-page="model-choice">
+<header class="topbar">
+  <button class="menu-btn" type="button" data-nav-toggle aria-expanded="false">Меню</button>
+  <a class="brand" href="../index.html"><strong>20838 · к экзамену</strong><span>Data &amp; Analytics for Strategic Marketing Decisions</span></a>
+  <div class="top-actions">
+    <a class="ghost" href="../topics/mock-exam.html">Mock exam</a>
+  </div>
+</header>
+<div class="layout">
+  <nav class="sidenav" aria-label="Темы"><h2>Навигация</h2>
+<a href="../index.html">План на 8 недель<small>С чего начать</small></a>
+<a href="../index.html#inventory">Все материалы<small>Лекции, лабы, кейсы</small></a>
+<a href="formula-sheet.html">Шпаргалка формул<small>Выучить до автоматизма</small></a>
+<a href="mock-exam.html">Пробный экзамен<small>Сначала сами, потом решение</small></a>
+<h2>Неделя 1. Язык данных</h2>
+<a href="model-and-data.html">Модель и строка клиента</a>
+<a href="variable-types.html">Типы переменных</a>
+<a href="descriptive-stats.html">Среднее, медиана, мода, SD</a>
+<a href="shape-missing.html">Форма, ящики и пропуски</a>
+<a href="inference-se-ci.html">Выборка, SE и интервал</a>
+<a href="hypothesis-testing.html">Проверка гипотезы</a>
+<a href="python-bank-walkthrough.html">Тетрадь bank_basics</a>
+<h2>Неделя 2. Python без страха</h2>
+<a href="python-objects.html">Имена, списки, множества</a>
+<a href="python-strings.html">Строки и срезы</a>
+<a href="python-sets-dicts.html">Множества и словари</a>
+<a href="python-logic.html">Условия, циклы, функции</a>
+<a href="python-olympics.html">Python Olympics</a>
+<h2>Неделя 3. Эксперимент</h2>
+<a href="acquisition.html">Привлечение клиента</a>
+<a href="privacy.html">Privacy на слайдах</a>
+<a href="causation.html">Причинность и field test</a>
+<a href="experiment-design.html">Словарь эксперимента</a>
+<h2>Неделя 4. Кейс Artea</h2>
+<a href="artea-setup.html">Кейс Artea</a>
+<a href="artea-balance.html">Рандомизация и средние</a>
+<a href="artea-ols.html">OLS по купону</a>
+<a href="artea-heterogeneity.html">Кому слать купон</a>
+<a href="artea-notebook.html">Тетрадь Artea</a>
+<h2>Неделя 5. Ценность и отток</h2>
+<a href="clv.html">CLV и срок жизни</a>
+<a href="churn-management.html">Управление оттоком</a>
+<a href="model-choice.html">Какая модель под какой Y</a>
+<a href="calibration-lift.html">Calibration, validation, lift</a>
+<a href="predictors.html">Какие X брать</a>
+<h2>Неделя 6. Logit и шансы</h2>
+<a href="logit-odds.html">Шансы и odds ratio</a>
+<a href="advertising-lab.html">Лаба Advertising</a>
+<a href="reading-output.html">Чтение таблиц OLS и logit</a>
+<a href="interactions.html">Взаимодействия</a>
+<h2>Неделя 7. Кейсы и matching</h2>
+<a href="pilgrim.html">Кейс Pilgrim</a>
+<a href="books-r-us.html">Кейс Books R Us</a>
+<a href="association-experiment.html">Связь или причина</a>
+<a href="matching-idea.html">Идея matching</a>
+<a href="sample-box.html">Sample Box и деньги</a>
+<h2>Неделя 8. Пробный экзамен</h2>
+<a href="exam-format.html">Формат экзамена</a>
+<a href="touchpoints.html">Touchpoints</a>
+<a href="readings-gaps.html">Чего нет в папке</a>
+<a href="formula-sheet.html">Шпаргалка</a>
+<a href="mock-exam.html">Пробный экзамен</a></nav>
+  <main><div class="wrap">
+    <p class="kicker">Неделя 5 · выбор техники</p>
+    <h1>OLS, logit, Poisson и соседи</h1>
+    <p class="lead">Модель выбирают по зависимой переменной. Этот слайд почти готовый multiple choice.</p>
+    
+<div class="table-wrap"><table>
+<thead><tr><th>Y</th><th>Техника со слайда</th><th>Пример курса</th><th>Насколько глубоко разобрано</th></tr></thead>
+<tbody>
+<tr><td>Непрерывное число</td><td>OLS</td><td>Выручка Artea, прибыль Books R Us, траты Sample Box</td><td>Глубоко, это надо уметь читать</td></tr>
+<tr><td>0/1</td><td>Logit или probit</td><td>HighSales, покупка Red Bull, churn, клик</td><td>Глубоко. Probit назван рядом, в лабах считают logit</td></tr>
+<tr><td>Один выбор из трёх и больше, варианты исключают друг друга</td><td>Multinomial logit/probit</td><td>Машина, трамвай или автобус</td><td>Только определение. Оценивать multinomial в файлах не учат</td></tr>
+<tr><td>Несколько вещей сразу, они не исключают друг друга</td><td>Multivariate logit/probit</td><td>Кофе, сок и круассан в одном заказе</td><td>Только определение</td></tr>
+<tr><td>Число, обрезанное снизу или сверху</td><td>Tobit I</td><td>Удовлетворённость записана от 0, хотя «минус» мог бы быть</td><td>Только имя</td></tr>
+<tr><td>Число видно не у всех</td><td>Tobit II</td><td>Оценка только у тех, кто поставил отзыв</td><td>Только имя</td></tr>
+<tr><td>Время до события</td><td>Hazard / survival</td><td>Сколько пройдёт до оттока</td><td>Только имя</td></tr>
+<tr><td>Счёт: 0, 1, 2, 3…</td><td>Poisson или negative binomial</td><td>Лайки под постами</td><td>Пример есть, расчёта в лабе нет</td></tr>
+</tbody></table></div>
+<h2>Три вопроса слайда, уже с ответом</h2>
+<ol class="steps">
+<li>Предсказать звёзды ресторана на Google Maps. Ответ слайда: OLS, с оговоркой «есть ограничения». Звёзды похожи на число, но шкала короткая и порядковая. Если на экзамене дадут 1–5 и попросят выбрать из списка, ориентир курса — OLS, и стоит добавить оговорку слайда, а не спорить с ней.</li>
+<li>Предсказать число лайков. Ответ: Poisson или negative binomial. Лайки — счёт, не да/нет и не евро.</li>
+<li>Предсказать вероятность клика по рекламе. Ответ: logit или probit. Исход 0/1.</li>
+</ol>
+<p>В Red Bull исход «купил Red Bull, а не другой энергетик» тоже 0/1, и в решении прямо написано logistic regression. Рядом столбец Exp(Coef.), это ещё один опознавательный знак odds ratio.</p>
+<div class="callout mistake"><strong>Частая ошибка</strong>Видеть в Artea транзакции 0, 1, 2 и требовать logit. Лаба честно ставит OLS, потому что Y — количество и выручка, а не вероятность. Logit был бы уместен, если бы Y был «купил / не купил». Оба выбора защищаются, если вы назвали, чем является Y.</div>
+<h2>Практикум</h2>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="mc1" data-answer="b" data-why="Прямой ответ слайда про вероятность клика.">
+  <p class="prompt">Y = клик по объявлению, да или нет. Что выбрать по слайду?</p>
+  <label class="opt"><input type="radio" name="mc1" value="a"> OLS без оговорок</label><label class="opt"><input type="radio" name="mc1" value="b"> Logit или probit</label><label class="opt"><input type="radio" name="mc1" value="c"> Hazard</label><label class="opt"><input type="radio" name="mc1" value="d"> Только среднее</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="mc2" data-answer="a" data-why="Счётчик. Multinomial был бы, если человек выбирает ровно один вариант из нескольких.">
+  <p class="prompt">Y = число лайков под постом. Что выбрать?</p>
+  <label class="opt"><input type="radio" name="mc2" value="a"> Poisson или negative binomial</label><label class="opt"><input type="radio" name="mc2" value="b"> Multinomial, потому что лайков бывает много видов</label><label class="opt"><input type="radio" name="mc2" value="c"> Только mode</label><label class="opt"><input type="radio" name="mc2" value="d"> Matching</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="mc3" data-answer="b" data-why="Примеры: транспорт либо-либо, и заказ, где кофе и сок могут лежать вместе.">
+  <p class="prompt">Чем multinomial отличается от multivariate на этом слайде?</p>
+  <label class="opt"><input type="radio" name="mc3" value="a"> Ничем</label><label class="opt"><input type="radio" name="mc3" value="b"> Multinomial: один выбор из исключающих вариантов. Multivariate: несколько исходов сразу, они друг друга не исключают</label><label class="opt"><input type="radio" name="mc3" value="c"> Multivariate только для денег</label><label class="opt"><input type="radio" name="mc3" value="d"> Multinomial только для времени до события</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="mc4" data-answer="a" data-why="Подпись: OLS regression, although with some limitations. Оговорку лучше произнести.">
+  <p class="prompt">Звёзды ресторана 1–5. Позиция слайда:</p>
+  <label class="opt"><input type="radio" name="mc4" value="a"> OLS, хотя ограничения у шкалы есть</label><label class="opt"><input type="radio" name="mc4" value="b"> Обязательно hazard</label><label class="opt"><input type="radio" name="mc4" value="c"> Нельзя моделировать вообще</label><label class="opt"><input type="radio" name="mc4" value="d"> Только set в Python</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+<p class="pills"><a href="churn-management.html">← Управление оттоком</a><a href="calibration-lift.html">Calibration, validation, lift →</a></p>
+    <footer class="note">Числа и формулировки взяты из загруженных слайдов, тетрадей и mock exam курса 20838 (2026). Если в файле чего-то нет, страница так и говорит.</footer>
+  </div></main>
+</div>
+<script src="../js/nav.js"></script>
+<script src="../js/quiz.js"></script>
+</body>
+</html>

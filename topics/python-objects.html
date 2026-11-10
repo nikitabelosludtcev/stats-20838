@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Переменные, list и set · 20838</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-page="python-objects">
+<header class="topbar">
+  <button class="menu-btn" type="button" data-nav-toggle aria-expanded="false">Меню</button>
+  <a class="brand" href="../index.html"><strong>20838 · к экзамену</strong><span>Data &amp; Analytics for Strategic Marketing Decisions</span></a>
+  <div class="top-actions">
+    <a class="ghost" href="../topics/mock-exam.html">Mock exam</a>
+  </div>
+</header>
+<div class="layout">
+  <nav class="sidenav" aria-label="Темы"><h2>Навигация</h2>
+<a href="../index.html">План на 8 недель<small>С чего начать</small></a>
+<a href="../index.html#inventory">Все материалы<small>Лекции, лабы, кейсы</small></a>
+<a href="formula-sheet.html">Шпаргалка формул<small>Выучить до автоматизма</small></a>
+<a href="mock-exam.html">Пробный экзамен<small>Сначала сами, потом решение</small></a>
+<h2>Неделя 1. Язык данных</h2>
+<a href="model-and-data.html">Модель и строка клиента</a>
+<a href="variable-types.html">Типы переменных</a>
+<a href="descriptive-stats.html">Среднее, медиана, мода, SD</a>
+<a href="shape-missing.html">Форма, ящики и пропуски</a>
+<a href="inference-se-ci.html">Выборка, SE и интервал</a>
+<a href="hypothesis-testing.html">Проверка гипотезы</a>
+<a href="python-bank-walkthrough.html">Тетрадь bank_basics</a>
+<h2>Неделя 2. Python без страха</h2>
+<a href="python-objects.html">Имена, списки, множества</a>
+<a href="python-strings.html">Строки и срезы</a>
+<a href="python-sets-dicts.html">Множества и словари</a>
+<a href="python-logic.html">Условия, циклы, функции</a>
+<a href="python-olympics.html">Python Olympics</a>
+<h2>Неделя 3. Эксперимент</h2>
+<a href="acquisition.html">Привлечение клиента</a>
+<a href="privacy.html">Privacy на слайдах</a>
+<a href="causation.html">Причинность и field test</a>
+<a href="experiment-design.html">Словарь эксперимента</a>
+<h2>Неделя 4. Кейс Artea</h2>
+<a href="artea-setup.html">Кейс Artea</a>
+<a href="artea-balance.html">Рандомизация и средние</a>
+<a href="artea-ols.html">OLS по купону</a>
+<a href="artea-heterogeneity.html">Кому слать купон</a>
+<a href="artea-notebook.html">Тетрадь Artea</a>
+<h2>Неделя 5. Ценность и отток</h2>
+<a href="clv.html">CLV и срок жизни</a>
+<a href="churn-management.html">Управление оттоком</a>
+<a href="model-choice.html">Какая модель под какой Y</a>
+<a href="calibration-lift.html">Calibration, validation, lift</a>
+<a href="predictors.html">Какие X брать</a>
+<h2>Неделя 6. Logit и шансы</h2>
+<a href="logit-odds.html">Шансы и odds ratio</a>
+<a href="advertising-lab.html">Лаба Advertising</a>
+<a href="reading-output.html">Чтение таблиц OLS и logit</a>
+<a href="interactions.html">Взаимодействия</a>
+<h2>Неделя 7. Кейсы и matching</h2>
+<a href="pilgrim.html">Кейс Pilgrim</a>
+<a href="books-r-us.html">Кейс Books R Us</a>
+<a href="association-experiment.html">Связь или причина</a>
+<a href="matching-idea.html">Идея matching</a>
+<a href="sample-box.html">Sample Box и деньги</a>
+<h2>Неделя 8. Пробный экзамен</h2>
+<a href="exam-format.html">Формат экзамена</a>
+<a href="touchpoints.html">Touchpoints</a>
+<a href="readings-gaps.html">Чего нет в папке</a>
+<a href="formula-sheet.html">Шпаргалка</a>
+<a href="mock-exam.html">Пробный экзамен</a></nav>
+  <main><div class="wrap">
+    <p class="kicker">Неделя 2 · Python Basics</p>
+    <h1>Переменные, list и set</h1>
+    <p class="lead">Переменная — это имя, приклеенное к значению. На экзамене показывают одну строку и спрашивают, что получится.</p>
+    
+<p>Колода Francesco Balocco начинается с обещания: к концу вы решаете маленькую задачу без готового шаблона. Для письменного экзамена важнее другое, и closing class это подтверждает: multiple choice про то, что делает код. Софт запускать не дадут.</p>
+<h2>Имя и присваивание</h2>
+<pre><code>grade = 16
+grade = grade + 2</code></pre>
+<p>Первая строка создаёт имя <code>grade</code> и кладёт в него 16. Вторая читает текущие 16, прибавляет 2 и записывает 18 обратно. Старое 16 пропадает. Знак <code>=</code> не «равно» из математики, а «положи сюда».</p>
+<p>Имя не может содержать пробел. <code>birth year = 2005</code> — ошибка. Рабочее имя: <code>birth_year</code>. Слайд диагностирует это за 60 секунд: valid name или нет.</p>
+<h2>Список хранит порядок и повторы</h2>
+<pre><code>tv_shows = ["Dark", "The Office", "Dark"]</code></pre>
+<p>Список, list, нумерует элементы с нуля. Индекс 0 — это "Dark", индекс 1 — "The Office", индекс 2 — снова "Dark". Повтор законен: два одинаковых сериала остаются двумя записями. Порядок — это рейтинг, его нельзя терять.</p>
+<h2>Множество хранит уникальные значения</h2>
+<pre><code>pets = {"dog", "cat", "dog"}</code></pre>
+<p>Множество, set, свернёт это в {"dog", "cat"}. Второй "dog" исчезнет. Порядка, на который можно положиться, нет. Фигурные скобки здесь не словарь: внутри нет пар «ключ: значение».</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Задача</th><th>Что выбрать</th><th>Почему</th></tr></thead>
+<tbody>
+<tr><td>Рейтинг сериалов</td><td>list</td><td>Важны места и возможны повторы</td></tr>
+<tr><td>Кто одновременно подходит по всем условиям</td><td>set</td><td>Нужны пересечение и уникальные имена</td></tr>
+<tr><td>Оценка конкретного человека</td><td>dict</td><td>Имя — ключ, оценка — значение. Это следующая страница</td></tr>
+</tbody></table></div>
+<h2>Решённая задача: когда вам будет 100</h2>
+<p>Слайд просит три переменные и печать, сколько лет осталось до 100.</p>
+<pre><code>birth_year = 2002
+current_year = 2026
+years_left = birth_year + 100 - current_year
+print(years_left)  # 76</code></pre>
+<ol class="steps">
+<li>Имя без пробела: <code>birth_year</code>, не <code>birth year</code>.</li>
+<li><code>=</code> сохраняет. Если написать <code>==</code>, Python решит, что вы спрашиваете, а не сохраняете.</li>
+<li>Формула со слайда: birth_year + 100 − current_year. Для 2002 и 2026 это 76.</li>
+<li>Проверка на маленьком примере: человек 2000 года рождения в 2026 году уже прожил 26 лет, до 100 осталось 74. Формула даёт 2000 + 100 − 2026 = 74. Сходится.</li>
+</ol>
+<h2>Взвешенное среднее, а не обычное</h2>
+<p>Оценки: marketing101 = 30 при 5 кредитах, business101 = 26 при 8, math101 = 24 при 5.</p>
+<ol class="steps">
+<li>Неверная привычка: (30 + 26 + 24) / 3 = 26,67. Каждый курс весит одинаково, хотя business длиннее.</li>
+<li>Нужно: (30×5 + 26×8 + 24×5) / (5 + 8 + 5).</li>
+<li>Числитель: 150 + 208 + 120 = 478. Знаменатель: 18.</li>
+<li>478 / 18 = 26,56. Более длинный курс тянет среднее к 26, и это честно.</li>
+</ol>
+<div class="callout exam"><strong>На экзамене</strong>Образец MCQ уже есть: <code>df_customers.head(25)</code> показывает первые 25 строк, не сортирует и не показывает хвост. Хвост был бы <code>tail</code>. Это из mock, разбор на неделе 8, но имя <code>head</code> заучите сейчас.</div>
+<h2>Практикум</h2>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="o1" data-answer="b" data-why="Слайд: valid name — birth_year. Пробел запрещён. = как раз правильный знак присваивания.">
+  <p class="prompt">Что не так со строкой birth year = 2005?</p>
+  <label class="opt"><input type="radio" name="o1" value="a"> Год слишком маленький</label><label class="opt"><input type="radio" name="o1" value="b"> В имени переменной пробел, Python такое имя не примет</label><label class="opt"><input type="radio" name="o1" value="c"> Нужно писать == вместо =</label><label class="opt"><input type="radio" name="o1" value="d"> Числа нельзя класть в переменные</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="o2" data-answer="b" data-why="List хранит порядок и повторы. Индекс 0 — первая позиция.">
+  <p class="prompt">tv_shows = ["Dark", "The Office", "Dark"]. Что лежит по индексу 0?</p>
+  <label class="opt"><input type="radio" name="o2" value="a"> The Office</label><label class="opt"><input type="radio" name="o2" value="b"> Dark, первый элемент. Нумерация с нуля</label><label class="opt"><input type="radio" name="o2" value="c"> Число 3</label><label class="opt"><input type="radio" name="o2" value="d"> Ошибка, повторы в списке запрещены</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="o3" data-answer="b" data-why="Set оставляет каждое значение один раз.">
+  <p class="prompt">pets = {"dog", "cat", "dog"}. Сколько значений останется во множестве?</p>
+  <label class="opt"><input type="radio" name="o3" value="a"> 3</label><label class="opt"><input type="radio" name="o3" value="b"> 2: dog и cat</label><label class="opt"><input type="radio" name="o3" value="c"> 1</label><label class="opt"><input type="radio" name="o3" value="d"> 0, фигурные скобки всегда пустые</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="blank" data-qid="o4" data-why="478 / 18 = 26,555… Слайд противопоставляет это неверным 26,67, где все курсы весят одинаково.">
+  <p class="prompt">Взвешенное среднее: (30×5 + 26×8 + 24×5) / 18. Впишите результат, округлив до двух знаков.</p>
+  <p><label>Среднее<br><input type="text" data-accept="26.56|26.55" data-label="Среднее" placeholder="26,56"></label></p>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+<p class="pills"><a href="python-bank-walkthrough.html">← Тетрадь bank_basics</a><a href="python-strings.html">Строки и срезы →</a></p>
+    <footer class="note">Числа и формулировки взяты из загруженных слайдов, тетрадей и mock exam курса 20838 (2026). Если в файле чего-то нет, страница так и говорит.</footer>
+  </div></main>
+</div>
+<script src="../js/nav.js"></script>
+<script src="../js/quiz.js"></script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Artea: взаимодействие и таргетинг · 20838</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-page="artea-heterogeneity">
+<header class="topbar">
+  <button class="menu-btn" type="button" data-nav-toggle aria-expanded="false">Меню</button>
+  <a class="brand" href="../index.html"><strong>20838 · к экзамену</strong><span>Data &amp; Analytics for Strategic Marketing Decisions</span></a>
+  <div class="top-actions">
+    <a class="ghost" href="../topics/mock-exam.html">Mock exam</a>
+  </div>
+</header>
+<div class="layout">
+  <nav class="sidenav" aria-label="Темы"><h2>Навигация</h2>
+<a href="../index.html">План на 8 недель<small>С чего начать</small></a>
+<a href="../index.html#inventory">Все материалы<small>Лекции, лабы, кейсы</small></a>
+<a href="formula-sheet.html">Шпаргалка формул<small>Выучить до автоматизма</small></a>
+<a href="mock-exam.html">Пробный экзамен<small>Сначала сами, потом решение</small></a>
+<h2>Неделя 1. Язык данных</h2>
+<a href="model-and-data.html">Модель и строка клиента</a>
+<a href="variable-types.html">Типы переменных</a>
+<a href="descriptive-stats.html">Среднее, медиана, мода, SD</a>
+<a href="shape-missing.html">Форма, ящики и пропуски</a>
+<a href="inference-se-ci.html">Выборка, SE и интервал</a>
+<a href="hypothesis-testing.html">Проверка гипотезы</a>
+<a href="python-bank-walkthrough.html">Тетрадь bank_basics</a>
+<h2>Неделя 2. Python без страха</h2>
+<a href="python-objects.html">Имена, списки, множества</a>
+<a href="python-strings.html">Строки и срезы</a>
+<a href="python-sets-dicts.html">Множества и словари</a>
+<a href="python-logic.html">Условия, циклы, функции</a>
+<a href="python-olympics.html">Python Olympics</a>
+<h2>Неделя 3. Эксперимент</h2>
+<a href="acquisition.html">Привлечение клиента</a>
+<a href="privacy.html">Privacy на слайдах</a>
+<a href="causation.html">Причинность и field test</a>
+<a href="experiment-design.html">Словарь эксперимента</a>
+<h2>Неделя 4. Кейс Artea</h2>
+<a href="artea-setup.html">Кейс Artea</a>
+<a href="artea-balance.html">Рандомизация и средние</a>
+<a href="artea-ols.html">OLS по купону</a>
+<a href="artea-heterogeneity.html">Кому слать купон</a>
+<a href="artea-notebook.html">Тетрадь Artea</a>
+<h2>Неделя 5. Ценность и отток</h2>
+<a href="clv.html">CLV и срок жизни</a>
+<a href="churn-management.html">Управление оттоком</a>
+<a href="model-choice.html">Какая модель под какой Y</a>
+<a href="calibration-lift.html">Calibration, validation, lift</a>
+<a href="predictors.html">Какие X брать</a>
+<h2>Неделя 6. Logit и шансы</h2>
+<a href="logit-odds.html">Шансы и odds ratio</a>
+<a href="advertising-lab.html">Лаба Advertising</a>
+<a href="reading-output.html">Чтение таблиц OLS и logit</a>
+<a href="interactions.html">Взаимодействия</a>
+<h2>Неделя 7. Кейсы и matching</h2>
+<a href="pilgrim.html">Кейс Pilgrim</a>
+<a href="books-r-us.html">Кейс Books R Us</a>
+<a href="association-experiment.html">Связь или причина</a>
+<a href="matching-idea.html">Идея matching</a>
+<a href="sample-box.html">Sample Box и деньги</a>
+<h2>Неделя 8. Пробный экзамен</h2>
+<a href="exam-format.html">Формат экзамена</a>
+<a href="touchpoints.html">Touchpoints</a>
+<a href="readings-gaps.html">Чего нет в папке</a>
+<a href="formula-sheet.html">Шпаргалка</a>
+<a href="mock-exam.html">Пробный экзамен</a></nav>
+  <main><div class="wrap">
+    <p class="kicker">Неделя 4 · heterogeneity</p>
+    <h1>Artea: взаимодействие и таргетинг</h1>
+    <p class="lead">Средний эффект прячет противоположные куски. Купон помогает не «пользователю вообще», а заметно помогает части каналов и тем, кто бросил корзину.</p>
+    
+<h2>Сначала без модели, по подгруппам</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Откуда пришёл</th><th>Control, транзакции</th><th>Купон</th><th>Разница</th><th>Выручка, разница</th></tr></thead>
+<tbody>
+<tr><td>Instagram, всего около 1&nbsp;552 человек</td><td>0,15</td><td>0,20</td><td>+6 п.п. на слайде</td><td>+$1,17 (9,17 → 10,34)</td></tr>
+<tr><td>Google, всего около 2&nbsp;035</td><td>0,08</td><td>0,06</td><td>−2 п.п.</td><td>−$2,12 (4,92 → 2,80)</td></tr>
+</tbody></table></div>
+<p>Один и тот же купон. На Instagram транзакции и выручка выше. На Google обе цифры ниже. Усреднение почти зануляет историю.</p>
+<h2>Interaction, взаимодействие</h2>
+<p>В регрессию добавляют произведение «канал × купон». Это 1 только у тех, кто и пришёл из этого канала, и получил купон. Тогда голый коэффициент <code>test_coupon</code> — эффект купона для базового канала, Google. Коэффициент <code>Instagram &amp; Coupon</code> — насколько эффект у Instagram отличается от эффекта у Google.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Переменная</th><th>Транзакции, коэф.</th><th>p</th><th>Выручка, коэф.</th><th>p</th></tr></thead>
+<tbody>
+<tr><td>test_coupon (эффект для базы)</td><td>−0,01</td><td>0,51</td><td>−1,62</td><td>0,09</td></tr>
+<tr><td>Facebook &amp; Coupon</td><td>+0,05</td><td>0,07</td><td>+1,55</td><td>0,34</td></tr>
+<tr><td>Instagram &amp; Coupon</td><td>+0,07</td><td>0,00</td><td>+2,96</td><td>0,04</td></tr>
+<tr><td>Referral &amp; Coupon</td><td>+0,07</td><td>0,17</td><td>+2,31</td><td>0,43</td></tr>
+<tr><td>Other &amp; Coupon</td><td>−0,01</td><td>0,92</td><td>−0,67</td><td>0,87</td></tr>
+</tbody></table></div>
+<p>Как сказать. Для Google значимого плюса нет. Для Instagram эффект на транзакции выше на 0,07 (p &lt; 0,01), на выручку выше примерно на $2,96 (p = 0,04). Facebook по транзакциям на грани 10% (p = 0,07) и по выручке не значим. Referral и Other не отличаются от базы значимо.</p>
+<h2>Брошенная корзина</h2>
+<p>Отдельная модель ставит <code>shopping_cart × coupon</code>.</p>
+<ul>
+<li>На транзакции: коэффициент 0,0846, p = 0,000.</li>
+<li>На выручку: +2,997 доллара, p = 0,025.</li>
+<li>Голый test_coupon при этом почти ноль: 0,0009, p = 0,945 для транзакций. Средний плюс, который мы видели раньше, сидит в основном у тех, кто уже клал товар в корзину.</li>
+</ul>
+<p>Рисунок слайда это показывает столбиками: с брошенной корзиной разрыв «купон против без купона» заметный, без корзины столбики близки.</p>
+<h2>Решение, которое можно защищать</h2>
+<ol class="steps">
+<li>Всем подряд купон не рассылать: средний эффект на выручку не доказан, у Google сырые средние даже ниже.</li>
+<li>Имеет смысл целиться в Instagram и в тех, кто бросил корзину. Там есть и model-free разрыв, и значимое взаимодействие.</li>
+<li>Новая база New Campaign может содержать дополнительные поля. Слайд просит выбрать политику явно: никто, все, только Facebook, только Instagram без истории покупок, и подумать, помогут ли демография. Лишние поля можно использовать для портрета, только если они были известны до решения о купоне. Иначе это уже не таргетинг, а подглядывание в итог.</li>
+<li>Оговорка: взаимодействие показывает, где эффект отличается. Оно не доказывает вечный закон «Instagram всегда лучше». Это этот тест, эта скидка 20%, этот сайт.</li>
+</ol>
+<div class="callout exam"><strong>Фраза</strong>«Управлять неоднородностью выгодно». Это последняя строка решения Artea. На mock ту же логику спросят словами «кому отправить скидку».</div>
+<h2>Практикум</h2>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="h1" data-answer="b" data-why="Каналы и должны быть разными. Вопрос в том, отличается ли реакция на купон. Она отличается.">
+  <p class="prompt">Сырые транзакции: Instagram +6 п.п., Google −2 п.п. Что из этого следует?</p>
+  <label class="opt"><input type="radio" name="h1" value="a"> Среднее по всем уже достаточно для решения «слать всем»</label><label class="opt"><input type="radio" name="h1" value="b"> Эффект купона разного знака в разных каналах, среднее его прячет</label><label class="opt"><input type="radio" name="h1" value="c"> Google надо удалить из данных</label><label class="opt"><input type="radio" name="h1" value="d"> Рандомизация провалена, потому что каналы разные</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="h2" data-answer="b" data-why="Так читают взаимодействие. Уровень канала без купона сидит в коэффициенте самого channel_Instagram.">
+  <p class="prompt">Коэффициент Instagram & Coupon = 0,07 при p = 0,00 для транзакций. Это:</p>
+  <label class="opt"><input type="radio" name="h2" value="a"> уровень транзакций у всех пользователей Instagram без купона</label><label class="opt"><input type="radio" name="h2" value="b"> насколько эффект купона у Instagram выше, чем у базового канала</label><label class="opt"><input type="radio" name="h2" value="c"> odds ratio</label><label class="opt"><input type="radio" name="h2" value="d"> выручка в долларах</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="blank" data-qid="h3" data-why="На слайде 2,997 и p = 0,025. Это ниже 0,05, значит да.">
+  <p class="prompt">Взаимодействие корзина × купон для выручки. Впишите коэффициент, округлив до двух знаков, и скажите, значим ли он на 5% (да или нет).</p>
+  <p><label>Коэффициент<br><input type="text" data-accept="3.00|2.997|3" data-label="Коэффициент" placeholder="3,00"></label></p><p><label>Значим на 5%? да/нет<br><input type="text" data-accept="да|yes" data-label="Значим на 5%? да/нет" placeholder="да"></label></p>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="h4" data-answer="b" data-why="Коэффициент 0,0009 при p = 0,945: для базы без этого взаимодействия эффекта не видно.">
+  <p class="prompt">После включения cart × coupon голый test_coupon имеет p = 0,945. Как это сказать менеджеру?</p>
+  <label class="opt"><input type="radio" name="h4" value="a"> Купон вреден всем</label><label class="opt"><input type="radio" name="h4" value="b"> Средний плюс почти целиком сидит в подгруппе с брошенной корзиной, а не у «среднего» человека без корзины</label><label class="opt"><input type="radio" name="h4" value="c"> Модель сломалась, p не бывает таким большим</label><label class="opt"><input type="radio" name="h4" value="d"> Нужно послать купон Google</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+<p class="pills"><a href="artea-ols.html">← OLS по купону</a><a href="artea-notebook.html">Тетрадь Artea →</a></p>
+    <footer class="note">Числа и формулировки взяты из загруженных слайдов, тетрадей и mock exam курса 20838 (2026). Если в файле чего-то нет, страница так и говорит.</footer>
+  </div></main>
+</div>
+<script src="../js/nav.js"></script>
+<script src="../js/quiz.js"></script>
+</body>
+</html>

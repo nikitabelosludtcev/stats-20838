@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Artea: купон, который проверяют экспериментом · 20838</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-page="artea-setup">
+<header class="topbar">
+  <button class="menu-btn" type="button" data-nav-toggle aria-expanded="false">Меню</button>
+  <a class="brand" href="../index.html"><strong>20838 · к экзамену</strong><span>Data &amp; Analytics for Strategic Marketing Decisions</span></a>
+  <div class="top-actions">
+    <a class="ghost" href="../topics/mock-exam.html">Mock exam</a>
+  </div>
+</header>
+<div class="layout">
+  <nav class="sidenav" aria-label="Темы"><h2>Навигация</h2>
+<a href="../index.html">План на 8 недель<small>С чего начать</small></a>
+<a href="../index.html#inventory">Все материалы<small>Лекции, лабы, кейсы</small></a>
+<a href="formula-sheet.html">Шпаргалка формул<small>Выучить до автоматизма</small></a>
+<a href="mock-exam.html">Пробный экзамен<small>Сначала сами, потом решение</small></a>
+<h2>Неделя 1. Язык данных</h2>
+<a href="model-and-data.html">Модель и строка клиента</a>
+<a href="variable-types.html">Типы переменных</a>
+<a href="descriptive-stats.html">Среднее, медиана, мода, SD</a>
+<a href="shape-missing.html">Форма, ящики и пропуски</a>
+<a href="inference-se-ci.html">Выборка, SE и интервал</a>
+<a href="hypothesis-testing.html">Проверка гипотезы</a>
+<a href="python-bank-walkthrough.html">Тетрадь bank_basics</a>
+<h2>Неделя 2. Python без страха</h2>
+<a href="python-objects.html">Имена, списки, множества</a>
+<a href="python-strings.html">Строки и срезы</a>
+<a href="python-sets-dicts.html">Множества и словари</a>
+<a href="python-logic.html">Условия, циклы, функции</a>
+<a href="python-olympics.html">Python Olympics</a>
+<h2>Неделя 3. Эксперимент</h2>
+<a href="acquisition.html">Привлечение клиента</a>
+<a href="privacy.html">Privacy на слайдах</a>
+<a href="causation.html">Причинность и field test</a>
+<a href="experiment-design.html">Словарь эксперимента</a>
+<h2>Неделя 4. Кейс Artea</h2>
+<a href="artea-setup.html">Кейс Artea</a>
+<a href="artea-balance.html">Рандомизация и средние</a>
+<a href="artea-ols.html">OLS по купону</a>
+<a href="artea-heterogeneity.html">Кому слать купон</a>
+<a href="artea-notebook.html">Тетрадь Artea</a>
+<h2>Неделя 5. Ценность и отток</h2>
+<a href="clv.html">CLV и срок жизни</a>
+<a href="churn-management.html">Управление оттоком</a>
+<a href="model-choice.html">Какая модель под какой Y</a>
+<a href="calibration-lift.html">Calibration, validation, lift</a>
+<a href="predictors.html">Какие X брать</a>
+<h2>Неделя 6. Logit и шансы</h2>
+<a href="logit-odds.html">Шансы и odds ratio</a>
+<a href="advertising-lab.html">Лаба Advertising</a>
+<a href="reading-output.html">Чтение таблиц OLS и logit</a>
+<a href="interactions.html">Взаимодействия</a>
+<h2>Неделя 7. Кейсы и matching</h2>
+<a href="pilgrim.html">Кейс Pilgrim</a>
+<a href="books-r-us.html">Кейс Books R Us</a>
+<a href="association-experiment.html">Связь или причина</a>
+<a href="matching-idea.html">Идея matching</a>
+<a href="sample-box.html">Sample Box и деньги</a>
+<h2>Неделя 8. Пробный экзамен</h2>
+<a href="exam-format.html">Формат экзамена</a>
+<a href="touchpoints.html">Touchpoints</a>
+<a href="readings-gaps.html">Чего нет в папке</a>
+<a href="formula-sheet.html">Шпаргалка</a>
+<a href="mock-exam.html">Пробный экзамен</a></nav>
+  <main><div class="wrap">
+    <p class="kicker">Неделя 4 · HBR Artea</p>
+    <h1>Artea: купон, который проверяют экспериментом</h1>
+    <p class="lead">Магазин одежды умеет смотреть, как люди ходят по сайту, и плохо умеет превращать визит в покупку. Проверка — случайный купон 20%.</p>
+    
+<p>Кейс Harvard Business Review: Eva Ascarza и Ayelet Israeli, в шапке решения указан апрель 2021, в списке чтения closing class — 25 сентября 2020. Для экзамена важны числа лабы, не расхождение дат на обложке. Отрасль: одежда и аксессуары. Культура компании уже data driven, есть команда data science и дашборд. Проблема CEO Alex Campbel: многие, кто был на сайте, так и не купили. Данные о вовлечении вроде ничего, конверсия слабая.</p>
+<p>Действие: купон на скидку 20% зарегистрированным пользователям. Это field test, не опрос «хотели бы вы скидку».</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Факт</th><th>Число</th></tr></thead>
+<tbody>
+<tr><td>Пользователи сайта в тесте</td><td>5&nbsp;000</td></tr>
+<tr><td>Получили купон, treatment</td><td>2&nbsp;502</td></tr>
+<tr><td>Не получили, control</td><td>2&nbsp;498</td></tr>
+<tr><td>Вопросы менеджера</td><td>Выросли ли транзакции? Выросли ли траты на человека? Кому слать купон дальше?</td></tr>
+</tbody></table></div>
+<h2>Что лежит в строке</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Столбец</th><th>Смысл</th></tr></thead>
+<tbody>
+<tr><td>id</td><td>Код человека</td></tr>
+<tr><td>trans_after</td><td>Сколько транзакций после эксперимента. Это один из Y</td></tr>
+<tr><td>revenue_after</td><td>Выручка в долларах после эксперимента. Второй Y</td></tr>
+<tr><td>test_coupon</td><td>1, если купон послали, 0 если нет. Это X, который назначали</td></tr>
+<tr><td>num_past_purch</td><td>Сколько покупок было раньше</td></tr>
+<tr><td>spent_last_purchase</td><td>Сколько долларов потратил в прошлый раз</td></tr>
+<tr><td>weeks_since_visit</td><td>Недель с последнего визита</td></tr>
+<tr><td>browsing_minutes</td><td>Минуты на сайте в последний визит</td></tr>
+<tr><td>shopping_cart</td><td>1, если в последний визит положил товар в корзину и не купил</td></tr>
+<tr><td>channel_Facebook, Instagram, Referral, Other</td><td>1/0, откуда человек впервые пришёл. Если все четыре нули, на решении это канал Google: он база, отдельного столбца нет</td></tr>
+</tbody></table></div>
+<p>Канал — это первое касание, когда человек стал prospect, а не обязательно уже покупателем. Это словарь acquisition из прошлой недели.</p>
+<h2>Четыре шага, которые просит лаба</h2>
+<ol class="steps">
+<li>Открыть Artea / DataArtea.</li>
+<li>Проверить случайное назначение: группы до теста должны быть похожи.</li>
+<li>Model-free evidence: просто сравнить средние trans_after и revenue_after. «Model-free» значит «пока без регрессии».</li>
+<li>Проверить эффект регрессией.</li>
+<li>Дальше heterogeneity: не всем ли купон помогает одинаково.</li>
+</ol>
+<div class="callout exam"><strong>Два вопроса кейса держите отдельно</strong>«Сработал ли купон в среднем?» и «кому его слать?» требуют разных таблиц. Средний эффект может быть маленьким, а у куска аудитории большим. Это вся мораль wrap-up: heterogeneity окупается.</div>
+<h2>Практикум</h2>
+
+<section class="quiz" data-quiz data-kind="blank" data-qid="ar1" data-why="5 000 = 2 502 + 2 498. Группы почти равны, но «почти равны» ещё не доказательство, что рандомизация удалась. Это проверяют по признакам до теста.">
+  <p class="prompt">Сколько людей в treatment и в control?</p>
+  <p><label>Treatment<br><input type="text" data-accept="2502" data-label="Treatment" placeholder="2502"></label></p><p><label>Control<br><input type="text" data-accept="2498" data-label="Control" placeholder="2498"></label></p>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="ar2" data-answer="b" data-why="Это treatment. Y — trans_after и revenue_after.">
+  <p class="prompt">Что такое test_coupon?</p>
+  <label class="opt"><input type="radio" name="ar2" value="a"> Выручка после теста</label><label class="opt"><input type="radio" name="ar2" value="b"> Индикатор 1/0: человеку назначили купон или нет</label><label class="opt"><input type="radio" name="ar2" value="c"> Число прошлых покупок</label><label class="opt"><input type="radio" name="ar2" value="d"> Канал Instagram</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="ar3" data-answer="b" data-why="Определение в словаре данных презентации.">
+  <p class="prompt">shopping_cart = 1 означает:</p>
+  <label class="opt"><input type="radio" name="ar3" value="a"> человек купил в последний визит</label><label class="opt"><input type="radio" name="ar3" value="b"> положил в корзину и не купил</label><label class="opt"><input type="radio" name="ar3" value="c"> пришёл с Facebook</label><label class="opt"><input type="radio" name="ar3" value="d"> получил купон</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="ar4" data-answer="b" data-why="Так устроены dummy. Коэффициент channel_Instagram потом читается «относительно Google». На проверке баланса Google виден отдельной строкой: около 52% и 49%.">
+  <p class="prompt">Почему нет столбца channel_Google, хотя Google есть в тексте решения?</p>
+  <label class="opt"><input type="radio" name="ar4" value="a"> Таких людей нет</label><label class="opt"><input type="radio" name="ar4" value="b"> Google оставлен базовой категорией: все канальные 0/1 равны нулю</label><label class="opt"><input type="radio" name="ar4" value="c"> Google записан в revenue_after</label><label class="opt"><input type="radio" name="ar4" value="d"> Это ошибка файла</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+<p class="pills"><a href="experiment-design.html">← Словарь эксперимента</a><a href="artea-balance.html">Рандомизация и средние →</a></p>
+    <footer class="note">Числа и формулировки взяты из загруженных слайдов, тетрадей и mock exam курса 20838 (2026). Если в файле чего-то нет, страница так и говорит.</footer>
+  </div></main>
+</div>
+<script src="../js/nav.js"></script>
+<script src="../js/quiz.js"></script>
+</body>
+</html>

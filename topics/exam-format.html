@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Как устроены 75 минут и оценка · 20838</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-page="exam-format">
+<header class="topbar">
+  <button class="menu-btn" type="button" data-nav-toggle aria-expanded="false">Меню</button>
+  <a class="brand" href="../index.html"><strong>20838 · к экзамену</strong><span>Data &amp; Analytics for Strategic Marketing Decisions</span></a>
+  <div class="top-actions">
+    <a class="ghost" href="../topics/mock-exam.html">Mock exam</a>
+  </div>
+</header>
+<div class="layout">
+  <nav class="sidenav" aria-label="Темы"><h2>Навигация</h2>
+<a href="../index.html">План на 8 недель<small>С чего начать</small></a>
+<a href="../index.html#inventory">Все материалы<small>Лекции, лабы, кейсы</small></a>
+<a href="formula-sheet.html">Шпаргалка формул<small>Выучить до автоматизма</small></a>
+<a href="mock-exam.html">Пробный экзамен<small>Сначала сами, потом решение</small></a>
+<h2>Неделя 1. Язык данных</h2>
+<a href="model-and-data.html">Модель и строка клиента</a>
+<a href="variable-types.html">Типы переменных</a>
+<a href="descriptive-stats.html">Среднее, медиана, мода, SD</a>
+<a href="shape-missing.html">Форма, ящики и пропуски</a>
+<a href="inference-se-ci.html">Выборка, SE и интервал</a>
+<a href="hypothesis-testing.html">Проверка гипотезы</a>
+<a href="python-bank-walkthrough.html">Тетрадь bank_basics</a>
+<h2>Неделя 2. Python без страха</h2>
+<a href="python-objects.html">Имена, списки, множества</a>
+<a href="python-strings.html">Строки и срезы</a>
+<a href="python-sets-dicts.html">Множества и словари</a>
+<a href="python-logic.html">Условия, циклы, функции</a>
+<a href="python-olympics.html">Python Olympics</a>
+<h2>Неделя 3. Эксперимент</h2>
+<a href="acquisition.html">Привлечение клиента</a>
+<a href="privacy.html">Privacy на слайдах</a>
+<a href="causation.html">Причинность и field test</a>
+<a href="experiment-design.html">Словарь эксперимента</a>
+<h2>Неделя 4. Кейс Artea</h2>
+<a href="artea-setup.html">Кейс Artea</a>
+<a href="artea-balance.html">Рандомизация и средние</a>
+<a href="artea-ols.html">OLS по купону</a>
+<a href="artea-heterogeneity.html">Кому слать купон</a>
+<a href="artea-notebook.html">Тетрадь Artea</a>
+<h2>Неделя 5. Ценность и отток</h2>
+<a href="clv.html">CLV и срок жизни</a>
+<a href="churn-management.html">Управление оттоком</a>
+<a href="model-choice.html">Какая модель под какой Y</a>
+<a href="calibration-lift.html">Calibration, validation, lift</a>
+<a href="predictors.html">Какие X брать</a>
+<h2>Неделя 6. Logit и шансы</h2>
+<a href="logit-odds.html">Шансы и odds ratio</a>
+<a href="advertising-lab.html">Лаба Advertising</a>
+<a href="reading-output.html">Чтение таблиц OLS и logit</a>
+<a href="interactions.html">Взаимодействия</a>
+<h2>Неделя 7. Кейсы и matching</h2>
+<a href="pilgrim.html">Кейс Pilgrim</a>
+<a href="books-r-us.html">Кейс Books R Us</a>
+<a href="association-experiment.html">Связь или причина</a>
+<a href="matching-idea.html">Идея matching</a>
+<a href="sample-box.html">Sample Box и деньги</a>
+<h2>Неделя 8. Пробный экзамен</h2>
+<a href="exam-format.html">Формат экзамена</a>
+<a href="touchpoints.html">Touchpoints</a>
+<a href="readings-gaps.html">Чего нет в папке</a>
+<a href="formula-sheet.html">Шпаргалка</a>
+<a href="mock-exam.html">Пробный экзамен</a></nav>
+  <main><div class="wrap">
+    <p class="kicker">Неделя 8 · assessment и closing class</p>
+    <h1>Как устроены 75 минут и оценка</h1>
+    <p class="lead">Половина усилий attending-студента — проект, половина — письменный экзамен. Экзамен не просит запускать Python. Он просит прочитать чужой вывод и решить, что делать менеджеру.</p>
+    
+<div class="table-wrap"><table>
+<thead><tr><th></th><th>Attending, делали командный проект</th><th>Non-attending</th></tr></thead>
+<tbody>
+<tr><td>Вес</td><td>Проект 50% и письменный экзамен 50%</td><td>Письменный экзамен 100%</td></tr>
+<tr><td>Формат бланка</td><td colspan="2">Одинаковый: 75 минут. 4 multiple choice и открытые вопросы по короткому кейсу. Верный MCQ = 1, неверный = 0</td></tr>
+<tr><td>Содержание</td><td>Слайды, кейсы, код, Lemon &amp; Verhoef, Ascarza 2018, кейс Artea</td><td>То же плюс Dubé et al. 2025, Madrigal, главы Blattberg 20, 21 и 24. Вопросы по этим текстам другие</td></tr>
+<tr><td>Округление</td><td colspan="2">Пример closing class: проект 30 и экзамен 25 дают 0,5×30 + 0,5×25 = 27,5, и это 28. 27,2 округляют до 27</td></tr>
+</tbody></table></div>
+<p>В загруженном blank mock структура такая: 4 MCQ, затем два мини-кейса. В файле solution кейс Green Product назван дополнительной частью «на максимальный балл». Готовьтесь к обоим: основной кейс про модель 0/1 и отдельный кусок про кривой field test. В папке приведены только 2 примера MCQ, не все четыре.</p>
+<p>Closing class повторяет: статистический софт на экзамене не запускают. Методы нужны, чтобы читать вывод. Обязательные статьи надо читать: темы в курсе уже звучали, статья уходит на шаг глубже. Если ваш проект был только про прогноз и таргетинг, отдельно повторите field test, и наоборот. Экзамен покрывает все техники курса, не только вашу.</p>
+<h2>Что пишут в сильном открытом ответе</h2>
+<ol class="steps">
+<li>Имя модели и почему она подходит этому Y.</li>
+<li>Какие строки значимы на 5%, какие только на 10%, какие нет. Порог проговаривайте.</li>
+<li>Перевод: OLS в единицах Y, logit в процентах odds через (OR − 1) или (1 − OR).</li>
+<li>База dummy названа: «относительно клиентов старше 55», «относительно контроля».</li>
+<li>Взаимодействие не перепутано с главным эффектом.</li>
+<li>Причина отдельно от связи. Если группы нарезали городами или люди сами записались в программу, вы говорите selection bias.</li>
+<li>Рекомендация уже после оговорки, а не вместо неё. «Не повышать цену только потому, что p-value большой» — как раз такой ход.</li>
+</ol>
+<div class="callout exam"><strong>Peer review</strong>На оценку экзамена не влияет. Это добровольное письмо про вклад в проект, шкала 0–100, штраф до 3 баллов с проектной части в редком случае. На подготовку к тесту время не тратьте.</div>
+<h2>Порядок этих дней</h2>
+<p>День 1: эта страница и touchpoints. День 2–3: mock с закрытыми решениями, таймер 75 минут, пишете от руки или в заметке. День 4: открываете решения и сверяете каждое предложение. День 5: второй проход вслух за 60 минут. День 6: шпаргалка и список дыр, без новых тем.</p>
+<h2>Практикум</h2>
+
+<section class="quiz" data-quiz data-kind="blank" data-qid="ex1" data-why="0,5×27 + 0,5×30 = 28,5. Правило слайда: 27,5 → 28, значит 0,5 округляют вверх. 28,5 → 29.">
+  <p class="prompt">Проект 27, экзамен 30. Итоговая оценка attending до округления и после округления до целого.</p>
+  <p><label>До<br><input type="text" data-accept="28.5" data-label="До" placeholder="28,5"></label></p><p><label>После<br><input type="text" data-accept="29" data-label="После" placeholder="29"></label></p>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="ex2" data-answer="a" data-why="Blank mock: 1 point for a correct answer and 0 for an incorrect one. Четыре таких вопроса.">
+  <p class="prompt">Сколько баллов даёт один верный multiple choice и сколько неверный?</p>
+  <label class="opt"><input type="radio" name="ex2" value="a"> 1 и 0</label><label class="opt"><input type="radio" name="ex2" value="b"> 2 и −1</label><label class="opt"><input type="radio" name="ex2" value="c"> 0,5 и 0,5</label><label class="opt"><input type="radio" name="ex2" value="d"> 4 за любой ответ</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="ex3" data-answer="b" data-why="Closing class, note 2. Пример строки — df_customers.head(25) в mock.">
+  <p class="prompt">Нужно ли на письменном экзамене запускать Python?</p>
+  <label class="opt"><input type="radio" name="ex3" value="a"> Да, без тетради балл не ставят</label><label class="opt"><input type="radio" name="ex3" value="b"> Нет. Могут показать строку кода или таблицу вывода и спросить, что это значит</label><label class="opt"><input type="radio" name="ex3" value="c"> Только non-attending</label><label class="opt"><input type="radio" name="ex3" value="d"> Только если проект был про logit</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="ex4" data-answer="b" data-why="Assessment strategy говорит это прямо: review the alternative technique, for example A/B testing.">
+  <p class="prompt">Проект команды был только про таргетинг. Что повторить отдельно?</p>
+  <label class="opt"><input type="radio" name="ex4" value="a"> Ничего, экзамен спросит только вашу технику</label><label class="opt"><input type="radio" name="ex4" value="b"> Field test и остальные методы курса. Экзамен покрывает все техники</label><label class="opt"><input type="radio" name="ex4" value="c"> Только peer review</label><label class="opt"><input type="radio" name="ex4" value="d"> Только медианный возраст банка</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+<p class="pills"><a href="sample-box.html">← Sample Box и деньги</a><a href="touchpoints.html">Touchpoints →</a></p>
+    <footer class="note">Числа и формулировки взяты из загруженных слайдов, тетрадей и mock exam курса 20838 (2026). Если в файле чего-то нет, страница так и говорит.</footer>
+  </div></main>
+</div>
+<script src="../js/nav.js"></script>
+<script src="../js/quiz.js"></script>
+</body>
+</html>

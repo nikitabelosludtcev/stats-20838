@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Как коротко описать столбец · 20838</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-page="descriptive-stats">
+<header class="topbar">
+  <button class="menu-btn" type="button" data-nav-toggle aria-expanded="false">Меню</button>
+  <a class="brand" href="../index.html"><strong>20838 · к экзамену</strong><span>Data &amp; Analytics for Strategic Marketing Decisions</span></a>
+  <div class="top-actions">
+    <a class="ghost" href="../topics/mock-exam.html">Mock exam</a>
+  </div>
+</header>
+<div class="layout">
+  <nav class="sidenav" aria-label="Темы"><h2>Навигация</h2>
+<a href="../index.html">План на 8 недель<small>С чего начать</small></a>
+<a href="../index.html#inventory">Все материалы<small>Лекции, лабы, кейсы</small></a>
+<a href="formula-sheet.html">Шпаргалка формул<small>Выучить до автоматизма</small></a>
+<a href="mock-exam.html">Пробный экзамен<small>Сначала сами, потом решение</small></a>
+<h2>Неделя 1. Язык данных</h2>
+<a href="model-and-data.html">Модель и строка клиента</a>
+<a href="variable-types.html">Типы переменных</a>
+<a href="descriptive-stats.html">Среднее, медиана, мода, SD</a>
+<a href="shape-missing.html">Форма, ящики и пропуски</a>
+<a href="inference-se-ci.html">Выборка, SE и интервал</a>
+<a href="hypothesis-testing.html">Проверка гипотезы</a>
+<a href="python-bank-walkthrough.html">Тетрадь bank_basics</a>
+<h2>Неделя 2. Python без страха</h2>
+<a href="python-objects.html">Имена, списки, множества</a>
+<a href="python-strings.html">Строки и срезы</a>
+<a href="python-sets-dicts.html">Множества и словари</a>
+<a href="python-logic.html">Условия, циклы, функции</a>
+<a href="python-olympics.html">Python Olympics</a>
+<h2>Неделя 3. Эксперимент</h2>
+<a href="acquisition.html">Привлечение клиента</a>
+<a href="privacy.html">Privacy на слайдах</a>
+<a href="causation.html">Причинность и field test</a>
+<a href="experiment-design.html">Словарь эксперимента</a>
+<h2>Неделя 4. Кейс Artea</h2>
+<a href="artea-setup.html">Кейс Artea</a>
+<a href="artea-balance.html">Рандомизация и средние</a>
+<a href="artea-ols.html">OLS по купону</a>
+<a href="artea-heterogeneity.html">Кому слать купон</a>
+<a href="artea-notebook.html">Тетрадь Artea</a>
+<h2>Неделя 5. Ценность и отток</h2>
+<a href="clv.html">CLV и срок жизни</a>
+<a href="churn-management.html">Управление оттоком</a>
+<a href="model-choice.html">Какая модель под какой Y</a>
+<a href="calibration-lift.html">Calibration, validation, lift</a>
+<a href="predictors.html">Какие X брать</a>
+<h2>Неделя 6. Logit и шансы</h2>
+<a href="logit-odds.html">Шансы и odds ratio</a>
+<a href="advertising-lab.html">Лаба Advertising</a>
+<a href="reading-output.html">Чтение таблиц OLS и logit</a>
+<a href="interactions.html">Взаимодействия</a>
+<h2>Неделя 7. Кейсы и matching</h2>
+<a href="pilgrim.html">Кейс Pilgrim</a>
+<a href="books-r-us.html">Кейс Books R Us</a>
+<a href="association-experiment.html">Связь или причина</a>
+<a href="matching-idea.html">Идея matching</a>
+<a href="sample-box.html">Sample Box и деньги</a>
+<h2>Неделя 8. Пробный экзамен</h2>
+<a href="exam-format.html">Формат экзамена</a>
+<a href="touchpoints.html">Touchpoints</a>
+<a href="readings-gaps.html">Чего нет в папке</a>
+<a href="formula-sheet.html">Шпаргалка</a>
+<a href="mock-exam.html">Пробный экзамен</a></nav>
+  <main><div class="wrap">
+    <p class="kicker">Неделя 1 · descriptive statistics</p>
+    <h1>Как коротко описать столбец</h1>
+    <p class="lead">Описательная статистика отвечает только на вопрос «как выглядит наша выборка». Про всех клиентов банка она ещё ничего не доказывает.</p>
+    
+<p>Слайд даёт четыре меры. Их легко перепутать, потому что в быту всё это называют «средним».</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Мера</th><th>Что измеряет</th><th>Для каких переменных</th><th>Пример курса</th></tr></thead>
+<tbody>
+<tr><td>Mode</td><td>Что встречается чаще всего</td><td>Nominal, ordinal, discrete</td><td>married, 61,9%. Или «Instagram — самая частая площадка» на иллюстрации слайда</td></tr>
+<tr><td>Median</td><td>Середина, если значения выстроить по порядку. Половина ниже, половина выше</td><td>Ordinal и numerical</td><td>Медиана трат на слайде-примере €50. Медиана возраста в банке 39 лет. Медиана balance €444</td></tr>
+<tr><td>Mean</td><td>Сумма, делённая на число наблюдений. Обычное среднее</td><td>Numerical</td><td>Средний возраст 41,17. Средний balance €1&nbsp;423</td></tr>
+<tr><td>Standard deviation, SD</td><td>Насколько значения разбросаны вокруг своего среднего</td><td>Numerical</td><td>SD возраста 10,57 года. На слайде-примере SD balance €3&nbsp;045: два магазина могут иметь одни и те же средние продажи и разный разброс</td></tr>
+</tbody></table></div>
+<div class="callout formula"><strong>Формула, которую стоит уметь сказать словами</strong><br>mean = сумма значений / n<br>SD большое → клиенты сильно отличаются друг от друга. SD ещё не говорит, насколько точна оценка среднего. Для точности есть standard error, это следующая тема.</div>
+<h2>Разбор возраста</h2>
+<p>Тетрадь печатает:</p>
+<ul>
+<li>n = 4&nbsp;521</li>
+<li>mean = 41,17</li>
+<li>median = 39</li>
+<li>SD = 10,58</li>
+<li>минимум 19, максимум 87</li>
+<li>квартили: 25% людей моложе 33, 75% моложе 49</li>
+</ul>
+<p>Среднее чуть выше медианы. Хвост старших возрастов тянет среднее вверх. Слайд говорит: mean и median вместе подсказывают форму распределения. Если перекос сильный, среднее плохой «типичный» клиент.</p>
+<h2>Решённая задача про balance</h2>
+<p>balance: mean €1&nbsp;422,66, median €444, SD €3&nbsp;009,64, минимум −3&nbsp;313, максимум 71&nbsp;188.</p>
+<ol class="steps">
+<li>Половина клиентов имеет на счету не больше €444. Это медиана, «типичный» человек в середине списка.</li>
+<li>Среднее почти втрое больше, потому что редкие очень большие счета тянут сумму. Один максимум 71&nbsp;188 уже сильно влияет.</li>
+<li>SD около €3&nbsp;000 при медиане €444 означает огромный разброс, а не «типичный клиент плюс-минус три тысячи».</li>
+<li>Для отчёта менеджеру про «обычный баланс» в этих данных честнее медиана. Среднее отвечает на другой вопрос: сколько евро приходится на клиента, если сложить все счета.</li>
+</ol>
+<div class="callout mistake"><strong>Частая ошибка</strong>SD путают с «ошибкой исследования». SD описывает различие клиентов. Позже SE = SD / √n описывает, насколько прыгало бы среднее, если набрать другую такую же выборку.</div>
+<h2>Практикум</h2>
+
+<section class="quiz" data-quiz data-kind="blank" data-qid="d1" data-why="Слайд: Mean = 41.2, Median = 39. Тетрадь точнее: 41.170. Оба округления принимают суть: среднее выше медианы.">
+  <p class="prompt">По возрасту банка впишите среднее и медиану так, как их округляет слайд (один знак после запятой у среднего, целое у медианы).</p>
+  <p><label>Mean age<br><input type="text" data-accept="41.2|41.17" data-label="Mean age" placeholder="41,2"></label></p><p><label>Median age<br><input type="text" data-accept="39" data-label="Median age" placeholder="39"></label></p>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="d2" data-answer="b" data-why="Слайд предупреждает: при сильном скосе mean плохой типичный показатель. Здесь 71 188 против медианы 444.">
+  <p class="prompt">Почему у balance среднее далеко от медианы?</p>
+  <label class="opt"><input type="radio" name="d2" value="a"> В столбце перепутаны категории</label><label class="opt"><input type="radio" name="d2" value="b"> Распределение скошено: редкие очень большие счета тянут среднее вверх</label><label class="opt"><input type="radio" name="d2" value="c"> Медиану можно считать только для nominal</label><label class="opt"><input type="radio" name="d2" value="d"> SD обязан равняться среднему</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="mcq" data-qid="d3" data-answer="a" data-why="Пример слайда про SD: одинаковое среднее, разная вариация дневных продаж.">
+  <p class="prompt">Два магазина продают в среднем на €1 000 в день. У какого вывод «день на день не приходится» сильнее?</p>
+  <label class="opt"><input type="radio" name="d3" value="a"> У того, где SD больше</label><label class="opt"><input type="radio" name="d3" value="b"> У того, где mode больше</label><label class="opt"><input type="radio" name="d3" value="c"> У того, где n больше</label><label class="opt"><input type="radio" name="d3" value="d"> Это невозможно: среднее уже всё сказало</label>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+
+<section class="quiz" data-quiz data-kind="blank" data-qid="d4" data-why="Mode — самое частое значение. Married встречается чаще single (26,5%) и divorced (11,7%).">
+  <p class="prompt">Mode для marital. Впишите категорию и процент со слайда.</p>
+  <p><label>Категория<br><input type="text" data-accept="married" data-label="Категория" placeholder="married"></label></p><p><label>Процент<br><input type="text" data-accept="61.9|61.9%" data-label="Процент" placeholder="61,9"></label></p>
+  <button type="button" data-check>Проверить</button>
+  <div class="feedback"></div>
+</section>
+<p class="pills"><a href="variable-types.html">← Типы переменных</a><a href="shape-missing.html">Форма, ящики и пропуски →</a></p>
+    <footer class="note">Числа и формулировки взяты из загруженных слайдов, тетрадей и mock exam курса 20838 (2026). Если в файле чего-то нет, страница так и говорит.</footer>
+  </div></main>
+</div>
+<script src="../js/nav.js"></script>
+<script src="../js/quiz.js"></script>
+</body>
+</html>
